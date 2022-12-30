@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* //NOTE: 
+vscode error Unknown at rule @tailwindcss(unknownAtRules)
+Solution: Install PostCSS Language Support extension
+-Thésée
+}
+*/
