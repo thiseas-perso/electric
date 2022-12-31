@@ -1,4 +1,7 @@
 import Head from 'next/head';
+import Link from 'next/link';
+import { useContext, useEffect } from 'react';
+import { CarsCtx } from '../context/carsContext';
 import { getAllData } from '../utils/csvParser';
 
 export async function getStaticProps() {
@@ -7,7 +10,18 @@ export async function getStaticProps() {
 }
 
 const Home = ({ allData }) => {
-  console.log({ allData });
+  const { carsState, setCarsState } = useContext(CarsCtx);
+  useEffect(() => {
+    let isMounted = true;
+    if (carsState.length === 0 && isMounted) {
+      setCarsState(allData);
+    }
+    return () => {
+      isMounted = false;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  console.log({ carsState });
   return (
     <>
       <Head>
@@ -17,6 +31,7 @@ const Home = ({ allData }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1>HOME</h1>
+      <Link href={'/electric-cars'}>cars</Link>
     </>
   );
 };
