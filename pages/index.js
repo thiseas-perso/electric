@@ -1,6 +1,13 @@
 import Head from 'next/head';
+import { getAllData } from '../utils/csvParser';
 
-export default function Home() {
+export async function getStaticProps() {
+  const allData = await getAllData();
+  return { props: { allData } };
+}
+
+const Home = ({ allData }) => {
+  console.log({ allData });
   return (
     <>
       <Head>
@@ -12,4 +19,6 @@ export default function Home() {
       <h1>HOME</h1>
     </>
   );
-}
+};
+
+export default Home;
