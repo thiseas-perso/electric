@@ -1,13 +1,14 @@
 import Head from 'next/head';
-import { getAllData } from '../../lib/csvParser';
+import { getAllCarNames, getAllData } from '../../lib/csvParser';
 
 export async function getStaticProps() {
   const allData = await getAllData();
-  return { props: { allData } };
+  const allNames = await getAllCarNames();
+  return { props: { allNames, allData } };
 }
 
-const Cars = ({ allData }) => {
-  console.log({ allData });
+const Cars = ({ allNames, allData }) => {
+  console.log({ allNames, allData });
   return (
     <>
       <Head>
