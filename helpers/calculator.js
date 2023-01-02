@@ -1,8 +1,6 @@
 // const energyData = {
-//   evConsumption: '', //kWh/100km
 //   chargingPriceHC: '', //EUR
 //   chargingPriceHP: '', //EUR
-//   iceConsumption: '', //lt/100km
 //   gasPrice: '', //EUR/lt
 //   durationStudied: '', //years
 // };
@@ -23,8 +21,10 @@
 //   purchaseCost: '', //EUR
 //   insurancePerY: '', //EUR
 //   maintenancePerY: '', //EUR
+//   iceConsumption: '', //lt/100km
 // };
 // const carDataEV = {
+//   evConsumption: '', //kWh/100km
 //   purchaseCost: '', //EUR
 //   insurancePerY: '', //EUR
 //   maintenancePerY: '', //EUR
@@ -47,17 +47,17 @@ const calculator = ({
       usageData.daysWorkedPerY +
       usageData.weekendKM * 52 +
       usageData.otherKMPerW * 52; // km
-  const evConsumptionPerY = (totalKMPerY / 100) * energyData.evConsumption; //kWh
+  const evConsumptionPerY = (totalKMPerY / 100) * carDataEV.evConsumption; //kWh
   const chargeEVCostPerY =
     evConsumptionPerY *
     (0.5 * energyData.chargingPriceHC + 0.5 * energyData.chargingPriceHC); //EUR
   const evKMCost =
     ((0.5 * energyData.chargingPriceHC + 0.5 * energyData.chargingPriceHC) *
-      energyData.evConsumption) /
+      carDataEV.evConsumption) /
     100; //EUR
   const gasICECostPerY =
-    ((energyData.gasPrice * energyData.iceConsumption) / 100) * totalKMPerY; //EUR
-  const iceKMCost = (energyData.iceConsumption / 100) * energyData.gasPrice;
+    ((energyData.gasPrice * iceConsumption.iceConsumption) / 100) * totalKMPerY; //EUR
+  const iceKMCost = (iceConsumption.iceConsumption / 100) * energyData.gasPrice;
 
   const iceVSevCostPerY = gasICECostPerY - chargeEVCostPerY;
 

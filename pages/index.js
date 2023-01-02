@@ -20,7 +20,7 @@ const Home = ({ allNames, allData, bananaData }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1>HOME</h1>
-      <Link href={'/electric-cars'}>cars</Link>
+      <Link href={'/calculator'}>calculator</Link>
     </>
   );
 };

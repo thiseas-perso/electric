@@ -10,6 +10,13 @@ const Calculator = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1>Calculator</h1>
+      <form>
+        <fieldset id="energyData"> </fieldset>
+        <fieldset id="usageData"> </fieldset>
+        <fieldset id="usageExpected"> </fieldset>
+        <fieldset id="carDataICE"> </fieldset>
+        <fieldset id="carDataEV"> </fieldset>
+      </form>
     </>
   );
 };
