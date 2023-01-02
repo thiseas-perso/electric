@@ -2,7 +2,7 @@
 //   chargingPriceHC: '', //EUR
 //   chargingPriceHP: '', //EUR
 //   gasPrice: '', //EUR/lt
-//   durationStudied: '', //years
+
 // };
 
 // const usageData = {
@@ -39,6 +39,7 @@ const calculator = ({
   usageExpected,
   carDataICE,
   carDataEV,
+  durationStudied,
 }) => {
   const totalKMPerY =
     usageExpected.totalKMPerY ||
@@ -63,13 +64,12 @@ const calculator = ({
 
   const carEVCostAtEndOfPeriod =
     carDataEV.purchaseCost +
-    (carDataEV.insurancePerY + carDataEV.maintenancePerY) *
-      energyData.durationStudied -
+    (carDataEV.insurancePerY + carDataEV.maintenancePerY) * durationStudied -
     carDataEV.ecoBonus;
 
   const carEVValueAtEndOfPeriod = (() => {
     let currPrice = carDataEV.purchaseCost;
-    for (let i = 0; i < energyData.durationStudied; i++) {
+    for (let i = 0; i < durationStudied; i++) {
       if (carDepreciation[i]) {
         currPrice = currPrice - (currPrice * carDepreciation[i]) / 100;
       } else {
@@ -80,7 +80,7 @@ const calculator = ({
 
   const carICEValueAtEndOfPeriod = (() => {
     let currPrice = carDataEV.purchaseCost;
-    for (let i = 0; i < energyData.durationStudied; i++) {
+    for (let i = 0; i < durationStudied; i++) {
       if (carDepreciation[i]) {
         currPrice = currPrice - (currPrice * carDepreciation[i]) / 100;
       } else {
@@ -91,8 +91,7 @@ const calculator = ({
 
   const carICECostAtEndOfPeriod =
     carDataICE.purchaseCost +
-    (carDataICE.insurancePerY + carDataICE.maintenancePerY) *
-      energyData.durationStudied;
+    (carDataICE.insurancePerY + carDataICE.maintenancePerY) * durationStudied;
 
   return {
     iceVSevCostPerY,
