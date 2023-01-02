@@ -1,47 +1,45 @@
-const energyData = {
-  evConsumption: '', //kWh/100km
-  chargingPriceHC: '', //EUR
-  chargingPriceHP: '', //EUR
-  iceConsumption: '', //lt/100km
-  gasPrice: '', //EUR/lt
-  durationStudied: '', //years
-};
-
-const usageData = {
-  workHomeDistance: '', //km
-  dailyCommutes: '', //number
-  daysWorkedPerY: '', //number
-  weekendKM: '', //km
-  otherKMPerW: '', //km
-};
-
-const usageExpected = {
-  totalKMPerY: '', //km
-};
-
-const carDataICE = {
-  purchaseCost: '', //EUR
-  insurancePerY: '', //EUR
-  maintenancePerY: '', //EUR
-};
-const carDataEV = {
-  purchaseCost: '', //EUR
-  insurancePerY: '', //EUR
-  maintenancePerY: '', //EUR
-  ecoBonus: '', //EUR
-};
-
-// const carDepreciation = {
-//   '1': -20,
-//   '2': -15,
-//   '3': -10,
-//   '4': -10,
-//   '5': -7,
-//   '6': -6,
+// const energyData = {
+//   evConsumption: '', //kWh/100km
+//   chargingPriceHC: '', //EUR
+//   chargingPriceHP: '', //EUR
+//   iceConsumption: '', //lt/100km
+//   gasPrice: '', //EUR/lt
+//   durationStudied: '', //years
 // };
+
+// const usageData = {
+//   workHomeDistance: '', //km
+//   dailyCommutes: '', //number
+//   daysWorkedPerY: '', //number
+//   weekendKM: '', //km
+//   otherKMPerW: '', //km
+// };
+
+// const usageExpected = {
+//   totalKMPerY: '', //km
+// };
+
+// const carDataICE = {
+//   purchaseCost: '', //EUR
+//   insurancePerY: '', //EUR
+//   maintenancePerY: '', //EUR
+// };
+// const carDataEV = {
+//   purchaseCost: '', //EUR
+//   insurancePerY: '', //EUR
+//   maintenancePerY: '', //EUR
+//   ecoBonus: '', //EUR
+// };
+
 const carDepreciation = [20, 15, 10, 10, 7, 6];
 
-const calculator = () => {
+const calculator = ({
+  energyData,
+  usageData,
+  usageExpected,
+  carDataICE,
+  carDataEV,
+}) => {
   const totalKMPerY =
     usageExpected.totalKMPerY ||
     usageData.workHomeDistance *
@@ -70,7 +68,25 @@ const calculator = () => {
     carDataEV.ecoBonus;
 
   const carEVValueAtEndOfPeriod = (() => {
-    for (let i = 0; i < energyData.durationStudied; i++) {}
+    let currPrice = carDataEV.purchaseCost;
+    for (let i = 0; i < energyData.durationStudied; i++) {
+      if (carDepreciation[i]) {
+        currPrice = currPrice - (currPrice * carDepreciation[i]) / 100;
+      } else {
+        currPrice = currPrice - (currPrice * 6) / 100;
+      }
+    }
+  })();
+
+  const carICEValueAtEndOfPeriod = (() => {
+    let currPrice = carDataEV.purchaseCost;
+    for (let i = 0; i < energyData.durationStudied; i++) {
+      if (carDepreciation[i]) {
+        currPrice = currPrice - (currPrice * carDepreciation[i]) / 100;
+      } else {
+        currPrice = currPrice - (currPrice * 6) / 100;
+      }
+    }
   })();
 
   const carICECostAtEndOfPeriod =
@@ -78,7 +94,16 @@ const calculator = () => {
     (carDataICE.insurancePerY + carDataICE.maintenancePerY) *
       energyData.durationStudied;
 
-  return { iceVSevCostPerY, carEVCostAtEndOfPeriod, carICECostAtEndOfPeriod };
+  return {
+    iceVSevCostPerY,
+    carEVCostAtEndOfPeriod,
+    carICECostAtEndOfPeriod,
+    carEVValueAtEndOfPeriod,
+    carICEValueAtEndOfPeriod,
+    totalKMPerY,
+    evKMCost,
+    iceKMCost,
+  };
 };
 
 export default calculator;
