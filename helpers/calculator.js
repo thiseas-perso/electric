@@ -2,7 +2,6 @@
 //   chargingPriceHC: '', //EUR
 //   chargingPriceHP: '', //EUR
 //   gasPrice: '', //EUR/lt
-
 // };
 
 // const usageData = {
@@ -30,6 +29,8 @@
 //   maintenancePerY: '', //EUR
 //   ecoBonus: '', //EUR
 // };
+
+//const durationStudied = '' //years
 
 const carDepreciation = [20, 15, 10, 10, 7, 6];
 
