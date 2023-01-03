@@ -12,48 +12,54 @@ const initialState = {
   energyData: {
     chargingPriceHC: '0.15',
     chargingPriceHP: '0.18',
-    gasPrice: '',
+    gasPrice: '1.7',
   },
   usageData: {
-    workHomeDistance: '',
-    dailyCommutes: '',
-    daysWorkedPerY: '',
-    weekendKM: '',
-    otherKMPerW: '',
+    workHomeDistance: '50',
+    dailyCommutes: '2',
+    daysWorkedPerY: '150',
+    weekendKM: '100',
+    otherKMPerW: '150',
   },
   usageExpected: {
-    totalKMPerY: '',
+    totalKMPerY: '10000',
   },
   carDataICE: {
-    purchaseCost: '',
-    insurancePerY: '',
-    maintenancePerY: '',
-    iceConsumption: '',
+    purchaseCost: '30000',
+    insurance: '500',
+    maintenance: '1000',
+    consumption: '5',
   },
   carDataEV: {
     purchaseCost: '30000',
-    evConsumption: '',
-    insurancePerY: '',
-    maintenancePerY: '',
-    ecoBonus: '',
+    consumption: '20',
+    insurance: '500',
+    maintenance: '500',
+    ecoBonus: '5000',
   },
-  durationStudied: '',
+  durationStudied: '4',
 };
 
 const Calculator = () => {
   const [state, setState] = useState(initialState);
 
-  // const convertDataToNumbers = (obj) => {
-  //   const result = Object.fromEntries(
-  //     Object.entries(obj).map(([key, value]) => [key, Number(value)])
-  //   );
-  //   return result;
-  // };
+  const convertDataToNumbers = (obj) => {
+    const newObj = {};
+    for (const key in obj) {
+      const element = obj[key];
+      if (typeof element === 'object') {
+        newObj[key] = convertDataToNumbers(element);
+      } else {
+        newObj[key] = Number(Number(element).toFixed(2));
+      }
+    }
+    return newObj;
+  };
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log('state : ', state);
-    console.log(calculator(state));
+    console.log('state : ', convertDataToNumbers(state));
+    console.log(calculator(convertDataToNumbers(state)));
   };
 
   return (
