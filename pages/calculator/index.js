@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useState } from 'react';
-import CarDataFieldSet from '../../components/calculator/carDataFieldSet';
+import CarEVFieldSet from '../../components/calculator/CarEVFieldSet';
+import CarICEFieldSet from '../../components/calculator/CarICEFieldSet';
 import DurationFieldSet from '../../components/calculator/DurationFieldSet';
 import EnergyDataFieldSet from '../../components/calculator/energyDataFieldSet';
 import UsageDataFieldSet from '../../components/calculator/usageDataFieldSet';
@@ -9,50 +10,58 @@ import calculator from '../../helpers/calculator';
 
 const initialState = {
   energyData: {
-    chargingPriceHC: '',
-    chargingPriceHP: '',
-    gasPrice: '',
+    chargingPriceHC: '0.15',
+    chargingPriceHP: '0.18',
+    gasPrice: '1.7',
   },
   usageData: {
-    workHomeDistance: '',
-    dailyCommutes: '',
-    daysWorkedPerY: '',
-    weekendKM: '',
-    otherKMPerW: '',
+    workHomeDistance: '50',
+    dailyCommutes: '2',
+    daysWorkedPerY: '150',
+    weekendKM: '100',
+    otherKMPerW: '150',
   },
   usageExpected: {
-    totalKMPerY: '',
+    totalKMPerY: '10000',
   },
   carDataICE: {
-    purchaseCost: '',
-    insurancePerY: '',
-    maintenancePerY: '',
-    iceConsumption: '',
+    purchaseCost: '30000',
+    insurance: '500',
+    maintenance: '1000',
+    consumption: '5',
   },
   carDataEV: {
-    evConsumption: '',
-    purchaseCost: '',
-    insurancePerY: '',
-    maintenancePerY: '',
-    ecoBonus: '',
+    purchaseCost: '30000',
+    consumption: '20',
+    insurance: '500',
+    maintenance: '500',
+    ecoBonus: '5000',
   },
-  durationStudied: '2',
+  durationStudied: '4',
 };
 
 const Calculator = () => {
   const [state, setState] = useState(initialState);
+
   const convertDataToNumbers = (obj) => {
-    const result = Object.fromEntries(
-      Object.entries(obj).map(([key, value]) => [key, Number(value)])
-    );
-    console.log({ result });
-    return result;
+    const newObj = {};
+    for (const key in obj) {
+      const element = obj[key];
+      if (typeof element === 'object') {
+        newObj[key] = convertDataToNumbers(element);
+      } else {
+        newObj[key] = Number(Number(element).toFixed(2));
+      }
+    }
+    return newObj;
   };
+
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log('state : ', state);
-    console.log(calculator(state));
+    console.log('state : ', convertDataToNumbers(state));
+    console.log(calculator(convertDataToNumbers(state)));
   };
+
   return (
     <>
       <Head>
@@ -63,56 +72,12 @@ const Calculator = () => {
       </Head>
       <h1>Calculator</h1>
       <form onSubmit={(e) => submitHandler(e)}>
-        <CarDataFieldSet
-          carType={'EV'}
-          getData={(data) =>
-            setState((prev) => ({
-              ...prev,
-              carDataEV: convertDataToNumbers(data),
-            }))
-          }
-        />
-        <CarDataFieldSet
-          carType={'ICE'}
-          getData={(data) =>
-            setState((prev) => ({
-              ...prev,
-              carDataICE: convertDataToNumbers(data),
-            }))
-          }
-        />
-        <EnergyDataFieldSet
-          getData={(data) =>
-            setState((prev) => ({
-              ...prev,
-              energyData: convertDataToNumbers(data),
-            }))
-          }
-        />
-        <UsageDataFieldSet
-          getData={(data) =>
-            setState((prev) => ({
-              ...prev,
-              usageData: convertDataToNumbers(data),
-            }))
-          }
-        />
-        <UsageExpectedFieldSet
-          getData={(data) =>
-            setState((prev) => ({
-              ...prev,
-              usageExpected: convertDataToNumbers(data),
-            }))
-          }
-        />
-        <DurationFieldSet
-          getData={(data) =>
-            setState((prev) => ({
-              ...prev,
-              durationStudied: Number(data),
-            }))
-          }
-        />
+        <CarEVFieldSet state={state} setState={setState} />
+        <CarICEFieldSet state={state} setState={setState} />
+        <EnergyDataFieldSet state={state} setState={setState} />
+        <UsageDataFieldSet state={state} setState={setState} />
+        <UsageExpectedFieldSet state={state} setState={setState} />
+        <DurationFieldSet state={state} setState={setState} />
         <button type="submit">Lancer l&lsquo;analyse</button>
       </form>
     </>

@@ -42,14 +42,6 @@ const calculator = ({
   carDataEV,
   durationStudied,
 }) => {
-  console.log({
-    energyData,
-    usageData,
-    usageExpected,
-    carDataICE,
-    carDataEV,
-    durationStudied,
-  });
   const totalKMPerY =
     usageExpected.totalKMPerY ||
     usageData.workHomeDistance *
@@ -73,15 +65,15 @@ const calculator = ({
 
   const carEVCostAtEndOfPeriod =
     carDataEV.purchaseCost +
-    (carDataEV.insurance + carDataEV.maintenance) * durationStudied -
+    (carDataEV.insurance + carDataEV.maintenance + chargeEVCostPerY) *
+      durationStudied -
     carDataEV.ecoBonus;
 
   const carEVValueAtEndOfPeriod = (() => {
     let currPrice = carDataEV.purchaseCost;
-    console.log({ currPrice });
+
     for (let i = 0; i < durationStudied; i++) {
       if (carDepreciation[i]) {
-        console.log('in if', carDepreciation[i]);
         currPrice = currPrice - (currPrice * carDepreciation[i]) / 100;
       } else {
         currPrice = currPrice - (currPrice * 6) / 100;
@@ -104,7 +96,8 @@ const calculator = ({
 
   const carICECostAtEndOfPeriod =
     carDataICE.purchaseCost +
-    (carDataICE.insurance + carDataICE.maintenance) * durationStudied;
+    (carDataICE.insurance + carDataICE.maintenance + gasICECostPerY) *
+      durationStudied;
 
   return {
     iceVSevCostPerY,
