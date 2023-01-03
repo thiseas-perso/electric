@@ -1,22 +1,6 @@
-import React, { useState } from 'react';
-
-const initialState = {
-  chargingPriceHC: '1.4',
-  chargingPriceHP: '1.8',
-  gasPrice: '2',
-};
-
-const EnergyDataFieldSet = ({ getData }) => {
-  const [state, setState] = useState(initialState);
-  const onBlurHandler = (e) => {
-    e.stopPropagation();
-    if (!e.currentTarget.contains(e.relatedTarget)) {
-      console.log('getting data');
-      getData(state);
-    }
-  };
+const EnergyDataFieldSet = ({ state, setState }) => {
   return (
-    <fieldset id="energyData" onBlur={(e) => onBlurHandler(e)}>
+    <fieldset id="energyData">
       <legend>
         <h2>Données energie</h2>
       </legend>
@@ -27,11 +11,14 @@ const EnergyDataFieldSet = ({ getData }) => {
         type="number"
         id="chargingPriceHC"
         name="chargingPriceHC"
-        value={state.chargingPriceHC}
+        value={state.energyData.chargingPriceHC}
         onChange={(e) =>
           setState((prev) => ({
             ...prev,
-            chargingPriceHC: e.target.value,
+            energyData: {
+              ...state.energyData,
+              chargingPriceHC: e.target.value,
+            },
           }))
         }
       />
@@ -42,11 +29,14 @@ const EnergyDataFieldSet = ({ getData }) => {
         type="number"
         id="chargingPriceHP"
         name="chargingPriceHP"
-        value={state.chargingPriceHP}
+        value={state.energyData.chargingPriceHP}
         onChange={(e) =>
           setState((prev) => ({
             ...prev,
-            chargingPriceHP: e.target.value,
+            energyData: {
+              ...state.energyData,
+              chargingPriceHP: e.target.value,
+            },
           }))
         }
       />
@@ -57,17 +47,18 @@ const EnergyDataFieldSet = ({ getData }) => {
         type="number"
         id="gasPrice"
         name="gasPrice"
-        value={state.gasPrice}
+        value={state.energyData.gasPrice}
         onChange={(e) =>
           setState((prev) => ({
             ...prev,
-            gasPrice: e.target.value,
+            energyData: {
+              ...state.energyData,
+              gasPrice: e.target.value,
+            },
           }))
         }
       />
-      <button type="button" onClick={() => getData(state)}>
-        Suivant
-      </button>
+      <button type="button">Suivant</button>
     </fieldset>
   );
 };

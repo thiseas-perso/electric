@@ -1,16 +1,6 @@
-import React, { useState } from 'react';
-
-function DurationFieldSet({ getData }) {
-  const [state, setState] = useState('2');
-  const onBlurHandler = (e) => {
-    e.stopPropagation();
-    if (!e.currentTarget.contains(e.relatedTarget)) {
-      console.log('getting data');
-      getData(state);
-    }
-  };
+function DurationFieldSet({ state, setState }) {
   return (
-    <fieldset onBlur={(e) => onBlurHandler(e)}>
+    <fieldset>
       <legend>
         <h2>Durée de détention étudiee</h2>
       </legend>
@@ -21,13 +11,16 @@ function DurationFieldSet({ getData }) {
         type="number"
         id="durationStudied"
         name="durationStudied"
-        value={state}
-        onChange={(e) => setState(() => e.target.value)}
+        value={state.durationStudied}
+        onChange={(e) =>
+          setState((prev) => ({
+            ...prev,
+            durationStudied: e.target.value,
+          }))
+        }
       />
       <button type="button">Précédent</button>
-      <button type="button" onClick={() => getData(state)}>
-        Suivant
-      </button>
+      <button type="button">Suivant</button>
     </fieldset>
   );
 }

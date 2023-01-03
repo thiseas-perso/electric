@@ -1,23 +1,6 @@
-import React, { useState } from 'react';
-
-const initialState = {
-  workHomeDistance: '50',
-  dailyCommutes: '2',
-  daysWorkedPerY: '200',
-  weekendKM: '60',
-  otherKMPerW: '70',
-};
-const UsageDataFieldSet = ({ getData }) => {
-  const [state, setState] = useState(initialState);
-  const onBlurHandler = (e) => {
-    e.stopPropagation();
-    if (!e.currentTarget.contains(e.relatedTarget)) {
-      console.log('getting data');
-      getData(state);
-    }
-  };
+const UsageDataFieldSet = ({ state, setState }) => {
   return (
-    <fieldset id="usageData" onBlur={(e) => onBlurHandler(e)}>
+    <fieldset id="usageData">
       <legend>
         <h2>Analyse de vos usages</h2>
       </legend>
@@ -27,11 +10,14 @@ const UsageDataFieldSet = ({ getData }) => {
         type="number"
         id="workHomeDistance"
         name="workHomeDistance"
-        value={state.workHomeDistance}
+        value={state.usageData.workHomeDistance}
         onChange={(e) =>
           setState((prev) => ({
             ...prev,
-            workHomeDistance: e.target.value,
+            usageData: {
+              ...state.usageData,
+              workHomeDistance: e.target.value,
+            },
           }))
         }
       />
@@ -41,11 +27,14 @@ const UsageDataFieldSet = ({ getData }) => {
         type="number"
         id="dailyCommutes"
         name="dailyCommutes"
-        value={state.dailyCommutes}
+        value={state.usageData.dailyCommutes}
         onChange={(e) =>
           setState((prev) => ({
             ...prev,
-            dailyCommutes: e.target.value,
+            usageData: {
+              ...state.usageData,
+              dailyCommutes: e.target.value,
+            },
           }))
         }
       />
@@ -56,11 +45,14 @@ const UsageDataFieldSet = ({ getData }) => {
         type="number"
         id="daysWorkedPerY"
         name="daysWorkedPerY"
-        value={state.daysWorkedPerY}
+        value={state.usageData.daysWorkedPerY}
         onChange={(e) =>
           setState((prev) => ({
             ...prev,
-            daysWorkedPerY: e.target.value,
+            usageData: {
+              ...state.usageData,
+              daysWorkedPerY: e.target.value,
+            },
           }))
         }
       />
@@ -70,11 +62,14 @@ const UsageDataFieldSet = ({ getData }) => {
         type="number"
         id="weekendKM"
         name="weekendKM"
-        value={state.weekendKM}
+        value={state.usageData.weekendKM}
         onChange={(e) =>
           setState((prev) => ({
             ...prev,
-            weekendKM: e.target.value,
+            usageData: {
+              ...state.usageData,
+              weekendKM: e.target.value,
+            },
           }))
         }
       />
@@ -84,18 +79,19 @@ const UsageDataFieldSet = ({ getData }) => {
         type="number"
         id="otherKMPerW"
         name="otherKMPerW"
-        value={state.otherKMPerW}
+        value={state.usageData.otherKMPerW}
         onChange={(e) =>
           setState((prev) => ({
             ...prev,
-            otherKMPerW: e.target.value,
+            usageData: {
+              ...state.usageData,
+              otherKMPerW: e.target.value,
+            },
           }))
         }
       />
       <button type="button">Précédent</button>
-      <button type="button" onClick={() => getData(state)}>
-        Suivant
-      </button>
+      <button type="button">Suivant</button>
     </fieldset>
   );
 };

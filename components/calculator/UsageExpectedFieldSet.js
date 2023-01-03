@@ -1,20 +1,6 @@
-import React, { useState } from 'react';
-
-const initialState = {
-  totalKMPerY: '',
-};
-
-const UsageExpectedFieldSet = ({ getData }) => {
-  const [state, setState] = useState(initialState);
-  const onBlurHandler = (e) => {
-    e.stopPropagation();
-    if (!e.currentTarget.contains(e.relatedTarget)) {
-      console.log('getting data');
-      getData(state);
-    }
-  };
+const UsageExpectedFieldSet = ({ state, setState }) => {
   return (
-    <fieldset id="usageExpected" onBlur={(e) => onBlurHandler(e)}>
+    <fieldset id="usageExpected">
       <legend>
         <h2>Usage attendu</h2>
       </legend>
@@ -23,18 +9,19 @@ const UsageExpectedFieldSet = ({ getData }) => {
         min="0"
         type="number"
         id="totalKMPerY"
-        value={state.totalKMPerY}
+        value={state.usageExpected.totalKMPerY}
         onChange={(e) =>
           setState((prev) => ({
             ...prev,
-            totalKMPerY: e.target.value,
+            usageExpected: {
+              ...state.usageExpected,
+              totalKMPerY: e.target.value,
+            },
           }))
         }
       />
       <button type="button">Précédent</button>
-      <button type="button" onClick={() => getData(state)}>
-        Suivant
-      </button>
+      <button type="button">Suivant</button>
     </fieldset>
   );
 };

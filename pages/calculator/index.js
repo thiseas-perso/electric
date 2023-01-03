@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useState } from 'react';
-import CarDataFieldSet from '../../components/calculator/carDataFieldSet';
+import CarEVFieldSet from '../../components/calculator/CarEVFieldSet';
+import CarICEFieldSet from '../../components/calculator/CarICEFieldSet';
 import DurationFieldSet from '../../components/calculator/DurationFieldSet';
 import EnergyDataFieldSet from '../../components/calculator/energyDataFieldSet';
 import UsageDataFieldSet from '../../components/calculator/usageDataFieldSet';
@@ -9,8 +10,8 @@ import calculator from '../../helpers/calculator';
 
 const initialState = {
   energyData: {
-    chargingPriceHC: '',
-    chargingPriceHP: '',
+    chargingPriceHC: '0.15',
+    chargingPriceHP: '0.18',
     gasPrice: '',
   },
   usageData: {
@@ -30,29 +31,31 @@ const initialState = {
     iceConsumption: '',
   },
   carDataEV: {
+    purchaseCost: '30000',
     evConsumption: '',
-    purchaseCost: '',
     insurancePerY: '',
     maintenancePerY: '',
     ecoBonus: '',
   },
-  durationStudied: '2',
+  durationStudied: '',
 };
 
 const Calculator = () => {
   const [state, setState] = useState(initialState);
-  const convertDataToNumbers = (obj) => {
-    const result = Object.fromEntries(
-      Object.entries(obj).map(([key, value]) => [key, Number(value)])
-    );
-    console.log({ result });
-    return result;
-  };
+
+  // const convertDataToNumbers = (obj) => {
+  //   const result = Object.fromEntries(
+  //     Object.entries(obj).map(([key, value]) => [key, Number(value)])
+  //   );
+  //   return result;
+  // };
+
   const submitHandler = (e) => {
     e.preventDefault();
     console.log('state : ', state);
     console.log(calculator(state));
   };
+
   return (
     <>
       <Head>
@@ -63,56 +66,12 @@ const Calculator = () => {
       </Head>
       <h1>Calculator</h1>
       <form onSubmit={(e) => submitHandler(e)}>
-        <CarDataFieldSet
-          carType={'EV'}
-          getData={(data) =>
-            setState((prev) => ({
-              ...prev,
-              carDataEV: convertDataToNumbers(data),
-            }))
-          }
-        />
-        <CarDataFieldSet
-          carType={'ICE'}
-          getData={(data) =>
-            setState((prev) => ({
-              ...prev,
-              carDataICE: convertDataToNumbers(data),
-            }))
-          }
-        />
-        <EnergyDataFieldSet
-          getData={(data) =>
-            setState((prev) => ({
-              ...prev,
-              energyData: convertDataToNumbers(data),
-            }))
-          }
-        />
-        <UsageDataFieldSet
-          getData={(data) =>
-            setState((prev) => ({
-              ...prev,
-              usageData: convertDataToNumbers(data),
-            }))
-          }
-        />
-        <UsageExpectedFieldSet
-          getData={(data) =>
-            setState((prev) => ({
-              ...prev,
-              usageExpected: convertDataToNumbers(data),
-            }))
-          }
-        />
-        <DurationFieldSet
-          getData={(data) =>
-            setState((prev) => ({
-              ...prev,
-              durationStudied: Number(data),
-            }))
-          }
-        />
+        <CarEVFieldSet state={state} setState={setState} />
+        <CarICEFieldSet state={state} setState={setState} />
+        <EnergyDataFieldSet state={state} setState={setState} />
+        <UsageDataFieldSet state={state} setState={setState} />
+        <UsageExpectedFieldSet state={state} setState={setState} />
+        <DurationFieldSet state={state} setState={setState} />
         <button type="submit">Lancer l&lsquo;analyse</button>
       </form>
     </>
