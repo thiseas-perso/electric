@@ -60,7 +60,7 @@ Tesla Model Y - Performance;2100;1040;1060;50/50;82 kWh
 Polestar 2 - SR SM;2060;1140;920;55/45;64 kWh
 Tesla Model Y - LR;2060;1020;1040;50/50;79 kWh
 Nissan Ariya - 63 kWh;2040;1120;920;55/45;66 kWh
-VW ID3 82 kWh;2020;980;1040;49/51;82 kWh
+VW ID3 - 82 kWh;2020;980;1040;49/51;82 kWh
 Tesla Model 3 - Long Range;1980;1000;980;51/49;79 kWh
 Maxus Euniq - 5;1960;1040;920;53/47;53 kWh
 Tesla Model 3 - Performance 2019;1960;980;980;50/50;~80 kWh
@@ -86,10 +86,10 @@ Mazda MX-30;1760;980;780;56/44;35.5 kWh
 MG ZS - EV;1760;1020;740;58/42;72 kWh
 Citroen e-C4;1740;960;780;55/45;50 kWh
 Nissan e-NV200 - 40 kWh;1740;1000;740;57/43;40 kWh
-Tesla Model 3 - - SR 2019+;1740;800;940;46/54;~55 kWh
+Tesla Model 3 - SR 2019+;1740;800;940;46/54;~55 kWh
 Xpeng G3 - 520i;1740;1000;740;57/43;66.5 kWh
 Maxus e-Deliver - 3;1720;980;740;57/43;52.5 kWh
-Tesla Model 3 - - SR+ 2021;1720;820;900;48/52;~55 kWh
+Tesla Model 3 - SR+ 2021;1720;820;900;48/52;~55 kWh
 Xpeng G3 - 520 Chinese;1720;1000;720;58/42;66.5 kWh
 Kia Ceed - PHEV;1700;920;780;54/46;8.9 kWh
 Nissan Leaf - 40 kWh;1700;960;740;56/44;40 kWh
