@@ -9,10 +9,10 @@ Nissan Ariya 87 kWh;Dry;Michelin Primacy 4;Summer;255/40-20;255/40-20;61,3;64,5;
 MG Marvel R Performance;Dry;Michelin Primacy 4;Summer;235/45-19;235/45-19;62,9;65,2;67,0;65,35
 Audi e-tron 55 w/acoustic glass;Dry;Bridgestone Alenza;Summer;255/50-20;255/50-20;62,6;66,2;66,7;65,51
 VW ID5 GTX;Dry;Pirelli Scorpion;Summer;235/45-21;255/40-21;62,4;65,2;67,6;65,56
-Audi e-tron 50 Sportback;Dry;Bridgestone Alenza;Summer;255/50-20;255/50-20;63,3;65,3;67,7;65,80
+Audi e-tron - 50 Sportback;Dry;Bridgestone Alenza;Summer;255/50-20;255/50-20;63,3;65,3;67,7;65,80
 Skoda Enyaq Coupé RS;Dry;Pirelli Scorpion;Summer;235/45-21;255/40-21;63,7;65,8;67,5;65,94
 Nio ES8;Dry;Continental MC6;Summer;265/45-21;265/45-21;63,6;65,9;68,1;66,25
-Audi Q4 e-tron 40;Dry;Bridgestone Turanza Eco;Summer;235/55-19;255/50-19;63,5;66,2;68,3;66,42
+Audi Q4 e-tron - 40;Dry;Bridgestone Turanza Eco;Summer;235/55-19;255/50-19;63,5;66,2;68,3;66,42
 Peugeot e-2008 GT;Dry;Michelin Pri 4;Summer;215/55-18;215/55-18;63,8;65,8;68,5;66,46
 Porsche Taycan 4S w/glass;Dry;Hankook evo3;Summer;225/55-19;275/45-19;64,5;66,0;68,2;66,50
 Porsche Taycan 4S 79 kWh;Dry;Michelin PS4;Summer;245/45-20;285/40-20;64,8;66,3;67,9;66,52
@@ -23,8 +23,8 @@ VW ID4 GTX;Dry;Pirelli Scorpion;Summer;235/45-21;255/40-21;64,0;66,6;68,8;66,89
 BMW iX3;Dry;Bridgestone Alenza;Summer;245/45-20;275/40-20;64,5;66,8;68,9;67,09
 Hyundai Ioniq 5 AWD;Dry;Michelin Primacy 4;Summer;235/55-19;235/55-19;64,6;67,1;68,7;67,11
 Ford Mustang Mach-E LR RWD;Dry;Continental PreCon 6;Summer;225/60-18;225/60-18;64,8;66,7;68,9;67,12
-Tesla Model S LR Raven;Dry;Mag52 + Winrun R330;Summer;245/45-19;245/45-19;65,2;66,9;68,8;67,21
-Tesla Model S Perf Raven;Dry;Michelin PS4S;Summer;245/35-21;265/35-21;64,6;67,0;69,0;67,23
+Tesla Model S - LR Raven;Dry;Mag52 + Winrun R330;Summer;245/45-19;245/45-19;65,2;66,9;68,8;67,21
+Tesla Model S - Perf Raven;Dry;Michelin PS4S;Summer;245/35-21;265/35-21;64,6;67,0;69,0;67,23
 Tesla Model X;Dry;Winrun R330;Summer;255/45-20;275/45-20;64,5;67,2;69,1;67,32
 Tesla Model Y Performance;Dry;Minerva Ecospeed2 SUV;Summer;235/55-18;235/55-18;64,3;67,3;69,3;67,42
 VW ID Buzz;Dry;Hankook Ventus S1 evo3;Summer;235/45-21;265/40-21;64,8;66,7;69,5;67,43
@@ -34,7 +34,7 @@ Citroen e-C4;Dry;Michelin e Primacy;Summer;195/60-18;195/60-18;65,3;67,3;69,3;67
 Tesla Model 3 Performance*;Dry;Winrun R330;Summer;235/45-18;235/45-18;65,8;67,6;68,9;67,61
 2022 Tesla Model 3 Performance;Dry;Pirelli P Zero;Summer;235/35-20;235/35-20;65,2;67,3;69,5;67,68
 Porsche Taycan Cross Turismo 4;Dry;Goodyear Eagle F1;Summer;265/35-21;305/30-21;66,4;67,6;68,9;67,75
-Tesla Model S P85 (MF);Dry;Falken Azenis FK520;Summer;245/45-19;245/45-19;65,3;68,0;69,4;67,88
+Tesla Model S - P85 (MF);Dry;Falken Azenis FK520;Summer;245/45-19;245/45-19;65,3;68,0;69,4;67,88
 DS 3 e-tense;Dry;Michelin Pri 4;Summer;215/55-18;215/55-18;65,8;66,8;70,1;67,98
 Kia Niro EV;Dry;Continental EC6;Summer;215/55-17;215/55-17;65,0;67,7;69,9;67,98
 Skoda Enyaq iV 80;Dry;Pirelli Scorpion V;Summer;235/45-21;235/45-21;65,4;67,0;70,2;68,01
