@@ -44,8 +44,8 @@ Mercedes EQC;Dry;14;Pirelli Scorpion V;Summer;255/45-20;255/45-20;90;192;80;420;
 Mercedes EQC;Dry;15;Pirelli Scorpion V;Summer;255/45-20;255/45-20;120;270;80;296;184;192;34;340
 Jaguar I-Pace - 90 kWh;Dry;13;Michelin Latitude;Summer;235/65-18;235/65-18;90;196;81,8;417;259;271;45;361
 Jaguar I-Pace - 90 kWh;Dry;13;Michelin Latitude;Summer;235/65-18;235/65-18;120;269;81,8;304;189;198;45;263
-Tesla Model X - - LR Raven;Dry;15;Michelin Lat Sp 3;Summer;255/45-20;255/45-20;90;177;92;520;323;338;34;596
-Tesla Model X - - LR Raven;Dry;18;Michelin Lat Sp 3;Summer;255/45-20;255/45-20;120;229;92;402;250;261;34;461
+Tesla Model X - LR Raven;Dry;15;Michelin Lat Sp 3;Summer;255/45-20;255/45-20;90;177;92;520;323;338;34;596
+Tesla Model X - LR Raven;Dry;18;Michelin Lat Sp 3;Summer;255/45-20;255/45-20;120;229;92;402;250;261;34;461
 Tesla Model 3 - SR+ 2019;Dry;24;Michelin Pri 4;Summer;235/45-18;235/45-18;90;122;49;402;250;261;22;713
 Tesla Model S - LR Raven;Dry;19;Michelin PS4s;Summer;245/35-21;245/35-21;90;164;92,8;566;352;368;34;649
 Renault Zoe - 52 kWh;Dry;3;Nokian R3;Winter;195/55-16;195/55-16;90;147;42,5;289;180;188;50;225
@@ -117,21 +117,21 @@ VW ID3 - 1st Plus;Dry;-10;Nokian R3;Winter;215/55-18;215/55-18;90;201;55,7;278;1
 VW ID3 - 1st Plus;Dry;-8;Nokian R3;Winter;215/55-18;215/55-18;120;271;55,6;205;127;133;30;267
 Nissan Leaf - 62 kWh;Dry;-10;Nokian R3;Winter;215/50-17;215/50-17;90;196;51,4;262;163;170;36;284
 Nissan Leaf - 62 kWh;Dry;-12;Nokian R3;Winter;215/50-17;215/50-17;120;271;51,2;180;112;117;36;195
-Mercedes EQV;Dry;-12;Nokian R3;Winter;245/55-17;245/55-17;90;344;84,5;245;152;159;38;251
-Mercedes EQV;Dry;-14;Nokian R3;Winter;245/55-17;245/55-17;120;459;84,5;186;116;121;38;191
+Mercedes EQV - 7 seater;Dry;-12;Nokian R3;Winter;245/55-17;245/55-17;90;344;84,5;245;152;159;38;251
+Mercedes EQV - 7 seater;Dry;-14;Nokian R3;Winter;245/55-17;245/55-17;120;459;84,5;186;116;121;38;191
 Ford Mustang - Mach-E LR AWD;Wet;-5;Continental VC7;Winter;225/55-19;225/55-19;90;240;84;350;217;228;38;359
 Ford Mustang - Mach-E LR AWD;Wet;-5;Continental VC7;Winter;225/55-19;225/55-19;120;320;84;263;163;171;38;270
 Polestar 2;Dry;4;Continental VC7;Winter;245/45-19;245/45-19;90;203;74,4;366;227;238;36;397
-Tesla Model S - P85 (MF);Dry;10;Frigus EV Ice 3;Summer;245/45-19;245/45-19;90;172;64,9;379;235;246;;
-Tesla Model S - P85 (MF);Dry;0;Frigus EV Ice 3;Summer;245/45-19;245/45-19;120;239;63,5;258;160;168;;
+Tesla Model S - P85 MF;Dry;10;Frigus EV Ice 3;Summer;245/45-19;245/45-19;90;172;64,9;379;235;246;;
+Tesla Model S - P85 MF;Dry;0;Frigus EV Ice 3;Summer;245/45-19;245/45-19;120;239;63,5;258;160;168;;
 VW ID4 - 1st 82 kWh;Dry;15;Hankook Ventus S1evo3;Summer;235/50-20;255/45-20;90;167;75;449;279;292;32;547
 VW ID4 - 1st 82 kWh;Dry;9;Hankook Ventus S1evo3;Summer;235/50-20;255/45-20;120;251;74,6;297;184;193;32;362
 VW ID3 - 82 kWh;Dry;8;Goodyear EfficientGrip;Summer;215/50-19;215/50-19;90;162;75,5;466;289;303;32;568
 VW ID3 - 82 kWh;Dry;5;Goodyear EfficientGrip;Summer;215/50-19;215/50-19;120;231;75,5;325;202;211;32;396
 Tesla Model 3 - SR+;Dry;11;Michelin PS4;Summer;235/45-18;235/45-18;90;130;50,9;391;243;254;28;545
 Tesla Model 3 - SR+;Dry;10;Michelin PS4;Summer;235/45-18;235/45-18;120;180;50,9;283;176;184;28;394
-BMW iX - 3;Dry;12;Bridgestone Alenza;Summer;245/45-20;275/40-20;90;168;74,2;442;275;287;27;638
-BMW iX - 3;Dry;17;Bridgestone Alenza;Summer;245/45-20;275/40-20;120;235;74,7;318;198;207;27;459
+BMW iX3;Dry;12;Bridgestone Alenza;Summer;245/45-20;275/40-20;90;168;74,2;442;275;287;27;638
+BMW iX3;Dry;17;Bridgestone Alenza;Summer;245/45-20;275/40-20;120;235;74,7;318;198;207;27;459
 Lexus UX - 300e;Dry;10;Bridgestone Turanza;Summer;225/50-18;225/50-18;90;201;41,2;205;127;133;39;205
 Lexus UX - 300e;Dry;10;Bridgestone Turanza;Summer;225/50-18;225/50-18;120;272;44,7;166;103;108;39;166
 Skoda Enyaq - iV 80;Dry;9;Pirelli Scorpion V;Summer;235/45-21;235/45-21;90;166;75;452;281;294;32;551
@@ -148,16 +148,16 @@ Tesla Model 3 - SR+ MIC;Dry;24;Michelin PS4;Summer;235/45-18;235/45-18;90;122;49
 Tesla Model 3 - SR+ MIC;Dry;23;Michelin PS4;Summer;235/45-18;235/45-18;120;166;49,8;300;186;195;22;532
 Audi Q4 e-tron - 40;Dry;20;Bridgestone Turanza Eco;Summer;235/55-19;255/50-19;90;154;75;487;302;317;32;594
 Audi Q4 e-tron - 40;Dry;20;Bridgestone Turanza Eco;Summer;235/55-19;255/50-19;120;225;74,6;332;206;216;32;405
-Tesla Model 3 - LR (82 kWh);Dry;27;Michelin PS4;Summer;235/45-18;235/45-18;90;136;76,5;563;350;366;28;784
-Tesla Model 3 - LR (82 kWh);Dry;25;Michelin PS4;Summer;235/45-18;235/45-18;120;180;76;422;262;274;28;588
-Hyundai Ioniq - 5 AWD;Dry;25;Michelin Primacy 4;Summer;235/55-19;235/55-19;90;153;70,6;461;286;300;17;1058
-Hyundai Ioniq - 5 AWD;Dry;21;Michelin Primacy 4;Summer;235/55-19;235/55-19;120;244;70,6;289;180;188;17;663
+Tesla Model 3 - LR 82 kWh;Dry;27;Michelin PS4;Summer;235/45-18;235/45-18;90;136;76,5;563;350;366;28;784
+Tesla Model 3 - LR 82 kWh;Dry;25;Michelin PS4;Summer;235/45-18;235/45-18;120;180;76;422;262;274;28;588
+Hyundai Ioniq5 - AWD;Dry;25;Michelin Primacy 4;Summer;235/55-19;235/55-19;90;153;70,6;461;286;300;17;1058
+Hyundai Ioniq5 - AWD;Dry;21;Michelin Primacy 4;Summer;235/55-19;235/55-19;120;244;70,6;289;180;188;17;663
 Citroen e-C4;Dry;27;Michelin e Primacy;Summer;195/60-18;195/60-18;90;137;40,9;299;186;194;24;486
 Citroen e-C4;Dry;22;Michelin e Primacy;Summer;195/60-18;195/60-18;120;207;40,9;198;123;129;24;322
 Opel Mokka-e;Dry;25;Michelin Primacy 4;Summer;215/55-18;215/55-18;90;148;42,9;290;180;189;24;471
 Opel Mokka-e;Dry;20;Michelin Primacy 4;Summer;215/55-18;215/55-18;120;221;42,9;194;120;126;24;315
-Citroen e-Spacetourer;Dry;19;Michelin Primacy 4;Summer;225/55-17;225/55-17;90;211;62,2;295;183;192;34;338
-Citroen e-Spacetourer;Dry;17;Michelin Primacy 4;Summer;225/55-17;225/55-17;120;346;62,2;180;112;117;34;206
+Citroen e-Spacetourer - 7 seater;Dry;19;Michelin Primacy 4;Summer;225/55-17;225/55-17;90;211;62,2;295;183;192;34;338
+Citroen e-Spacetourer - 7 seater;Dry;17;Michelin Primacy 4;Summer;225/55-17;225/55-17;120;346;62,2;180;112;117;34;206
 Opel Corsa-e;Dry;21;Michelin Primacy 4;Summer;195/55-16;195/55-16;90;140;40,9;292;181;190;24;475
 Opel Corsa-e;Dry;19;Michelin Primacy 4;Summer;195/55-16;195/55-16;120;205;40,9;200;124;130;24;325
 Fiat 500e;Dry;21;Continental EC6;Summer;205/45-17;205/45-17;90;146;36,2;249;155;162;25;388
@@ -166,8 +166,8 @@ Ford Mustang - Mach-E LR RWD;Dry;18;Continental PreCon 6;Summer;225/60-18;225/60
 Ford Mustang - Mach-E LR RWD;Dry;15;Continental PreCon 6;Summer;225/60-18;225/60-18;120;240;85,6;357;222;232;38;366
 Tesla Model 3 - SR+ MIC;Dry;20;Michelin PS4;Summer;235/45-18;235/45-18;90;118;52,6;443;275;288;22;785
 Tesla Model 3 - SR+ MIC;Dry;19;Michelin PS4;Summer;235/45-18;235/45-18;120;168;52,6;313;194;203;22;555
-Tesla Model S - P85 (MF);Dry;19;Goodyear Eagle RS-A1;Summer;245/45-19;245/45-19;90;160;65,9;412;256;268;;
-Tesla Model S - P85 (MF);Dry;17;Goodyear Eagle RS-A1;Summer;245/45-19;245/45-19;120;218;65,9;302;188;196;;
+Tesla Model S - P85 MF;Dry;19;Goodyear Eagle RS-A1;Summer;245/45-19;245/45-19;90;160;65,9;412;256;268;;
+Tesla Model S - P85 MF;Dry;17;Goodyear Eagle RS-A1;Summer;245/45-19;245/45-19;120;218;65,9;302;188;196;;
 Tesla Model Y - LR;Dry;21;Winrun R330;Summer;235/55-18;235/55-18;90;148;70;473;294;307;31;595
 Tesla Model Y - LR;Dry;17;Winrun R330;Summer;235/55-18;235/55-18;120;206;70;340;211;221;31;428
 Tesla Model Y - LR (caps on);Dry;20;Hankook evo3;Summer;255/45-19;255/45-19;90;142;70;493;306;320;31;620
@@ -176,14 +176,14 @@ Tesla Model Y - LR (caps off);Dry;20;Hankook evo3;Summer;255/45-19;255/45-19;90;
 Tesla Model Y - LR (caps off);Dry;21;Hankook evo3;Summer;255/45-19;255/45-19;120;201;70;348;216;226;31;438
 VW ID3 - 55 kWh;Dry;15;Goodyear EfficientGrip;Summer;215/55-18;215/55-18;90;137;43,5;316;196;205;25;493
 VW ID3 - 55 kWh;Dry;16;Goodyear EfficientGrip;Summer;215/55-18;215/55-18;120;199;43,5;219;136;142;25;342
-Nio ES8 - 100 kWh;Dry;11;Continental MC6;Summer;265/45-21;265/45-21;90;221;87,9;397;247;258;38;407
-Nio ES8 - 100 kWh;Dry;6;Continental MC6;Summer;265/45-21;265/45-21;120;300;87,9;293;182;190;38;301
+Nio ES8 - 100 kWh 6 seater;Dry;11;Continental MC6;Summer;265/45-21;265/45-21;90;221;87,9;397;247;258;38;407
+Nio ES8 - 100 kWh 6 seater;Dry;6;Continental MC6;Summer;265/45-21;265/45-21;120;300;87,9;293;182;190;38;301
 Mercedes EQC;Wet;11;Nokian R3;Winter;235/50-20;255/45-20;90;205;80;390;242;254;34;447
 Mercedes EQC;Wet;11;Nokian R3;Winter;235/50-20;255/45-20;120;282;80;284;176;185;34;326
 Maxus Euniq - 5;Dry;7;Nokian R3;Winter;215/55-17;215/55-17;90;200;52,1;267;166;174;35;298
 Maxus Euniq - 5;Dry;7;Nokian R3;Winter;215/55-17;215/55-17;120;281;52,1;185;115;120;35;206
-Kia EV6 - AWD;Dry;1;Nokian R3;Winter;235/55-19;235/55-19;90;180;72,4;402;250;261;17;922
-Kia EV6 - AWD;Dry;1;Nokian R3;Winter;235/55-19;235/55-19;120;264;72,4;274;170;178;17;629
+Kia EV6 - 77 kWh AWD;Dry;1;Nokian R3;Winter;235/55-19;235/55-19;90;180;72,4;402;250;261;17;922
+Kia EV6 - 77 kWh AWD;Dry;1;Nokian R3;Winter;235/55-19;235/55-19;120;264;72,4;274;170;178;17;629
 Tesla Model 3 - SR+ MIC;Wet;1;Frigus EV Ice 3;Winter;235/45-18;235/45-18;90;152;52,6;346;215;225;22;613
 Tesla Model 3 - SR+ MIC;Wet;1;Frigus EV Ice 3;Winter;235/45-18;235/45-18;120;202;52,6;263;163;171;22;466
 Polestar 2 - SR SM;Dry;1;Continental VC7;Winter;245/45-19;245/45-19;90;176;58,6;333;207;216;28;464
@@ -242,8 +242,8 @@ BMW i4 - M50;Dry;18;Hankook Ventus S1evo3;Summer;245/40-19;255/40-19;90;155;80,3
 BMW i4 - M50;Dry;16;Hankook Ventus S1evo3;Summer;245/40-19;255/40-19;120;217;80,3;370;230;241;26;555
 Mercedes EQS - 450+;Dry;21;Goodyear Eagle F1;Summer;265/40-21;265/40-21;90;150;106,7;711;442;462;28;990
 Mercedes EQS - 450+;Dry;20;Goodyear Eagle F1;Summer;265/40-21;265/40-21;120;198;106,7;539;335;350;28;751
-Hongqi E-HS9;Dry;18;Michelin PS4 SUV;Summer;265/45-21;265/45-21;90;218;86,5;402;250;261;33;475
-Hongqi E-HS9;Dry;13;Michelin PS4 SUV;Summer;265/45-21;265/45-21;120;321;86,5;269;167;175;33;318
+Hongqi E-HS9 - 99 kWh 6 seater;Dry;18;Michelin PS4 SUV;Summer;265/45-21;265/45-21;90;218;86,5;402;250;261;33;475
+Hongqi E-HS9 - 99 kWh 6 seater;Dry;13;Michelin PS4 SUV;Summer;265/45-21;265/45-21;120;321;86,5;269;167;175;33;318
 MG Marvel - R Performance;Dry;12;Michelin Primacy 4;Summer;235/45-19;235/45-19;90;182;69,7;383;238;249;38;393
 MG Marvel - R Performance;Dry;9;Michelin Primacy 4;Summer;235/45-19;235/45-19;120;284;69,7;245;152;159;38;251
 Xpeng P7 - Performance Wing Edition;Dry;8;Michelin PS4;Summer;245/45-19;245/45-19;90;193;72,3;376;234;244;44;333
@@ -256,29 +256,29 @@ Mercedes EQS - 580 4Matic;Dry;11;Goodyear Eagle F1;Summer;265/40-21;265/40-21;90
 Mercedes EQS - 580 4Matic;Dry;11;Goodyear Eagle F1;Summer;265/40-21;265/40-21;120;223;106,7;478;297;311;28;666
 Voyah Free;Dry;9;Michelin Primacy 4;Summer;255/45-20;255/45-20;90;229;97,6;426;265;277;;
 Voyah Free;Dry;7;Michelin Primacy 4;Summer;255/45-20;255/45-20;120;298;97,6;328;204;213;;
-Kia Niro - EV;Dry;12;Continental EC6;Summer;215/55-17;215/55-17;90;154;64,3;416;258;270;38;427
-Kia Niro - EV;Dry;11;Continental EC6;Summer;215/55-17;215/55-17;120;223;64,3;288;179;187;38;296
+Kia Niro - EV 64 kWh;Dry;12;Continental EC6;Summer;215/55-17;215/55-17;90;154;64,3;416;258;270;38;427
+Kia Niro - EV 64 kWh;Dry;11;Continental EC6;Summer;215/55-17;215/55-17;120;223;64,3;288;179;187;38;296
 Mercedes EQE - 53 4Matic+;Dry;12;Continental VC7;Winter;265/35-21;265/35-21;90;187;89,4;478;297;311;27;690
 Mercedes EQE - 53 4Matic+;Dry;13;Continental VC7;Winter;265/35-21;265/35-21;120;248;89,4;360;224;234;27;520
-VW ID - Buzz 82 kWh;Dry;10;Hankook Ventus S1evo3;Summer;235/45-21;265/40-21;90;206;74,5;362;225;235;26;543
-VW ID - Buzz 82 kWh;Dry/wet;7;Hankook Ventus S1evo3;Summer;235/45-21;265/40-21;120;302;74,5;247;153;161;26;371
+VW ID Buzz - 82 kWh;Dry;10;Hankook Ventus S1evo3;Summer;235/45-21;265/40-21;90;206;74,5;362;225;235;26;543
+VW ID Buzz - 82 kWh;Dry/wet;7;Hankook Ventus S1evo3;Summer;235/45-21;265/40-21;120;302;74,5;247;153;161;26;371
 Mercedes EQE - 300;Dry;9;Nokian R5;Winter;255/45-19;255/45-19;90;163;89,4;548;340;356;27;792
 Mercedes EQE - 300;Dry;9;Nokian R5;Winter;255/45-19;255/45-19;120;218;89,4;411;255;267;27;594
 Mercedes EQV - 300;Dry/wet;4;Nokian R3;Winter;245/55-17;245/55-17;90;293;84,5;299;186;194;38;307
 Mercedes EQV - 300;Wet;4;Nokian R3;Winter;245/55-17;245/55-17;120;404;84,5;209;130;136;38;215
 MG MG5;Wet;6;Nokian R5;Winter;215/50-17;215/50-17;90;173;55,5;321;199;209;30;417
 MG MG5;Wet;6;Nokian R5;Winter;215/50-17;215/50-17;120;247;55,5;225;140;146;30;293
-VW ID - Buzz Cargo 82 kWh;Dry/wet;10;Continental EcoContact 6Q;Winter;235/50-20;265/45-20;90;209;74,5;356;221;231;26;534
-VW ID - Buzz Cargo 82 kWh w/trailer;Dry/wet;9;Continental EcoContact 6Q;Winter;235/50-20;265/45-20;90;340;74,5;219;136;142;26;329
-VW ID - Buzz Cargo 82 kWh;Dry/wet;10;Continental EcoContact 6Q;Winter;235/50-20;265/45-20;120;285;74,5;261;162;170;26;392
+VW ID Buzz - Cargo 82 kWh;Dry/wet;10;Continental EcoContact 6Q;Winter;235/50-20;265/45-20;90;209;74,5;356;221;231;26;534
+VW ID Buzz - Cargo 82 kWh w/trailer;Dry/wet;9;Continental EcoContact 6Q;Winter;235/50-20;265/45-20;90;340;74,5;219;136;142;26;329
+VW ID Buzz - Cargo 82 kWh;Dry/wet;10;Continental EcoContact 6Q;Winter;235/50-20;265/45-20;120;285;74,5;261;162;170;26;392
 Renault Megane E-Tech - 60 kWh;Dry;13;Nokian R3;Winter;215/45-20;215/45-20;90;147;54,5;371;230;241;33;438
 Renault Megane E-Tech - 60 kWh;Dry;13;Nokian R3;Winter;215/45-20;215/45-20;120;199;54,5;274;170;178;33;324
 Nissan Ariya - 87 kWh FWD;Wet;1;Continental VC7;Winter;235/55-19;235/55-19;90;194;79,9;412;256;268;30;536
 Nissan Ariya - 87 kWh FWD;Wet;1;Continental VC7;Winter;235/55-19;235/55-19;120;274;79,9;292;181;190;30;380
 MG ZS EV - 72 kWh;Wet;2;Continental VC7;Winter;215/50-17;215/50-17;90;190;67,6;356;221;231;35;397
 MG ZS EV - 72 kWh;Wet;2;Continental VC7;Winter;215/50-17;215/50-17;120;260;67,6;260;161;169;35;290
-VW ID - Buzz Pro 82 kWh;Dry;-4;Continental VC7;Winter;235/50-20;265/45-20;90;266;74,5;280;174;182;26;420
-VW ID - Buzz Pro 82 kWh;Dry;-4;Continental VC7;Winter;235/50-20;265/45-20;120;355;74,5;210;130;137;26;315
+VW ID Buzz - Cargo 82 kWh;Dry;-4;Continental VC7;Winter;235/50-20;265/45-20;90;266;74,5;280;174;182;26;420
+VW ID Buzz - Cargo 82 kWh;Dry;-4;Continental VC7;Winter;235/50-20;265/45-20;120;355;74,5;210;130;137;26;315
 BYD Atto 3 - 60 kWh;Dry;25;Atlas Batman A51;Summer;215/55-18;215/55-18;90;134;59,6;445;276;289;40;434
 Ora Good Cat - 500 Ultra;Dry;20;GitiComfort;Summer;215/50-18;215/50-18;90;140;59;420;261;273;49;334
 Ora Good Cat - GT;Dry;27;GitiComfort;Summer;215/50-18;215/50-18;90;148;56,8;384;239;250;49;306
