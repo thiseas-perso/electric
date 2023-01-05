@@ -1,13 +1,13 @@
 Car;Type;Trunk;Seats folded;Frunk
 Maxus Euniq - 5;car;20;35;
-Nio ES8 - 6 seater;car;16;32;
-Hongqi E-HS9 - 6 seater;car;16;30;
+Nio ES8 - 100 kWh 6 seater;car;16;32;
+Hongqi E-HS9 - 99 kWh 6 seater;car;16;30;
 BYD Tang;car;15;28;
 Tesla Model X - 5 seater;car;10;28;1
 Tesla Model Y;car;9;26;1
 Voyah Free;car;9;26;
 Mercedes EQB;car;12;25;
-Hyundai Ioniq - 5;car;11;25;
+Hyundai Ioniq - 5 AWD;car;11;25;
 Skoda Enyaq - iV 80;car;10;25;
 VW ID4;car;9;25;
 BMW iX;car;8;25;
@@ -23,17 +23,17 @@ Tesla Model X - 6 seater;car;9;23;1
 Ford Mustang - Mach-E;car;8;23;1
 Audi e-tron;car;8;23;
 Kia EV6;car;8;23;
-Kia Niro - EV;car;8;23;
+Kia Niro - EV 64 kWh;car;8;23;
 Audi e-tron - Sportback;car;7;23;
-Kia e-Soul;car;7;23;
+Kia e-Soul - 64 kWh;car;7;23;
 Mercedes EQA;car;6;23;
-Kia e-Niro;car;8;22;
+Kia e-Niro - 64 kWh;car;8;22;
 Tesla Model S - facelift;car;8;22;
 Volvo C40;car;6;22;
 Xpeng G3;car;8;21;
 Nissan Leaf 2018;car;7;21;
 Volvo XC40;car;7;21;
-Kia Soul - EV;car;6;21;
+Kia Soul - 30 kWh;car;6;21;
 Mercedes EQE;car;6;21;
 MG Marvel - R Performance;car;6;21;
 Renault Megane E-Tech;car;6;21;
@@ -60,7 +60,7 @@ Opel Mokka-e;car;5;17;
 Mazda MX-30;car;6;16;
 Porsche Taycan;car;5;16;5
 VW e-Golf;car;5;16;
-Hyundai Kona;car;5;16;
+Hyundai Kona - 64 kWh;car;5;16;
 Mitsubishi i-MiEV;car;3;16;
 VW e-up;car;4;14;
 BMW i3;car;4;14;
@@ -70,8 +70,8 @@ Fiat 500e;car;2;8;
 Fiat 500e;car;1;8;
 VW e-Crafter - cargo;van;156;156;
 VW ID Buzz - Cargo;van;56;56;
-Nissan e-NV200 - cargo;van;50;50;
+Nissan e-NV200 - 40 kWh;van;50;50;
 VW ID Buzz - 5 seater;van;30;49;
 Mercedes EQV - 7 seater;van;13;35;
 Citroen e-Spacetourer - 7 seater;van;10;24;
-Kia e-Soul - van;van;21;21;
+Kia e-Soul - 64 kWh (Back seats removed);car;21;21;
