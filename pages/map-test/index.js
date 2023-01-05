@@ -121,6 +121,7 @@ const MapTest = () => {
                       ...prev,
                       longitude: res.center[0],
                       latitude: res.center[1],
+                      zoom: 4.5,
                     }));
                   }}
                 >
