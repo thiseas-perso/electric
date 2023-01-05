@@ -25,15 +25,21 @@ const MapTest = () => {
   const [lon, setLon] = useState(2.35);
   const [lat, setLat] = useState(48.85);
   const [radiusA, setRadiusA] = useState(200);
+  const [radiusB, setRadiusB] = useState(100);
+  const [query, setQuery] = useState('');
+  const [results, setResults] = useState([]);
+  const [display, setDisplay] = useState(false);
+
+  const debouncedQuery = useDebounce(query, 500);
+
   let center = [lon, lat];
+
   const options = { steps: 100, units: 'kilometers', properties: {} };
+
   const circleA = turf.circle(center, radiusA, options);
   const lineA = turf.lineString(...circleA.geometry.coordinates);
 
-  const [radiusB, setRadiusB] = useState(100);
-
-  const optionsB = { steps: 100, units: 'kilometers', properties: {} };
-  const circleB = turf.circle(center, radiusB, optionsB);
+  const circleB = turf.circle(center, radiusB, options);
   const lineB = turf.lineString(...circleB.geometry.coordinates);
 
   const mapRef = useRef(null);
@@ -47,11 +53,6 @@ const MapTest = () => {
     pitch: 0,
     bearing: 0,
   });
-
-  const [query, setQuery] = useState('');
-  const [results, setResults] = useState([]);
-  const [display, setDisplay] = useState(false);
-  const debouncedQuery = useDebounce(query, 500);
 
   useEffect(() => {
     if (!debouncedQuery) {
