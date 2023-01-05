@@ -30,7 +30,7 @@ const MapTest = () => {
   const circleA = turf.circle(center, radiusA, options);
   const lineA = turf.lineString(...circleA.geometry.coordinates);
 
-  let radiusB = 250;
+  const [radiusB, setRadiusB] = useState(100);
 
   const optionsB = { steps: 100, units: 'kilometers', properties: {} };
   const circleB = turf.circle(center, radiusB, optionsB);
@@ -83,7 +83,6 @@ const MapTest = () => {
         {...viewport}
         interactive={true}
         ref={mapRef}
-        onClick={(e, v) => console.log(e)}
         style={{ width: 600, height: 400 }}
         mapStyle="mapbox://styles/mapbox/streets-v9"
         mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
@@ -120,8 +119,8 @@ const MapTest = () => {
                     setLat(() => res.center[1]);
                     setViewport((prev) => ({
                       ...prev,
-                      lon: res.center[0],
-                      lat: res.center[1],
+                      longitude: res.center[0],
+                      latitude: res.center[1],
                     }));
                   }}
                 >
