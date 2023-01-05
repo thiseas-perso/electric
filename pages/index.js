@@ -23,6 +23,7 @@ const Home = ({ allNames, allData, bananaData }) => {
       <div>
         <Link href={'/calculator'}>calculator</Link>
         <Link href={'/electric-cars'}>All cars</Link>
+        <Link href={'/ev-tests/thousandkm'}>1000km test</Link>
       </div>
     </>
   );
