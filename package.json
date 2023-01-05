@@ -12,6 +12,7 @@
     "@next/font": "13.1.1",
     "@turf/circle": "^6.5.0",
     "@turf/turf": "^6.5.0",
+    "axios": "^1.2.2",
     "csv-parse": "^5.3.3",
     "eslint": "8.30.0",
     "eslint-config-next": "13.1.1",

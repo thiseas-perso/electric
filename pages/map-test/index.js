@@ -1,22 +1,42 @@
 import Head from 'next/head';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import ReactMapGL, { Source, Layer, ScaleControl } from 'react-map-gl';
 import * as turf from '@turf/turf';
+import axios from 'axios';
+
+//TODO: debounce hook to move to separate file
+const useDebounce = (value, delay) => {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [value, delay]);
+
+  return debouncedValue;
+};
 
 const MapTest = () => {
-  let lon = 2.35;
-  let lat = 48.85;
-  let radius = 200;
+  const [lon, setLon] = useState(2.35);
+  const [lat, setLat] = useState(48.85);
+  const [radiusA, setRadiusA] = useState(200);
   let center = [lon, lat];
   const options = { steps: 100, units: 'kilometers', properties: {} };
-  const circle = turf.circle(center, radius, options);
-  const line = turf.lineString(...circle.geometry.coordinates);
+  const circleA = turf.circle(center, radiusA, options);
+  const lineA = turf.lineString(...circleA.geometry.coordinates);
 
   let radiusB = 250;
-  let centerB = [lon, lat];
+
   const optionsB = { steps: 100, units: 'kilometers', properties: {} };
-  const circleB = turf.circle(centerB, radiusB, optionsB);
+  const circleB = turf.circle(center, radiusB, optionsB);
   const lineB = turf.lineString(...circleB.geometry.coordinates);
+
+  const mapRef = useRef(null);
 
   const [viewport, setViewport] = useState({
     width: '100%',
@@ -27,7 +47,28 @@ const MapTest = () => {
     pitch: 0,
     bearing: 0,
   });
-  const mapRef = useRef(null);
+
+  const [query, setQuery] = useState('');
+  const [results, setResults] = useState([]);
+  const [display, setDisplay] = useState(false);
+  const debouncedQuery = useDebounce(query, 500);
+
+  useEffect(() => {
+    if (!debouncedQuery) {
+      setResults([]);
+      return;
+    }
+
+    axios
+      .get(
+        `https://api.mapbox.com/geocoding/v5/mapbox.places/${debouncedQuery}.json?access_token=${process.env.NEXT_PUBLIC_MAPBOX_TOKEN}`
+      )
+      .then((response) => {
+        console.log(response.data.features);
+        setResults(response.data.features);
+      });
+  }, [debouncedQuery]);
+
   return (
     <>
       <Head>
@@ -37,6 +78,7 @@ const MapTest = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>MapTest</div>
+
       <ReactMapGL
         {...viewport}
         interactive={true}
@@ -46,14 +88,54 @@ const MapTest = () => {
         mapStyle="mapbox://styles/mapbox/streets-v9"
         mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
         transitionDuration={100}
-        onMove={(evt) => setViewport(evt.viewport)}
+        onMove={(e) => setViewport(e.viewport)}
       >
-        {/* <div style={{ position: 'absolute', bottom: 200, left: 100 }}>
+        <div style={{ position: 'absolute', top: 5, left: 5 }}>
+          <input
+            type="text"
+            value={query}
+            onChange={(e) => {
+              setQuery(e.target.value), setDisplay(() => true);
+            }}
+          />
+        </div>
+        <div
+          style={{
+            position: 'absolute',
+            top: 10,
+            left: 5,
+            display: display ? 'block' : 'none',
+          }}
+        >
+          <ul>
+            {results.length > 0 &&
+              results.map((res) => (
+                <li
+                  key={res.id}
+                  onClick={() => {
+                    setQuery(() => res.place_name);
+                    setResults(() => []);
+                    setDisplay(() => false);
+                    setLon(() => res.center[0]);
+                    setLat(() => res.center[1]);
+                    setViewport((prev) => ({
+                      ...prev,
+                      lon: res.center[0],
+                      lat: res.center[1],
+                    }));
+                  }}
+                >
+                  {res.place_name}
+                </li>
+              ))}
+          </ul>
+        </div>
+        <div style={{ position: 'absolute', bottom: 200, left: 100 }}>
           <ScaleControl maxWidth={100} unit={'metric'} />
-        </div> */}
+        </div>
 
         {/* first circle */}
-        <Source id="circle-1" type="geojson" data={circle}>
+        <Source id="circle-1" type="geojson" data={circleA}>
           <Layer
             id="circle-1-fill"
             type="fill"
@@ -65,7 +147,7 @@ const MapTest = () => {
           />
         </Source>
 
-        <Source id="circle-1-line" type="geojson" data={line}>
+        <Source id="circle-1-line" type="geojson" data={lineA}>
           <Layer
             id="circle-1-line"
             type="line"
