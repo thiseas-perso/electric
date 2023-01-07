@@ -5,7 +5,10 @@ import { getAllData, getAllFullTestedVersions } from '../lib/csvParser';
 
 export async function getStaticProps() {
   const allData = await getAllData();
-  const getFullTested = await getAllFullTestedVersions();
+  const getFullTested = await getAllFullTestedVersions([
+    'RANGE',
+    'ACCELERATION',
+  ]);
   // const allNames = await getAllCarNames();
   // const bananaData = await getOneFileData('BANANA');
   return { props: { allData, getFullTested } };
