@@ -1,7 +1,14 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import CarsList from '../components/cars/CarsList';
-import { getAllData, getAllFullTestedVersions } from '../lib/csvParser';
+import {
+  getAllData,
+  getAllFullTestedVersions,
+  getAllCarNames,
+  getAllMakers,
+  getCarsByMaker,
+  getCarsByMakerLight,
+} from '../lib/csvParser';
 
 export async function getStaticProps() {
   const allData = await getAllData();
@@ -9,13 +16,32 @@ export async function getStaticProps() {
     'RANGE',
     'ACCELERATION',
   ]);
-  // const allNames = await getAllCarNames();
+  const allNames = await getAllCarNames();
+  const allMakers = await getAllMakers();
+  const teslas = await getCarsByMaker('Tesla');
+  const teslasLight = await getCarsByMakerLight('Tesla');
   // const bananaData = await getOneFileData('BANANA');
-  return { props: { allData, getFullTested } };
+  return {
+    props: { allData, getFullTested, allNames, allMakers, teslas, teslasLight },
+  };
 }
 
-const Home = ({ allData, getFullTested }) => {
-  console.log({ allData, getFullTested });
+const Home = ({
+  allData,
+  getFullTested,
+  allNames,
+  allMakers,
+  teslas,
+  teslasLight,
+}) => {
+  console.log({
+    allData,
+    getFullTested,
+    allNames,
+    allMakers,
+    teslas,
+    teslasLight,
+  });
 
   return (
     <>
