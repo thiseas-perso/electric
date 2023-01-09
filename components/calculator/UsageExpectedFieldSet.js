@@ -1,6 +1,19 @@
+import { motion } from 'framer-motion';
+
 const UsageExpectedFieldSet = ({ state, setState, className }) => {
   return (
-    <fieldset id="usageExpected" className={className}>
+    <motion.fieldset
+      id="usageExpected"
+      className={className}
+      initial={{ opacity: 0, x: 1000, y: 0 }}
+      animate={{ opacity: 1, x: 0, y: 0 }}
+      exit={{ opacity: 0, x: -1000, y: 0 }}
+      transition={{
+        delay: 0.2,
+        duration: 0.2,
+        ease: 'easeOut',
+      }}
+    >
       <h2 className="text-3xl mb-2">Usage attendu</h2>
 
       <label htmlFor="totalKMPerY">Total de KM/an</label>
@@ -20,7 +33,7 @@ const UsageExpectedFieldSet = ({ state, setState, className }) => {
           }))
         }
       />
-    </fieldset>
+    </motion.fieldset>
   );
 };
 

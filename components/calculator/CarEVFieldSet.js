@@ -1,6 +1,19 @@
+import { motion } from 'framer-motion';
+
 const CarEVFieldSet = ({ state, setState, className }) => {
   return (
-    <fieldset id="carData" className={className}>
+    <motion.fieldset
+      id="carData"
+      className={className}
+      initial={{ opacity: 0, x: 1000, y: 0 }}
+      animate={{ opacity: 1, x: 0, y: 0 }}
+      exit={{ opacity: 0, x: -1000, y: 0 }}
+      transition={{
+        delay: 0.2,
+        duration: 0.2,
+        ease: 'easeOut',
+      }}
+    >
       <h2 className="text-3xl mb-2">Véhicule électrique</h2>
       <label htmlFor="purchaseCost">
         <span>Prix achat (€):</span>
@@ -107,7 +120,7 @@ const CarEVFieldSet = ({ state, setState, className }) => {
           }))
         }
       />
-    </fieldset>
+    </motion.fieldset>
   );
 };
 

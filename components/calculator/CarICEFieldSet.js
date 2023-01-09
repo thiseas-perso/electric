@@ -1,12 +1,24 @@
+import { motion } from 'framer-motion';
+
 const CarICEFieldSet = ({ state, setState, className }) => {
   return (
-    <fieldset id="carData" className={className}>
+    <motion.fieldset
+      id="carData"
+      className={className}
+      initial={{ opacity: 0, x: 1000, y: 0 }}
+      animate={{ opacity: 1, x: 0, y: 0 }}
+      exit={{ opacity: 0, x: -1000, y: 0 }}
+      transition={{
+        delay: 0.2,
+        duration: 0.2,
+        ease: 'easeOut',
+      }}
+    >
       <h2 className="text-3xl mb-2">Véhicule thérmique</h2>
 
       <label htmlFor="purchaseCost">Prix achat (€):</label>
       <input
         className="mb-2"
-        required
         min="0"
         type="number"
         id="purchaseCost"
@@ -80,7 +92,7 @@ const CarICEFieldSet = ({ state, setState, className }) => {
           }))
         }
       />
-    </fieldset>
+    </motion.fieldset>
   );
 };
 

@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
+
 import { CarEVFieldSet } from '../../components/calculator';
 import { CarICEFieldSet } from '../../components/calculator';
 import { DurationFieldSet } from '../../components/calculator';
@@ -100,15 +102,20 @@ const Calculator = () => {
     <>
       <CustomHead title="SOME TITLE" description="some description" />
       <h1>Comparateur électrique -thérmique</h1>
-      <div id="form-container" className="bg-red-200 h-screen flex flex-col">
-        <form className="mx-2 text-lg flex flex-col flex-1 items-center justify-between">
-          {stepState === 0 && (
-            <CarEVFieldSet
-              state={state}
-              setState={setState}
-              className="bg-white flex flex-col rounded-lg mt-10  border border-black px-4 pt-2 pb-4 dark:bg-black "
-            />
-          )}
+      <div
+        id="form-container"
+        className="bg-gradient-to-t from-light-primary-start to-light-primary-end flex flex-col overflow-x-hidden flex-grow"
+      >
+        <form className="mx-2 text-lg flex flex-col flex-grow items-center justify-between">
+          <AnimatePresence mode="wait">
+            {stepState === 0 && (
+              <CarEVFieldSet
+                state={state}
+                setState={setState}
+                className="bg-white flex flex-col rounded-lg mt-10  border border-black px-4 pt-2 pb-4 dark:bg-black "
+              />
+            )}
+          </AnimatePresence>
           {stepState === 1 && (
             <CarICEFieldSet
               state={state}
@@ -116,34 +123,42 @@ const Calculator = () => {
               className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
             />
           )}
-          {stepState === 2 && (
-            <EnergyDataFieldSet
-              state={state}
-              setState={setState}
-              className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
-            />
-          )}
-          {stepState === 3 && (
-            <UsageDataFieldSet
-              state={state}
-              setState={setState}
-              className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
-            />
-          )}
-          {stepState === 4 && (
-            <UsageExpectedFieldSet
-              state={state}
-              setState={setState}
-              className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
-            />
-          )}
-          {stepState === 5 && (
-            <DurationFieldSet
-              state={state}
-              setState={setState}
-              className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
-            />
-          )}
+          <AnimatePresence>
+            {stepState === 2 && (
+              <EnergyDataFieldSet
+                state={state}
+                setState={setState}
+                className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
+              />
+            )}
+          </AnimatePresence>
+          <AnimatePresence>
+            {stepState === 3 && (
+              <UsageDataFieldSet
+                state={state}
+                setState={setState}
+                className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
+              />
+            )}
+          </AnimatePresence>
+          <AnimatePresence>
+            {stepState === 4 && (
+              <UsageExpectedFieldSet
+                state={state}
+                setState={setState}
+                className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
+              />
+            )}
+          </AnimatePresence>
+          <AnimatePresence>
+            {stepState === 5 && (
+              <DurationFieldSet
+                state={state}
+                setState={setState}
+                className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
+              />
+            )}
+          </AnimatePresence>
 
           {stepState === 6 && (
             <button type="submit" onClick={(e) => submitHandler(e)}>
@@ -151,7 +166,7 @@ const Calculator = () => {
             </button>
           )}
 
-          <div className="sticky bottom-0">
+          <div>
             {stepState > 0 && stepState < 7 && (
               <button
                 type="button"
