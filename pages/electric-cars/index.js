@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import CustomHead from '../../components/customHead';
 import { getAllCarNames, getAllData } from '../../lib/csvParser';
 
