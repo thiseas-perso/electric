@@ -75,6 +75,7 @@ const initialStateErrors = {
 const Calculator = () => {
   const [state, setState] = useState(initialState);
   const [errorState, setErrorState] = useState(initialStateErrors);
+  const [stepState, setStepState] = useState(0);
 
   const convertDataToNumbers = (obj) => {
     const newObj = {};
@@ -99,38 +100,51 @@ const Calculator = () => {
     <>
       <CustomHead title="SOME TITLE" description="some description" />
       <h1>Comparateur électrique -thérmique</h1>
-      <div id="form-container" className="bg-red-200 ">
+      <div id="form-container" className="bg-red-200">
         <form className="mx-2 text-lg">
-          <CarEVFieldSet
-            state={state}
-            setState={setState}
-            className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black "
-          />
-          <CarICEFieldSet
-            state={state}
-            setState={setState}
-            className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black"
-          />
-          <EnergyDataFieldSet
-            state={state}
-            setState={setState}
-            className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black"
-          />
-          <UsageDataFieldSet
-            state={state}
-            setState={setState}
-            className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black"
-          />
-          <UsageExpectedFieldSet
-            state={state}
-            setState={setState}
-            className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black"
-          />
-          <DurationFieldSet
-            state={state}
-            setState={setState}
-            className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black"
-          />
+          {stepState === 0 && (
+            <CarEVFieldSet
+              state={state}
+              setState={setState}
+              className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black "
+            />
+          )}
+          {stepState === 1 && (
+            <CarICEFieldSet
+              state={state}
+              setState={setState}
+              className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black"
+            />
+          )}
+          {stepState === 2 && (
+            <EnergyDataFieldSet
+              state={state}
+              setState={setState}
+              className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black"
+            />
+          )}
+          {stepState === 3 && (
+            <UsageDataFieldSet
+              state={state}
+              setState={setState}
+              className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black"
+            />
+          )}
+          {stepState === 3 && (
+            <UsageExpectedFieldSet
+              state={state}
+              setState={setState}
+              className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black"
+            />
+          )}
+          {stepState === 4 && (
+            <DurationFieldSet
+              state={state}
+              setState={setState}
+              className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black"
+            />
+          )}
+
           <button type="submit" onClick={(e) => submitHandler(e)}>
             Lancer l&lsquo;analyse
           </button>

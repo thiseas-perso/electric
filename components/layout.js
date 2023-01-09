@@ -5,7 +5,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <main /* className="container mx-auto px-4" */>{children}</main>
+      <main className="flex flex-col flex-grow">{children}</main>
       <Footer />
     </>
   );

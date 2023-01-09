@@ -23,3 +23,13 @@ Solution: Install PostCSS Language Support extension
     @apply font-semibold text-lg;
   }
 }
+
+@layer components {
+  #__next {
+    @apply h-full flex flex-col;
+  }
+  html,
+  body {
+    @apply h-full;
+  }
+}
