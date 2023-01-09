@@ -100,74 +100,75 @@ const Calculator = () => {
     <>
       <CustomHead title="SOME TITLE" description="some description" />
       <h1>Comparateur électrique -thérmique</h1>
-      <div id="form-container" className="bg-red-200 h-screen">
-        <form className="mx-2 text-lg">
+      <div id="form-container" className="bg-red-200 h-screen flex flex-col">
+        <form className="mx-2 text-lg flex flex-col flex-1 items-center justify-between">
           {stepState === 0 && (
             <CarEVFieldSet
               state={state}
               setState={setState}
-              className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black "
+              className="bg-white flex flex-col rounded-lg mt-10  border border-black px-4 pt-2 pb-4 dark:bg-black "
             />
           )}
           {stepState === 1 && (
             <CarICEFieldSet
               state={state}
               setState={setState}
-              className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black"
+              className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
             />
           )}
           {stepState === 2 && (
             <EnergyDataFieldSet
               state={state}
               setState={setState}
-              className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black"
+              className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
             />
           )}
           {stepState === 3 && (
             <UsageDataFieldSet
               state={state}
               setState={setState}
-              className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black"
-            />
-          )}
-          {stepState === 3 && (
-            <UsageExpectedFieldSet
-              state={state}
-              setState={setState}
-              className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black"
+              className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
             />
           )}
           {stepState === 4 && (
+            <UsageExpectedFieldSet
+              state={state}
+              setState={setState}
+              className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
+            />
+          )}
+          {stepState === 5 && (
             <DurationFieldSet
               state={state}
               setState={setState}
-              className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black"
+              className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
             />
           )}
 
-          {stepState > 0 && stepState < 6 && (
-            <button
-              type="button"
-              onClick={() => setStepState((prev) => prev - 1)}
-            >
-              Back
-            </button>
-          )}
-
-          {stepState < 5 && (
-            <button
-              type="button"
-              onClick={() => setStepState((prev) => prev + 1)}
-            >
-              Next
-            </button>
-          )}
-
-          {stepState === 5 && (
+          {stepState === 6 && (
             <button type="submit" onClick={(e) => submitHandler(e)}>
               Lancer l&lsquo;analyse
             </button>
           )}
+
+          <div className="sticky bottom-0">
+            {stepState > 0 && stepState < 7 && (
+              <button
+                type="button"
+                onClick={() => setStepState((prev) => prev - 1)}
+              >
+                Back
+              </button>
+            )}
+            {stepState < 6 && (
+              <button
+                type="button"
+                onClick={() => setStepState((prev) => prev + 1)}
+              >
+                Next
+              </button>
+            )}
+          </div>
         </form>
       </div>
     </>
