@@ -24,7 +24,7 @@ Solution: Install PostCSS Language Support extension
   }
 }
 
-@layer components {
+/* @layer components {
   #__next {
     @apply h-full flex flex-col;
   }
@@ -32,4 +32,4 @@ Solution: Install PostCSS Language Support extension
   body {
     @apply h-full;
   }
-}
+} */

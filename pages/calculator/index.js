@@ -100,7 +100,7 @@ const Calculator = () => {
     <>
       <CustomHead title="SOME TITLE" description="some description" />
       <h1>Comparateur électrique -thérmique</h1>
-      <div id="form-container" className="bg-red-200">
+      <div id="form-container" className="bg-red-200 h-screen">
         <form className="mx-2 text-lg">
           {stepState === 0 && (
             <CarEVFieldSet
@@ -145,9 +145,29 @@ const Calculator = () => {
             />
           )}
 
-          <button type="submit" onClick={(e) => submitHandler(e)}>
-            Lancer l&lsquo;analyse
-          </button>
+          {stepState > 0 && stepState < 6 && (
+            <button
+              type="button"
+              onClick={() => setStepState((prev) => prev - 1)}
+            >
+              Back
+            </button>
+          )}
+
+          {stepState < 5 && (
+            <button
+              type="button"
+              onClick={() => setStepState((prev) => prev + 1)}
+            >
+              Next
+            </button>
+          )}
+
+          {stepState === 5 && (
+            <button type="submit" onClick={(e) => submitHandler(e)}>
+              Lancer l&lsquo;analyse
+            </button>
+          )}
         </form>
       </div>
     </>
