@@ -1,11 +1,12 @@
-const CarEVFieldSet = ({ state, setState }) => {
+const CarEVFieldSet = ({ state, setState, className }) => {
   return (
-    <fieldset id="carData">
-      <legend>
-        <h2>Véhicule électrique</h2>
-      </legend>
-      <label htmlFor="purchaseCost">Prix achat</label>
+    <fieldset id="carData" className={className}>
+      <h2 className="text-3xl mb-2">Véhicule électrique</h2>
+      <label htmlFor="purchaseCost">
+        <span>Prix achat (€):</span>
+      </label>
       <input
+        className="mb-2"
         required
         min="0"
         type="number"
@@ -22,9 +23,11 @@ const CarEVFieldSet = ({ state, setState }) => {
           }))
         }
       />
-
-      <label htmlFor="ecoBonus">Bonus ecologique</label>
+      <label htmlFor="ecoBonus">
+        <span>Bonus ecologique (€):</span>
+      </label>
       <input
+        className="mb-2"
         required
         min="0"
         type="number"
@@ -41,9 +44,11 @@ const CarEVFieldSet = ({ state, setState }) => {
           }))
         }
       />
-
-      <label htmlFor="consumption">Consomation kWh/100km</label>
+      <label htmlFor="consumption">
+        <span>Consomation (kWh/100km):</span>
+      </label>
       <input
+        className="mb-2"
         required
         min="0"
         type="number"
@@ -60,8 +65,11 @@ const CarEVFieldSet = ({ state, setState }) => {
           }))
         }
       />
-      <label htmlFor="insurance">Assurance</label>
+      <label htmlFor="insurance">
+        <span>Assurance (€/an):</span>
+      </label>
       <input
+        className="mb-2"
         required
         min="0"
         type="number"
@@ -78,8 +86,11 @@ const CarEVFieldSet = ({ state, setState }) => {
           }))
         }
       />
-      <label htmlFor="maintenance">Entretien</label>
+      <label htmlFor="maintenance">
+        <span>Entretien (€/an):</span>
+      </label>
       <input
+        className="mb-2"
         required
         min="0"
         type="number"
@@ -96,7 +107,6 @@ const CarEVFieldSet = ({ state, setState }) => {
           }))
         }
       />
-      <button type="button">Suivant</button>
     </fieldset>
   );
 };

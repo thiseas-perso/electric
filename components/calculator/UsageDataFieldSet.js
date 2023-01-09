@@ -1,11 +1,10 @@
-const UsageDataFieldSet = ({ state, setState }) => {
+const UsageDataFieldSet = ({ state, setState, className }) => {
   return (
-    <fieldset id="usageData">
-      <legend>
-        <h2>Analyse de vos usages</h2>
-      </legend>
-      <label htmlFor="workHomeDistance">Distance domicile travail</label>
+    <fieldset id="usageData" className={className}>
+      <h2 className="text-3xl mb-2">Analyse de vos trajets</h2>
+      <label htmlFor="workHomeDistance">Distance domicile travail (km):</label>
       <input
+        className="mb-2"
         min="0"
         type="number"
         id="workHomeDistance"
@@ -23,6 +22,7 @@ const UsageDataFieldSet = ({ state, setState }) => {
       />
       <label htmlFor="dailyCommutes">A/R quotidiens</label>
       <input
+        className="mb-2"
         min="0"
         type="number"
         id="dailyCommutes"
@@ -40,6 +40,7 @@ const UsageDataFieldSet = ({ state, setState }) => {
       />
       <label htmlFor="daysWorkedPerY">Nombre de jours travaillés/an</label>
       <input
+        className="mb-2"
         min="0"
         max="365"
         type="number"
@@ -56,8 +57,9 @@ const UsageDataFieldSet = ({ state, setState }) => {
           }))
         }
       />
-      <label htmlFor="weekendKM">KM/weekend</label>
+      <label htmlFor="weekendKM">Km les weekends</label>
       <input
+        className="mb-2"
         min="0"
         type="number"
         id="weekendKM"
@@ -75,6 +77,7 @@ const UsageDataFieldSet = ({ state, setState }) => {
       />
       <label htmlFor="otherKMPerW">Autres km par semaine</label>
       <input
+        className="mb-2"
         min="0"
         type="number"
         id="otherKMPerW"
@@ -90,8 +93,6 @@ const UsageDataFieldSet = ({ state, setState }) => {
           }))
         }
       />
-      <button type="button">Précédent</button>
-      <button type="button">Suivant</button>
     </fieldset>
   );
 };

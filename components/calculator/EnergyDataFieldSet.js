@@ -1,11 +1,13 @@
-const EnergyDataFieldSet = ({ state, setState }) => {
+const EnergyDataFieldSet = ({ state, setState, className }) => {
   return (
-    <fieldset id="energyData">
-      <legend>
-        <h2>Données energie</h2>
-      </legend>
-      <label htmlFor="chargingPriceHC">Cout electricité HC</label>
+    <fieldset id="energyData" className={className}>
+      <h2 className="text-3xl mb-2">Cout de l&apos;énergie</h2>
+
+      <label htmlFor="chargingPriceHC">
+        Electricité - heures creuses(€/kWh):
+      </label>
       <input
+        className="mb-2"
         min="0"
         step=".01"
         type="number"
@@ -22,8 +24,11 @@ const EnergyDataFieldSet = ({ state, setState }) => {
           }))
         }
       />
-      <label htmlFor="chargingPriceHP">Cout electricité HP</label>
+      <label htmlFor="chargingPriceHP">
+        Electricité - heures pleines(€/kWh):
+      </label>
       <input
+        className="mb-2"
         min="0"
         step=".01"
         type="number"
@@ -40,8 +45,9 @@ const EnergyDataFieldSet = ({ state, setState }) => {
           }))
         }
       />
-      <label htmlFor="gasPrice">Cout carburant</label>
+      <label htmlFor="gasPrice">Carburant (€/lt):</label>
       <input
+        className="mb-2"
         min="0"
         step=".01"
         type="number"
@@ -58,7 +64,6 @@ const EnergyDataFieldSet = ({ state, setState }) => {
           }))
         }
       />
-      <button type="button">Suivant</button>
     </fieldset>
   );
 };

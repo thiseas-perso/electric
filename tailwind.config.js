@@ -4,8 +4,22 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
   ],
+  // corePlugins: {
+  //   preflight: false,
+  // },
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'light-primary-0': '#F37C9D',
+        'light-primary-1': '#A36CD9',
+        'light-primary-2': '#D7F0EE',
+        'light-primary-3': '#80F0E4',
+        'light-primary-4': '#FFCF7A',
+        'light-primary-start': '#D7F0EE',
+        'light-primary-end': '#E9E0F8',
+      },
+    },
   },
+  darkMode: 'class',
   plugins: [],
 };

@@ -40,8 +40,41 @@ const initialState = {
   durationStudied: '4',
 };
 
+const initialStateErrors = {
+  energyData: {
+    chargingPriceHC: '',
+    chargingPriceHP: '',
+    gasPrice: '',
+  },
+  usageData: {
+    workHomeDistance: '',
+    dailyCommutes: '',
+    daysWorkedPerY: '',
+    weekendKM: '',
+    otherKMPerW: '',
+  },
+  usageExpected: {
+    totalKMPerY: '',
+  },
+  carDataICE: {
+    purchaseCost: '',
+    insurance: '',
+    maintenance: '',
+    consumption: '',
+  },
+  carDataEV: {
+    purchaseCost: '',
+    consumption: '',
+    insurance: '',
+    maintenance: '',
+    ecoBonus: '',
+  },
+  durationStudied: '',
+};
+
 const Calculator = () => {
   const [state, setState] = useState(initialState);
+  const [errorState, setErrorState] = useState(initialStateErrors);
 
   const convertDataToNumbers = (obj) => {
     const newObj = {};
@@ -65,16 +98,44 @@ const Calculator = () => {
   return (
     <>
       <CustomHead title="SOME TITLE" description="some description" />
-      <h1>Calculator</h1>
-      <form onSubmit={(e) => submitHandler(e)}>
-        <CarEVFieldSet state={state} setState={setState} />
-        <CarICEFieldSet state={state} setState={setState} />
-        <EnergyDataFieldSet state={state} setState={setState} />
-        <UsageDataFieldSet state={state} setState={setState} />
-        <UsageExpectedFieldSet state={state} setState={setState} />
-        <DurationFieldSet state={state} setState={setState} />
-        <button type="submit">Lancer l&lsquo;analyse</button>
-      </form>
+      <h1>Comparateur électrique -thérmique</h1>
+      <div id="form-container" className="bg-red-200 ">
+        <form className="mx-2 text-lg">
+          <CarEVFieldSet
+            state={state}
+            setState={setState}
+            className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black "
+          />
+          <CarICEFieldSet
+            state={state}
+            setState={setState}
+            className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black"
+          />
+          <EnergyDataFieldSet
+            state={state}
+            setState={setState}
+            className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black"
+          />
+          <UsageDataFieldSet
+            state={state}
+            setState={setState}
+            className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black"
+          />
+          <UsageExpectedFieldSet
+            state={state}
+            setState={setState}
+            className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black"
+          />
+          <DurationFieldSet
+            state={state}
+            setState={setState}
+            className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black"
+          />
+          <button type="submit" onClick={(e) => submitHandler(e)}>
+            Lancer l&lsquo;analyse
+          </button>
+        </form>
+      </div>
     </>
   );
 };
