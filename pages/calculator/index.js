@@ -6,6 +6,7 @@ import DurationFieldSet from '../../components/calculator/DurationFieldSet';
 import EnergyDataFieldSet from '../../components/calculator/energyDataFieldSet';
 import UsageDataFieldSet from '../../components/calculator/usageDataFieldSet';
 import UsageExpectedFieldSet from '../../components/calculator/usageExpectedFieldSet';
+import CustomHead from '../../components/customHead';
 import calculator from '../../helpers/calculator';
 
 const initialState = {
@@ -64,12 +65,7 @@ const Calculator = () => {
 
   return (
     <>
-      <Head>
-        <title>[TTILE HERE]</title>
-        <meta name="description" content="[DESCRIPTION HERE]" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <CustomHead title="SOME TITLE" description="some description" />
       <h1>Calculator</h1>
       <form onSubmit={(e) => submitHandler(e)}>
         <CarEVFieldSet state={state} setState={setState} />

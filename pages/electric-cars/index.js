@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import CustomHead from '../../components/customHead';
 import { getAllCarNames, getAllData } from '../../lib/csvParser';
 
 export async function getStaticProps() {
@@ -11,12 +12,7 @@ const Cars = ({ allNames, allData }) => {
   console.log({ allNames, allData });
   return (
     <>
-      <Head>
-        <title>[TTILE HERE]</title>
-        <meta name="description" content="[DESCRIPTION HERE]" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <CustomHead title="SOME TITLE" description="some description" />
       <h1>Cars</h1>
     </>
   );
