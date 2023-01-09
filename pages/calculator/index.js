@@ -1,11 +1,10 @@
-import Head from 'next/head';
 import { useState } from 'react';
-import CarEVFieldSet from '../../components/calculator/CarEVFieldSet';
-import CarICEFieldSet from '../../components/calculator/CarICEFieldSet';
-import DurationFieldSet from '../../components/calculator/DurationFieldSet';
-import EnergyDataFieldSet from '../../components/calculator/energyDataFieldSet';
-import UsageDataFieldSet from '../../components/calculator/usageDataFieldSet';
-import UsageExpectedFieldSet from '../../components/calculator/usageExpectedFieldSet';
+import { CarEVFieldSet } from '../../components/calculator';
+import { CarICEFieldSet } from '../../components/calculator';
+import { DurationFieldSet } from '../../components/calculator';
+import { EnergyDataFieldSet } from '../../components/calculator';
+import { UsageDataFieldSet } from '../../components/calculator';
+import { UsageExpectedFieldSet } from '../../components/calculator';
 import CustomHead from '../../components/customHead';
 import calculator from '../../helpers/calculator';
 
