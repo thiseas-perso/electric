@@ -78,6 +78,7 @@ const Calculator = () => {
   const [state, setState] = useState(initialState);
   const [errorState, setErrorState] = useState(initialStateErrors);
   const [stepState, setStepState] = useState(0);
+  const [x, setX] = useState(0);
 
   const convertDataToNumbers = (obj) => {
     const newObj = {};
@@ -110,6 +111,8 @@ const Calculator = () => {
           <AnimatePresence mode="wait">
             {stepState === 0 && (
               <CarEVFieldSet
+                x={x}
+                setX={setX}
                 state={state}
                 setState={setState}
                 className="bg-white flex flex-col rounded-lg mt-10  border border-black px-4 pt-2 pb-4 dark:bg-black "
@@ -118,6 +121,8 @@ const Calculator = () => {
           </AnimatePresence>
           {stepState === 1 && (
             <CarICEFieldSet
+              x={x}
+              setX={setX}
               state={state}
               setState={setState}
               className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
@@ -126,6 +131,8 @@ const Calculator = () => {
           <AnimatePresence>
             {stepState === 2 && (
               <EnergyDataFieldSet
+                x={x}
+                setX={setX}
                 state={state}
                 setState={setState}
                 className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
@@ -135,6 +142,8 @@ const Calculator = () => {
           <AnimatePresence>
             {stepState === 3 && (
               <UsageDataFieldSet
+                x={x}
+                setX={setX}
                 state={state}
                 setState={setState}
                 className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
@@ -144,6 +153,8 @@ const Calculator = () => {
           <AnimatePresence>
             {stepState === 4 && (
               <UsageExpectedFieldSet
+                x={x}
+                setX={setX}
                 state={state}
                 setState={setState}
                 className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
@@ -153,6 +164,8 @@ const Calculator = () => {
           <AnimatePresence>
             {stepState === 5 && (
               <DurationFieldSet
+                x={x}
+                setX={setX}
                 state={state}
                 setState={setState}
                 className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
@@ -170,7 +183,9 @@ const Calculator = () => {
             {stepState > 0 && stepState < 7 && (
               <button
                 type="button"
-                onClick={() => setStepState((prev) => prev - 1)}
+                onClick={() => {
+                  setStepState((prev) => prev - 1), setX(() => -1000);
+                }}
               >
                 Back
               </button>
@@ -178,7 +193,9 @@ const Calculator = () => {
             {stepState < 6 && (
               <button
                 type="button"
-                onClick={() => setStepState((prev) => prev + 1)}
+                onClick={() => {
+                  setStepState((prev) => prev + 1), setX(() => 1000);
+                }}
               >
                 Next
               </button>

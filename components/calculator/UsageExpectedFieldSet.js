@@ -1,15 +1,13 @@
 import { motion } from 'framer-motion';
 
-const UsageExpectedFieldSet = ({ state, setState, className }) => {
+const UsageExpectedFieldSet = ({ state, setState, className, x }) => {
   return (
     <motion.fieldset
       id="usageExpected"
       className={className}
-      initial={{ opacity: 0, x: 1000, y: 0 }}
-      animate={{ opacity: 1, x: 0, y: 0 }}
-      exit={{ opacity: 0, x: -1000, y: 0 }}
+      initial={{ opacity: 0, x }}
+      animate={{ opacity: 1, x: 0 }}
       transition={{
-        delay: 0.2,
         duration: 0.2,
         ease: 'easeOut',
       }}

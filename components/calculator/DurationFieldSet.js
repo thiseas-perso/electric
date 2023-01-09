@@ -1,14 +1,12 @@
 import { motion } from 'framer-motion';
 
-function DurationFieldSet({ state, setState, className }) {
+function DurationFieldSet({ state, setState, className, x }) {
   return (
     <motion.fieldset
       className={className}
-      initial={{ opacity: 0, x: 1000, y: 0 }}
-      animate={{ opacity: 1, x: 0, y: 0 }}
-      exit={{ opacity: 0, x: -1000, y: 0 }}
+      initial={{ x }}
+      animate={{ x: 0 }}
       transition={{
-        delay: 0.2,
         duration: 0.2,
         ease: 'easeOut',
       }}
