@@ -11,12 +11,14 @@ function DurationFieldSet({ state, setState, className, x }) {
         ease: 'easeOut',
       }}
     >
-      <h2 className="text-3xl mb-2 p-4 bg-red-400">Durée de détention</h2>
+      <h2 className="text-3xl mb-5 p-4 font-lato font-light bg-light-primary-0 text-center">
+        Durée de détention
+      </h2>
 
       <div className="flex flex-col px-4 pb-4">
         <label htmlFor="durationStudied">Années</label>
         <input
-          className="mb-2"
+          className="mb-3"
           min=""
           step="1"
           type="number"

@@ -25,7 +25,8 @@ module.exports = {
       },
       fontFamily: {
         raleway: ['var(--raleway-font)', ...fontFamily.sans],
-        merriweather: 'var(--merriweather-font)',
+        merriweather: ['var(--merriweather-font)', ...fontFamily.serif],
+        lato: ['var(--lato-font)', ...fontFamily.sans],
       },
     },
   },

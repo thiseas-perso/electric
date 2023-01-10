@@ -11,13 +11,15 @@ const UsageDataFieldSet = ({ state, setState, className, x }) => {
         ease: 'easeOut',
       }}
     >
-      <h2 className="text-3xl mb-2 p-4 bg-red-400">Vos trajets</h2>
+      <h2 className="text-3xl mb-5 p-4 font-lato font-light bg-light-primary-0 text-center">
+        Vos trajets
+      </h2>
       <div className="flex flex-col px-4 pb-4">
         <label htmlFor="workHomeDistance">
           Distance domicile travail (km):
         </label>
         <input
-          className="mb-2"
+          className="mb-3"
           min="0"
           type="number"
           id="workHomeDistance"
@@ -35,7 +37,7 @@ const UsageDataFieldSet = ({ state, setState, className, x }) => {
         />
         <label htmlFor="dailyCommutes">A/R quotidiens</label>
         <input
-          className="mb-2"
+          className="mb-3"
           min="0"
           type="number"
           id="dailyCommutes"
@@ -53,7 +55,7 @@ const UsageDataFieldSet = ({ state, setState, className, x }) => {
         />
         <label htmlFor="daysWorkedPerY">Nombre de jours travaillés/an</label>
         <input
-          className="mb-2"
+          className="mb-3"
           min="0"
           max="365"
           type="number"
@@ -72,7 +74,7 @@ const UsageDataFieldSet = ({ state, setState, className, x }) => {
         />
         <label htmlFor="weekendKM">Km les weekends</label>
         <input
-          className="mb-2"
+          className="mb-3"
           min="0"
           type="number"
           id="weekendKM"
@@ -90,7 +92,7 @@ const UsageDataFieldSet = ({ state, setState, className, x }) => {
         />
         <label htmlFor="otherKMPerW">Autres km par semaine</label>
         <input
-          className="mb-2"
+          className="mb-3"
           min="0"
           type="number"
           id="otherKMPerW"

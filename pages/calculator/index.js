@@ -122,26 +122,26 @@ const Calculator = () => {
   return (
     <>
       <CustomHead title="SOME TITLE" description="some description" />
+      <h1 className="text-xl p-2 bg-white font-lato font-extrabold">
+        Comparateur électrique - thérmique
+      </h1>
       <div
         id="progress-ctn"
         className="h-4 min-w-full bg-gradient-to-r from-light-sec-start via-light-sec-mid to-light-sec-end"
       >
         <div
           id="progress-fill"
-          className={`bg-white h-full ${barClassName} ml-auto`}
+          className={`bg-light-primary-end h-full ${barClassName} ml-auto`}
         />
       </div>
-      <h1 className="text-center p-2 bg-white">
-        Comparateur électrique - thérmique
-      </h1>
 
-      <form className=" text-lg flex flex-col flex-grow items-center ">
+      <form className=" text-lg flex flex-col flex-grow  justify-between mt-4">
         {stepState === 0 && (
           <CarEVFieldSet
             x={x}
             state={state}
             setState={setState}
-            className="bg-white overflow-hidden rounded-lg mt-auto mb-auto  mx-4 dark:bg-black "
+            className="bg-white overflow-hidden   shadow-xl min-w-[275px]  dark:bg-black "
           />
         )}
         {stepState === 1 && (
@@ -149,7 +149,7 @@ const Calculator = () => {
             x={x}
             state={state}
             setState={setState}
-            className="bg-white overflow-hidden rounded-lg mt-auto mb-auto  dark:bg-black"
+            className="bg-white overflow-hidden   shadow-xl min-w-[275px] dark:bg-black"
           />
         )}
         {stepState === 2 && (
@@ -157,7 +157,7 @@ const Calculator = () => {
             x={x}
             state={state}
             setState={setState}
-            className="bg-white overflow-hidden rounded-lg mt-auto mb-auto mx-4 dark:bg-black"
+            className="bg-white overflow-hidden   shadow-xl min-w-[275px] dark:bg-black"
           />
         )}
         {stepState === 3 && (
@@ -165,7 +165,7 @@ const Calculator = () => {
             x={x}
             state={state}
             setState={setState}
-            className="bg-white overflow-hidden rounded-lg mt-auto mb-auto mx-4 dark:bg-black"
+            className="bg-white overflow-hidden   shadow-xl min-w-[275px] dark:bg-black"
           />
         )}
         {stepState === 4 && (
@@ -173,7 +173,7 @@ const Calculator = () => {
             x={x}
             state={state}
             setState={setState}
-            className="bg-white overflow-hidden rounded-lg mt-auto mb-auto mx-4 dark:bg-black"
+            className="bg-white overflow-hidden   shadow-xl min-w-[275px] dark:bg-black"
           />
         )}
         {stepState === 5 && (
@@ -181,7 +181,7 @@ const Calculator = () => {
             x={x}
             state={state}
             setState={setState}
-            className="bg-white overflow-hidden rounded-lg mt-auto mb-auto mx-4 dark:bg-black"
+            className="bg-white overflow-hidden   shadow-xl min-w-[275px] dark:bg-black"
           />
         )}
 
@@ -195,10 +195,12 @@ const Calculator = () => {
           </button>
         )}
 
-        <div>
+        <div className="flex self-stretch">
           {stepState > 0 && stepState < 7 && (
             <button
-              className={`${stepState > 0 && stepState < 7 ? 'active' : ''}`}
+              className={`${
+                stepState > 5 ? 'border-0' : 'border-r-2'
+              } flex-1 bg-gray-400 rounded-none border-0 font-normal`}
               type="button"
               onClick={() => {
                 setStepState((prev) => prev - 1), setX(() => -1000);
@@ -209,7 +211,9 @@ const Calculator = () => {
           )}
           {stepState < 6 && (
             <button
-              className=""
+              className={`${
+                stepState < 1 ? 'border-0' : 'border-l-2'
+              } flex-1 bg-gray-400 rounded-none border-0  font-normal`}
               type="button"
               onClick={() => {
                 setStepState((prev) => prev + 1), setX(() => 1000);

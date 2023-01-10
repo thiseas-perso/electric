@@ -12,12 +12,14 @@ const UsageExpectedFieldSet = ({ state, setState, className, x }) => {
         ease: 'easeOut',
       }}
     >
-      <h2 className="text-3xl mb-2 p-4 bg-red-400">Usage attendu</h2>
+      <h2 className="text-3xl mb-5 p-4 font-lato font-light bg-light-primary-0 text-center">
+        Usage attendu
+      </h2>
 
       <div className="flex flex-col px-4 pb-4">
         <label htmlFor="totalKMPerY">Total de KM/an</label>
         <input
-          className="mb-2"
+          className="mb-3"
           min="0"
           type="number"
           id="totalKMPerY"

@@ -12,14 +12,16 @@ const EnergyDataFieldSet = ({ state, setState, className, x }) => {
         ease: 'easeOut',
       }}
     >
-      <h2 className="text-3xl mb-2 p-4 bg-red-400">Cout de l&apos;énergie</h2>
+      <h2 className="text-3xl mb-5 p-4 font-lato font-light bg-light-primary-0 text-center">
+        Cout de l&apos;énergie
+      </h2>
 
       <div className="flex flex-col px-4 pb-4">
         <label htmlFor="chargingPriceHC">
           Electricité - heures creuses(€/kWh):
         </label>
         <input
-          className="mb-2"
+          className="mb-3"
           min="0"
           step=".01"
           type="number"
@@ -40,7 +42,7 @@ const EnergyDataFieldSet = ({ state, setState, className, x }) => {
           Electricité - heures pleines(€/kWh):
         </label>
         <input
-          className="mb-2"
+          className="mb-3"
           min="0"
           step=".01"
           type="number"
@@ -59,7 +61,7 @@ const EnergyDataFieldSet = ({ state, setState, className, x }) => {
         />
         <label htmlFor="gasPrice">Carburant (€/lt):</label>
         <input
-          className="mb-2"
+          className="mb-3"
           min="0"
           step=".01"
           type="number"
