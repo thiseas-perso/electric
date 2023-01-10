@@ -142,7 +142,7 @@ const Calculator = () => {
               x={x}
               state={state}
               setState={setState}
-              className="bg-white flex flex-col rounded-lg  border border-black px-4 pt-2 pb-4 dark:bg-black "
+              className="bg-white flex flex-col rounded-lg   mx-4 dark:bg-black "
             />
           )}
           {stepState === 1 && (
@@ -150,7 +150,7 @@ const Calculator = () => {
               x={x}
               state={state}
               setState={setState}
-              className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black"
+              className="bg-white flex flex-col rounded-lg  dark:bg-black"
             />
           )}
           {stepState === 2 && (
@@ -158,7 +158,7 @@ const Calculator = () => {
               x={x}
               state={state}
               setState={setState}
-              className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black"
+              className="bg-white flex flex-col rounded-lg mx-4 dark:bg-black"
             />
           )}
           {stepState === 3 && (
@@ -166,7 +166,7 @@ const Calculator = () => {
               x={x}
               state={state}
               setState={setState}
-              className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black"
+              className="bg-white flex flex-col rounded-lg mx-4 dark:bg-black"
             />
           )}
           {stepState === 4 && (
@@ -174,7 +174,7 @@ const Calculator = () => {
               x={x}
               state={state}
               setState={setState}
-              className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black"
+              className="bg-white flex flex-col rounded-lg mx-4 dark:bg-black"
             />
           )}
           {stepState === 5 && (
@@ -182,7 +182,7 @@ const Calculator = () => {
               x={x}
               state={state}
               setState={setState}
-              className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black"
+              className="bg-white flex flex-col rounded-lg mx-4 dark:bg-black"
             />
           )}
 

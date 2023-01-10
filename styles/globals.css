@@ -9,6 +9,13 @@ Solution: Install PostCSS Language Support extension
 */
 
 @layer base {
+  #__next {
+    @apply min-h-screen flex flex-col;
+  }
+  html,
+  body {
+    @apply min-h-screen;
+  }
   input {
     @apply border rounded px-1;
   }
@@ -21,15 +28,5 @@ Solution: Install PostCSS Language Support extension
   }
   h2 {
     @apply font-semibold text-lg;
-  }
-}
-
-@layer components {
-  #__next {
-    @apply h-full flex flex-col;
-  }
-  html,
-  body {
-    @apply h-full;
   }
 }

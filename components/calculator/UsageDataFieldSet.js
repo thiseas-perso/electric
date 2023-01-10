@@ -11,7 +11,7 @@ const UsageDataFieldSet = ({ state, setState, className, x }) => {
         ease: 'easeOut',
       }}
     >
-      <h2 className="text-3xl mb-2">Analyse de vos trajets</h2>
+      <h2 className="text-3xl mb-2">Vos trajets</h2>
       <label htmlFor="workHomeDistance">Distance domicile travail (km):</label>
       <input
         className="mb-2"
