@@ -5,10 +5,10 @@ const EnergyDataFieldSet = ({ state, setState, className, x }) => {
     <motion.fieldset
       id="energyData"
       className={className}
-      initial={{ opacity: 0, x }}
-      animate={{ opacity: 1, x: 0 }}
+      initial={{ x }}
+      animate={{ x: 0 }}
       transition={{
-        duration: 0.2,
+        // duration: 0.2,
         ease: 'easeOut',
       }}
     >

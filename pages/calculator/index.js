@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, AnimateSharedLayout } from 'framer-motion';
 
 import { CarEVFieldSet } from '../../components/calculator';
 import { CarICEFieldSet } from '../../components/calculator';
@@ -108,70 +108,56 @@ const Calculator = () => {
         className="bg-gradient-to-t from-light-primary-start to-light-primary-end flex flex-col overflow-x-hidden flex-grow"
       >
         <form className="mx-2 text-lg flex flex-col flex-grow items-center justify-between">
-          <AnimatePresence mode="wait">
+          <AnimateSharedLayout>
             {stepState === 0 && (
               <CarEVFieldSet
                 x={x}
-                setX={setX}
                 state={state}
                 setState={setState}
                 className="bg-white flex flex-col rounded-lg mt-10  border border-black px-4 pt-2 pb-4 dark:bg-black "
               />
             )}
-          </AnimatePresence>
-          {stepState === 1 && (
-            <CarICEFieldSet
-              x={x}
-              setX={setX}
-              state={state}
-              setState={setState}
-              className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
-            />
-          )}
-          <AnimatePresence>
+            {stepState === 1 && (
+              <CarICEFieldSet
+                x={x}
+                state={state}
+                setState={setState}
+                className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
+              />
+            )}
             {stepState === 2 && (
               <EnergyDataFieldSet
                 x={x}
-                setX={setX}
                 state={state}
                 setState={setState}
                 className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
               />
             )}
-          </AnimatePresence>
-          <AnimatePresence>
             {stepState === 3 && (
               <UsageDataFieldSet
                 x={x}
-                setX={setX}
                 state={state}
                 setState={setState}
                 className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
               />
             )}
-          </AnimatePresence>
-          <AnimatePresence>
             {stepState === 4 && (
               <UsageExpectedFieldSet
                 x={x}
-                setX={setX}
                 state={state}
                 setState={setState}
                 className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
               />
             )}
-          </AnimatePresence>
-          <AnimatePresence>
             {stepState === 5 && (
               <DurationFieldSet
                 x={x}
-                setX={setX}
                 state={state}
                 setState={setState}
                 className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
               />
             )}
-          </AnimatePresence>
+          </AnimateSharedLayout>
 
           {stepState === 6 && (
             <button type="submit" onClick={(e) => submitHandler(e)}>

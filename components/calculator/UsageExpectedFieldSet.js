@@ -5,7 +5,7 @@ const UsageExpectedFieldSet = ({ state, setState, className, x }) => {
     <motion.fieldset
       id="usageExpected"
       className={className}
-      initial={{ opacity: 0, x }}
+      initial={{ opacity: 0, x, y: 0 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{
         duration: 0.2,
