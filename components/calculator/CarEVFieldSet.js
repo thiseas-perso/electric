@@ -8,116 +8,114 @@ const CarEVFieldSet = ({ state, setState, className, x }) => {
       initial={{ x }}
       animate={{ x: 0 }}
       transition={{
-        // duration: 0.2,
         ease: 'easeOut',
       }}
     >
-      <h2 className="text-3xl mb-2">Véhicule électrique</h2>
-      <label htmlFor="purchaseCost">
-        <span>Prix achat (€):</span>
-      </label>
-      <input
-        className="mb-2"
-        required
-        min="0"
-        type="number"
-        id="purchaseCost"
-        name="purchaseCost"
-        value={state.carDataEV.purchaseCost}
-        onChange={(e) =>
-          setState((prev) => ({
-            ...prev,
-            carDataEV: {
-              ...state.carDataEV,
-              purchaseCost: e.target.value,
-            },
-          }))
-        }
-      />
-      <label htmlFor="ecoBonus">
-        <span>Bonus ecologique (€):</span>
-      </label>
-      <input
-        className="mb-2"
-        required
-        min="0"
-        type="number"
-        id="ecoBonus"
-        name="ecoBonus"
-        value={state.carDataEV.ecoBonus}
-        onChange={(e) =>
-          setState((prev) => ({
-            ...prev,
-            carDataEV: {
-              ...state.carDataEV,
-              ecoBonus: e.target.value,
-            },
-          }))
-        }
-      />
-      <label htmlFor="consumption">
-        <span>Consomation (kWh/100km):</span>
-      </label>
-      <input
-        className="mb-2"
-        required
-        min="0"
-        type="number"
-        id="consumption"
-        name="consumption"
-        value={state.carDataEV.consumption}
-        onChange={(e) =>
-          setState((prev) => ({
-            ...prev,
-            carDataEV: {
-              ...state.carDataEV,
-              consumption: e.target.value,
-            },
-          }))
-        }
-      />
-      <label htmlFor="insurance">
-        <span>Assurance (€/an):</span>
-      </label>
-      <input
-        className="mb-2"
-        required
-        min="0"
-        type="number"
-        id="insurance"
-        name="insurance"
-        value={state.carDataEV.insurance}
-        onChange={(e) =>
-          setState((prev) => ({
-            ...prev,
-            carDataEV: {
-              ...state.carDataEV,
-              insurance: e.target.value,
-            },
-          }))
-        }
-      />
-      <label htmlFor="maintenance">
-        <span>Entretien (€/an):</span>
-      </label>
-      <input
-        className="mb-2"
-        required
-        min="0"
-        type="number"
-        id="maintenance"
-        name="maintenance"
-        value={state.carDataEV.maintenance}
-        onChange={(e) =>
-          setState((prev) => ({
-            ...prev,
-            carDataEV: {
-              ...state.carDataEV,
-              maintenance: e.target.value,
-            },
-          }))
-        }
-      />
+      <h2 className="text-3xl mb-5 p-4 font-lato font-light bg-light-primary-0 text-center">
+        Véhicule <span className="">électrique</span>
+      </h2>
+      <div className="flex flex-col px-4 pb-4">
+        <label htmlFor="purchaseCost">Prix achat (€):</label>
+        <input
+          className="mb-4"
+          placeholder="ex: 35000"
+          required
+          min="0"
+          type="number"
+          id="purchaseCost"
+          name="purchaseCost"
+          value={state.carDataEV.purchaseCost}
+          onChange={(e) =>
+            setState((prev) => ({
+              ...prev,
+              carDataEV: {
+                ...state.carDataEV,
+                purchaseCost: e.target.value,
+              },
+            }))
+          }
+        />
+        <label htmlFor="ecoBonus">Bonus ecologique (€):</label>
+        <input
+          className="mb-4"
+          placeholder="ex: 5000"
+          required
+          min="0"
+          type="number"
+          id="ecoBonus"
+          name="ecoBonus"
+          value={state.carDataEV.ecoBonus}
+          onChange={(e) =>
+            setState((prev) => ({
+              ...prev,
+              carDataEV: {
+                ...state.carDataEV,
+                ecoBonus: e.target.value,
+              },
+            }))
+          }
+        />
+        <label htmlFor="consumption">Consomation (kWh/100km):</label>
+        <input
+          className="mb-4"
+          placeholder="ex: 18"
+          required
+          min="0"
+          type="number"
+          id="consumption"
+          name="consumption"
+          value={state.carDataEV.consumption}
+          onChange={(e) =>
+            setState((prev) => ({
+              ...prev,
+              carDataEV: {
+                ...state.carDataEV,
+                consumption: e.target.value,
+              },
+            }))
+          }
+        />
+        <label htmlFor="insurance">Assurance (€/an):</label>
+        <input
+          className="mb-4"
+          placeholder="ex: 650"
+          required
+          min="0"
+          type="number"
+          id="insurance"
+          name="insurance"
+          value={state.carDataEV.insurance}
+          onChange={(e) =>
+            setState((prev) => ({
+              ...prev,
+              carDataEV: {
+                ...state.carDataEV,
+                insurance: e.target.value,
+              },
+            }))
+          }
+        />
+        <label htmlFor="maintenance">Entretien (€/an):</label>
+        <input
+          className="mb-4"
+          placeholder="ex: 600"
+          required
+          min="0"
+          type="number"
+          id="maintenance"
+          name="maintenance"
+          value={state.carDataEV.maintenance}
+          onChange={(e) =>
+            setState((prev) => ({
+              ...prev,
+              carDataEV: {
+                ...state.carDataEV,
+                maintenance: e.target.value,
+              },
+            }))
+          }
+        />
+      </div>
     </motion.fieldset>
   );
 };

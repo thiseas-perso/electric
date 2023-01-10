@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { AnimatePresence } from 'framer-motion';
 
 import { CarEVFieldSet } from '../../components/calculator';
 import { CarICEFieldSet } from '../../components/calculator';
@@ -75,7 +74,7 @@ const initialStateErrors = {
 };
 
 const Calculator = () => {
-  const [state, setState] = useState(initialState);
+  const [state, setState] = useState(initialStateErrors);
   const [errorState, setErrorState] = useState(initialStateErrors);
   const [stepState, setStepState] = useState(0);
   const [x, setX] = useState(0);
@@ -99,94 +98,132 @@ const Calculator = () => {
     console.log(calculator(convertDataToNumbers(state)));
   };
 
+  const barClassName = (() => {
+    switch (stepState) {
+      case 6:
+        return 'w-0';
+      case 5:
+        return 'w-1/6';
+      case 4:
+        return 'w-2/6';
+      case 3:
+        return 'w-3/6';
+      case 2:
+        return 'w-4/6';
+      case 1:
+        return 'w-5/6';
+      case 0:
+        return 'w-full';
+      default:
+        return 'w-full';
+    }
+  })();
+
   return (
     <>
       <CustomHead title="SOME TITLE" description="some description" />
-      <h1>Comparateur électrique -thérmique</h1>
+      <h1 className="text-xl p-2 bg-white font-lato font-extrabold">
+        Comparateur électrique - thérmique
+      </h1>
       <div
-        id="form-container"
-        className="bg-gradient-to-t from-light-primary-start to-light-primary-end flex flex-col overflow-x-hidden flex-grow"
+        id="progress-ctn"
+        className="h-4 min-w-full bg-gradient-to-r from-light-sec-start via-light-sec-mid to-light-sec-end"
       >
-        <form className="mx-2 text-lg flex flex-col flex-grow items-center justify-between">
-          {stepState === 0 && (
-            <CarEVFieldSet
-              x={x}
-              state={state}
-              setState={setState}
-              className="bg-white flex flex-col rounded-lg mt-10  border border-black px-4 pt-2 pb-4 dark:bg-black "
-            />
-          )}
-          {stepState === 1 && (
-            <CarICEFieldSet
-              x={x}
-              state={state}
-              setState={setState}
-              className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
-            />
-          )}
-          {stepState === 2 && (
-            <EnergyDataFieldSet
-              x={x}
-              state={state}
-              setState={setState}
-              className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
-            />
-          )}
-          {stepState === 3 && (
-            <UsageDataFieldSet
-              x={x}
-              state={state}
-              setState={setState}
-              className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
-            />
-          )}
-          {stepState === 4 && (
-            <UsageExpectedFieldSet
-              x={x}
-              state={state}
-              setState={setState}
-              className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
-            />
-          )}
-          {stepState === 5 && (
-            <DurationFieldSet
-              x={x}
-              state={state}
-              setState={setState}
-              className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
-            />
-          )}
+        <div
+          id="progress-fill"
+          className={`bg-light-primary-end h-full ${barClassName} ml-auto`}
+        />
+      </div>
 
-          {stepState === 6 && (
-            <button type="submit" onClick={(e) => submitHandler(e)}>
-              Lancer l&lsquo;analyse
+      <form className=" text-lg flex flex-col flex-grow  justify-between mt-4 overflow-x-hidden">
+        {stepState === 0 && (
+          <CarEVFieldSet
+            x={x}
+            state={state}
+            setState={setState}
+            className="bg-white overflow-hidden  min-w-[275px]  dark:bg-black "
+          />
+        )}
+        {stepState === 1 && (
+          <CarICEFieldSet
+            x={x}
+            state={state}
+            setState={setState}
+            className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
+          />
+        )}
+        {stepState === 2 && (
+          <EnergyDataFieldSet
+            x={x}
+            state={state}
+            setState={setState}
+            className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
+          />
+        )}
+        {stepState === 3 && (
+          <UsageDataFieldSet
+            x={x}
+            state={state}
+            setState={setState}
+            className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
+          />
+        )}
+        {stepState === 4 && (
+          <UsageExpectedFieldSet
+            x={x}
+            state={state}
+            setState={setState}
+            className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
+          />
+        )}
+        {stepState === 5 && (
+          <DurationFieldSet
+            x={x}
+            state={state}
+            setState={setState}
+            className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
+          />
+        )}
+
+        {stepState === 6 && (
+          <button
+            className="mb-auto mt-auto"
+            type="submit"
+            onClick={(e) => submitHandler(e)}
+          >
+            Lancer l&lsquo;analyse
+          </button>
+        )}
+
+        <div className="flex self-stretch">
+          {stepState > 0 && stepState < 7 && (
+            <button
+              className={`${
+                stepState > 5 ? 'border-0' : 'border-r-2'
+              } flex-1 bg-gray-400 rounded-none border-0 font-normal`}
+              type="button"
+              onClick={() => {
+                setStepState((prev) => prev - 1), setX(() => -1000);
+              }}
+            >
+              Back
             </button>
           )}
-
-          <div>
-            {stepState > 0 && stepState < 7 && (
-              <button
-                type="button"
-                onClick={() => {
-                  setStepState((prev) => prev - 1), setX(() => -1000);
-                }}
-              >
-                Back
-              </button>
-            )}
-            {stepState < 6 && (
-              <button
-                type="button"
-                onClick={() => {
-                  setStepState((prev) => prev + 1), setX(() => 1000);
-                }}
-              >
-                Next
-              </button>
-            )}
-          </div>
-        </form>
-      </div>
+          {stepState < 6 && (
+            <button
+              className={`${
+                stepState < 1 ? 'border-0' : 'border-l-2'
+              } flex-1 bg-gray-400 rounded-none border-0  font-normal`}
+              type="button"
+              onClick={() => {
+                setStepState((prev) => prev + 1), setX(() => 1000);
+              }}
+            >
+              Next
+            </button>
+          )}
+        </div>
+      </form>
     </>
   );
 };

@@ -1,12 +1,16 @@
 import Footer from './footer';
 import Header from './header';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, className }) => {
   return (
     <>
-      <Header />
-      <main className="flex flex-col flex-grow">{children}</main>
-      <Footer />
+      <Header className="h-12 font-lato" />
+      <main
+        className={`${className} flex flex-1 flex-col  min-h-[calc(100vh-48px)] font-lato`}
+      >
+        {children}
+      </main>
+      <Footer className="font-lato" />
     </>
   );
 };

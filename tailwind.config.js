@@ -1,3 +1,5 @@
+const { fontFamily } = require('tailwindcss/defaultTheme');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -17,6 +19,14 @@ module.exports = {
         'light-primary-4': '#FFCF7A',
         'light-primary-start': '#D7F0EE',
         'light-primary-end': '#E9E0F8',
+        'light-sec-start': '#F7779F',
+        'light-sec-mid': '#DBA386',
+        'light-sec-end': '#BAC686',
+      },
+      fontFamily: {
+        raleway: ['var(--raleway-font)', ...fontFamily.sans],
+        merriweather: ['var(--merriweather-font)', ...fontFamily.serif],
+        lato: ['var(--lato-font)', ...fontFamily.sans],
       },
     },
   },

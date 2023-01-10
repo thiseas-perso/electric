@@ -1,7 +1,7 @@
 import { useTheme } from 'next-themes';
 import { useState, useEffect } from 'react';
 
-const Header = () => {
+const Header = ({ className }) => {
   const [mounted, setMounted] = useState(false);
   const { systemTheme, theme, setTheme } = useTheme();
   useEffect(() => {
@@ -13,7 +13,7 @@ const Header = () => {
   }
 
   return (
-    <header>
+    <header className={className}>
       [Header]
       <button
         onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')}
