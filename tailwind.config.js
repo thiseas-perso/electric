@@ -1,3 +1,5 @@
+const { fontFamily } = require('tailwindcss/defaultTheme');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -20,6 +22,10 @@ module.exports = {
         'light-sec-start': '#F7779F',
         'light-sec-mid': '#DBA386',
         'light-sec-end': '#BAC686',
+      },
+      fontFamily: {
+        raleway: ['var(--raleway-font)', ...fontFamily.sans],
+        merriweather: 'var(--merriweather-font)',
       },
     },
   },

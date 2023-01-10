@@ -122,100 +122,104 @@ const Calculator = () => {
   return (
     <>
       <CustomHead title="SOME TITLE" description="some description" />
-      <h1>Comparateur électrique -thérmique</h1>
       <div
-        id="form-container"
-        className="bg-gradient-to-t from-light-primary-start to-light-primary-end flex flex-col overflow-x-hidden flex-grow"
+        id="progress-ctn"
+        className="h-4 min-w-full bg-gradient-to-r from-light-sec-start via-light-sec-mid to-light-sec-end"
       >
-        <form className=" text-lg flex flex-col flex-grow items-center justify-between">
-          <div
-            id="progress-ctn"
-            className="h-4 min-w-full bg-gradient-to-r from-light-sec-start via-light-sec-mid to-light-sec-end"
-          >
-            <div
-              id="progress-fill"
-              className={`bg-white h-full ${barClassName} ml-auto`}
-            />
-          </div>
-          {stepState === 0 && (
-            <CarEVFieldSet
-              x={x}
-              state={state}
-              setState={setState}
-              className="bg-white flex flex-col rounded-lg   mx-4 dark:bg-black "
-            />
-          )}
-          {stepState === 1 && (
-            <CarICEFieldSet
-              x={x}
-              state={state}
-              setState={setState}
-              className="bg-white flex flex-col rounded-lg  dark:bg-black"
-            />
-          )}
-          {stepState === 2 && (
-            <EnergyDataFieldSet
-              x={x}
-              state={state}
-              setState={setState}
-              className="bg-white flex flex-col rounded-lg mx-4 dark:bg-black"
-            />
-          )}
-          {stepState === 3 && (
-            <UsageDataFieldSet
-              x={x}
-              state={state}
-              setState={setState}
-              className="bg-white flex flex-col rounded-lg mx-4 dark:bg-black"
-            />
-          )}
-          {stepState === 4 && (
-            <UsageExpectedFieldSet
-              x={x}
-              state={state}
-              setState={setState}
-              className="bg-white flex flex-col rounded-lg mx-4 dark:bg-black"
-            />
-          )}
-          {stepState === 5 && (
-            <DurationFieldSet
-              x={x}
-              state={state}
-              setState={setState}
-              className="bg-white flex flex-col rounded-lg mx-4 dark:bg-black"
-            />
-          )}
+        <div
+          id="progress-fill"
+          className={`bg-white h-full ${barClassName} ml-auto`}
+        />
+      </div>
+      <h1 className="text-center p-2 bg-white">
+        Comparateur électrique - thérmique
+      </h1>
 
-          {stepState === 6 && (
-            <button type="submit" onClick={(e) => submitHandler(e)}>
-              Lancer l&lsquo;analyse
+      <form className=" text-lg flex flex-col flex-grow items-center ">
+        {stepState === 0 && (
+          <CarEVFieldSet
+            x={x}
+            state={state}
+            setState={setState}
+            className="bg-white overflow-hidden rounded-lg mt-auto mb-auto  mx-4 dark:bg-black "
+          />
+        )}
+        {stepState === 1 && (
+          <CarICEFieldSet
+            x={x}
+            state={state}
+            setState={setState}
+            className="bg-white overflow-hidden rounded-lg mt-auto mb-auto  dark:bg-black"
+          />
+        )}
+        {stepState === 2 && (
+          <EnergyDataFieldSet
+            x={x}
+            state={state}
+            setState={setState}
+            className="bg-white overflow-hidden rounded-lg mt-auto mb-auto mx-4 dark:bg-black"
+          />
+        )}
+        {stepState === 3 && (
+          <UsageDataFieldSet
+            x={x}
+            state={state}
+            setState={setState}
+            className="bg-white overflow-hidden rounded-lg mt-auto mb-auto mx-4 dark:bg-black"
+          />
+        )}
+        {stepState === 4 && (
+          <UsageExpectedFieldSet
+            x={x}
+            state={state}
+            setState={setState}
+            className="bg-white overflow-hidden rounded-lg mt-auto mb-auto mx-4 dark:bg-black"
+          />
+        )}
+        {stepState === 5 && (
+          <DurationFieldSet
+            x={x}
+            state={state}
+            setState={setState}
+            className="bg-white overflow-hidden rounded-lg mt-auto mb-auto mx-4 dark:bg-black"
+          />
+        )}
+
+        {stepState === 6 && (
+          <button
+            className="mb-auto mt-auto"
+            type="submit"
+            onClick={(e) => submitHandler(e)}
+          >
+            Lancer l&lsquo;analyse
+          </button>
+        )}
+
+        <div>
+          {stepState > 0 && stepState < 7 && (
+            <button
+              className={`${stepState > 0 && stepState < 7 ? 'active' : ''}`}
+              type="button"
+              onClick={() => {
+                setStepState((prev) => prev - 1), setX(() => -1000);
+              }}
+            >
+              Back
             </button>
           )}
-
-          <div>
-            {stepState > 0 && stepState < 7 && (
-              <button
-                type="button"
-                onClick={() => {
-                  setStepState((prev) => prev - 1), setX(() => -1000);
-                }}
-              >
-                Back
-              </button>
-            )}
-            {stepState < 6 && (
-              <button
-                type="button"
-                onClick={() => {
-                  setStepState((prev) => prev + 1), setX(() => 1000);
-                }}
-              >
-                Next
-              </button>
-            )}
-          </div>
-        </form>
-      </div>
+          {stepState < 6 && (
+            <button
+              className=""
+              type="button"
+              onClick={() => {
+                setStepState((prev) => prev + 1), setX(() => 1000);
+              }}
+            >
+              Next
+            </button>
+          )}
+        </div>
+      </form>
     </>
   );
 };
