@@ -18,6 +18,7 @@ const CarEVFieldSet = ({ state, setState, className, x }) => {
         <label htmlFor="purchaseCost">Prix achat (€):</label>
         <input
           className="mb-4"
+          placeholder="ex: 35000"
           required
           min="0"
           type="number"
@@ -37,6 +38,7 @@ const CarEVFieldSet = ({ state, setState, className, x }) => {
         <label htmlFor="ecoBonus">Bonus ecologique (€):</label>
         <input
           className="mb-4"
+          placeholder="ex: 5000"
           required
           min="0"
           type="number"
@@ -56,6 +58,7 @@ const CarEVFieldSet = ({ state, setState, className, x }) => {
         <label htmlFor="consumption">Consomation (kWh/100km):</label>
         <input
           className="mb-4"
+          placeholder="ex: 18"
           required
           min="0"
           type="number"
@@ -75,6 +78,7 @@ const CarEVFieldSet = ({ state, setState, className, x }) => {
         <label htmlFor="insurance">Assurance (€/an):</label>
         <input
           className="mb-4"
+          placeholder="ex: 650"
           required
           min="0"
           type="number"
@@ -94,6 +98,7 @@ const CarEVFieldSet = ({ state, setState, className, x }) => {
         <label htmlFor="maintenance">Entretien (€/an):</label>
         <input
           className="mb-4"
+          placeholder="ex: 600"
           required
           min="0"
           type="number"

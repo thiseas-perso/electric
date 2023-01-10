@@ -20,6 +20,7 @@ function DurationFieldSet({ state, setState, className, x }) {
         <input
           className="mb-3"
           min=""
+          placeholder="ex: 8"
           step="1"
           type="number"
           id="durationStudied"

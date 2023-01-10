@@ -21,6 +21,7 @@ const UsageExpectedFieldSet = ({ state, setState, className, x }) => {
         <input
           className="mb-3"
           min="0"
+          placeholder="ex: 12500"
           type="number"
           id="totalKMPerY"
           value={state.usageExpected.totalKMPerY}

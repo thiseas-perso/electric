@@ -20,6 +20,8 @@ const UsageDataFieldSet = ({ state, setState, className, x }) => {
         </label>
         <input
           className="mb-3"
+          required
+          placeholder="ex: 45"
           min="0"
           type="number"
           id="workHomeDistance"
@@ -38,6 +40,8 @@ const UsageDataFieldSet = ({ state, setState, className, x }) => {
         <label htmlFor="dailyCommutes">A/R quotidiens</label>
         <input
           className="mb-3"
+          required
+          placeholder="ex: 2"
           min="0"
           type="number"
           id="dailyCommutes"
@@ -58,6 +62,8 @@ const UsageDataFieldSet = ({ state, setState, className, x }) => {
           className="mb-3"
           min="0"
           max="365"
+          required
+          placeholder="ex: 150"
           type="number"
           id="daysWorkedPerY"
           name="daysWorkedPerY"
@@ -79,6 +85,7 @@ const UsageDataFieldSet = ({ state, setState, className, x }) => {
           type="number"
           id="weekendKM"
           name="weekendKM"
+          placeholder="ex: 140"
           value={state.usageData.weekendKM}
           onChange={(e) =>
             setState((prev) => ({
@@ -94,6 +101,7 @@ const UsageDataFieldSet = ({ state, setState, className, x }) => {
         <input
           className="mb-3"
           min="0"
+          placeholder="ex: 20"
           type="number"
           id="otherKMPerW"
           name="otherKMPerW"

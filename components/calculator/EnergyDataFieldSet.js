@@ -22,6 +22,8 @@ const EnergyDataFieldSet = ({ state, setState, className, x }) => {
         </label>
         <input
           className="mb-3"
+          required
+          placeholder="ex: 0.15"
           min="0"
           step=".01"
           type="number"
@@ -43,6 +45,8 @@ const EnergyDataFieldSet = ({ state, setState, className, x }) => {
         </label>
         <input
           className="mb-3"
+          required
+          placeholder="ex: 0.18"
           min="0"
           step=".01"
           type="number"
@@ -62,6 +66,8 @@ const EnergyDataFieldSet = ({ state, setState, className, x }) => {
         <label htmlFor="gasPrice">Carburant (€/lt):</label>
         <input
           className="mb-3"
+          required
+          placeholder="ex: 1.75"
           min="0"
           step=".01"
           type="number"

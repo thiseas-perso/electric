@@ -74,7 +74,7 @@ const initialStateErrors = {
 };
 
 const Calculator = () => {
-  const [state, setState] = useState(initialState);
+  const [state, setState] = useState(initialStateErrors);
   const [errorState, setErrorState] = useState(initialStateErrors);
   const [stepState, setStepState] = useState(0);
   const [x, setX] = useState(0);
@@ -141,7 +141,7 @@ const Calculator = () => {
             x={x}
             state={state}
             setState={setState}
-            className="bg-white overflow-hidden   shadow-xl min-w-[275px]  dark:bg-black "
+            className="bg-white overflow-hidden  min-w-[275px]  dark:bg-black "
           />
         )}
         {stepState === 1 && (
@@ -149,7 +149,7 @@ const Calculator = () => {
             x={x}
             state={state}
             setState={setState}
-            className="bg-white overflow-hidden   shadow-xl min-w-[275px] dark:bg-black"
+            className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
           />
         )}
         {stepState === 2 && (
@@ -157,7 +157,7 @@ const Calculator = () => {
             x={x}
             state={state}
             setState={setState}
-            className="bg-white overflow-hidden   shadow-xl min-w-[275px] dark:bg-black"
+            className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
           />
         )}
         {stepState === 3 && (
@@ -165,7 +165,7 @@ const Calculator = () => {
             x={x}
             state={state}
             setState={setState}
-            className="bg-white overflow-hidden   shadow-xl min-w-[275px] dark:bg-black"
+            className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
           />
         )}
         {stepState === 4 && (
@@ -173,7 +173,7 @@ const Calculator = () => {
             x={x}
             state={state}
             setState={setState}
-            className="bg-white overflow-hidden   shadow-xl min-w-[275px] dark:bg-black"
+            className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
           />
         )}
         {stepState === 5 && (
@@ -181,7 +181,7 @@ const Calculator = () => {
             x={x}
             state={state}
             setState={setState}
-            className="bg-white overflow-hidden   shadow-xl min-w-[275px] dark:bg-black"
+            className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
           />
         )}
 

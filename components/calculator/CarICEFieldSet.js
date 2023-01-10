@@ -19,6 +19,8 @@ const CarICEFieldSet = ({ state, setState, className, x }) => {
         <label htmlFor="purchaseCost">Prix achat (€):</label>
         <input
           className="mb-3"
+          placeholder="ex: 35000"
+          required
           min="0"
           type="number"
           id="purchaseCost"
@@ -37,6 +39,7 @@ const CarICEFieldSet = ({ state, setState, className, x }) => {
         <label htmlFor="consumption">Consomation (lt/100km):</label>
         <input
           className="mb-3"
+          placeholder="ex: 5.2"
           required
           min="0"
           type="number"
@@ -56,6 +59,7 @@ const CarICEFieldSet = ({ state, setState, className, x }) => {
         <label htmlFor="insurance">Assurance (€/an):</label>
         <input
           className="mb-3"
+          placeholder="ex: 750"
           required
           min="0"
           type="number"
@@ -75,6 +79,7 @@ const CarICEFieldSet = ({ state, setState, className, x }) => {
         <label htmlFor="maintenance">Entretien (€/an):</label>
         <input
           className="mb-3"
+          placeholder="ex: 700"
           required
           min="0"
           type="number"
