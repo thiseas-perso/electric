@@ -8,7 +8,6 @@ const CarEVFieldSet = ({ state, setState, className, x }) => {
       initial={{ x }}
       animate={{ x: 0 }}
       transition={{
-        // duration: 0.2,
         ease: 'easeOut',
       }}
     >

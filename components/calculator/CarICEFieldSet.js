@@ -5,10 +5,9 @@ const CarICEFieldSet = ({ state, setState, className, x }) => {
     <motion.fieldset
       id="carData"
       className={className}
-      initial={{ x }}
+      initial={{ x, y: 0 }}
       animate={{ x: 0 }}
       transition={{
-        // duration: 0.2,
         ease: 'easeOut',
       }}
     >

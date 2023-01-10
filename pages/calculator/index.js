@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { AnimatePresence } from 'framer-motion';
 
 import { CarEVFieldSet } from '../../components/calculator';
 import { CarICEFieldSet } from '../../components/calculator';
@@ -108,6 +107,9 @@ const Calculator = () => {
         className="bg-gradient-to-t from-light-primary-start to-light-primary-end flex flex-col overflow-x-hidden flex-grow"
       >
         <form className="mx-2 text-lg flex flex-col flex-grow items-center justify-between">
+          <div id="progress-ctn" className="h-4 min-w-full">
+            <div id="progress-fill" className="bg-red-600 h-full" />
+          </div>
           {stepState === 0 && (
             <CarEVFieldSet
               x={x}
