@@ -100,25 +100,24 @@ const Calculator = () => {
 
   const barClassName = (() => {
     switch (stepState) {
-      case 0:
+      case 6:
         return 'w-0';
-      case 1:
+      case 5:
         return 'w-1/6';
-      case 2:
+      case 4:
         return 'w-2/6';
       case 3:
         return 'w-3/6';
-      case 4:
+      case 2:
         return 'w-4/6';
-      case 5:
+      case 1:
         return 'w-5/6';
-      case 6:
+      case 0:
         return 'w-full';
       default:
         return 'w-full';
     }
   })();
-  console.log({ barClassName });
 
   return (
     <>
@@ -129,10 +128,13 @@ const Calculator = () => {
         className="bg-gradient-to-t from-light-primary-start to-light-primary-end flex flex-col overflow-x-hidden flex-grow"
       >
         <form className=" text-lg flex flex-col flex-grow items-center justify-between">
-          <div id="progress-ctn" className="h-4 min-w-full">
+          <div
+            id="progress-ctn"
+            className="h-4 min-w-full bg-gradient-to-r from-light-sec-start via-light-sec-mid to-light-sec-end"
+          >
             <div
               id="progress-fill"
-              className={`bg-red-600 h-full ${barClassName}`}
+              className={`bg-white h-full ${barClassName} ml-auto`}
             />
           </div>
           {stepState === 0 && (
@@ -140,7 +142,7 @@ const Calculator = () => {
               x={x}
               state={state}
               setState={setState}
-              className="bg-white flex flex-col rounded-lg mt-10  border border-black px-4 pt-2 pb-4 dark:bg-black "
+              className="bg-white flex flex-col rounded-lg  border border-black px-4 pt-2 pb-4 dark:bg-black "
             />
           )}
           {stepState === 1 && (
@@ -148,7 +150,7 @@ const Calculator = () => {
               x={x}
               state={state}
               setState={setState}
-              className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
+              className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black"
             />
           )}
           {stepState === 2 && (
@@ -156,7 +158,7 @@ const Calculator = () => {
               x={x}
               state={state}
               setState={setState}
-              className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
+              className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black"
             />
           )}
           {stepState === 3 && (
@@ -164,7 +166,7 @@ const Calculator = () => {
               x={x}
               state={state}
               setState={setState}
-              className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
+              className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black"
             />
           )}
           {stepState === 4 && (
@@ -172,7 +174,7 @@ const Calculator = () => {
               x={x}
               state={state}
               setState={setState}
-              className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
+              className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black"
             />
           )}
           {stepState === 5 && (
@@ -180,7 +182,7 @@ const Calculator = () => {
               x={x}
               state={state}
               setState={setState}
-              className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
+              className="bg-white flex flex-col rounded-lg border border-black px-4 pt-2 pb-4 dark:bg-black"
             />
           )}
 
