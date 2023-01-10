@@ -135,7 +135,7 @@ const Calculator = () => {
         />
       </div>
 
-      <form className=" text-lg flex flex-col flex-grow  justify-between mt-4">
+      <form className=" text-lg flex flex-col flex-grow  justify-between mt-4 overflow-x-hidden">
         {stepState === 0 && (
           <CarEVFieldSet
             x={x}
