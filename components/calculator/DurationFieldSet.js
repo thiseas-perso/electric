@@ -1,11 +1,21 @@
-function DurationFieldSet({ state, setState }) {
+import { motion } from 'framer-motion';
+
+function DurationFieldSet({ state, setState, className, x }) {
   return (
-    <fieldset>
-      <legend>
-        <h2>Durée de détention étudiee</h2>
-      </legend>
+    <motion.fieldset
+      className={className}
+      initial={{ x }}
+      animate={{ x: 0 }}
+      transition={{
+        duration: 0.2,
+        ease: 'easeOut',
+      }}
+    >
+      <h2 className="text-3xl mb-2">Durée de détention</h2>
+
       <label htmlFor="durationStudied">Années</label>
       <input
+        className="mb-2"
         min=""
         step="1"
         type="number"
@@ -19,9 +29,7 @@ function DurationFieldSet({ state, setState }) {
           }))
         }
       />
-      <button type="button">Précédent</button>
-      <button type="button">Suivant</button>
-    </fieldset>
+    </motion.fieldset>
   );
 }
 

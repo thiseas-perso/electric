@@ -1,12 +1,22 @@
-const CarICEFieldSet = ({ state, setState }) => {
+import { motion } from 'framer-motion';
+
+const CarICEFieldSet = ({ state, setState, className, x }) => {
   return (
-    <fieldset id="carData">
-      <legend>
-        <h2>Véhicule thérmique</h2>
-      </legend>
-      <label htmlFor="purchaseCost">Prix achat</label>
+    <motion.fieldset
+      id="carData"
+      className={className}
+      initial={{ x }}
+      animate={{ x: 0 }}
+      transition={{
+        // duration: 0.2,
+        ease: 'easeOut',
+      }}
+    >
+      <h2 className="text-3xl mb-2">Véhicule thérmique</h2>
+
+      <label htmlFor="purchaseCost">Prix achat (€):</label>
       <input
-        required
+        className="mb-2"
         min="0"
         type="number"
         id="purchaseCost"
@@ -23,8 +33,9 @@ const CarICEFieldSet = ({ state, setState }) => {
         }
       />
 
-      <label htmlFor="consumption">lt/100km</label>
+      <label htmlFor="consumption">Consomation (lt/100km):</label>
       <input
+        className="mb-2"
         required
         min="0"
         type="number"
@@ -41,8 +52,9 @@ const CarICEFieldSet = ({ state, setState }) => {
           }))
         }
       />
-      <label htmlFor="insurance">Assurance</label>
+      <label htmlFor="insurance">Assurance (€/an):</label>
       <input
+        className="mb-2"
         required
         min="0"
         type="number"
@@ -59,8 +71,9 @@ const CarICEFieldSet = ({ state, setState }) => {
           }))
         }
       />
-      <label htmlFor="maintenance">Entretien</label>
+      <label htmlFor="maintenance">Entretien (€/an):</label>
       <input
+        className="mb-2"
         required
         min="0"
         type="number"
@@ -77,9 +90,7 @@ const CarICEFieldSet = ({ state, setState }) => {
           }))
         }
       />
-      <button type="button">Précédent</button>
-      <button type="button">Suivant</button>
-    </fieldset>
+    </motion.fieldset>
   );
 };
 

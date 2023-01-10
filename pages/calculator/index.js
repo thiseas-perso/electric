@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { AnimatePresence, AnimateSharedLayout } from 'framer-motion';
+
 import { CarEVFieldSet } from '../../components/calculator';
 import { CarICEFieldSet } from '../../components/calculator';
 import { DurationFieldSet } from '../../components/calculator';
@@ -40,8 +42,43 @@ const initialState = {
   durationStudied: '4',
 };
 
+const initialStateErrors = {
+  energyData: {
+    chargingPriceHC: '',
+    chargingPriceHP: '',
+    gasPrice: '',
+  },
+  usageData: {
+    workHomeDistance: '',
+    dailyCommutes: '',
+    daysWorkedPerY: '',
+    weekendKM: '',
+    otherKMPerW: '',
+  },
+  usageExpected: {
+    totalKMPerY: '',
+  },
+  carDataICE: {
+    purchaseCost: '',
+    insurance: '',
+    maintenance: '',
+    consumption: '',
+  },
+  carDataEV: {
+    purchaseCost: '',
+    consumption: '',
+    insurance: '',
+    maintenance: '',
+    ecoBonus: '',
+  },
+  durationStudied: '',
+};
+
 const Calculator = () => {
   const [state, setState] = useState(initialState);
+  const [errorState, setErrorState] = useState(initialStateErrors);
+  const [stepState, setStepState] = useState(0);
+  const [x, setX] = useState(0);
 
   const convertDataToNumbers = (obj) => {
     const newObj = {};
@@ -65,16 +102,93 @@ const Calculator = () => {
   return (
     <>
       <CustomHead title="SOME TITLE" description="some description" />
-      <h1>Calculator</h1>
-      <form onSubmit={(e) => submitHandler(e)}>
-        <CarEVFieldSet state={state} setState={setState} />
-        <CarICEFieldSet state={state} setState={setState} />
-        <EnergyDataFieldSet state={state} setState={setState} />
-        <UsageDataFieldSet state={state} setState={setState} />
-        <UsageExpectedFieldSet state={state} setState={setState} />
-        <DurationFieldSet state={state} setState={setState} />
-        <button type="submit">Lancer l&lsquo;analyse</button>
-      </form>
+      <h1>Comparateur électrique -thérmique</h1>
+      <div
+        id="form-container"
+        className="bg-gradient-to-t from-light-primary-start to-light-primary-end flex flex-col overflow-x-hidden flex-grow"
+      >
+        <form className="mx-2 text-lg flex flex-col flex-grow items-center justify-between">
+          <AnimateSharedLayout>
+            {stepState === 0 && (
+              <CarEVFieldSet
+                x={x}
+                state={state}
+                setState={setState}
+                className="bg-white flex flex-col rounded-lg mt-10  border border-black px-4 pt-2 pb-4 dark:bg-black "
+              />
+            )}
+            {stepState === 1 && (
+              <CarICEFieldSet
+                x={x}
+                state={state}
+                setState={setState}
+                className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
+              />
+            )}
+            {stepState === 2 && (
+              <EnergyDataFieldSet
+                x={x}
+                state={state}
+                setState={setState}
+                className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
+              />
+            )}
+            {stepState === 3 && (
+              <UsageDataFieldSet
+                x={x}
+                state={state}
+                setState={setState}
+                className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
+              />
+            )}
+            {stepState === 4 && (
+              <UsageExpectedFieldSet
+                x={x}
+                state={state}
+                setState={setState}
+                className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
+              />
+            )}
+            {stepState === 5 && (
+              <DurationFieldSet
+                x={x}
+                state={state}
+                setState={setState}
+                className="bg-white flex flex-col rounded-lg mt-10 border border-black px-4 pt-2 pb-4 dark:bg-black"
+              />
+            )}
+          </AnimateSharedLayout>
+
+          {stepState === 6 && (
+            <button type="submit" onClick={(e) => submitHandler(e)}>
+              Lancer l&lsquo;analyse
+            </button>
+          )}
+
+          <div>
+            {stepState > 0 && stepState < 7 && (
+              <button
+                type="button"
+                onClick={() => {
+                  setStepState((prev) => prev - 1), setX(() => -1000);
+                }}
+              >
+                Back
+              </button>
+            )}
+            {stepState < 6 && (
+              <button
+                type="button"
+                onClick={() => {
+                  setStepState((prev) => prev + 1), setX(() => 1000);
+                }}
+              >
+                Next
+              </button>
+            )}
+          </div>
+        </form>
+      </div>
     </>
   );
 };

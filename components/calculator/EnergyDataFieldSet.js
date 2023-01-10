@@ -1,11 +1,24 @@
-const EnergyDataFieldSet = ({ state, setState }) => {
+import { motion } from 'framer-motion';
+
+const EnergyDataFieldSet = ({ state, setState, className, x }) => {
   return (
-    <fieldset id="energyData">
-      <legend>
-        <h2>Données energie</h2>
-      </legend>
-      <label htmlFor="chargingPriceHC">Cout electricité HC</label>
+    <motion.fieldset
+      id="energyData"
+      className={className}
+      initial={{ x }}
+      animate={{ x: 0 }}
+      transition={{
+        // duration: 0.2,
+        ease: 'easeOut',
+      }}
+    >
+      <h2 className="text-3xl mb-2">Cout de l&apos;énergie</h2>
+
+      <label htmlFor="chargingPriceHC">
+        Electricité - heures creuses(€/kWh):
+      </label>
       <input
+        className="mb-2"
         min="0"
         step=".01"
         type="number"
@@ -22,8 +35,11 @@ const EnergyDataFieldSet = ({ state, setState }) => {
           }))
         }
       />
-      <label htmlFor="chargingPriceHP">Cout electricité HP</label>
+      <label htmlFor="chargingPriceHP">
+        Electricité - heures pleines(€/kWh):
+      </label>
       <input
+        className="mb-2"
         min="0"
         step=".01"
         type="number"
@@ -40,8 +56,9 @@ const EnergyDataFieldSet = ({ state, setState }) => {
           }))
         }
       />
-      <label htmlFor="gasPrice">Cout carburant</label>
+      <label htmlFor="gasPrice">Carburant (€/lt):</label>
       <input
+        className="mb-2"
         min="0"
         step=".01"
         type="number"
@@ -58,8 +75,7 @@ const EnergyDataFieldSet = ({ state, setState }) => {
           }))
         }
       />
-      <button type="button">Suivant</button>
-    </fieldset>
+    </motion.fieldset>
   );
 };
 

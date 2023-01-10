@@ -5,8 +5,31 @@
 /* //NOTE: 
 vscode error Unknown at rule @tailwindcss(unknownAtRules)
 Solution: Install PostCSS Language Support extension
-OR
-https://stackoverflow.com/questions/47607602/how-to-add-a-tailwind-css-rule-to-css-checker
--Thésée
 }
 */
+
+@layer base {
+  input {
+    @apply border rounded px-1;
+  }
+  button {
+    @apply border rounded py-2 px-4 font-semibold;
+  }
+
+  h1 {
+    @apply font-semibold text-xl;
+  }
+  h2 {
+    @apply font-semibold text-lg;
+  }
+}
+
+@layer components {
+  #__next {
+    @apply h-full flex flex-col;
+  }
+  html,
+  body {
+    @apply h-full;
+  }
+}
