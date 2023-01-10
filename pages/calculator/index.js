@@ -98,6 +98,28 @@ const Calculator = () => {
     console.log(calculator(convertDataToNumbers(state)));
   };
 
+  const barClassName = (() => {
+    switch (stepState) {
+      case 0:
+        return 'w-0';
+      case 1:
+        return 'w-1/6';
+      case 2:
+        return 'w-2/6';
+      case 3:
+        return 'w-3/6';
+      case 4:
+        return 'w-4/6';
+      case 5:
+        return 'w-5/6';
+      case 6:
+        return 'w-full';
+      default:
+        return 'w-full';
+    }
+  })();
+  console.log({ barClassName });
+
   return (
     <>
       <CustomHead title="SOME TITLE" description="some description" />
@@ -106,9 +128,12 @@ const Calculator = () => {
         id="form-container"
         className="bg-gradient-to-t from-light-primary-start to-light-primary-end flex flex-col overflow-x-hidden flex-grow"
       >
-        <form className="mx-2 text-lg flex flex-col flex-grow items-center justify-between">
+        <form className=" text-lg flex flex-col flex-grow items-center justify-between">
           <div id="progress-ctn" className="h-4 min-w-full">
-            <div id="progress-fill" className="bg-red-600 h-full" />
+            <div
+              id="progress-fill"
+              className={`bg-red-600 h-full ${barClassName}`}
+            />
           </div>
           {stepState === 0 && (
             <CarEVFieldSet
