@@ -187,7 +187,7 @@ const Calculator = () => {
 
         {stepState === 6 && (
           <button
-            className="mb-auto mt-auto"
+            className="m-auto w-52 h-52 border-2 relative top-[-42px] overflow-hidden rounded-full bg-light-primary-6/10 text-white text-xl"
             type="submit"
             onClick={(e) => submitHandler(e)}
           >
