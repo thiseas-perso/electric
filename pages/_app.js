@@ -1,10 +1,17 @@
 import '../styles/globals.css';
-import { Raleway, Merriweather_Sans, Lato } from '@next/font/google';
+import { Raleway, Merriweather_Sans, Lato, Poppins } from '@next/font/google';
 import { ThemeProvider } from 'next-themes';
 import Layout from '../components/layout';
 
 const raleway = Raleway({
   variable: '--raleway-font',
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  style: ['normal', 'italic'],
+  subsets: ['latin'],
+  display: 'fallback',
+});
+const poppins = Poppins({
+  variable: '--poppins-font',
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
   style: ['normal', 'italic'],
   subsets: ['latin'],
@@ -30,7 +37,7 @@ const App = ({ Component, pageProps }) => {
   return (
     <ThemeProvider attribute="class">
       <Layout
-        className={`${raleway.variable} ${merriweather.variable} ${lato.variable}`}
+        className={`${raleway.variable} ${merriweather.variable} ${lato.variable} ${poppins.variable}`}
       >
         <Component {...pageProps} />
       </Layout>

@@ -12,8 +12,8 @@ const EnergyDataFieldSet = ({ state, setState, className, x }) => {
         ease: 'easeOut',
       }}
     >
-      <h2 className="text-3xl mb-5 p-4 font-lato font-light bg-light-primary-0 text-center">
-        Cout de l&apos;énergie
+      <h2 className="text-3xl text-white mb-5 p-4 font-poppins font-bold bg-light-primary-2 text-center">
+        Cout de l&apos;<span className="text-light-primary-4">énergie</span>
       </h2>
 
       <div className="flex flex-col px-4 pb-4">

@@ -6,7 +6,7 @@ const Layout = ({ children, className }) => {
     <>
       <Header className="h-12 font-lato" />
       <main
-        className={`${className} flex flex-1 flex-col  min-h-[calc(100vh-48px)] font-lato`}
+        className={`${className} flex flex-1 flex-col  min-h-[calc(100vh-48px)] font-poppins`}
       >
         {children}
       </main>

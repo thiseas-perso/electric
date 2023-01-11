@@ -12,8 +12,8 @@ const UsageExpectedFieldSet = ({ state, setState, className, x }) => {
         ease: 'easeOut',
       }}
     >
-      <h2 className="text-3xl mb-5 p-4 font-lato font-light bg-light-primary-0 text-center">
-        Usage attendu
+      <h2 className="text-3xl text-white mb-5 p-4 font-poppins font-bold bg-light-primary-2 text-center">
+        <span className="text-light-primary-4">Usage</span> attendu
       </h2>
 
       <div className="flex flex-col px-4 pb-4">
