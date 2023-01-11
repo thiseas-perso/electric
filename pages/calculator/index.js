@@ -123,107 +123,135 @@ const Calculator = () => {
     <>
       <CustomHead title="SOME TITLE" description="some description" />
 
-      <div
-        id="progress-ctn"
-        className="h-4 min-w-full bg-gradient-to-r from-light-primary-8 to-light-primary-success"
-      >
+      <div className="flex flex-col flex-grow justify-between">
         <div
-          id="progress-fill"
-          className={`bg-light-primary-end h-full ${barClassName} ml-auto`}
-        />
-      </div>
-      <h1 className="text-xl p-2 text-white font-poppins font-extrabold text-center">
-        Comparateur VE - VT
-      </h1>
-      <form className=" text-lg flex flex-col flex-grow  justify-between mt-2 overflow-x-hidden">
-        {stepState === 0 && (
-          <CarEVFieldSet
-            x={x}
-            state={state}
-            setState={setState}
-            className="bg-white overflow-hidden  min-w-[275px]  dark:bg-black "
+          id="progress-ctn"
+          className="h-4 min-w-full bg-gradient-to-r from-light-primary-8 to-light-primary-success"
+        >
+          <div
+            id="progress-fill"
+            className={`bg-light-primary-end h-full ${barClassName} ml-auto`}
           />
-        )}
-        {stepState === 1 && (
-          <CarICEFieldSet
-            x={x}
-            state={state}
-            setState={setState}
-            className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
-          />
-        )}
-        {stepState === 2 && (
-          <EnergyDataFieldSet
-            x={x}
-            state={state}
-            setState={setState}
-            className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
-          />
-        )}
-        {stepState === 3 && (
-          <UsageDataFieldSet
-            x={x}
-            state={state}
-            setState={setState}
-            className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
-          />
-        )}
-        {stepState === 4 && (
-          <UsageExpectedFieldSet
-            x={x}
-            state={state}
-            setState={setState}
-            className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
-          />
-        )}
-        {stepState === 5 && (
-          <DurationFieldSet
-            x={x}
-            state={state}
-            setState={setState}
-            className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
-          />
-        )}
-
-        {stepState === 6 && (
-          <button
-            className="m-auto w-52 h-52 border-2 relative top-[-42px] overflow-hidden rounded-full bg-light-primary-6/10 text-white text-xl"
-            type="submit"
-            onClick={(e) => submitHandler(e)}
-          >
-            Lancer l&lsquo;analyse
-          </button>
-        )}
-
-        <div className="flex self-stretch font-bold font-poppins text-white border-t-2 bg-light-primary-start">
-          {stepState > 0 && stepState < 7 && (
-            <button
-              className={`${
-                stepState > 5 ? 'border-0' : 'border-r'
-              } flex-1 rounded-none border-0 font-normal`}
-              type="button"
-              onClick={() => {
-                setStepState((prev) => prev - 1), setX(() => -1000);
-              }}
-            >
-              Back
-            </button>
-          )}
-          {stepState < 6 && (
-            <button
-              className={`${
-                stepState < 1 ? 'border-0' : 'border-l'
-              } flex-1 rounded-none border-0 `}
-              type="button"
-              onClick={() => {
-                setStepState((prev) => prev + 1), setX(() => 1000);
-              }}
-            >
-              Next
-            </button>
-          )}
         </div>
-      </form>
+        <h1 className="text-xl p-2 text-white font-poppins font-extrabold text-center">
+          Comparateur VE - VT
+        </h1>
+        <form className=" text-lg flex flex-col flex-grow  justify-between mt-2 overflow-x-hidden">
+          {stepState === 0 && (
+            <CarEVFieldSet
+              x={x}
+              state={state}
+              setState={setState}
+              className="bg-white overflow-hidden  min-w-[275px]  dark:bg-black "
+            />
+          )}
+          {stepState === 1 && (
+            <CarICEFieldSet
+              x={x}
+              state={state}
+              setState={setState}
+              className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
+            />
+          )}
+          {stepState === 2 && (
+            <EnergyDataFieldSet
+              x={x}
+              state={state}
+              setState={setState}
+              className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
+            />
+          )}
+          {stepState === 3 && (
+            <UsageDataFieldSet
+              x={x}
+              state={state}
+              setState={setState}
+              className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
+            />
+          )}
+          {stepState === 4 && (
+            <UsageExpectedFieldSet
+              x={x}
+              state={state}
+              setState={setState}
+              className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
+            />
+          )}
+          {stepState === 5 && (
+            <DurationFieldSet
+              x={x}
+              state={state}
+              setState={setState}
+              className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
+            />
+          )}
+          {stepState === 6 && (
+            <button
+              className="m-auto rounded-3xl border-2 relative top-[-42px] overflow-hidden  bg-light-primary-6/10 text-white text-xl transition-colors"
+              type="submit"
+              onClick={(e) => submitHandler(e)}
+            >
+              Voir les resultas
+            </button>
+          )}
+          <div className="flex self-stretch font-bold font-poppins text-white border-t-2 bg-light-primary-start">
+            {stepState > 0 && stepState < 7 && (
+              <button
+                className={`${
+                  stepState > 5 ? 'border-0' : 'border-r'
+                } flex-1 rounded-none border-0 font-normal`}
+                type="button"
+                onClick={() => {
+                  setStepState((prev) => prev - 1), setX(() => -1000);
+                }}
+              >
+                Back
+              </button>
+            )}
+            {stepState < 6 && (
+              <button
+                className={`${
+                  stepState < 1 ? 'border-0' : 'border-l'
+                } flex-1 rounded-none border-0 `}
+                type="button"
+                onClick={() => {
+                  setStepState((prev) => prev + 1), setX(() => 1000);
+                }}
+              >
+                Next
+              </button>
+            )}
+          </div>
+        </form>
+      </div>
+      <div>
+        <h2>Resultas</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+          mollitia, molestiae quas vel sint commodi repudiandae consequuntur
+          voluptatum laborum numquam blanditiis harum quisquam eius sed odit
+          fugiat iusto fuga praesentium optio, eaque rerum! Provident similique
+          accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut
+          molestias architecto voluptate aliquam nihil, eveniet aliquid culpa
+          officia aut! Impedit sit sunt quaerat, odit, tenetur error, harum
+          nesciunt ipsum debitis quas aliquid. Reprehenderit, quia. Quo neque
+          error repudiandae fuga? Ipsa laudantium molestias eos sapiente
+          officiis modi at sunt excepturi expedita sint? Sed quibusdam
+          recusandae alias error harum maxime adipisci amet laborum.
+          Perspiciatis minima nesciunt dolorem! Officiis iure rerum voluptates a
+          cumque velit quibusdam sed amet tempora. Sit laborum ab, eius fugit
+          doloribus tenetur fugiat, temporibus enim commodi iusto libero magni
+          deleniti quod quam consequuntur! Commodi minima excepturi repudiandae
+          velit hic maxime doloremque. Quaerat provident commodi consectetur
+          veniam similique ad earum omnis ipsum saepe, voluptas, hic voluptates
+          pariatur est explicabo fugiat, dolorum eligendi quam cupiditate
+          excepturi mollitia maiores labore suscipit quas? Nulla, placeat.
+          Voluptatem quaerat non architecto ab laudantium modi minima sunt esse
+          temporibus sint culpa, recusandae aliquam numquam totam ratione
+          voluptas quod exercitationem fuga. Possimus quis earum veniam quasi
+          aliquam eligendi, placeat qui corporis!
+        </p>
+      </div>
     </>
   );
 };
