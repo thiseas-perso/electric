@@ -11,7 +11,7 @@ const CarEVFieldSet = ({ state, setState, className, x }) => {
         ease: 'easeOut',
       }}
     >
-      <h2 className="text-3xl mb-5 p-4 font-lato font-light bg-light-primary-0 text-center">
+      <h2 className="text-3xl mb-5 p-4 font-poppins font-light bg-light-primary-0 text-center">
         Véhicule <span className="">électrique</span>
       </h2>
       <div className="flex flex-col px-4 pb-4">

@@ -122,8 +122,8 @@ const Calculator = () => {
   return (
     <>
       <CustomHead title="SOME TITLE" description="some description" />
-      <h1 className="text-xl p-2 bg-white font-lato font-extrabold">
-        Comparateur électrique - thérmique
+      <h1 className="text-xl p-2 bg-white font-poppins font-extrabold">
+        Comparateur VE - VT
       </h1>
       <div
         id="progress-ctn"
