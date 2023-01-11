@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import { CarEVFieldSet } from '../../components/calculator';
 import { CarICEFieldSet } from '../../components/calculator';
@@ -78,7 +78,8 @@ const Calculator = () => {
   const [errorState, setErrorState] = useState(initialStateErrors);
   const [stepState, setStepState] = useState(0);
   const [x, setX] = useState(0);
-
+  const [clicked, setClicked] = useState(false);
+  const resultsRef = useRef(null);
   const convertDataToNumbers = (obj) => {
     const newObj = {};
     for (const key in obj) {
@@ -94,8 +95,10 @@ const Calculator = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    const height = window.innerHeight - 42;
     console.log('state : ', convertDataToNumbers(state));
-    console.log(calculator(convertDataToNumbers(state)));
+    setClicked(() => true);
+    window.scrollBy({ top: height, behavior: 'smooth' });
   };
 
   const barClassName = (() => {
@@ -123,7 +126,7 @@ const Calculator = () => {
     <>
       <CustomHead title="SOME TITLE" description="some description" />
 
-      <div className="flex flex-col flex-grow justify-between">
+      <div className="flex flex-col flex-grow justify-between min-h-[calc(100vh-48px)]">
         <div
           id="progress-ctn"
           className="h-4 min-w-full bg-gradient-to-r from-light-primary-8 to-light-primary-success"
@@ -224,34 +227,42 @@ const Calculator = () => {
           </div>
         </form>
       </div>
-      <div>
-        <h2>Resultas</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-          mollitia, molestiae quas vel sint commodi repudiandae consequuntur
-          voluptatum laborum numquam blanditiis harum quisquam eius sed odit
-          fugiat iusto fuga praesentium optio, eaque rerum! Provident similique
-          accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut
-          molestias architecto voluptate aliquam nihil, eveniet aliquid culpa
-          officia aut! Impedit sit sunt quaerat, odit, tenetur error, harum
-          nesciunt ipsum debitis quas aliquid. Reprehenderit, quia. Quo neque
-          error repudiandae fuga? Ipsa laudantium molestias eos sapiente
-          officiis modi at sunt excepturi expedita sint? Sed quibusdam
-          recusandae alias error harum maxime adipisci amet laborum.
-          Perspiciatis minima nesciunt dolorem! Officiis iure rerum voluptates a
-          cumque velit quibusdam sed amet tempora. Sit laborum ab, eius fugit
-          doloribus tenetur fugiat, temporibus enim commodi iusto libero magni
-          deleniti quod quam consequuntur! Commodi minima excepturi repudiandae
-          velit hic maxime doloremque. Quaerat provident commodi consectetur
-          veniam similique ad earum omnis ipsum saepe, voluptas, hic voluptates
-          pariatur est explicabo fugiat, dolorum eligendi quam cupiditate
-          excepturi mollitia maiores labore suscipit quas? Nulla, placeat.
-          Voluptatem quaerat non architecto ab laudantium modi minima sunt esse
-          temporibus sint culpa, recusandae aliquam numquam totam ratione
-          voluptas quod exercitationem fuga. Possimus quis earum veniam quasi
-          aliquam eligendi, placeat qui corporis!
-        </p>
-      </div>
+      {stepState === 6 && (
+        <div
+          ref={resultsRef}
+          className={` min-h-[calc(100vh-48px)] bg-gradient-to-t from-light-primary-start to-light-primary-end`}
+        >
+          <div>
+            <h2>Resultas</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+              mollitia, molestiae quas vel sint commodi repudiandae consequuntur
+              voluptatum laborum numquam blanditiis harum quisquam eius sed odit
+              fugiat iusto fuga praesentium optio, eaque rerum! Provident
+              similique accusantium nemo autem. Veritatis obcaecati tenetur iure
+              eius earum ut molestias architecto voluptate aliquam nihil,
+              eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,
+              tenetur error, harum nesciunt ipsum debitis quas aliquid.
+              Reprehenderit, quia. Quo neque error repudiandae fuga? Ipsa
+              laudantium molestias eos sapiente officiis modi at sunt excepturi
+              expedita sint? Sed quibusdam recusandae alias error harum maxime
+              adipisci amet laborum. Perspiciatis minima nesciunt dolorem!
+              Officiis iure rerum voluptates a cumque velit quibusdam sed amet
+              tempora. Sit laborum ab, eius fugit doloribus tenetur fugiat,
+              temporibus enim commodi iusto libero magni deleniti quod quam
+              consequuntur! Commodi minima excepturi repudiandae velit hic
+              maxime doloremque. Quaerat provident commodi consectetur veniam
+              similique ad earum omnis ipsum saepe, voluptas, hic voluptates
+              pariatur est explicabo fugiat, dolorum eligendi quam cupiditate
+              excepturi mollitia maiores labore suscipit quas? Nulla, placeat.
+              Voluptatem quaerat non architecto ab laudantium modi minima sunt
+              esse temporibus sint culpa, recusandae aliquam numquam totam
+              ratione voluptas quod exercitationem fuga. Possimus quis earum
+              veniam quasi aliquam eligendi, placeat qui corporis!
+            </p>
+          </div>
+        </div>
+      )}
     </>
   );
 };
