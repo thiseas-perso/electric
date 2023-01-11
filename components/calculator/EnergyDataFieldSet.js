@@ -23,9 +23,10 @@ const EnergyDataFieldSet = ({ state, setState, className, x }) => {
         <input
           className="mb-3"
           required
-          placeholder="ex: 0.15"
+          placeholder="ex: 0,15"
           min="0"
           step=".01"
+          lang="en"
           type="number"
           id="chargingPriceHC"
           name="chargingPriceHC"
@@ -46,7 +47,7 @@ const EnergyDataFieldSet = ({ state, setState, className, x }) => {
         <input
           className="mb-3"
           required
-          placeholder="ex: 0.18"
+          placeholder="ex: 0,18"
           min="0"
           step=".01"
           type="number"
@@ -67,7 +68,7 @@ const EnergyDataFieldSet = ({ state, setState, className, x }) => {
         <input
           className="mb-3"
           required
-          placeholder="ex: 1.75"
+          placeholder="ex: 1,75"
           min="0"
           step=".01"
           type="number"

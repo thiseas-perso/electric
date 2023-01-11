@@ -49,17 +49,29 @@ const calculator = ({
       usageData.daysWorkedPerY +
       usageData.weekendKM * 52 +
       usageData.otherKMPerW * 52; // km
-  const evConsumptionPerY = (totalKMPerY / 100) * carDataEV.consumption; //kWh
+  const evConsumptionPerY = Number(
+    ((totalKMPerY / 100) * carDataEV.consumption).toFixed(2)
+  ); //kWh
   const chargeEVCostPerY =
     evConsumptionPerY *
     (0.5 * energyData.chargingPriceHC + 0.5 * energyData.chargingPriceHC); //EUR
-  const evKMCost =
-    ((0.5 * energyData.chargingPriceHC + 0.5 * energyData.chargingPriceHC) *
-      carDataEV.consumption) /
-    100; //EUR
-  const gasICECostPerY =
-    ((energyData.gasPrice * carDataICE.consumption) / 100) * totalKMPerY; //EUR
-  const iceKMCost = (carDataICE.consumption / 100) * energyData.gasPrice;
+  const evKMCost = Number(
+    (
+      ((0.5 * energyData.chargingPriceHC + 0.5 * energyData.chargingPriceHC) *
+        carDataEV.consumption) /
+      100
+    ).toFixed(2)
+  ); //EUR
+
+  const gasICECostPerY = Number(
+    (
+      ((energyData.gasPrice * carDataICE.consumption) / 100) *
+      totalKMPerY
+    ).toFixed(2)
+  ); //EUR
+  const iceKMCost = Number(
+    ((carDataICE.consumption / 100) * energyData.gasPrice).toFixed(2)
+  );
 
   const iceVSevCostPerY = gasICECostPerY - chargeEVCostPerY;
 
@@ -79,7 +91,7 @@ const calculator = ({
         currPrice = currPrice - (currPrice * 6) / 100;
       }
     }
-    return currPrice;
+    return Number(currPrice.toFixed(2));
   })();
 
   const carICEValueAtEndOfPeriod = (() => {
@@ -91,7 +103,7 @@ const calculator = ({
         currPrice = currPrice - (currPrice * 6) / 100;
       }
     }
-    return currPrice;
+    return Number(currPrice.toFixed(2));
   })();
 
   const carICECostAtEndOfPeriod =
