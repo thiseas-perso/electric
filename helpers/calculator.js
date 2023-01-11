@@ -73,7 +73,7 @@ const calculator = ({
     ((carDataICE.consumption / 100) * energyData.gasPrice).toFixed(2)
   );
 
-  const iceVSevCostPerY = gasICECostPerY - chargeEVCostPerY;
+  const gasIceVSevCostPerY = gasICECostPerY - chargeEVCostPerY;
 
   const carEVCostAtEndOfPeriod =
     carDataEV.purchaseCost +
@@ -111,8 +111,15 @@ const calculator = ({
     (carDataICE.insurance + carDataICE.maintenance + gasICECostPerY) *
       durationStudied;
 
+  const carICECostPerKmAtEnd = Number(
+    (carICECostAtEndOfPeriod / (totalKMPerY * durationStudied)).toFixed(3)
+  );
+  const carEVCostPerKmAtEnd = Number(
+    (carEVCostAtEndOfPeriod / (totalKMPerY * durationStudied)).toFixed(3)
+  );
+
   return {
-    iceVSevCostPerY,
+    gasIceVSevCostPerY,
     carEVCostAtEndOfPeriod,
     carICECostAtEndOfPeriod,
     carEVValueAtEndOfPeriod,
@@ -120,6 +127,8 @@ const calculator = ({
     totalKMPerY,
     evKMCost,
     iceKMCost,
+    carICECostPerKmAtEnd,
+    carEVCostPerKmAtEnd,
   };
 };
 
