@@ -9,6 +9,7 @@ import { UsageExpectedFieldSet } from '../../components/calculator';
 import ResultMsgNegative from '../../components/calculator/ReslutMsgNegative';
 import ResultMsgNeutral from '../../components/calculator/ReslutMsgNeutral';
 import ResultMsgPositive from '../../components/calculator/ReslutMsgPositive';
+import ResultData from '../../components/calculator/ResultData';
 import CustomHead from '../../components/customHead';
 import calculator from '../../helpers/calculator';
 
@@ -298,56 +299,21 @@ const Calculator = () => {
             id="results-ctn"
             className="grid grid-cols-2 gap-x-2 gap-y-5 mx-4 mt-2"
           >
-            <div className="border-2  rounded-xl bg-white text-center overflow-hidden">
-              <h3 className="font-bold border-b p-2 bg-light-primary-2 text-white">
-                Cout <span className="text-light-primary-4">Thérmique</span>
-              </h3>
-              <div className="my-4">
-                <h4>Cout total :</h4>
-                <p className="font-bold">{results.carICECostAtEndOfPeriod} €</p>
-                <h4>Cout au km</h4>
-                <p className="font-bold">{results.carICECostPerKmAtEnd} €</p>
-                {checked && (
-                  <>
-                    <h4>Valeur résiduelle</h4>
-                    <p className="font-bold">
-                      {results.carICEValueAtEndOfPeriod} €
-                    </p>
-                    <h4>Cout net</h4>
-                    <p className="font-bold">
-                      {results.carICECostAtEndOfPeriod -
-                        results.carICEValueAtEndOfPeriod}{' '}
-                      €
-                    </p>
-                  </>
-                )}
-              </div>
-            </div>
-            <div className="border-2  rounded-xl bg-white text-center overflow-hidden">
-              <h3 className="font-bold border-b p-2 bg-light-primary-2 text-white">
-                Cout <span className="text-light-primary-4">Eléctique</span>
-              </h3>
-              <div className="my-4">
-                <h4>Cout total :</h4>
-                <p className="font-bold">{results.carEVCostAtEndOfPeriod} €</p>
-                <h4>Cout au km</h4>
-                <p className="font-bold">{results.carEVCostPerKmAtEnd} €</p>
-                {checked && (
-                  <>
-                    <h4>Valeur résiduelle</h4>
-                    <p className="font-bold">
-                      {results.carEVValueAtEndOfPeriod} €
-                    </p>
-                    <h4>Cout net</h4>
-                    <p className="font-bold">
-                      {results.carEVCostAtEndOfPeriod -
-                        results.carEVValueAtEndOfPeriod}{' '}
-                      €
-                    </p>
-                  </>
-                )}
-              </div>
-            </div>
+            <ResultData
+              carCostAtEnd={results.carICECostAtEndOfPeriod}
+              carType="Thérmique"
+              carCostPerKMAtEnd={results.carICECostPerKmAtEnd}
+              carValueAtEnd={results.carICEValueAtEndOfPeriod}
+              checked={checked}
+            />
+            <ResultData
+              carCostAtEnd={results.carEVCostAtEndOfPeriod}
+              carType="Eléctrique"
+              carCostPerKMAtEnd={results.carEVCostPerKmAtEnd}
+              carValueAtEnd={results.carEVValueAtEndOfPeriod}
+              checked={checked}
+            />
+
             {worthIt > 1000 && (
               <ResultMsgNegative
                 durationStudied={state.durationStudied}
