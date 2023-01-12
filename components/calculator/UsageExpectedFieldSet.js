@@ -2,7 +2,13 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import infoIcon from '../../public/icons/info.svg';
 
-const UsageExpectedFieldSet = ({ state, changeHandler, className, x }) => {
+const UsageExpectedFieldSet = ({
+  state,
+  changeHandler,
+  className,
+  x,
+  errorState,
+}) => {
   return (
     <motion.fieldset
       id="usageExpected"
@@ -28,7 +34,11 @@ const UsageExpectedFieldSet = ({ state, changeHandler, className, x }) => {
         <label htmlFor="totalKMPerY">
           Total de KM/an <span className="italic">(optionnel)</span>
         </label>
+        <span className="error-msg">
+          {errorState.usageExpected.totalKMPerY}
+        </span>
         <input
+          autoFocus
           className="mb-3"
           min="0"
           placeholder="ex: 12500"

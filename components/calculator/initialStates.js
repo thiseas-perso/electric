@@ -27,7 +27,9 @@ export const initialState = {
     maintenance: '500',
     ecoBonus: '5000',
   },
-  durationStudied: '4',
+  durationStudied: {
+    yearsStudied: '4',
+  },
 };
 
 export const initialStateErrors = {
@@ -59,7 +61,9 @@ export const initialStateErrors = {
     maintenance: '',
     ecoBonus: '',
   },
-  durationStudied: '',
+  durationStudied: {
+    yearsStudied: '',
+  },
 };
 
 export const initialResultsState = {

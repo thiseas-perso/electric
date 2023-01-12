@@ -2,9 +2,9 @@ import React from 'react';
 
 const SubmitPage = ({ submitHandler, checked, setChecked }) => {
   return (
-    <div className="m-auto relative top-[-42px] flex flex-col items-start gap-3">
+    <div className="m-auto relative top-[-42px] flex flex-col items-center gap-3">
       <button
-        className="rounded-3xl border-2  overflow-hidden  bg-light-primary-6/10 text-white text-xl transition-colors"
+        className="rounded-3xl border-2  overflow-hidden  bg-light-primary-6/10 text-white text-xl "
         type="submit"
         onClick={(e) => submitHandler(e)}
       >

@@ -33,19 +33,19 @@ const ResultPage = ({ results, checked, worthIt, state }) => {
 
         {worthIt > 1000 && (
           <ResultMsgNegative
-            durationStudied={state.durationStudied}
+            durationStudied={state.durationStudied.yearsStudied}
             worthIt={worthIt}
           />
         )}
         {worthIt < -1000 && (
           <ResultMsgPositive
-            durationStudied={state.durationStudied}
+            durationStudied={state.durationStudied.yearsStudied}
             worthIt={worthIt}
           />
         )}
         {worthIt > -1000 && worthIt < 1000 && (
           <ResultMsgNeutral
-            durationStudied={state.durationStudied}
+            durationStudied={state.durationStudied.yearsStudied}
             worthIt={worthIt}
           />
         )}
