@@ -1,12 +1,6 @@
 import { motion } from 'framer-motion';
 
-const EnergyDataFieldSet = ({
-  state,
-  changeHandler,
-  className,
-  x,
-  errorState,
-}) => {
+const EnergyDataFieldSet = ({ state, setState, className, x }) => {
   return (
     <motion.fieldset
       id="energyData"
@@ -26,11 +20,7 @@ const EnergyDataFieldSet = ({
         <label htmlFor="chargingPriceHC">
           Electricité - heures creuses(€/kWh):
         </label>
-        <span className="error-msg">
-          {errorState.energyData.chargingPriceHC}
-        </span>
         <input
-          autoFocus
           className="mb-3"
           required
           placeholder="ex: 0,15"
@@ -41,14 +31,19 @@ const EnergyDataFieldSet = ({
           id="chargingPriceHC"
           name="chargingPriceHC"
           value={state.energyData.chargingPriceHC}
-          onChange={(e) => changeHandler(e, 'energyData', 'chargingPriceHC')}
+          onChange={(e) =>
+            setState((prev) => ({
+              ...prev,
+              energyData: {
+                ...state.energyData,
+                chargingPriceHC: e.target.value,
+              },
+            }))
+          }
         />
         <label htmlFor="chargingPriceHP">
           Electricité - heures pleines(€/kWh):
         </label>
-        <span className="error-msg">
-          {errorState.energyData.chargingPriceHP}
-        </span>
         <input
           className="mb-3"
           required
@@ -59,10 +54,17 @@ const EnergyDataFieldSet = ({
           id="chargingPriceHP"
           name="chargingPriceHP"
           value={state.energyData.chargingPriceHP}
-          onChange={(e) => changeHandler(e, 'energyData', 'chargingPriceHP')}
+          onChange={(e) =>
+            setState((prev) => ({
+              ...prev,
+              energyData: {
+                ...state.energyData,
+                chargingPriceHP: e.target.value,
+              },
+            }))
+          }
         />
         <label htmlFor="gasPrice">Carburant (€/lt):</label>
-        <span className="error-msg">{errorState.energyData.gasPrice}</span>
         <input
           className="mb-3"
           required
@@ -73,7 +75,15 @@ const EnergyDataFieldSet = ({
           id="gasPrice"
           name="gasPrice"
           value={state.energyData.gasPrice}
-          onChange={(e) => changeHandler(e, 'energyData', 'gasPrice')}
+          onChange={(e) =>
+            setState((prev) => ({
+              ...prev,
+              energyData: {
+                ...state.energyData,
+                gasPrice: e.target.value,
+              },
+            }))
+          }
         />
       </div>
     </motion.fieldset>

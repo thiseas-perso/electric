@@ -2,13 +2,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import infoIcon from '../../public/icons/info.svg';
 
-const UsageExpectedFieldSet = ({
-  state,
-  changeHandler,
-  className,
-  x,
-  errorState,
-}) => {
+const UsageExpectedFieldSet = ({ state, setState, className, x }) => {
   return (
     <motion.fieldset
       id="usageExpected"
@@ -31,21 +25,23 @@ const UsageExpectedFieldSet = ({
           <b>vide</b> et utilisez le <b>similutateur</b> de l&apos;étape
           suivante
         </p>
-        <label htmlFor="totalKMPerY">
-          Total de KM/an <span className="italic">(optionnel)</span>
-        </label>
-        <span className="error-msg">
-          {errorState.usageExpected.totalKMPerY}
-        </span>
+        <label htmlFor="totalKMPerY">Total de KM/an (*)</label>
         <input
-          autoFocus
           className="mb-3"
           min="0"
           placeholder="ex: 12500"
           type="number"
           id="totalKMPerY"
           value={state.usageExpected.totalKMPerY}
-          onChange={(e) => changeHandler(e, 'usageExpected', 'totalKMPerY')}
+          onChange={(e) =>
+            setState((prev) => ({
+              ...prev,
+              usageExpected: {
+                ...state.usageExpected,
+                totalKMPerY: e.target.value,
+              },
+            }))
+          }
         />
       </div>
     </motion.fieldset>

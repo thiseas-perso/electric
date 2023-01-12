@@ -1,12 +1,6 @@
 import { motion } from 'framer-motion';
 
-const UsageDataFieldSet = ({
-  state,
-  errorState,
-  className,
-  x,
-  changeHandler,
-}) => {
+const UsageDataFieldSet = ({ state, setState, className, x }) => {
   const total =
     Number(state.usageData.workHomeDistance) *
       Number(state.usageData.dailyCommutes) *
@@ -31,11 +25,7 @@ const UsageDataFieldSet = ({
         <label htmlFor="workHomeDistance">
           Distance domicile travail (km):
         </label>
-        <span className="error-msg">
-          {errorState.usageData.workHomeDistance}
-        </span>
         <input
-          autoFocus
           className="mb-3"
           required
           placeholder="ex: 45"
@@ -44,10 +34,17 @@ const UsageDataFieldSet = ({
           id="workHomeDistance"
           name="workHomeDistance"
           value={state.usageData.workHomeDistance}
-          onChange={(e) => changeHandler(e, 'usageData', 'workHomeDistance')}
+          onChange={(e) =>
+            setState((prev) => ({
+              ...prev,
+              usageData: {
+                ...state.usageData,
+                workHomeDistance: e.target.value,
+              },
+            }))
+          }
         />
         <label htmlFor="dailyCommutes">A/R quotidiens</label>
-        <span className="error-msg">{errorState.usageData.dailyCommutes}</span>
         <input
           className="mb-3"
           required
@@ -57,10 +54,17 @@ const UsageDataFieldSet = ({
           id="dailyCommutes"
           name="dailyCommutes"
           value={state.usageData.dailyCommutes}
-          onChange={(e) => changeHandler(e, 'usageData', 'dailyCommutes')}
+          onChange={(e) =>
+            setState((prev) => ({
+              ...prev,
+              usageData: {
+                ...state.usageData,
+                dailyCommutes: e.target.value,
+              },
+            }))
+          }
         />
         <label htmlFor="daysWorkedPerY">Nombre de jours travaillés/an</label>
-        <span className="error-msg">{errorState.usageData.daysWorkedPerY}</span>
         <input
           className="mb-3"
           min="0"
@@ -71,10 +75,17 @@ const UsageDataFieldSet = ({
           id="daysWorkedPerY"
           name="daysWorkedPerY"
           value={state.usageData.daysWorkedPerY}
-          onChange={(e) => changeHandler(e, 'usageData', 'daysWorkedPerY')}
+          onChange={(e) =>
+            setState((prev) => ({
+              ...prev,
+              usageData: {
+                ...state.usageData,
+                daysWorkedPerY: e.target.value,
+              },
+            }))
+          }
         />
         <label htmlFor="weekendKM">Km les weekends</label>
-        <span className="error-msg">{errorState.usageData.weekendKM}</span>
         <input
           className="mb-3"
           min="0"
@@ -83,10 +94,17 @@ const UsageDataFieldSet = ({
           name="weekendKM"
           placeholder="ex: 140"
           value={state.usageData.weekendKM}
-          onChange={(e) => changeHandler(e, 'usageData', 'weekendKM')}
+          onChange={(e) =>
+            setState((prev) => ({
+              ...prev,
+              usageData: {
+                ...state.usageData,
+                weekendKM: e.target.value,
+              },
+            }))
+          }
         />
         <label htmlFor="otherKMPerW">Autres km par semaine</label>
-        <span className="error-msg">{errorState.usageData.otherKMPerW}</span>
         <input
           className="mb-3"
           min="0"
@@ -95,7 +113,15 @@ const UsageDataFieldSet = ({
           id="otherKMPerW"
           name="otherKMPerW"
           value={state.usageData.otherKMPerW}
-          onChange={(e) => changeHandler(e, 'usageData', 'otherKMPerW')}
+          onChange={(e) =>
+            setState((prev) => ({
+              ...prev,
+              usageData: {
+                ...state.usageData,
+                otherKMPerW: e.target.value,
+              },
+            }))
+          }
         />
         <div className="text-end">
           <b>Total:</b> {total} km

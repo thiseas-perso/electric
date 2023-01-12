@@ -30,9 +30,7 @@
 //   ecoBonus: '', //EUR
 // };
 
-//const durationStudied = {
-// yearsStudied: '' //years
-// }
+//const durationStudied = '' //years
 
 const carDepreciation = [20, 15, 10, 10, 7, 6];
 
@@ -80,13 +78,13 @@ const calculator = ({
   const carEVCostAtEndOfPeriod =
     carDataEV.purchaseCost +
     (carDataEV.insurance + carDataEV.maintenance + chargeEVCostPerY) *
-      durationStudied.yearsStudied -
+      durationStudied -
     carDataEV.ecoBonus;
 
   const carEVValueAtEndOfPeriod = (() => {
     let currPrice = carDataEV.purchaseCost;
 
-    for (let i = 0; i < durationStudied.yearsStudied; i++) {
+    for (let i = 0; i < durationStudied; i++) {
       if (carDepreciation[i]) {
         currPrice = currPrice - (currPrice * carDepreciation[i]) / 100;
       } else {
@@ -98,7 +96,7 @@ const calculator = ({
 
   const carICEValueAtEndOfPeriod = (() => {
     let currPrice = carDataICE.purchaseCost;
-    for (let i = 0; i < durationStudied.yearsStudied; i++) {
+    for (let i = 0; i < durationStudied; i++) {
       if (carDepreciation[i]) {
         currPrice = currPrice - (currPrice * carDepreciation[i]) / 100;
       } else {
@@ -111,19 +109,13 @@ const calculator = ({
   const carICECostAtEndOfPeriod =
     carDataICE.purchaseCost +
     (carDataICE.insurance + carDataICE.maintenance + gasICECostPerY) *
-      durationStudied.yearsStudied;
+      durationStudied;
 
   const carICECostPerKmAtEnd = Number(
-    (
-      carICECostAtEndOfPeriod /
-      (totalKMPerY * durationStudied.yearsStudied)
-    ).toFixed(3)
+    (carICECostAtEndOfPeriod / (totalKMPerY * durationStudied)).toFixed(3)
   );
   const carEVCostPerKmAtEnd = Number(
-    (
-      carEVCostAtEndOfPeriod /
-      (totalKMPerY * durationStudied.yearsStudied)
-    ).toFixed(3)
+    (carEVCostAtEndOfPeriod / (totalKMPerY * durationStudied)).toFixed(3)
   );
 
   return {
