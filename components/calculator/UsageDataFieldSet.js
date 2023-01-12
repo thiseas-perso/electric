@@ -1,6 +1,13 @@
 import { motion } from 'framer-motion';
 
 const UsageDataFieldSet = ({ state, setState, className, x }) => {
+  const total =
+    Number(state.usageData.workHomeDistance) *
+      Number(state.usageData.dailyCommutes) *
+      Number(state.usageData.daysWorkedPerY) +
+    Number(state.usageData.weekendKM) * 52 +
+    Number(state.usageData.otherKMPerW) * 52;
+
   return (
     <motion.fieldset
       id="usageData"
@@ -116,6 +123,9 @@ const UsageDataFieldSet = ({ state, setState, className, x }) => {
             }))
           }
         />
+        <div className="text-end">
+          <b>Total:</b> {total} km
+        </div>
       </div>
     </motion.fieldset>
   );

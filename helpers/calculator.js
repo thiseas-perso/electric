@@ -91,7 +91,7 @@ const calculator = ({
         currPrice = currPrice - (currPrice * 6) / 100;
       }
     }
-    return Number(currPrice.toFixed(2));
+    return parseInt(currPrice);
   })();
 
   const carICEValueAtEndOfPeriod = (() => {
@@ -103,7 +103,7 @@ const calculator = ({
         currPrice = currPrice - (currPrice * 6) / 100;
       }
     }
-    return Number(currPrice.toFixed(2));
+    return parseInt(currPrice);
   })();
 
   const carICECostAtEndOfPeriod =

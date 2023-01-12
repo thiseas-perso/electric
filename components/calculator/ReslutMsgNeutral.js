@@ -1,4 +1,4 @@
-const ResultMsgNeutral = ({ results, durationStudied }) => {
+const ResultMsgNeutral = ({ worthIt, durationStudied }) => {
   return (
     <div className=" col-span-2 border-2  rounded-xl bg-white text-center overflow-hidden ">
       <h3 className="font-bold border-b p-2 bg-light-primary-2 text-white">

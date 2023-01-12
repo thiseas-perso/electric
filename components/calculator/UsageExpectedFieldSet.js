@@ -1,4 +1,6 @@
+import Image from 'next/image';
 import { motion } from 'framer-motion';
+import infoIcon from '../../public/icons/info.svg';
 
 const UsageExpectedFieldSet = ({ state, setState, className, x }) => {
   return (
@@ -13,11 +15,17 @@ const UsageExpectedFieldSet = ({ state, setState, className, x }) => {
       }}
     >
       <h2 className="text-3xl text-white mb-5 p-4 font-poppins font-bold bg-light-primary-2 text-center">
-        <span className="text-light-primary-4">Usage</span> attendu
+        <span className="text-light-primary-4">Kilomètrage</span> annuel
       </h2>
 
       <div className="flex flex-col px-4 pb-4">
-        <label htmlFor="totalKMPerY">Total de KM/an</label>
+        <p className="text-base leading-5 mb-4">
+          <Image alt="information" src={infoIcon} className="inline-block " />{' '}
+          Si vous ne connaissez pas votre kilomètrage annuel, laissez cette case{' '}
+          <b>vide</b> et utilisez le <b>similutateur</b> de l&apos;étape
+          suivante
+        </p>
+        <label htmlFor="totalKMPerY">Total de KM/an (*)</label>
         <input
           className="mb-3"
           min="0"
