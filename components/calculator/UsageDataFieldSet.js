@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-const UsageDataFieldSet = ({ state, setState, className, x }) => {
+const UsageDataFieldSet = ({ state, setState, className, x, total }) => {
   return (
     <motion.fieldset
       id="usageData"
@@ -116,6 +116,9 @@ const UsageDataFieldSet = ({ state, setState, className, x }) => {
             }))
           }
         />
+        <div className="text-end">
+          <b>Total:</b> {total} km
+        </div>
       </div>
     </motion.fieldset>
   );

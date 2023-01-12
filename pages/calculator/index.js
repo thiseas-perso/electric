@@ -97,6 +97,14 @@ const Calculator = () => {
   const [results, setResults] = useState(initialResultsState);
   const worthIt =
     results.carEVCostAtEndOfPeriod - results.carICECostAtEndOfPeriod;
+
+  const total =
+    Number(state.usageData.workHomeDistance) *
+      Number(state.usageData.dailyCommutes) *
+      Number(state.usageData.daysWorkedPerY) +
+    Number(state.usageData.weekendKM) * 52 +
+    Number(state.usageData.otherKMPerW) * 52;
+
   const convertDataToNumbers = (obj) => {
     const newObj = {};
     for (const key in obj) {
@@ -187,12 +195,14 @@ const Calculator = () => {
             <UsageDataFieldSet
               x={x}
               state={state}
+              total={total}
               setState={setState}
               className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
             />
           )}
           {stepState === 4 && (
             <UsageExpectedFieldSet
+              total={total}
               x={x}
               state={state}
               setState={setState}
