@@ -41,4 +41,8 @@ Solution: Install PostCSS Language Support extension
   h2 {
     @apply font-semibold text-lg;
   }
+
+  .error-msg {
+    @apply text-sm text-light-primary-1;
+  }
 }

@@ -19,7 +19,7 @@ import CustomHead from '../../components/customHead';
 import calculator from '../../helpers/calculator';
 
 const Calculator = () => {
-  const [state, setState] = useState(initialState);
+  const [state, setState] = useState(initialStateErrors);
   const [errorState, setErrorState] = useState(initialStateErrors);
   const [stepState, setStepState] = useState(0);
   const [x, setX] = useState(0);
@@ -56,7 +56,7 @@ const Calculator = () => {
       if (typeof element === 'object') {
         newObj[key] = convertDataToNumbers(element);
       } else {
-        newObj[key] = Number(Number(element).toFixed(2));
+        newObj[key] = Number(Math.abs(Number(element)).toFixed(2));
       }
     }
     return newObj;
@@ -66,14 +66,30 @@ const Calculator = () => {
     e.preventDefault();
     const height = window.innerHeight - 42;
     const convertedInputToNumbers = convertDataToNumbers(state);
-
-    console.log('state : ', convertedInputToNumbers);
-    console.log(calculator(convertDataToNumbers(state)));
-    setResults(() => calculator(convertDataToNumbers(state)));
+    console.log(calculator(convertedInputToNumbers));
+    setResults(() => calculator(convertedInputToNumbers));
     window.scrollBy({ top: height, behavior: 'smooth' });
   };
 
   const changeHandler = (e, objName, fieldName) => {
+    if (!e.target.value.trim().length) {
+      console.log(e.taget?.value);
+      setErrorState((prev) => ({
+        ...prev,
+        [objName]: {
+          ...prev[objName],
+          [fieldName]: '*Ce champ est obligatoire',
+        },
+      }));
+    } else {
+      setErrorState((prev) => ({
+        ...prev,
+        [objName]: {
+          ...prev[objName],
+          [fieldName]: '',
+        },
+      }));
+    }
     setState((prev) => ({
       ...prev,
       [objName]: {
@@ -97,6 +113,7 @@ const Calculator = () => {
             <CarEVFieldSet
               x={x}
               state={state}
+              errorState={errorState}
               className="bg-white overflow-hidden  min-w-[275px]  dark:bg-black "
               changeHandler={changeHandler}
             />
@@ -105,6 +122,7 @@ const Calculator = () => {
             <CarICEFieldSet
               x={x}
               state={state}
+              errorState={errorState}
               className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
               changeHandler={changeHandler}
             />
@@ -113,6 +131,7 @@ const Calculator = () => {
             <EnergyDataFieldSet
               x={x}
               state={state}
+              errorState={errorState}
               changeHandler={changeHandler}
               className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
             />
@@ -129,6 +148,7 @@ const Calculator = () => {
             <UsageDataFieldSet
               x={x}
               state={state}
+              errorState={errorState}
               changeHandler={changeHandler}
               className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
             />
@@ -138,6 +158,7 @@ const Calculator = () => {
             <DurationFieldSet
               x={x}
               state={state}
+              errorState={errorState}
               setState={setState}
               className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
             />

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const UsageDataFieldSet = ({
   state,
-  setState,
+  errorState,
   className,
   x,
   changeHandler,
@@ -31,6 +31,9 @@ const UsageDataFieldSet = ({
         <label htmlFor="workHomeDistance">
           Distance domicile travail (km):
         </label>
+        <span className="error-msg">
+          {errorState.usageData.workHomeDistance}
+        </span>
         <input
           className="mb-3"
           required
@@ -43,6 +46,7 @@ const UsageDataFieldSet = ({
           onChange={(e) => changeHandler(e, 'usageData', 'workHomeDistance')}
         />
         <label htmlFor="dailyCommutes">A/R quotidiens</label>
+        <span className="error-msg">{errorState.usageData.dailyCommutes}</span>
         <input
           className="mb-3"
           required
@@ -55,6 +59,7 @@ const UsageDataFieldSet = ({
           onChange={(e) => changeHandler(e, 'usageData', 'dailyCommutes')}
         />
         <label htmlFor="daysWorkedPerY">Nombre de jours travaillés/an</label>
+        <span className="error-msg">{errorState.usageData.daysWorkedPerY}</span>
         <input
           className="mb-3"
           min="0"
@@ -68,6 +73,7 @@ const UsageDataFieldSet = ({
           onChange={(e) => changeHandler(e, 'usageData', 'daysWorkedPerY')}
         />
         <label htmlFor="weekendKM">Km les weekends</label>
+        <span className="error-msg">{errorState.usageData.weekendKM}</span>
         <input
           className="mb-3"
           min="0"
@@ -79,6 +85,7 @@ const UsageDataFieldSet = ({
           onChange={(e) => changeHandler(e, 'usageData', 'weekendKM')}
         />
         <label htmlFor="otherKMPerW">Autres km par semaine</label>
+        <span className="error-msg">{errorState.usageData.otherKMPerW}</span>
         <input
           className="mb-3"
           min="0"

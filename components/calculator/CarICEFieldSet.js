@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-const CarICEFieldSet = ({ state, className, x, changeHandler }) => {
+const CarICEFieldSet = ({ state, className, x, changeHandler, errorState }) => {
   return (
     <motion.fieldset
       id="carData"
@@ -17,6 +17,7 @@ const CarICEFieldSet = ({ state, className, x, changeHandler }) => {
 
       <div className="flex flex-col px-4 pb-4">
         <label htmlFor="purchaseCost">Prix achat (€):</label>
+        <span className="error-msg">{errorState.carDataICE.purchaseCost}</span>
         <input
           className="mb-3"
           placeholder="ex: 35000"
@@ -29,6 +30,7 @@ const CarICEFieldSet = ({ state, className, x, changeHandler }) => {
           onChange={(e) => changeHandler(e, 'carDataICE', 'purchaseCost')}
         />
         <label htmlFor="consumption">Consomation (lt/100km):</label>
+        <span className="error-msg">{errorState.carDataICE.consumption}</span>
         <input
           className="mb-3"
           placeholder="ex: 5.2"
@@ -41,6 +43,7 @@ const CarICEFieldSet = ({ state, className, x, changeHandler }) => {
           onChange={(e) => changeHandler(e, 'carDataICE', 'consumption')}
         />
         <label htmlFor="insurance">Assurance (€/an):</label>
+        <span className="error-msg">{errorState.carDataICE.insurance}</span>
         <input
           className="mb-3"
           placeholder="ex: 750"
@@ -53,6 +56,7 @@ const CarICEFieldSet = ({ state, className, x, changeHandler }) => {
           onChange={(e) => changeHandler(e, 'carDataICE', 'insurance')}
         />
         <label htmlFor="maintenance">Entretien (€/an):</label>
+        <span className="error-msg">{errorState.carDataICE.maintenance}</span>
         <input
           className="mb-3"
           placeholder="ex: 700"

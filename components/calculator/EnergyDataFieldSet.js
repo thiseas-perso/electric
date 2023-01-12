@@ -1,6 +1,12 @@
 import { motion } from 'framer-motion';
 
-const EnergyDataFieldSet = ({ state, changeHandler, className, x }) => {
+const EnergyDataFieldSet = ({
+  state,
+  changeHandler,
+  className,
+  x,
+  errorState,
+}) => {
   return (
     <motion.fieldset
       id="energyData"
@@ -20,6 +26,9 @@ const EnergyDataFieldSet = ({ state, changeHandler, className, x }) => {
         <label htmlFor="chargingPriceHC">
           Electricité - heures creuses(€/kWh):
         </label>
+        <span className="error-msg">
+          {errorState.energyData.chargingPriceHC}
+        </span>
         <input
           className="mb-3"
           required
@@ -36,6 +45,9 @@ const EnergyDataFieldSet = ({ state, changeHandler, className, x }) => {
         <label htmlFor="chargingPriceHP">
           Electricité - heures pleines(€/kWh):
         </label>
+        <span className="error-msg">
+          {errorState.energyData.chargingPriceHP}
+        </span>
         <input
           className="mb-3"
           required
@@ -49,6 +61,7 @@ const EnergyDataFieldSet = ({ state, changeHandler, className, x }) => {
           onChange={(e) => changeHandler(e, 'energyData', 'chargingPriceHP')}
         />
         <label htmlFor="gasPrice">Carburant (€/lt):</label>
+        <span className="error-msg">{errorState.energyData.gasPrice}</span>
         <input
           className="mb-3"
           required

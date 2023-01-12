@@ -25,7 +25,9 @@ const UsageExpectedFieldSet = ({ state, changeHandler, className, x }) => {
           <b>vide</b> et utilisez le <b>similutateur</b> de l&apos;étape
           suivante
         </p>
-        <label htmlFor="totalKMPerY">Total de KM/an (*)</label>
+        <label htmlFor="totalKMPerY">
+          Total de KM/an <span className="italic">(optionnel)</span>
+        </label>
         <input
           className="mb-3"
           min="0"
