@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { CarEVFieldSet } from '../../components/calculator';
 import { CarICEFieldSet } from '../../components/calculator';
@@ -95,15 +95,30 @@ const Calculator = () => {
   const [stepState, setStepState] = useState(0);
   const [x, setX] = useState(0);
   const [results, setResults] = useState(initialResultsState);
-  const worthIt =
-    results.carEVCostAtEndOfPeriod - results.carICECostAtEndOfPeriod;
+  const [worthIt, setWorthIt] = useState(
+    results.carEVCostAtEndOfPeriod - results.carICECostAtEndOfPeriod
+  );
+  const [checked, setChecked] = useState(false);
 
-  const total =
-    Number(state.usageData.workHomeDistance) *
-      Number(state.usageData.dailyCommutes) *
-      Number(state.usageData.daysWorkedPerY) +
-    Number(state.usageData.weekendKM) * 52 +
-    Number(state.usageData.otherKMPerW) * 52;
+  useEffect(() => {
+    if (checked) {
+      setWorthIt(
+        results.carEVCostAtEndOfPeriod -
+          results.carEVValueAtEndOfPeriod -
+          (results.carICECostAtEndOfPeriod - results.carICEValueAtEndOfPeriod)
+      );
+    } else {
+      setWorthIt(
+        results.carEVCostAtEndOfPeriod - results.carICECostAtEndOfPeriod
+      );
+    }
+  }, [
+    results.carEVCostAtEndOfPeriod,
+    results.carICECostAtEndOfPeriod,
+    checked,
+    results.carEVValueAtEndOfPeriod,
+    results.carICEValueAtEndOfPeriod,
+  ]);
 
   const convertDataToNumbers = (obj) => {
     const newObj = {};
@@ -192,23 +207,22 @@ const Calculator = () => {
             />
           )}
           {stepState === 3 && (
-            <UsageDataFieldSet
+            <UsageExpectedFieldSet
               x={x}
               state={state}
-              total={total}
               setState={setState}
               className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
             />
           )}
           {stepState === 4 && (
-            <UsageExpectedFieldSet
-              total={total}
+            <UsageDataFieldSet
               x={x}
               state={state}
               setState={setState}
               className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
             />
           )}
+
           {stepState === 5 && (
             <DurationFieldSet
               x={x}
@@ -218,13 +232,30 @@ const Calculator = () => {
             />
           )}
           {stepState === 6 && (
-            <button
-              className="m-auto rounded-3xl border-2 relative top-[-42px] overflow-hidden  bg-light-primary-6/10 text-white text-xl transition-colors"
-              type="submit"
-              onClick={(e) => submitHandler(e)}
-            >
-              Voir les resultas
-            </button>
+            <div className="m-auto relative top-[-42px] flex flex-col items-start gap-3">
+              <button
+                className="rounded-3xl border-2  overflow-hidden  bg-light-primary-6/10 text-white text-xl transition-colors"
+                type="submit"
+                onClick={(e) => submitHandler(e)}
+              >
+                Voir les resultas
+              </button>
+              <div className="flex">
+                <input
+                  id="checkbox"
+                  type="checkbox"
+                  checked={checked}
+                  onChange={() => setChecked((prev) => !prev)}
+                  className="w-4 h-4 mx-1 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                />
+                <label
+                  htmlFor="checkbox"
+                  className="text-white font-normal leading-4"
+                >
+                  Inclure la valeur <br /> résiduelle des véhicules
+                </label>
+              </div>
+            </div>
           )}
           <div className="flex self-stretch font-bold font-poppins text-white border-t-2 bg-light-primary-start">
             {stepState > 0 && stepState < 7 && (
@@ -276,10 +307,20 @@ const Calculator = () => {
                 <p className="font-bold">{results.carICECostAtEndOfPeriod} €</p>
                 <h4>Cout au km</h4>
                 <p className="font-bold">{results.carICECostPerKmAtEnd} €</p>
-                <h4>Valeur résiduelle</h4>
-                <p className="font-bold">
-                  {results.carICEValueAtEndOfPeriod} €
-                </p>
+                {checked && (
+                  <>
+                    <h4>Valeur résiduelle</h4>
+                    <p className="font-bold">
+                      {results.carICEValueAtEndOfPeriod} €
+                    </p>
+                    <h4>Cout net</h4>
+                    <p className="font-bold">
+                      {results.carICECostAtEndOfPeriod -
+                        results.carICEValueAtEndOfPeriod}{' '}
+                      €
+                    </p>
+                  </>
+                )}
               </div>
             </div>
             <div className="border-2  rounded-xl bg-white text-center overflow-hidden">
@@ -291,26 +332,38 @@ const Calculator = () => {
                 <p className="font-bold">{results.carEVCostAtEndOfPeriod} €</p>
                 <h4>Cout au km</h4>
                 <p className="font-bold">{results.carEVCostPerKmAtEnd} €</p>
-                <h4>Valeur résiduelle</h4>
-                <p className="font-bold">{results.carEVValueAtEndOfPeriod} €</p>
+                {checked && (
+                  <>
+                    <h4>Valeur résiduelle</h4>
+                    <p className="font-bold">
+                      {results.carEVValueAtEndOfPeriod} €
+                    </p>
+                    <h4>Cout net</h4>
+                    <p className="font-bold">
+                      {results.carEVCostAtEndOfPeriod -
+                        results.carEVValueAtEndOfPeriod}{' '}
+                      €
+                    </p>
+                  </>
+                )}
               </div>
             </div>
             {worthIt > 1000 && (
               <ResultMsgNegative
                 durationStudied={state.durationStudied}
-                results={results}
+                worthIt={worthIt}
               />
             )}
             {worthIt < -1000 && (
               <ResultMsgPositive
                 durationStudied={state.durationStudied}
-                results={results}
+                worthIt={worthIt}
               />
             )}
             {worthIt > -1000 && worthIt < 1000 && (
               <ResultMsgNeutral
                 durationStudied={state.durationStudied}
-                results={results}
+                worthIt={worthIt}
               />
             )}
           </div>
