@@ -266,6 +266,10 @@ const Calculator = () => {
                 <p className="font-bold">{results.carICECostAtEndOfPeriod} €</p>
                 <h4>Cout au km</h4>
                 <p className="font-bold">{results.carICECostPerKmAtEnd} €</p>
+                <h4>Valeur résiduelle</h4>
+                <p className="font-bold">
+                  {results.carICEValueAtEndOfPeriod} €
+                </p>
               </div>
             </div>
             <div className="border-2  rounded-xl bg-white text-center overflow-hidden">
@@ -277,6 +281,8 @@ const Calculator = () => {
                 <p className="font-bold">{results.carEVCostAtEndOfPeriod} €</p>
                 <h4>Cout au km</h4>
                 <p className="font-bold">{results.carEVCostPerKmAtEnd} €</p>
+                <h4>Valeur résiduelle</h4>
+                <p className="font-bold">{results.carEVValueAtEndOfPeriod} €</p>
               </div>
             </div>
             {worthIt > 1000 && (
