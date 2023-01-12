@@ -1,6 +1,12 @@
 import { motion } from 'framer-motion';
 
-const UsageDataFieldSet = ({ state, setState, className, x }) => {
+const UsageDataFieldSet = ({
+  state,
+  setState,
+  className,
+  x,
+  changeHandler,
+}) => {
   const total =
     Number(state.usageData.workHomeDistance) *
       Number(state.usageData.dailyCommutes) *
@@ -34,15 +40,7 @@ const UsageDataFieldSet = ({ state, setState, className, x }) => {
           id="workHomeDistance"
           name="workHomeDistance"
           value={state.usageData.workHomeDistance}
-          onChange={(e) =>
-            setState((prev) => ({
-              ...prev,
-              usageData: {
-                ...state.usageData,
-                workHomeDistance: e.target.value,
-              },
-            }))
-          }
+          onChange={(e) => changeHandler(e, 'usageData', 'workHomeDistance')}
         />
         <label htmlFor="dailyCommutes">A/R quotidiens</label>
         <input
@@ -54,15 +52,7 @@ const UsageDataFieldSet = ({ state, setState, className, x }) => {
           id="dailyCommutes"
           name="dailyCommutes"
           value={state.usageData.dailyCommutes}
-          onChange={(e) =>
-            setState((prev) => ({
-              ...prev,
-              usageData: {
-                ...state.usageData,
-                dailyCommutes: e.target.value,
-              },
-            }))
-          }
+          onChange={(e) => changeHandler(e, 'usageData', 'dailyCommutes')}
         />
         <label htmlFor="daysWorkedPerY">Nombre de jours travaillés/an</label>
         <input
@@ -75,15 +65,7 @@ const UsageDataFieldSet = ({ state, setState, className, x }) => {
           id="daysWorkedPerY"
           name="daysWorkedPerY"
           value={state.usageData.daysWorkedPerY}
-          onChange={(e) =>
-            setState((prev) => ({
-              ...prev,
-              usageData: {
-                ...state.usageData,
-                daysWorkedPerY: e.target.value,
-              },
-            }))
-          }
+          onChange={(e) => changeHandler(e, 'usageData', 'daysWorkedPerY')}
         />
         <label htmlFor="weekendKM">Km les weekends</label>
         <input
@@ -94,15 +76,7 @@ const UsageDataFieldSet = ({ state, setState, className, x }) => {
           name="weekendKM"
           placeholder="ex: 140"
           value={state.usageData.weekendKM}
-          onChange={(e) =>
-            setState((prev) => ({
-              ...prev,
-              usageData: {
-                ...state.usageData,
-                weekendKM: e.target.value,
-              },
-            }))
-          }
+          onChange={(e) => changeHandler(e, 'usageData', 'weekendKM')}
         />
         <label htmlFor="otherKMPerW">Autres km par semaine</label>
         <input
@@ -113,15 +87,7 @@ const UsageDataFieldSet = ({ state, setState, className, x }) => {
           id="otherKMPerW"
           name="otherKMPerW"
           value={state.usageData.otherKMPerW}
-          onChange={(e) =>
-            setState((prev) => ({
-              ...prev,
-              usageData: {
-                ...state.usageData,
-                otherKMPerW: e.target.value,
-              },
-            }))
-          }
+          onChange={(e) => changeHandler(e, 'usageData', 'otherKMPerW')}
         />
         <div className="text-end">
           <b>Total:</b> {total} km

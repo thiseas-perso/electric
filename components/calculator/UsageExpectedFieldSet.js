@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import infoIcon from '../../public/icons/info.svg';
 
-const UsageExpectedFieldSet = ({ state, setState, className, x }) => {
+const UsageExpectedFieldSet = ({ state, changeHandler, className, x }) => {
   return (
     <motion.fieldset
       id="usageExpected"
@@ -33,15 +33,7 @@ const UsageExpectedFieldSet = ({ state, setState, className, x }) => {
           type="number"
           id="totalKMPerY"
           value={state.usageExpected.totalKMPerY}
-          onChange={(e) =>
-            setState((prev) => ({
-              ...prev,
-              usageExpected: {
-                ...state.usageExpected,
-                totalKMPerY: e.target.value,
-              },
-            }))
-          }
+          onChange={(e) => changeHandler(e, 'usageExpected', 'totalKMPerY')}
         />
       </div>
     </motion.fieldset>

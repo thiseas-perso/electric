@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-const EnergyDataFieldSet = ({ state, setState, className, x }) => {
+const EnergyDataFieldSet = ({ state, changeHandler, className, x }) => {
   return (
     <motion.fieldset
       id="energyData"
@@ -31,15 +31,7 @@ const EnergyDataFieldSet = ({ state, setState, className, x }) => {
           id="chargingPriceHC"
           name="chargingPriceHC"
           value={state.energyData.chargingPriceHC}
-          onChange={(e) =>
-            setState((prev) => ({
-              ...prev,
-              energyData: {
-                ...state.energyData,
-                chargingPriceHC: e.target.value,
-              },
-            }))
-          }
+          onChange={(e) => changeHandler(e, 'energyData', 'chargingPriceHC')}
         />
         <label htmlFor="chargingPriceHP">
           Electricité - heures pleines(€/kWh):
@@ -54,15 +46,7 @@ const EnergyDataFieldSet = ({ state, setState, className, x }) => {
           id="chargingPriceHP"
           name="chargingPriceHP"
           value={state.energyData.chargingPriceHP}
-          onChange={(e) =>
-            setState((prev) => ({
-              ...prev,
-              energyData: {
-                ...state.energyData,
-                chargingPriceHP: e.target.value,
-              },
-            }))
-          }
+          onChange={(e) => changeHandler(e, 'energyData', 'chargingPriceHP')}
         />
         <label htmlFor="gasPrice">Carburant (€/lt):</label>
         <input
@@ -75,15 +59,7 @@ const EnergyDataFieldSet = ({ state, setState, className, x }) => {
           id="gasPrice"
           name="gasPrice"
           value={state.energyData.gasPrice}
-          onChange={(e) =>
-            setState((prev) => ({
-              ...prev,
-              energyData: {
-                ...state.energyData,
-                gasPrice: e.target.value,
-              },
-            }))
-          }
+          onChange={(e) => changeHandler(e, 'energyData', 'gasPrice')}
         />
       </div>
     </motion.fieldset>

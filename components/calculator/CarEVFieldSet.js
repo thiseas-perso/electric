@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-const CarEVFieldSet = ({ state, setState, className, x }) => {
+const CarEVFieldSet = ({ state, className, x, changeHandler }) => {
   return (
     <motion.fieldset
       id="carData"
@@ -25,15 +25,7 @@ const CarEVFieldSet = ({ state, setState, className, x }) => {
           id="purchaseCost"
           name="purchaseCost"
           value={state.carDataEV.purchaseCost}
-          onChange={(e) =>
-            setState((prev) => ({
-              ...prev,
-              carDataEV: {
-                ...state.carDataEV,
-                purchaseCost: e.target.value,
-              },
-            }))
-          }
+          onChange={(e) => changeHandler(e, 'carDataEV', 'purchaseCost')}
         />
         <label htmlFor="ecoBonus">Bonus ecologique (€):</label>
         <input
@@ -45,15 +37,7 @@ const CarEVFieldSet = ({ state, setState, className, x }) => {
           id="ecoBonus"
           name="ecoBonus"
           value={state.carDataEV.ecoBonus}
-          onChange={(e) =>
-            setState((prev) => ({
-              ...prev,
-              carDataEV: {
-                ...state.carDataEV,
-                ecoBonus: e.target.value,
-              },
-            }))
-          }
+          onChange={(e) => changeHandler(e, 'carDataEV', 'ecoBonus')}
         />
         <label htmlFor="consumption">Consomation (kWh/100km):</label>
         <input
@@ -65,15 +49,7 @@ const CarEVFieldSet = ({ state, setState, className, x }) => {
           id="consumption"
           name="consumption"
           value={state.carDataEV.consumption}
-          onChange={(e) =>
-            setState((prev) => ({
-              ...prev,
-              carDataEV: {
-                ...state.carDataEV,
-                consumption: e.target.value,
-              },
-            }))
-          }
+          onChange={(e) => changeHandler(e, 'carDataEV', 'consumption')}
         />
         <label htmlFor="insurance">Assurance (€/an):</label>
         <input
@@ -85,15 +61,7 @@ const CarEVFieldSet = ({ state, setState, className, x }) => {
           id="insurance"
           name="insurance"
           value={state.carDataEV.insurance}
-          onChange={(e) =>
-            setState((prev) => ({
-              ...prev,
-              carDataEV: {
-                ...state.carDataEV,
-                insurance: e.target.value,
-              },
-            }))
-          }
+          onChange={(e) => changeHandler(e, 'carDataEV', 'insurance')}
         />
         <label htmlFor="maintenance">Entretien (€/an):</label>
         <input
@@ -105,15 +73,7 @@ const CarEVFieldSet = ({ state, setState, className, x }) => {
           id="maintenance"
           name="maintenance"
           value={state.carDataEV.maintenance}
-          onChange={(e) =>
-            setState((prev) => ({
-              ...prev,
-              carDataEV: {
-                ...state.carDataEV,
-                maintenance: e.target.value,
-              },
-            }))
-          }
+          onChange={(e) => changeHandler(e, 'carDataEV', 'maintenance')}
         />
       </div>
     </motion.fieldset>
