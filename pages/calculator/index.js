@@ -13,10 +13,7 @@ import {
 } from '../../components/calculator/initialStates';
 import NavButtons from '../../components/calculator/NavButtons';
 import ProgressBar from '../../components/calculator/ProgressBar';
-import ResultMsgNegative from '../../components/calculator/ReslutMsgNegative';
-import ResultMsgNeutral from '../../components/calculator/ReslutMsgNeutral';
-import ResultMsgPositive from '../../components/calculator/ReslutMsgPositive';
-import ResultData from '../../components/calculator/ResultData';
+import ResultPage from '../../components/calculator/ResultPage';
 import SubmitPage from '../../components/calculator/SubmitPage';
 import CustomHead from '../../components/customHead';
 import calculator from '../../helpers/calculator';
@@ -69,6 +66,7 @@ const Calculator = () => {
     e.preventDefault();
     const height = window.innerHeight - 42;
     const convertedInputToNumbers = convertDataToNumbers(state);
+
     console.log('state : ', convertedInputToNumbers);
     console.log(calculator(convertDataToNumbers(state)));
     setResults(() => calculator(convertDataToNumbers(state)));
@@ -159,51 +157,12 @@ const Calculator = () => {
         </form>
       </div>
       {stepState === 6 && (
-        <div
-          className={` min-h-[calc(100vh-48px)] bg-gradient-to-t from-light-primary-start to-light-primary-end`}
-        >
-          <h2 className="text-xl p-2 text-white font-poppins font-extrabold text-center">
-            Résultas
-          </h2>
-          <div
-            id="results-ctn"
-            className="grid grid-cols-2 gap-x-2 gap-y-5 mx-4 mt-2"
-          >
-            <ResultData
-              carCostAtEnd={results.carICECostAtEndOfPeriod}
-              carType="Thérmique"
-              carCostPerKMAtEnd={results.carICECostPerKmAtEnd}
-              carValueAtEnd={results.carICEValueAtEndOfPeriod}
-              checked={checked}
-            />
-            <ResultData
-              carCostAtEnd={results.carEVCostAtEndOfPeriod}
-              carType="Eléctrique"
-              carCostPerKMAtEnd={results.carEVCostPerKmAtEnd}
-              carValueAtEnd={results.carEVValueAtEndOfPeriod}
-              checked={checked}
-            />
-
-            {worthIt > 1000 && (
-              <ResultMsgNegative
-                durationStudied={state.durationStudied}
-                worthIt={worthIt}
-              />
-            )}
-            {worthIt < -1000 && (
-              <ResultMsgPositive
-                durationStudied={state.durationStudied}
-                worthIt={worthIt}
-              />
-            )}
-            {worthIt > -1000 && worthIt < 1000 && (
-              <ResultMsgNeutral
-                durationStudied={state.durationStudied}
-                worthIt={worthIt}
-              />
-            )}
-          </div>
-        </div>
+        <ResultPage
+          results={results}
+          checked={checked}
+          worthIt={worthIt}
+          state={state}
+        />
       )}
     </>
   );
