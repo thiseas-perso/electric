@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-function DurationFieldSet({ state, setState, className, x }) {
+function DurationFieldSet({ state, changeHandler, className, x, errorState }) {
   return (
     <motion.fieldset
       className={className}
@@ -17,21 +17,20 @@ function DurationFieldSet({ state, setState, className, x }) {
 
       <div className="flex flex-col px-4 pb-4">
         <label htmlFor="durationStudied">Années</label>
+        <span className="error-msg">
+          {errorState.durationStudied.yearsStudied}
+        </span>
         <input
+          autoFocus
           className="mb-3"
-          min=""
+          min="1"
           placeholder="ex: 8"
           step="1"
           type="number"
           id="durationStudied"
           name="durationStudied"
-          value={state.durationStudied}
-          onChange={(e) =>
-            setState((prev) => ({
-              ...prev,
-              durationStudied: e.target.value,
-            }))
-          }
+          value={state.durationStudied.yearsStudied}
+          onChange={(e) => changeHandler(e, 'durationStudied', 'yearsStudied')}
         />
       </div>
     </motion.fieldset>

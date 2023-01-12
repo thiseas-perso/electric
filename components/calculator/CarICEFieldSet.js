@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-const CarICEFieldSet = ({ state, setState, className, x }) => {
+const CarICEFieldSet = ({ state, className, x, changeHandler, errorState }) => {
   return (
     <motion.fieldset
       id="carData"
@@ -17,7 +17,9 @@ const CarICEFieldSet = ({ state, setState, className, x }) => {
 
       <div className="flex flex-col px-4 pb-4">
         <label htmlFor="purchaseCost">Prix achat (€):</label>
+        <span className="error-msg">{errorState.carDataICE.purchaseCost}</span>
         <input
+          autoFocus
           className="mb-3"
           placeholder="ex: 35000"
           required
@@ -26,17 +28,10 @@ const CarICEFieldSet = ({ state, setState, className, x }) => {
           id="purchaseCost"
           name="purchaseCost"
           value={state.carDataICE.purchaseCost}
-          onChange={(e) =>
-            setState((prev) => ({
-              ...prev,
-              carDataICE: {
-                ...state.carDataICE,
-                purchaseCost: e.target.value,
-              },
-            }))
-          }
+          onChange={(e) => changeHandler(e, 'carDataICE', 'purchaseCost')}
         />
         <label htmlFor="consumption">Consomation (lt/100km):</label>
+        <span className="error-msg">{errorState.carDataICE.consumption}</span>
         <input
           className="mb-3"
           placeholder="ex: 5.2"
@@ -46,17 +41,10 @@ const CarICEFieldSet = ({ state, setState, className, x }) => {
           id="consumption"
           name="consumption"
           value={state.carDataICE.consumption}
-          onChange={(e) =>
-            setState((prev) => ({
-              ...prev,
-              carDataICE: {
-                ...state.carDataICE,
-                consumption: e.target.value,
-              },
-            }))
-          }
+          onChange={(e) => changeHandler(e, 'carDataICE', 'consumption')}
         />
         <label htmlFor="insurance">Assurance (€/an):</label>
+        <span className="error-msg">{errorState.carDataICE.insurance}</span>
         <input
           className="mb-3"
           placeholder="ex: 750"
@@ -66,17 +54,10 @@ const CarICEFieldSet = ({ state, setState, className, x }) => {
           id="insurance"
           name="insurance"
           value={state.carDataICE.insurance}
-          onChange={(e) =>
-            setState((prev) => ({
-              ...prev,
-              carDataICE: {
-                ...state.carDataICE,
-                insurance: e.target.value,
-              },
-            }))
-          }
+          onChange={(e) => changeHandler(e, 'carDataICE', 'insurance')}
         />
         <label htmlFor="maintenance">Entretien (€/an):</label>
+        <span className="error-msg">{errorState.carDataICE.maintenance}</span>
         <input
           className="mb-3"
           placeholder="ex: 700"
@@ -86,15 +67,7 @@ const CarICEFieldSet = ({ state, setState, className, x }) => {
           id="maintenance"
           name="maintenance"
           value={state.carDataICE.maintenance}
-          onChange={(e) =>
-            setState((prev) => ({
-              ...prev,
-              carDataICE: {
-                ...state.carDataICE,
-                maintenance: e.target.value,
-              },
-            }))
-          }
+          onChange={(e) => changeHandler(e, 'carDataICE', 'maintenance')}
         />
       </div>
     </motion.fieldset>
