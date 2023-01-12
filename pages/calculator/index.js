@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 
 import { CarEVFieldSet } from '../../components/calculator';
 import { CarICEFieldSet } from '../../components/calculator';
@@ -6,6 +6,9 @@ import { DurationFieldSet } from '../../components/calculator';
 import { EnergyDataFieldSet } from '../../components/calculator';
 import { UsageDataFieldSet } from '../../components/calculator';
 import { UsageExpectedFieldSet } from '../../components/calculator';
+import ResultMsgNegative from '../../components/calculator/ReslutMsgNegative';
+import ResultMsgNeutral from '../../components/calculator/ReslutMsgNeutral';
+import ResultMsgPositive from '../../components/calculator/ReslutMsgPositive';
 import CustomHead from '../../components/customHead';
 import calculator from '../../helpers/calculator';
 
@@ -73,13 +76,27 @@ const initialStateErrors = {
   durationStudied: '',
 };
 
+const initialResultsState = {
+  carEVCostAtEndOfPeriod: '',
+  carEVValueAtEndOfPeriod: '',
+  carICECostAtEndOfPeriod: '',
+  carICEValueAtEndOfPeriod: '',
+  evKMCost: '',
+  iceKMCost: '',
+  gasIceVSevCostPerY: '',
+  totalKMPerY: '',
+  carICECostPerKmAtEnd: '',
+  carEVCostPerKmAtEnd: '',
+};
+
 const Calculator = () => {
-  const [state, setState] = useState(initialStateErrors);
+  const [state, setState] = useState(initialState);
   const [errorState, setErrorState] = useState(initialStateErrors);
   const [stepState, setStepState] = useState(0);
   const [x, setX] = useState(0);
-  const [clicked, setClicked] = useState(false);
-  const resultsRef = useRef(null);
+  const [results, setResults] = useState(initialResultsState);
+  const worthIt =
+    results.carEVCostAtEndOfPeriod - results.carICECostAtEndOfPeriod;
   const convertDataToNumbers = (obj) => {
     const newObj = {};
     for (const key in obj) {
@@ -96,8 +113,10 @@ const Calculator = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     const height = window.innerHeight - 42;
-    console.log('state : ', convertDataToNumbers(state));
-    setClicked(() => true);
+    const convertedInputToNumbers = convertDataToNumbers(state);
+    console.log('state : ', convertedInputToNumbers);
+    console.log(calculator(convertDataToNumbers(state)));
+    setResults(() => calculator(convertDataToNumbers(state)));
     window.scrollBy({ top: height, behavior: 'smooth' });
   };
 
@@ -229,37 +248,61 @@ const Calculator = () => {
       </div>
       {stepState === 6 && (
         <div
-          ref={resultsRef}
           className={` min-h-[calc(100vh-48px)] bg-gradient-to-t from-light-primary-start to-light-primary-end`}
         >
-          <div>
-            <h2>Resultas</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-              mollitia, molestiae quas vel sint commodi repudiandae consequuntur
-              voluptatum laborum numquam blanditiis harum quisquam eius sed odit
-              fugiat iusto fuga praesentium optio, eaque rerum! Provident
-              similique accusantium nemo autem. Veritatis obcaecati tenetur iure
-              eius earum ut molestias architecto voluptate aliquam nihil,
-              eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,
-              tenetur error, harum nesciunt ipsum debitis quas aliquid.
-              Reprehenderit, quia. Quo neque error repudiandae fuga? Ipsa
-              laudantium molestias eos sapiente officiis modi at sunt excepturi
-              expedita sint? Sed quibusdam recusandae alias error harum maxime
-              adipisci amet laborum. Perspiciatis minima nesciunt dolorem!
-              Officiis iure rerum voluptates a cumque velit quibusdam sed amet
-              tempora. Sit laborum ab, eius fugit doloribus tenetur fugiat,
-              temporibus enim commodi iusto libero magni deleniti quod quam
-              consequuntur! Commodi minima excepturi repudiandae velit hic
-              maxime doloremque. Quaerat provident commodi consectetur veniam
-              similique ad earum omnis ipsum saepe, voluptas, hic voluptates
-              pariatur est explicabo fugiat, dolorum eligendi quam cupiditate
-              excepturi mollitia maiores labore suscipit quas? Nulla, placeat.
-              Voluptatem quaerat non architecto ab laudantium modi minima sunt
-              esse temporibus sint culpa, recusandae aliquam numquam totam
-              ratione voluptas quod exercitationem fuga. Possimus quis earum
-              veniam quasi aliquam eligendi, placeat qui corporis!
-            </p>
+          <h2 className="text-xl p-2 text-white font-poppins font-extrabold text-center">
+            Résultas
+          </h2>
+          <div
+            id="results-ctn"
+            className="grid grid-cols-2 gap-x-2 gap-y-5 mx-4 mt-2"
+          >
+            <div className="border-2  rounded-xl bg-white text-center overflow-hidden">
+              <h3 className="font-bold border-b p-2 bg-light-primary-2 text-white">
+                Cout <span className="text-light-primary-4">Thérmique</span>
+              </h3>
+              <div className="my-4">
+                <h4>Cout total :</h4>
+                <p className="font-bold">{results.carICECostAtEndOfPeriod} €</p>
+                <h4>Cout au km</h4>
+                <p className="font-bold">{results.carICECostPerKmAtEnd} €</p>
+                <h4>Valeur résiduelle</h4>
+                <p className="font-bold">
+                  {results.carICEValueAtEndOfPeriod} €
+                </p>
+              </div>
+            </div>
+            <div className="border-2  rounded-xl bg-white text-center overflow-hidden">
+              <h3 className="font-bold border-b p-2 bg-light-primary-2 text-white">
+                Cout <span className="text-light-primary-4">Eléctique</span>
+              </h3>
+              <div className="my-4">
+                <h4>Cout total :</h4>
+                <p className="font-bold">{results.carEVCostAtEndOfPeriod} €</p>
+                <h4>Cout au km</h4>
+                <p className="font-bold">{results.carEVCostPerKmAtEnd} €</p>
+                <h4>Valeur résiduelle</h4>
+                <p className="font-bold">{results.carEVValueAtEndOfPeriod} €</p>
+              </div>
+            </div>
+            {worthIt > 1000 && (
+              <ResultMsgNegative
+                durationStudied={state.durationStudied}
+                results={results}
+              />
+            )}
+            {worthIt < -1000 && (
+              <ResultMsgPositive
+                durationStudied={state.durationStudied}
+                results={results}
+              />
+            )}
+            {worthIt > -1000 && worthIt < 1000 && (
+              <ResultMsgNeutral
+                durationStudied={state.durationStudied}
+                results={results}
+              />
+            )}
           </div>
         </div>
       )}
