@@ -19,7 +19,6 @@ const CarICEFieldSet = ({ state, className, x, changeHandler, errorState }) => {
         <label htmlFor="purchaseCost">Prix achat (€):</label>
         <span className="error-msg">{errorState.carDataICE.purchaseCost}</span>
         <input
-          autoFocus
           className="mb-3"
           placeholder="ex: 35000"
           required
