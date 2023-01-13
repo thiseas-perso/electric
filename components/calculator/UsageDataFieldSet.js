@@ -35,7 +35,6 @@ const UsageDataFieldSet = ({
           {errorState.usageData.workHomeDistance}
         </span>
         <input
-          autoFocus
           className="mb-3"
           required
           placeholder="ex: 45"

@@ -30,7 +30,6 @@ const EnergyDataFieldSet = ({
           {errorState.energyData.chargingPriceHC}
         </span>
         <input
-          autoFocus
           className="mb-3"
           required
           placeholder="ex: 0,15"
