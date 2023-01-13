@@ -64,16 +64,18 @@ const Cars = ({
     <>
       <CustomHead title="SOME TITLE" description="some description" />
 
-      <h1 className="text-xl p-2 text-white font-poppins font-extrabold text-center">
-        Tous les tests
-      </h1>
-      <MakerSection makersObj={allCarsByMaker} title="Cherchez par marque" />
-      <CarsHomeSection stringArr={testNames} title="Cherchez par test" />
-      <CarsHomeSection
-        stringArr={allModels}
-        title="Voir tous les modèles testés"
-        last={true}
-      />
+      <div className="min-h-[calc(100vh-48px)]">
+        <h1 className="text-xl p-2 text-white font-poppins font-extrabold text-center">
+          Tous les tests
+        </h1>
+        <MakerSection makersObj={allCarsByMaker} title="Cherchez par marque" />
+        <CarsHomeSection stringArr={testNames} title="Cherchez par test" />
+        <CarsHomeSection
+          stringArr={allModels}
+          title="Voir tous les modèles testés"
+          last={true}
+        />
+      </div>
     </>
   );
 };

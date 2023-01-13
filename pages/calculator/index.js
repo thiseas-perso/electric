@@ -20,7 +20,7 @@ import CustomHead from '../../components/customHead';
 import calculator from '../../helpers/calculator';
 
 const Calculator = () => {
-  const [state, setState] = useState(initialStateErrors);
+  const [state, setState] = useState(initialState);
   const [errorState, setErrorState] = useState(initialStateErrors);
   const [errorCount, setErrorCount] = useState(0);
   const [stepState, setStepState] = useState(0);

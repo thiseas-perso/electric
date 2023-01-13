@@ -10,6 +10,7 @@ const MakerSection = ({ makersObj, title, last }) => {
   const [display, setDisplay] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [models, setModels] = useState([]);
+  const [maker, setMaker] = useState('');
   const contentRef = useRef();
   let height;
   if (contentRef.current) height = `${contentRef.current.scrollHeight}px`;
@@ -48,11 +49,12 @@ const MakerSection = ({ makersObj, title, last }) => {
           {makers.map((maker) => (
             <MakerBtn
               maker={maker}
-              makersObj={makersObj}
+              models={makersObj[maker]}
               key={maker}
               onClick={() => {
                 setModalOpen(true);
                 setModels(() => makersObj[maker]);
+                setMaker(() => maker);
               }}
             />
           ))}
@@ -63,11 +65,41 @@ const MakerSection = ({ makersObj, title, last }) => {
         handleClose={() => {
           setModalOpen(false);
           setModels([]);
+          setMaker();
         }}
       >
-        {models.map((el) => (
-          <div key={el}>{el}</div>
-        ))}
+        <div className="bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500 p-1  overflow-hidden">
+          <div className="bg-white pt-0  overflow-hidden flex flex-col min-w-[200px] font-sans h-full w-full">
+            <div className="">
+              <h1 className="text-3xl text-white mb-5 p-4 font-poppins font-bold bg-light-primary-2 text-center">
+                Les modèles{' '}
+                <span className="text-light-primary-4">{maker}</span>
+              </h1>
+              {/* //TODO: transform into table */}
+              <ul className="">
+                {models.map((el) => (
+                  <li key={el.id}>
+                    <button className="border-none rounded-none mb-2 w-full bg-gradient-to-r from-light-primary-start to-light-primary-end p-0">
+                      <div className="bg-none transition-colors hover:bg-white/40">
+                        <span className="font-bold">{el.model}</span>{' '}
+                        <span className="italic font-light">
+                          ({el.totalVersions} version
+                          {el.totalVersions > 1 && 's'})
+                        </span>
+                      </div>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <button
+              className="rounded-none border-none bg-light-primary-2 text-white mt-4 "
+              onClick={() => setModalOpen(false)}
+            >
+              Close
+            </button>
+          </div>
+        </div>
       </Modal>
     </section>
   );
