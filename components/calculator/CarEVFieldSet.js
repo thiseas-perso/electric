@@ -18,7 +18,6 @@ const CarEVFieldSet = ({ state, className, x, changeHandler, errorState }) => {
         <label htmlFor="purchaseCost">Prix achat (€):</label>
         <span className="error-msg">{errorState.carDataEV.purchaseCost}</span>
         <input
-          autoFocus
           className="mb-4"
           placeholder="ex: 35000"
           required
