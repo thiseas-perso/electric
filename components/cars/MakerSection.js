@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import arrowButton from '../../public/icons/arrow-button.svg';
 import closeButton from '../../public/icons/close-button.svg';
 
-const CarsHomeSection = ({ stringArr, title, last }) => {
+const MakerSection = ({ stringArr, title, last }) => {
   const [display, setDisplay] = useState(false);
   const contentRef = useRef();
   let height;
@@ -49,4 +49,4 @@ const CarsHomeSection = ({ stringArr, title, last }) => {
   );
 };
 
-export default CarsHomeSection;
+export default MakerSection;

@@ -1,11 +1,13 @@
 import CarsHomeSection from '../../components/cars/CarsHomeSection';
+import MakerSection from '../../components/cars/MakerSection';
 import CustomHead from '../../components/customHead';
 
 import {
-  getAllCarNames,
   getAllData,
   getAllFullTestedVersions,
   getAllMakers,
+  getAllModelsFromParsedData,
+  getAllTestNames,
   getCarsByMaker,
   getCarsByMakerLight,
 } from '../../lib/csvParser';
@@ -16,31 +18,42 @@ export async function getStaticProps() {
     'range',
     'acceleration',
   ]);
-  const allNames = await getAllCarNames();
+
   const allMakers = await getAllMakers();
+  const allModels = await getAllModelsFromParsedData();
   const teslas = await getCarsByMaker('Tesla');
   const teslasLight = await getCarsByMakerLight('Tesla');
-
+  const testNames = getAllTestNames();
   return {
-    props: { allData, getFullTested, allNames, allMakers, teslas, teslasLight },
+    props: {
+      allData,
+      getFullTested,
+      allModels,
+      allMakers,
+      teslas,
+      teslasLight,
+      testNames,
+    },
   };
 }
 
 const Cars = ({
   allData,
   getFullTested,
-  allNames,
+  allModels,
   allMakers,
   teslas,
   teslasLight,
+  testNames,
 }) => {
   console.log({
     allData,
     getFullTested,
-    allNames,
+    allModels,
     allMakers,
     teslas,
     teslasLight,
+    testNames,
   });
   return (
     <>
@@ -49,15 +62,13 @@ const Cars = ({
       <h1 className="text-xl p-2 text-white font-poppins font-extrabold text-center">
         Tous les tests
       </h1>
-      <CarsHomeSection stringArr={allMakers} title="Cherchez par marque" />
-      <section>
-        <div className="flex items-center bg-white p-3 gap-3">
-          <h2>Cherchez par test</h2>
-        </div>
-      </section>
-      <section>
-        <h2>Voir tous les modèles</h2>
-      </section>
+      <MakerSection stringArr={allMakers} title="Cherchez par marque" />
+      <CarsHomeSection stringArr={testNames} title="Cherchez par test" />
+      <CarsHomeSection
+        stringArr={allModels}
+        title="Voir tous les modèles testés"
+        last={true}
+      />
     </>
   );
 };
