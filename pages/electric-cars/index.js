@@ -64,7 +64,9 @@ const Cars = ({
         </div>
       </section>
       <section>
-        <h2>Cherchez par test</h2>
+        <div className="flex items-center bg-white p-3 gap-3">
+          <h2>Cherchez par test</h2>
+        </div>
       </section>
       <section>
         <h2>Voir tous les modèles</h2>
