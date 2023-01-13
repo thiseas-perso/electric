@@ -1,13 +1,23 @@
 import Image from 'next/image';
+
 import { useRef, useState } from 'react';
 import arrowButton from '../../public/icons/arrow-button.svg';
 import closeButton from '../../public/icons/close-button.svg';
+import Modal from '../Modal';
+import MakerBtn from './MakerBtn';
 
-const MakerSection = ({ stringArr, title, last }) => {
+const MakerSection = ({ makersObj, title, last }) => {
   const [display, setDisplay] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [models, setModels] = useState([]);
   const contentRef = useRef();
   let height;
   if (contentRef.current) height = `${contentRef.current.scrollHeight}px`;
+
+  const makers = Object.entries(makersObj).map(([key, _value]) => key);
+  makers.sort((a, b) => {
+    return a.localeCompare(b);
+  });
 
   return (
     <section>
@@ -20,7 +30,7 @@ const MakerSection = ({ stringArr, title, last }) => {
           <Image
             src={display ? closeButton : arrowButton}
             alt="click to display brands"
-            className="rotate-180"
+            className="rotate-180 unselectable"
           />
         </button>
       </div>
@@ -31,20 +41,34 @@ const MakerSection = ({ stringArr, title, last }) => {
         style={{ height: display ? height : '0px' }}
       >
         <div
-          className={`flex flex-wrap gap-2 flex-grow bg-white p-3 pb-8 justify-center ${
+          className={`flex flex-wrap gap-2 flex-grow bg-white p-3 pb-8 justify-center items-start ${
             last && 'mb-20'
           }`}
         >
-          {stringArr.map((el) => (
-            <button
-              className={`m-0 bg-light-primary-2 text-white px-5 py-2 rounded-lg border-none `}
-              key={el}
-            >
-              {el}
-            </button>
+          {makers.map((maker) => (
+            <MakerBtn
+              maker={maker}
+              makersObj={makersObj}
+              key={maker}
+              onClick={() => {
+                setModalOpen(true);
+                setModels(() => makersObj[maker]);
+              }}
+            />
           ))}
         </div>
       </div>
+      <Modal
+        open={modalOpen}
+        handleClose={() => {
+          setModalOpen(false);
+          setModels([]);
+        }}
+      >
+        {models.map((el) => (
+          <div key={el}>{el}</div>
+        ))}
+      </Modal>
     </section>
   );
 };

@@ -6,6 +6,7 @@ import {
   getAllData,
   getAllFullTestedVersions,
   getAllMakers,
+  getAllModelsByMaker,
   getAllModelsFromParsedData,
   getAllTestNames,
   getCarsByMaker,
@@ -20,6 +21,7 @@ export async function getStaticProps() {
   ]);
 
   const allMakers = await getAllMakers();
+  const allCarsByMaker = await getAllModelsByMaker();
   const allModels = await getAllModelsFromParsedData();
   const teslas = await getCarsByMaker('Tesla');
   const teslasLight = await getCarsByMakerLight('Tesla');
@@ -33,6 +35,7 @@ export async function getStaticProps() {
       teslas,
       teslasLight,
       testNames,
+      allCarsByMaker,
     },
   };
 }
@@ -45,6 +48,7 @@ const Cars = ({
   teslas,
   teslasLight,
   testNames,
+  allCarsByMaker,
 }) => {
   console.log({
     allData,
@@ -54,6 +58,7 @@ const Cars = ({
     teslas,
     teslasLight,
     testNames,
+    allCarsByMaker,
   });
   return (
     <>
@@ -62,7 +67,7 @@ const Cars = ({
       <h1 className="text-xl p-2 text-white font-poppins font-extrabold text-center">
         Tous les tests
       </h1>
-      <MakerSection stringArr={allMakers} title="Cherchez par marque" />
+      <MakerSection makersObj={allCarsByMaker} title="Cherchez par marque" />
       <CarsHomeSection stringArr={testNames} title="Cherchez par test" />
       <CarsHomeSection
         stringArr={allModels}

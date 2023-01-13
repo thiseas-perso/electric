@@ -20,7 +20,7 @@ const CarsHomeSection = ({ stringArr, title, last }) => {
           <Image
             src={display ? closeButton : arrowButton}
             alt="click to display brands"
-            className="rotate-180"
+            className="rotate-180 unselectable"
           />
         </button>
       </div>
