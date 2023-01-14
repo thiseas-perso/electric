@@ -68,8 +68,8 @@ const MakerSection = ({ makersObj, title, last }) => {
           setMaker();
         }}
       >
-        <div className="bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500 p-1  overflow-hidden">
-          <div className="bg-white pt-0  overflow-hidden flex flex-col min-w-[200px] font-sans h-full w-full">
+        <div className="bg-gradient-to-bl from-pink-500 via-red-500 to-yellow-500 p-1  overflow-hidden">
+          <div className="bg-light-primary-2 pt-0  overflow-hidden flex flex-col min-w-[200px] font-sans h-full w-full">
             <div className="">
               <h1 className="text-3xl text-white mb-5 p-4 font-poppins font-bold bg-light-primary-2 text-center">
                 Les modèles{' '}
@@ -80,7 +80,7 @@ const MakerSection = ({ makersObj, title, last }) => {
                 {models.map((el) => (
                   <li key={el.id}>
                     <button className="border-none rounded-none mb-2 w-full bg-gradient-to-r from-light-primary-start to-light-primary-end p-0">
-                      <div className="bg-none transition-colors hover:bg-white/40">
+                      <div className="bg-none transition-colors text-white p-3 hover:bg-white/40">
                         <span className="font-bold">{el.model}</span>{' '}
                         <span className="italic font-light">
                           ({el.totalVersions} version
