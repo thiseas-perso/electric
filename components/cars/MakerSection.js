@@ -6,7 +6,7 @@ import closeButton from '../../public/icons/close-button.svg';
 import Modal from '../Modal';
 import MakerBtn from './MakerBtn';
 
-const MakerSection = ({ makersObj, title, last }) => {
+const MakerSection = ({ title, last, dataByMaker }) => {
   const [display, setDisplay] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [models, setModels] = useState([]);
@@ -14,11 +14,6 @@ const MakerSection = ({ makersObj, title, last }) => {
   const contentRef = useRef();
   let height;
   if (contentRef.current) height = `${contentRef.current.scrollHeight}px`;
-
-  const makers = Object.entries(makersObj).map(([key, _value]) => key);
-  makers.sort((a, b) => {
-    return a.localeCompare(b);
-  });
 
   return (
     <section>
@@ -46,15 +41,14 @@ const MakerSection = ({ makersObj, title, last }) => {
             last && 'mb-20'
           }`}
         >
-          {makers.map((maker) => (
+          {dataByMaker.map((data) => (
             <MakerBtn
-              maker={maker}
-              models={makersObj[maker]}
-              key={maker}
+              maker={data.maker}
+              key={data.maker}
               onClick={() => {
                 setModalOpen(true);
-                setModels(() => makersObj[maker]);
-                setMaker(() => maker);
+                setModels(() => data.models);
+                setMaker(() => data.maker);
               }}
             />
           ))}
@@ -75,7 +69,7 @@ const MakerSection = ({ makersObj, title, last }) => {
                 Les modèles{' '}
                 <span className="text-light-primary-4">{maker}</span>
               </h1>
-              {/* //TODO: transform into table */}
+
               <ul className="">
                 {models.map((el) => (
                   <li key={el.id}>
@@ -83,8 +77,8 @@ const MakerSection = ({ makersObj, title, last }) => {
                       <div className="bg-none transition-colors text-white p-3 hover:bg-white/40">
                         <span className="font-bold">{el.model}</span>{' '}
                         <span className="italic font-light">
-                          ({el.totalVersions} version
-                          {el.totalVersions > 1 && 's'})
+                          ({el.versions} version
+                          {el.versions > 1 && 's'})
                         </span>
                       </div>
                     </button>
