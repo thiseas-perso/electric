@@ -46,3 +46,12 @@ Solution: Install PostCSS Language Support extension
     @apply text-sm text-light-primary-1;
   }
 }
+
+.unselectable {
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
