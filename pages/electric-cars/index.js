@@ -8,6 +8,7 @@ import { getAllDataLight, getAllTestNames } from '../../lib/csvParser';
 export async function getStaticProps() {
   const allDataLight = await getAllDataLight();
   const testNames = getAllTestNames();
+
   return {
     props: {
       allDataLight,
@@ -16,7 +17,7 @@ export async function getStaticProps() {
   };
 }
 
-const Cars = ({ allDataLight, testNames }) => {
+const Cars = ({ allDataLight, testNames, allData }) => {
   console.log({
     allDataLight,
     testNames,
