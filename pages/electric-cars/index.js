@@ -3,23 +3,31 @@ import MakerSection from '../../components/cars/MakerSection';
 import ModelsSection from '../../components/cars/ModelsSection';
 import CustomHead from '../../components/customHead';
 
-import { getAllDataLight, getAllTestNames } from '../../lib/csvParser';
+import {
+  getAllData,
+  getAllDataLight,
+  getAllTestNames,
+} from '../../lib/csvParser';
 
 export async function getStaticProps() {
   const allDataLight = await getAllDataLight();
+  const allData = await getAllData();
   const testNames = getAllTestNames();
+
   return {
     props: {
       allDataLight,
       testNames,
+      allData,
     },
   };
 }
 
-const Cars = ({ allDataLight, testNames }) => {
+const Cars = ({ allDataLight, testNames, allData }) => {
   console.log({
     allDataLight,
     testNames,
+    allData,
   });
 
   const dataByMaker = allDataLight.reduce((acc, cur) => {
@@ -47,7 +55,7 @@ const Cars = ({ allDataLight, testNames }) => {
         <MakerSection dataByMaker={dataByMaker} title="Cherchez par marque" />
         <CarsHomeSection stringArr={testNames} title="Cherchez par test" />
         <ModelsSection
-          allData={allDataLight}
+          allDataLight={allDataLight}
           title="Tous les modèles testés"
           last={true}
         />
