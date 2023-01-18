@@ -1,6 +1,7 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
-const ModelCard = ({ maker, onClick, model, versions }) => {
+const ModelCard = ({ maker, id, model, versions }) => {
   const imgModel = (() => {
     switch (model) {
       case '3 e-tense':
@@ -18,19 +19,21 @@ const ModelCard = ({ maker, onClick, model, versions }) => {
 
   return (
     <li className="border rounded-lg overflow-hidden transition-colors hover:bg-light-primary-3 cursor-pointer">
-      <Image
-        alt=""
-        src={`https://cdn.imagin.studio/getImage?customer=frfreelance-thiseas&make=${maker}&modelFamily=${imgModel}&width=${width}`}
-        width="200"
-        height="200"
-        className="h-auto unselectable"
-      />
-      <h3 className="text-center mb-4 font-extrabold">
-        {maker} {model}
-      </h3>
-      <p className="text-center bg-light-primary-2 text-white">
-        {versions} version{versions > 1 && 's'} testée{versions > 1 && 's'}
-      </p>
+      <Link href={`/tested-cars/models/${id}`}>
+        <Image
+          alt=""
+          src={`https://cdn.imagin.studio/getImage?customer=frfreelance-thiseas&make=${maker}&modelFamily=${imgModel}&width=${width}`}
+          width="200"
+          height="200"
+          className="h-auto unselectable"
+        />
+        <h3 className="text-center mb-4 font-extrabold">
+          {maker} {model}
+        </h3>
+        <p className="text-center bg-light-primary-2 text-white">
+          {versions} version{versions > 1 && 's'} testée{versions > 1 && 's'}
+        </p>
+      </Link>
     </li>
   );
 };

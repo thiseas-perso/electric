@@ -61,8 +61,8 @@ const ModelsSection = ({ allDataLight, title, last }) => {
               maker={data.maker}
               key={data.id}
               model={data.model}
+              id={data.id}
               versions={data.versions}
-              onClick={() => console.log('clicked')}
             />
           ))}
         </ul>

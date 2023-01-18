@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import CarsList from '../components/cars/CarsList';
 import CustomHead from '../components/customHead';
 import {
   getAllData,
@@ -48,11 +47,9 @@ const Home = ({
       <CustomHead title="SOME TITLE" description="some description" />
       <h1>HOME</h1>
       <div>
-        <Link href={'/calculator'}>calculator</Link>
-        <Link href={'/electric-cars'}>All cars</Link>
+        <Link href={'/calculator'}>Calculator</Link>
+        <Link href={'/tested-cars'}>Tested cars</Link>
       </div>
-
-      <CarsList allData={allData} />
     </>
   );
 };

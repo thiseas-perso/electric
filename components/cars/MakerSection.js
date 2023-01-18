@@ -1,5 +1,5 @@
 import Image from 'next/image';
-
+import Link from 'next/link';
 import { useRef, useState } from 'react';
 import arrowButton from '../../public/icons/arrow-button.svg';
 import closeButton from '../../public/icons/close-button.svg';
@@ -73,15 +73,17 @@ const MakerSection = ({ title, last, dataByMaker }) => {
               <ul className="">
                 {models.map((el) => (
                   <li key={el.id}>
-                    <button className="border-none rounded-none mb-2 w-full bg-gradient-to-r from-light-primary-start to-light-primary-end p-0">
-                      <div className="bg-none transition-colors text-white p-3 hover:bg-white/40">
-                        <span className="font-bold">{el.model}</span>{' '}
-                        <span className="italic font-light">
-                          ({el.versions} version
-                          {el.versions > 1 && 's'})
-                        </span>
-                      </div>
-                    </button>
+                    <div className="border-none rounded-none mb-2 w-full bg-gradient-to-r from-light-primary-start to-light-primary-end p-0 hover:cursor-pointer">
+                      <Link href={`/tested-cars/models/${el.id}`}>
+                        <div className="bg-none transition-colors text-white p-3 hover:bg-white/40">
+                          <span className="font-bold">{el.model}</span>{' '}
+                          <span className="italic font-light">
+                            ({el.versions} version
+                            {el.versions > 1 && 's'})
+                          </span>
+                        </div>
+                      </Link>
+                    </div>
                   </li>
                 ))}
               </ul>
