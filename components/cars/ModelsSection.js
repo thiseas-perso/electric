@@ -14,7 +14,10 @@ const ModelsSection = ({ allDataLight, title, last }) => {
   if (contentRef.current) height = `${contentRef.current.scrollHeight}px`;
 
   const dataFiltered = allDataLight.filter((el) =>
-    el.id.split('-').join(' ').includes(query.toLowerCase())
+    el.id
+      .split('-')
+      .join(' ')
+      .includes(query.toLowerCase().replaceAll('-', ' '))
   );
 
   return (

@@ -7,8 +7,8 @@ const ModelCard = ({ maker, onClick, model, versions }) => {
         return '3';
       case 'Leaf 2018':
         return 'Leaf';
-      case 'e-up':
-        return 'up';
+      case 'e-Up':
+        return 'eup';
       default:
         return model;
     }
