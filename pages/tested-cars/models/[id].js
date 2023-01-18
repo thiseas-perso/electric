@@ -23,7 +23,7 @@ const Model = ({ modelData }) => {
   console.log(modelData);
   return (
     <div>
-      <div className="w-full  flex flex-col items-center">
+      <div className="w-full px-4 flex flex-col items-center">
         <StudioImage
           model={modelData.model}
           maker={modelData.maker}
