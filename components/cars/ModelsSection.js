@@ -39,7 +39,7 @@ const ModelsSection = ({ allDataLight, title, last }) => {
       <div
         ref={contentRef}
         className={`transition-all duration-150 overflow-hidden flex flex-col items-center`}
-        style={{ maxHeight: display ? height : '0px' }}
+        style={{ height: display ? height : '0px' }}
       >
         <div className="bg-white w-full p-8 flex justify-center">
           <label htmlFor="filter">Filtrez :</label>
@@ -48,7 +48,7 @@ const ModelsSection = ({ allDataLight, title, last }) => {
             id="filter"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            maxLength="10"
+            maxLength="20"
           />
         </div>
         <ul
