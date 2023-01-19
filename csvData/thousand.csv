@@ -1,4 +1,4 @@
-Car;Time;km/h;Wh/km;Date;Temp;T avg;Notes
+Car;Time;kmPerH;WhPerKm;Date;Temp;TAvg;Notes
 Kia Ceed - PHEV;09:00;111,1;555;1.8.2020;22-27°C;24.5°C;25 min food break removed
 Nio ES8 - 100 kWh 6 seater;09:00;111,1;280;20.8.2022;20-24°C;22°C;Battery swap at Lier
 Mercedes EQS - 450+;09:05;110,1;220;28.8.2022;16-21°C;19°C;
