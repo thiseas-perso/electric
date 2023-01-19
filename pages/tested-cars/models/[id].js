@@ -30,12 +30,12 @@ const Model = ({ modelData, testNames }) => {
   console.log({ modelData, testNames });
   return (
     <div>
-      <div className="w-full px-4 flex flex-col items-center">
+      <div className="w-full h-fit px-4 flex flex-col items-center">
         <StudioImage
           model={modelData.model}
           maker={modelData.maker}
           width={1200}
-          height={500}
+          height={100}
           zoomType={'fullscreen'}
           priority={true}
           className={'unselectable w-full max-w-3xl object-cover'}
