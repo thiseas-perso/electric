@@ -6,6 +6,7 @@ const StudioImage = ({
   width = 200,
   height = 200,
   zoomType = 'relative',
+  priority = false,
   className,
 }) => {
   const imgModel = (() => {
@@ -27,6 +28,7 @@ const StudioImage = ({
       width={width}
       height={height}
       className={className}
+      priority={priority}
     />
   );
 };
