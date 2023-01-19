@@ -1,31 +1,16 @@
-import Image from 'next/image';
 import Link from 'next/link';
+import StudioImage from '../StudioImage';
 
 const ModelCard = ({ maker, id, model, versions }) => {
-  const imgModel = (() => {
-    switch (model) {
-      case '3 e-tense':
-        return '3';
-      case 'Leaf 2018':
-        return 'Leaf';
-      case 'e-Up':
-        return 'eup';
-      default:
-        return model;
-    }
-  })();
-
-  const width = 200;
-
   return (
     <li className="border rounded-lg overflow-hidden transition-colors hover:bg-light-primary-3 cursor-pointer">
       <Link href={`/tested-cars/models/${id}`}>
-        <Image
-          alt=""
-          src={`https://cdn.imagin.studio/getImage?customer=frfreelance-thiseas&make=${maker}&modelFamily=${imgModel}&width=${width}`}
-          width="200"
-          height="200"
-          className="h-auto unselectable"
+        <StudioImage
+          model={model}
+          maker={maker}
+          width={200}
+          height={125}
+          className={'unselectable'}
         />
         <h3 className="text-center mb-4 font-extrabold">
           {maker} {model}
