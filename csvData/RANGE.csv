@@ -1,4 +1,4 @@
-Car;Surface;Temp;Tires;Season;Wheel-front;Wheel-rear;Speed;Wh-km;Capacity;km;mi;75-range;75-charging-time;75-km-h
+Car;Surface;Temp;Tires;Season;WheelFront;WheelRear;Speed;WhPerKm;Capacity;km;mi;75Range;75ChargingTime;75kmPerH
 BMW i3 - s 120 Ah;Dry;2;Nokian R3;Winter;155/70-19;155/70-19;90;163;38;225;140;146;35;251
 BMW i3 - s 120 Ah;Dry;2;Nokian R3;Winter;155/70-19;155/70-19;120;231;38;165;102;107;35;184
 Hyundai Ioniq - 28 kWh;Wet;-3;Nokian R3;Winter;205/55-16;205/55-16;90;156;28;180;112;117;18;390
