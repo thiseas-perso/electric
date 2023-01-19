@@ -1,37 +1,21 @@
-import React from 'react';
+import {
+  Acceleration,
+  Banana,
+  Braking,
+  Range,
+  ThousandKM,
+  Weight,
+} from '../TestTables';
 
-const VersionsTests = ({ version, testNames }) => {
-  const tests = [];
-  testNames.forEach((test) => {
-    if (version[test]) {
-      tests.push({ test, tests: version[test] });
-    }
-  });
-  console.log({ tests });
-
+const VersionsTests = ({ version }) => {
   return (
     <>
-      {tests.map((el) => {
-        return (
-          <li key={el.test}>
-            <h3 className="font-bold">{el.test}</h3>
-
-            {el.tests.map((elT, idx) => {
-              return (
-                <ul key={idx} className="border">
-                  {Object.keys(elT).map((objKey, idxT) => {
-                    return (
-                      <li key={idxT}>
-                        {objKey} : {elT[objKey]}
-                      </li>
-                    );
-                  })}
-                </ul>
-              );
-            })}
-          </li>
-        );
-      })}
+      {version?.acceleration && <Acceleration tests={version.acceleration} />}
+      {version?.thousand && <ThousandKM tests={version.thousand} />}
+      {version?.weight && <Weight tests={version.weight} />}
+      {version?.banana && <Banana tests={version.banana} />}
+      {version?.range && <Range tests={version.range} />}
+      {version?.braking && <Braking tests={version.braking} />}
     </>
   );
 };

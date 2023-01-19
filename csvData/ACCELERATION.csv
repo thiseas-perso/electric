@@ -1,4 +1,4 @@
-Car;Drive;Date;Tires;Wheel front;Wheel rear;0-10;0-20;0-30;0-40;0-50;0-60;0-70;0-80;0-90;0-100;0-100 (1 ft);0-100 spec;Test vs spec;Weight;Hp;Hp/weight
+Car;Drive;Date;Tires;WheelFront;WheelRear;ZeroTo10;ZeroTo20;ZeroTo30;ZeroTo40;ZeroTo50;ZeroTo60;ZeroTo70;ZeroTo80;ZeroTo90;ZeroTo100;ZeroTo100onefoot;ZeroTo100spec;TestVsSpec;Weight;Hp;HpPerWeight
 Tesla Model S - Performance Raven;AWD;03.06.2022;Michelin Pilot Super Sport;245/35-21;265/35-21;0,25;0,54;0,81;1,07;1,33;1,6;1,85;2,13;2,48;2,85;2,64;2,6;0,04;2360;800;0,339
 Porsche Taycan - Turbo S;AWD;02.10.2020;Pirelli P Zero;265/35-21;305/35-21;0,34;0,66;0,96;1,25;1,51;1,78;2,07;2,41;2,7;3,08;2,84;2,8;0,28;2380;761;0,32
 Porsche Taycan - Turbo;AWD;02.10.2020;Pirelli P Zero;265/35-21;305/35-21;0,28;0,62;0,92;1,23;1,51;1,8;2,12;2,46;2,8;3,21;2,99;3,2;0,01;2380;680;0,286
