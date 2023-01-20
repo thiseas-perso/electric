@@ -1,5 +1,6 @@
 import React from 'react';
 import StudioImage from '../../../components/StudioImage';
+import Version from '../../../components/Version';
 import VersionsTests from '../../../components/VersionTests';
 import {
   getAllModelIds,
@@ -30,12 +31,12 @@ const Model = ({ modelData, testNames }) => {
   console.log({ modelData, testNames });
   return (
     <div>
-      <div className="w-full px-4 flex flex-col items-center">
+      <div className="w-full h-fit px-4 flex flex-col items-center">
         <StudioImage
           model={modelData.model}
           maker={modelData.maker}
           width={1200}
-          height={500}
+          height={100}
           zoomType={'fullscreen'}
           priority={true}
           className={'unselectable w-full max-w-3xl object-cover'}
@@ -45,15 +46,10 @@ const Model = ({ modelData, testNames }) => {
           <span className="text-light-primary-4">{modelData.model}</span>
         </h1>
       </div>
-      <div className="bg-white w-full px-4">
+      <div className="bg-white min-w-ful px-4 max-w-full">
         {modelData.versions.map((version) => {
           return (
-            <div key={version.id}>
-              <h2>{version.version}</h2>
-              <ul>
-                <VersionsTests version={version} testNames={testNames} />
-              </ul>
-            </div>
+            <Version key={version.id} version={version} testNames={testNames} />
           );
         })}
       </div>

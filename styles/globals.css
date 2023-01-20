@@ -45,6 +45,14 @@ Solution: Install PostCSS Language Support extension
   .error-msg {
     @apply text-sm text-light-primary-1;
   }
+
+  th {
+    @apply font-semibold;
+  }
+
+  td {
+    @apply text-center align-middle;
+  }
 }
 
 .unselectable {
