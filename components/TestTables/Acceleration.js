@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
-const Acceleration = ({ tests }) => {
-  const [details, setDetails] = useState(true);
+const Acceleration = ({ tests, className }) => {
+  const [details, setDetails] = useState(false);
   const [moreDetails, setMoredetails] = useState(false);
   const display = details ? '' : 'hidden';
   const displayMore = moreDetails ? '' : 'hidden';
   return (
-    <div>
+    <div className={className}>
       <h3 className="font-bold">Acceleration</h3>
       <table>
         <thead>
