@@ -7,11 +7,15 @@ const Acceleration = ({ tests, className }) => {
   const displayMore = moreDetails ? '' : 'hidden';
   return (
     <div className={className}>
-      <h3 className="font-bold">Acceleration</h3>
-      <table>
+      <table className=" min-w-full">
+        <caption>
+          <h3 className="font-bold bg-light-primary-2 text-white p-2 text-left">
+            Acceleration
+          </h3>
+        </caption>
         <thead>
           <tr>
-            <th>Drive</th>
+            <th>Motorisation</th>
             <th className={displayMore}>0-10</th>
             <th className={displayMore}>0-20</th>
             <th className={displayMore}>0-30</th>

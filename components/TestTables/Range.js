@@ -8,11 +8,15 @@ const Range = ({ tests, className }) => {
 
   return (
     <div className={className}>
-      <h3 className="font-bold">Autonomie</h3>
-      <table>
+      <table className="min-w-full">
+        <caption>
+          <h3 className="font-bold bg-light-primary-2 text-white p-2 text-left">
+            Autonomie
+          </h3>
+        </caption>
         <thead>
           <tr>
-            <th>Vitesse</th>
+            <th>Vitesse (km/h)</th>
             <th className={display}>Capacitée réelle (kWh)</th>
             <th className={display}>Température</th>
             <th>Autonomie (km - charge à 100%)</th>

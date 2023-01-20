@@ -3,8 +3,12 @@ import React from 'react';
 const Weight = ({ tests, className }) => {
   return (
     <div className={className}>
-      <h3 className="font-bold">Poid</h3>
-      <table>
+      <table className="min-w-full">
+        <caption>
+          <h3 className="font-bold bg-light-primary-2 text-white p-2 text-left w-full">
+            Poid
+          </h3>
+        </caption>
         <thead>
           <tr>
             <th>Total</th>

@@ -3,8 +3,12 @@ import React from 'react';
 const ThousandKM = ({ tests, className }) => {
   return (
     <div className={className}>
-      <h3 className="font-bold">1000km</h3>
-      <table>
+      <table className="min-w-full">
+        <caption>
+          <h3 className="font-bold bg-light-primary-2 text-white p-2 text-left">
+            1000km
+          </h3>
+        </caption>
         <thead>
           <tr>
             <th>Temps</th>

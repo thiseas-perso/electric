@@ -7,8 +7,12 @@ const Braking = ({ tests, className }) => {
   const displayMore = moreDetails ? '' : 'hidden';
   return (
     <div className={className}>
-      <h3 className="font-bold">Freins</h3>
-      <table>
+      <table className="min-w-full">
+        <caption>
+          <h3 className="font-bold bg-light-primary-2 text-white p-2 text-left">
+            Freins
+          </h3>
+        </caption>
         <thead>
           <tr>
             <th>100 à 0 km/h (secondes)</th>
