@@ -1,4 +1,4 @@
-Car;Date;Surface;Temp;Tires;Season;Wheel front;Wheel rear;Distance;Secs100to0KmPerH;Weight
+Car;Date;Surface;Temp;Tires;Season;WheelFront;WheelRear;Distance;Secs100to0KmPerH;Weight
 Tesla Model Y - Performance;12.07.2022;Dry;12;Falken Azenis FK520;Summer;255/45-19;255/45-19;33,65;2,43;2100
 Porsche Taycan - Cross Turismo 4;05.06.2022;Dry;14;Goodyear Eagle F1;Summer;265/35-21;305/30-21;34,08;2,65;2440
 BYD Tang;07.08.2022;Dry;12;Continental ContiSportContact;Summer;265/40-22;265/40-22;34,7;2,46;2580

@@ -39,7 +39,7 @@ const Banana = ({ tests, className }) => {
             return (
               <tr key={i}>
                 <td
-                  data-th="Trunk"
+                  data-th="Coffre"
                   className={[
                     'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
                   ]}
@@ -47,7 +47,7 @@ const Banana = ({ tests, className }) => {
                   {test.Trunk}
                 </td>
                 <td
-                  data-th="SeatsFolded"
+                  data-th="Coffre sièges baissés"
                   className={[
                     'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
                   ]}
@@ -55,7 +55,7 @@ const Banana = ({ tests, className }) => {
                   {test.SeatsFolded}
                 </td>
                 <td
-                  data-th="Frunk"
+                  data-th="Coffre Avant"
                   className={[
                     'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
                   ]}

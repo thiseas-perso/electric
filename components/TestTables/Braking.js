@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const Braking = ({ tests, className }) => {
   const [details, setDetails] = useState(false);
   const [moreDetails, setMoredetails] = useState(false);
+
   const display = details ? '' : 'hidden';
   const displayMore = moreDetails ? '' : 'hidden';
   return (
@@ -15,29 +16,147 @@ const Braking = ({ tests, className }) => {
         </caption>
         <thead>
           <tr>
-            <th>100 à 0 km/h (secondes)</th>
-            <th>Distance (mètres)</th>
-            <th>Surface</th>
-            <th className={display}>Poid</th>
-            <th className={display}>Température</th>
-            <th className={displayMore}>Saison</th>
-            <th className={displayMore}>Pneux</th>
-            <th className={displayMore}>Roue avant</th>
-            <th className={displayMore}>Roue arrière</th>
+            <th
+              className={[
+                'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0',
+              ]}
+            >
+              100 à 0 km/h (secondes)
+            </th>
+            <th
+              className={[
+                'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0',
+              ]}
+            >
+              Distance (mètres)
+            </th>
+            <th
+              className={[
+                'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0',
+              ]}
+            >
+              Surface
+            </th>
+            <th
+              className={[
+                'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0',
+              ]}
+            >
+              Poid
+            </th>
+            <th
+              className={[
+                'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0',
+              ]}
+            >
+              Température
+            </th>
+            <th
+              className={[
+                'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0',
+              ]}
+            >
+              Saison
+            </th>
+            <th
+              className={[
+                'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0',
+              ]}
+            >
+              Pneux
+            </th>
+            <th
+              className={[
+                'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0',
+              ]}
+            >
+              Roue avant
+            </th>
+            <th
+              className={[
+                'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0',
+              ]}
+            >
+              Roue arrière
+            </th>
           </tr>
         </thead>
         <tbody>
           {tests.map((test, i) => {
             return (
               <tr key={i}>
-                <td>{test.Secs100to0KmPerH}</td>
-                <td>{test.Distance}</td>
-                <td>{test.Surface}</td>
-                <td className={displayMore}>{test.Weight}</td>
-                <td className={displayMore}>{test.Season}</td>
-                <td className={displayMore}>{test.Tires}</td>
-                <td className={displayMore}>{test.WheelFront}</td>
-                <td className={displayMore}>{test.WheelRear}</td>
+                <td
+                  data-th="100 à 0 km/h (secondes)"
+                  className={[
+                    'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
+                  ]}
+                >
+                  {test.Secs100to0KmPerH}
+                </td>
+                <td
+                  data-th="Distance (mètres)"
+                  className={[
+                    'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
+                  ]}
+                >
+                  {test.Distance}
+                </td>
+                <td
+                  data-th="Surface"
+                  className={[
+                    'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
+                  ]}
+                >
+                  {test.Surface}
+                </td>
+                <td
+                  data-th="Poid"
+                  className={[
+                    'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
+                  ]}
+                >
+                  {test.Weight}
+                </td>
+                <td
+                  data-th="Température"
+                  className={[
+                    'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
+                  ]}
+                >
+                  {test.Temp}
+                </td>
+                <td
+                  data-th="Saison"
+                  className={[
+                    'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
+                  ]}
+                >
+                  {test.Season}
+                </td>
+                <td
+                  data-th="Pneux"
+                  className={[
+                    'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
+                  ]}
+                >
+                  {test.Tires}
+                </td>
+                <td
+                  data-th="Roue avant"
+                  className={[
+                    'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
+                  ]}
+                >
+                  {test.WheelFront}
+                </td>
+                <td
+                  data-th="Roue arrière"
+                  className={[
+                    'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
+                  ]}
+                >
+                  {test.WheelRear}
+                </td>
               </tr>
             );
           })}
