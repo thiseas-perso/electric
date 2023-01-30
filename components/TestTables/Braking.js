@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 
 const Braking = ({ tests, className }) => {
-  const [details, setDetails] = useState(false);
-  const [moreDetails, setMoredetails] = useState(false);
+  const [showMoreDetails, setShowMoreDetails] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
 
-  const display = details ? '' : 'hidden';
-  const displayMore = moreDetails ? '' : 'hidden';
   return (
     <div className={className}>
       <table className="min-w-full">
@@ -16,66 +14,60 @@ const Braking = ({ tests, className }) => {
         </caption>
         <thead>
           <tr>
-            <th
-              className={[
-                'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0',
-              ]}
-            >
+            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0">
               100 à 0 km/h (secondes)
             </th>
-            <th
-              className={[
-                'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0',
-              ]}
-            >
+            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0">
               Distance (mètres)
             </th>
-            <th
-              className={[
-                'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0',
-              ]}
-            >
+            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0">
               Surface
             </th>
             <th
-              className={[
-                'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0',
-              ]}
+              className={`${
+                showDetails
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  : 'hidden'
+              }`}
             >
               Poid
             </th>
             <th
-              className={[
-                'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0',
-              ]}
+              className={`${
+                showDetails
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  : 'hidden'
+              }`}
             >
               Température
             </th>
             <th
-              className={[
-                'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0',
-              ]}
+              className={`${
+                showMoreDetails
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  : 'hidden'
+              }`}
             >
               Saison
             </th>
-            <th
-              className={[
-                'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0',
-              ]}
-            >
+            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0">
               Pneux
             </th>
             <th
-              className={[
-                'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0',
-              ]}
+              className={`${
+                showMoreDetails
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  : 'hidden'
+              }`}
             >
               Roue avant
             </th>
             <th
-              className={[
-                'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0',
-              ]}
+              className={`${
+                showMoreDetails
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  : 'hidden'
+              }`}
             >
               Roue arrière
             </th>
@@ -87,73 +79,75 @@ const Braking = ({ tests, className }) => {
               <tr key={i}>
                 <td
                   data-th="100 à 0 km/h (secondes)"
-                  className={[
-                    'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
-                  ]}
+                  className="block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell"
                 >
                   {test.Secs100to0KmPerH}
                 </td>
                 <td
                   data-th="Distance (mètres)"
-                  className={[
-                    'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
-                  ]}
+                  className="block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell"
                 >
                   {test.Distance}
                 </td>
                 <td
                   data-th="Surface"
-                  className={[
-                    'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
-                  ]}
+                  className="block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell"
                 >
                   {test.Surface}
                 </td>
                 <td
                   data-th="Poid"
-                  className={[
-                    'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
-                  ]}
+                  className={`${
+                    showDetails
+                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      : 'hidden'
+                  }`}
                 >
                   {test.Weight}
                 </td>
                 <td
                   data-th="Température"
-                  className={[
-                    'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
-                  ]}
+                  className={`${
+                    showDetails
+                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      : 'hidden'
+                  }`}
                 >
                   {test.Temp}
                 </td>
                 <td
                   data-th="Saison"
-                  className={[
-                    'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
-                  ]}
+                  className={`${
+                    showMoreDetails
+                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      : 'hidden'
+                  }`}
                 >
                   {test.Season}
                 </td>
                 <td
                   data-th="Pneux"
-                  className={[
-                    'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
-                  ]}
+                  className="block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell"
                 >
                   {test.Tires}
                 </td>
                 <td
                   data-th="Roue avant"
-                  className={[
-                    'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
-                  ]}
+                  className={`${
+                    showMoreDetails
+                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      : 'hidden'
+                  }`}
                 >
                   {test.WheelFront}
                 </td>
                 <td
                   data-th="Roue arrière"
-                  className={[
-                    'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
-                  ]}
+                  className={`${
+                    showMoreDetails
+                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      : 'hidden'
+                  }`}
                 >
                   {test.WheelRear}
                 </td>

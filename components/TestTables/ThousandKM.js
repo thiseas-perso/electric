@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const ThousandKM = ({ tests, className }) => {
+  const [showMoreDetails, setShowMoreDetails] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
+
   return (
     <div className={className}>
       <table className="min-w-full">
@@ -16,7 +19,7 @@ const ThousandKM = ({ tests, className }) => {
                 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0',
               ]}
             >
-              Temps
+              Durée
             </th>
             <th
               className={[
@@ -47,7 +50,7 @@ const ThousandKM = ({ tests, className }) => {
             return (
               <tr key={i}>
                 <td
-                  data-th="Temps"
+                  data-th="Durée"
                   className={[
                     'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
                   ]}
