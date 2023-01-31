@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 
 const Acceleration = ({ tests, className }) => {
-  const [details, setDetails] = useState(false);
-  const [moreDetails, setMoredetails] = useState(false);
-  const display = details ? '' : 'hidden';
-  const displayMore = moreDetails ? '' : 'hidden';
+  const [showMoreDetails, setShowMoreDetails] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
+
   return (
     <div className={className}>
       <table className=" min-w-full">
@@ -15,52 +14,360 @@ const Acceleration = ({ tests, className }) => {
         </caption>
         <thead>
           <tr>
-            <th>Motorisation</th>
-            <th className={displayMore}>0-10</th>
-            <th className={displayMore}>0-20</th>
-            <th className={displayMore}>0-30</th>
-            <th className={displayMore}>0-40</th>
-            <th className={displayMore}>0-50</th>
-            <th className={displayMore}>0-60</th>
-            <th className={displayMore}>0-70</th>
-            <th className={displayMore}>0-80</th>
-            <th className={displayMore}>0-90</th>
-            <th>0-100</th>
-            <th className={display}>0-100 (1ft)</th>
-            <th>0-100 (spec)</th>
-            <th className={display}>test VS spec</th>
-            <th className={display}>Date</th>
-            <th className={display}>Hp</th>
-            <th className={display}>Pneux</th>
-            <th>Poid (kg)</th>
-            <th className={display}>Roue avant</th>
-            <th className={display}>Roue arrière</th>
+            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0">
+              Motorisation
+            </th>
+            <th
+              className={`${
+                showMoreDetails
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  : 'hidden'
+              }`}
+            >
+              0-10
+            </th>
+            <th
+              className={`${
+                showMoreDetails
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  : 'hidden'
+              }`}
+            >
+              0-20
+            </th>
+            <th
+              className={`${
+                showMoreDetails
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  : 'hidden'
+              }`}
+            >
+              0-30
+            </th>
+            <th
+              className={`${
+                showMoreDetails
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  : 'hidden'
+              }`}
+            >
+              0-40
+            </th>
+            <th
+              className={`${
+                showMoreDetails
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  : 'hidden'
+              }`}
+            >
+              0-50
+            </th>
+            <th
+              className={`${
+                showMoreDetails
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  : 'hidden'
+              }`}
+            >
+              0-60
+            </th>
+            <th
+              className={`${
+                showMoreDetails
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  : 'hidden'
+              }`}
+            >
+              0-70
+            </th>
+            <th
+              className={`${
+                showMoreDetails
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  : 'hidden'
+              }`}
+            >
+              0-80
+            </th>
+            <th
+              className={`${
+                showMoreDetails
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  : 'hidden'
+              }`}
+            >
+              0-90
+            </th>
+            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0">
+              0-100
+            </th>
+            <th
+              className={`${
+                showMoreDetails
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  : 'hidden'
+              }`}
+            >
+              0-100 (1ft)
+            </th>
+            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0">
+              0-100 (spec)
+            </th>
+            <th
+              className={`${
+                showDetails
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  : 'hidden'
+              }`}
+            >
+              test VS spec
+            </th>
+            <th
+              className={`${
+                showMoreDetails
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  : 'hidden'
+              }`}
+            >
+              Date
+            </th>
+            <th
+              className={`${
+                showDetails
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  : 'hidden'
+              }`}
+            >
+              Hp
+            </th>
+            <th
+              className={`${
+                showMoreDetails
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  : 'hidden'
+              }`}
+            >
+              Pneux
+            </th>
+            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0">
+              Poid (kg)
+            </th>
+            <th
+              className={`${
+                showMoreDetails
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  : 'hidden'
+              }`}
+            >
+              Roue avant
+            </th>
+            <th
+              className={`${
+                showMoreDetails
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  : 'hidden'
+              }`}
+            >
+              Roue arrière
+            </th>
           </tr>
         </thead>
         <tbody>
           {tests.map((test, i) => {
             return (
               <tr key={i}>
-                <td>{test.Drive}</td>
-                <td className={displayMore}>{test.ZeroTo10}</td>
-                <td className={displayMore}>{test.ZeroTo20}</td>
-                <td className={displayMore}>{test.ZeroTo30}</td>
-                <td className={displayMore}>{test.ZeroTo40}</td>
-                <td className={displayMore}>{test.ZeroTo50}</td>
-                <td className={displayMore}>{test.ZeroTo60}</td>
-                <td className={displayMore}>{test.ZeroTo70}</td>
-                <td className={displayMore}>{test.ZeroTo80}</td>
-                <td className={displayMore}>{test.ZeroTo90}</td>
-                <td>{test.ZeroTo100}</td>
-                <td className={display}>{test.ZeroTo100onefoot}</td>
-                <td>{test.ZeroTo100spec}</td>
-                <td className={display}>{test.TestVsSpec}</td>
-                <td className={display}>{test.Date}</td>
-                <td className={display}>{test.Hp}</td>
-                <td className={display}>{test.Tires}</td>
-                <td>{test.Weight}</td>
-                <td className={display}>{test.WheelFront}</td>
-                <td className={display}>{test.WheelRear}</td>
+                <td
+                  data-th="Motorisation"
+                  className={[
+                    'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
+                  ]}
+                >
+                  {test.Drive}
+                </td>
+                <td
+                  data-th="0-10"
+                  className={`${
+                    showMoreDetails
+                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      : 'hidden'
+                  }`}
+                >
+                  {test.ZeroTo10}
+                </td>
+                <td
+                  data-th="0-20"
+                  className={`${
+                    showMoreDetails
+                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      : 'hidden'
+                  }`}
+                >
+                  {test.ZeroTo20}
+                </td>
+                <td
+                  data-th="0-30"
+                  className={`${
+                    showMoreDetails
+                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      : 'hidden'
+                  }`}
+                >
+                  {test.ZeroTo30}
+                </td>
+                <td
+                  data-th="0-40"
+                  className={`${
+                    showMoreDetails
+                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      : 'hidden'
+                  }`}
+                >
+                  {test.ZeroTo40}
+                </td>
+                <td
+                  data-th="0-50"
+                  className={`${
+                    showMoreDetails
+                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      : 'hidden'
+                  }`}
+                >
+                  {test.ZeroTo50}
+                </td>
+                <td
+                  data-th="0-60"
+                  className={`${
+                    showMoreDetails
+                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      : 'hidden'
+                  }`}
+                >
+                  {test.ZeroTo60}
+                </td>
+                <td
+                  data-th="0-70"
+                  className={`${
+                    showMoreDetails
+                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      : 'hidden'
+                  }`}
+                >
+                  {test.ZeroTo70}
+                </td>
+                <td
+                  data-th="0-80"
+                  className={`${
+                    showMoreDetails
+                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      : 'hidden'
+                  }`}
+                >
+                  {test.ZeroTo80}
+                </td>
+                <td
+                  data-th="0-90"
+                  className={`${
+                    showMoreDetails
+                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      : 'hidden'
+                  }`}
+                >
+                  {test.ZeroTo90}
+                </td>
+                <td
+                  data-th="0-100"
+                  className={[
+                    'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
+                  ]}
+                >
+                  {test.ZeroTo100}
+                </td>
+                <td
+                  data-th="0-100 (1 foot)"
+                  className={`${
+                    showMoreDetails
+                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      : 'hidden'
+                  }`}
+                >
+                  {test.ZeroTo100onefoot}
+                </td>
+                <td
+                  data-th="0-100 (spec)"
+                  className={[
+                    'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
+                  ]}
+                >
+                  {test.ZeroTo100spec}
+                </td>
+                <td
+                  data-th="test VS spec"
+                  className={`${
+                    showDetails
+                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      : 'hidden'
+                  }`}
+                >
+                  {test.TestVsSpec}
+                </td>
+                <td
+                  data-th="Date"
+                  className={`${
+                    showMoreDetails
+                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      : 'hidden'
+                  }`}
+                >
+                  {test.Date}
+                </td>
+                <td
+                  data-th="Hp"
+                  className={`${
+                    showDetails
+                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      : 'hidden'
+                  }`}
+                >
+                  {test.Hp}
+                </td>
+                <td
+                  data-th="Pneux"
+                  className={`${
+                    showMoreDetails
+                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      : 'hidden'
+                  }`}
+                >
+                  {test.Tires}
+                </td>
+                <td
+                  data-th="Poid (kg)"
+                  className={[
+                    'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
+                  ]}
+                >
+                  {test.Weight}
+                </td>
+                <td
+                  data-th="Roue avant"
+                  className={`${
+                    showMoreDetails
+                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      : 'hidden'
+                  }`}
+                >
+                  {test.WheelFront}
+                </td>
+                <td
+                  data-th="Roue arrière"
+                  className={`${
+                    showMoreDetails
+                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      : 'hidden'
+                  }`}
+                >
+                  {test.WheelRear}
+                </td>
               </tr>
             );
           })}

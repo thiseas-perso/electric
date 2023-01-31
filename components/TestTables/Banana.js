@@ -11,18 +11,39 @@ const Banana = ({ tests, className }) => {
         </caption>
         <thead>
           <tr>
-            <th>Coffre</th>
-            <th>Coffre sièges baissés</th>
-            <th>Coffre Avant</th>
+            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0">
+              Coffre
+            </th>
+            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0">
+              Coffre sièges baissés
+            </th>
+            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0">
+              Coffre Avant
+            </th>
           </tr>
         </thead>
         <tbody>
           {tests.map((test, i) => {
             return (
               <tr key={i}>
-                <td>{test.Trunk}</td>
-                <td>{test.SeatsFolded}</td>
-                <td>{test.Frunk || 0}</td>
+                <td
+                  data-th="Coffre"
+                  className="block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell"
+                >
+                  {test.Trunk}
+                </td>
+                <td
+                  data-th="Coffre sièges baissés"
+                  className="block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell"
+                >
+                  {test.SeatsFolded}
+                </td>
+                <td
+                  data-th="Coffre Avant"
+                  className="block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell"
+                >
+                  {test.Frunk || 0}
+                </td>
               </tr>
             );
           })}
