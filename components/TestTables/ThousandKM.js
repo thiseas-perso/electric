@@ -1,9 +1,4 @@
-import React, { useState } from 'react';
-
 const ThousandKM = ({ tests, className }) => {
-  const [showMoreDetails, setShowMoreDetails] = useState(false);
-  const [showDetails, setShowDetails] = useState(false);
-
   return (
     <div className={className}>
       <table className="min-w-full">
