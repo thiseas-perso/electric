@@ -3,13 +3,34 @@ import React, { useState } from 'react';
 const Range = ({ tests, className }) => {
   const [showMoreDetails, setShowMoreDetails] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
+  const [btnTxt, setBtnTxt] = useState('détails');
+
+  const clickHandler = () => {
+    if (!showDetails && !showMoreDetails) {
+      setShowDetails(true);
+      setBtnTxt('+ de détails');
+    } else if (showDetails && !showMoreDetails) {
+      setShowMoreDetails(true);
+      setBtnTxt('- de détails');
+    } else if (showDetails && showMoreDetails) {
+      setShowDetails(false);
+      setShowMoreDetails(false);
+      setBtnTxt('détails');
+    }
+  };
 
   return (
     <div className={className}>
       <table className="min-w-full">
         <caption>
-          <h3 className="font-bold bg-light-primary-2 text-white p-2 text-left">
+          <h3 className="font-bold bg-light-primary-2 text-white p-2 text-left flex items-center gap-x-4">
             Autonomie
+            <button
+              className="font-light hover:bg-white/25"
+              onClick={clickHandler}
+            >
+              {btnTxt}
+            </button>
           </h3>
         </caption>
         <thead>

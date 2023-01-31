@@ -3,13 +3,34 @@ import React, { useState } from 'react';
 const Braking = ({ tests, className }) => {
   const [showMoreDetails, setShowMoreDetails] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
+  const [btnTxt, setBtnTxt] = useState('détails');
+
+  const clickHandler = () => {
+    if (!showDetails && !showMoreDetails) {
+      setShowDetails(true);
+      setBtnTxt('+ de détails');
+    } else if (showDetails && !showMoreDetails) {
+      setShowMoreDetails(true);
+      setBtnTxt('- de détails');
+    } else if (showDetails && showMoreDetails) {
+      setShowDetails(false);
+      setShowMoreDetails(false);
+      setBtnTxt('détails');
+    }
+  };
 
   return (
     <div className={className}>
       <table className="min-w-full">
         <caption>
-          <h3 className="font-bold bg-light-primary-2 text-white p-2 text-left">
+          <h3 className="font-bold bg-light-primary-2 text-white p-2 text-left flex items-center gap-x-4">
             Freins
+            <button
+              className="font-light hover:bg-white/25"
+              onClick={clickHandler}
+            >
+              {btnTxt}
+            </button>
           </h3>
         </caption>
         <thead>
@@ -43,7 +64,7 @@ const Braking = ({ tests, className }) => {
             </th>
             <th
               className={`${
-                showMoreDetails
+                showDetails && showMoreDetails
                   ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
                   : 'hidden'
               }`}
@@ -55,7 +76,7 @@ const Braking = ({ tests, className }) => {
             </th>
             <th
               className={`${
-                showMoreDetails
+                showDetails && showMoreDetails
                   ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
                   : 'hidden'
               }`}
@@ -64,7 +85,7 @@ const Braking = ({ tests, className }) => {
             </th>
             <th
               className={`${
-                showMoreDetails
+                showDetails && showMoreDetails
                   ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
                   : 'hidden'
               }`}
@@ -118,7 +139,7 @@ const Braking = ({ tests, className }) => {
                 <td
                   data-th="Saison"
                   className={`${
-                    showMoreDetails
+                    showDetails && showMoreDetails
                       ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
                       : 'hidden'
                   }`}
@@ -134,7 +155,7 @@ const Braking = ({ tests, className }) => {
                 <td
                   data-th="Roue avant"
                   className={`${
-                    showMoreDetails
+                    showDetails && showMoreDetails
                       ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
                       : 'hidden'
                   }`}
@@ -144,7 +165,7 @@ const Braking = ({ tests, className }) => {
                 <td
                   data-th="Roue arrière"
                   className={`${
-                    showMoreDetails
+                    showDetails && showMoreDetails
                       ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
                       : 'hidden'
                   }`}
