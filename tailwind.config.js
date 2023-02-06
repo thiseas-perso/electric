@@ -37,4 +37,9 @@ module.exports = {
   },
   darkMode: 'class',
   plugins: [],
+  variants: {
+    // extend: {
+    //   backgroundColor: ['even'],
+    // },
+  },
 };

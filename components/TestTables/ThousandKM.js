@@ -1,7 +1,7 @@
 const ThousandKM = ({ tests, className }) => {
   return (
     <div className={className}>
-      <table className="min-w-full">
+      <table className="min-w-full border-separate border-spacing-2">
         <caption>
           <h3 className="font-bold bg-light-primary-2 text-white p-2 text-left">
             1000km
@@ -43,36 +43,31 @@ const ThousandKM = ({ tests, className }) => {
         <tbody>
           {tests.map((test, i) => {
             return (
-              <tr key={i}>
+              <tr
+                key={i}
+                className="even:bg-light-primary-7/50  odd:bg-light-primary-3/50 "
+              >
                 <td
                   data-th="Durée"
-                  className={[
-                    'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
-                  ]}
+                  className="block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.Time}
                 </td>
                 <td
                   data-th="Km/h"
-                  className={[
-                    'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
-                  ]}
+                  className="block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.kmPerH}
                 </td>
                 <td
                   data-th="KWh/km"
-                  className={[
-                    'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
-                  ]}
+                  className="block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {(Number(test.WhPerKm.replace(',', '.')) / 10).toFixed(1)}
                 </td>
                 <td
                   data-th="Température"
-                  className={[
-                    'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
-                  ]}
+                  className="block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.Temp}
                 </td>

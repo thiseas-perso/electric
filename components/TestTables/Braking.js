@@ -21,7 +21,7 @@ const Braking = ({ tests, className }) => {
 
   return (
     <div className={className}>
-      <table className="min-w-full">
+      <table className="min-w-full border-separate border-spacing-2">
         <caption>
           <h3 className="font-bold bg-light-primary-2 text-white p-2 text-left flex items-center gap-x-4">
             Freins
@@ -97,22 +97,25 @@ const Braking = ({ tests, className }) => {
         <tbody>
           {tests.map((test, i) => {
             return (
-              <tr key={i}>
+              <tr
+                key={i}
+                className="even:bg-light-primary-7/50  odd:bg-light-primary-3/50 "
+              >
                 <td
                   data-th="100 à 0 km/h (secondes)"
-                  className="block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell"
+                  className="block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.Secs100to0KmPerH}
                 </td>
                 <td
                   data-th="Distance (mètres)"
-                  className="block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell"
+                  className="block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.Distance}
                 </td>
                 <td
                   data-th="Surface"
-                  className="block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell"
+                  className="block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.Surface}
                 </td>
@@ -120,7 +123,7 @@ const Braking = ({ tests, className }) => {
                   data-th="Poid"
                   className={`${
                     showDetails
-                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -130,7 +133,7 @@ const Braking = ({ tests, className }) => {
                   data-th="Température"
                   className={`${
                     showDetails
-                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -140,7 +143,7 @@ const Braking = ({ tests, className }) => {
                   data-th="Saison"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -148,7 +151,7 @@ const Braking = ({ tests, className }) => {
                 </td>
                 <td
                   data-th="Pneux"
-                  className="block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell"
+                  className="block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.Tires}
                 </td>
@@ -156,7 +159,7 @@ const Braking = ({ tests, className }) => {
                   data-th="Roue avant"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -166,7 +169,7 @@ const Braking = ({ tests, className }) => {
                   data-th="Roue arrière"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >

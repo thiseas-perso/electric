@@ -47,11 +47,11 @@ Solution: Install PostCSS Language Support extension
   }
 
   th {
-    @apply font-semibold;
+    @apply font-normal text-sm;
   }
 
   td {
-    @apply text-center align-middle;
+    @apply text-center align-middle font-semibold p-0;
   }
 }
 

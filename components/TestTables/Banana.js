@@ -3,7 +3,7 @@ import React from 'react';
 const Banana = ({ tests, className }) => {
   return (
     <div className={className}>
-      <table className="min-w-full">
+      <table className="min-w-full border-separate border-spacing-2">
         <caption>
           <h3 className="font-bold bg-light-primary-2 text-white p-2 text-left">
             Banana Box
@@ -25,22 +25,25 @@ const Banana = ({ tests, className }) => {
         <tbody>
           {tests.map((test, i) => {
             return (
-              <tr key={i}>
+              <tr
+                key={i}
+                className="even:bg-light-primary-7/50  odd:bg-light-primary-3/50 "
+              >
                 <td
                   data-th="Coffre"
-                  className="block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell"
+                  className="block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.Trunk}
                 </td>
                 <td
                   data-th="Coffre sièges baissés"
-                  className="block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell"
+                  className="block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.SeatsFolded}
                 </td>
                 <td
                   data-th="Coffre Avant"
-                  className="block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell"
+                  className="block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.Frunk || 0}
                 </td>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import FlipCard from '../FlipCard';
 
 const Acceleration = ({ tests, className }) => {
   const [showMoreDetails, setShowMoreDetails] = useState(false);
@@ -21,7 +22,8 @@ const Acceleration = ({ tests, className }) => {
 
   return (
     <div className={className}>
-      <table className=" min-w-full">
+      <FlipCard />
+      <table className="min-w-full border-separate border-spacing-2">
         <caption>
           <h3 className="font-bold bg-light-primary-2 text-white p-2 text-left flex items-center gap-x-4">
             Acceleration
@@ -38,7 +40,7 @@ const Acceleration = ({ tests, className }) => {
             <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0">
               Motorisation
             </th>
-            <th
+            {/* <th
               className={`${
                 showDetails && showMoreDetails
                   ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
@@ -118,9 +120,9 @@ const Acceleration = ({ tests, className }) => {
               }`}
             >
               0-90
-            </th>
+            </th> */}
             <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0">
-              0-100
+              0-100 (secondes)
             </th>
             <th
               className={`${
@@ -129,10 +131,10 @@ const Acceleration = ({ tests, className }) => {
                   : 'hidden'
               }`}
             >
-              0-100 (1ft)
+              0-100 1-foot (secondes)
             </th>
             <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0">
-              0-100 (spec)
+              0-100 Spec. (secondes)
             </th>
             <th
               className={`${
@@ -196,20 +198,21 @@ const Acceleration = ({ tests, className }) => {
         <tbody>
           {tests.map((test, i) => {
             return (
-              <tr key={i}>
+              <tr
+                key={i}
+                className="even:bg-light-primary-7/50  odd:bg-light-primary-3/50 "
+              >
                 <td
                   data-th="Motorisation"
-                  className={[
-                    'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
-                  ]}
+                  className="block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.Drive}
                 </td>
-                <td
+                {/* <td
                   data-th="0-10"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -219,7 +222,7 @@ const Acceleration = ({ tests, className }) => {
                   data-th="0-20"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -229,7 +232,7 @@ const Acceleration = ({ tests, className }) => {
                   data-th="0-30"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -239,7 +242,7 @@ const Acceleration = ({ tests, className }) => {
                   data-th="0-40"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -249,7 +252,7 @@ const Acceleration = ({ tests, className }) => {
                   data-th="0-50"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -259,7 +262,7 @@ const Acceleration = ({ tests, className }) => {
                   data-th="0-60"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -269,7 +272,7 @@ const Acceleration = ({ tests, className }) => {
                   data-th="0-70"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -279,7 +282,7 @@ const Acceleration = ({ tests, className }) => {
                   data-th="0-80"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -289,34 +292,34 @@ const Acceleration = ({ tests, className }) => {
                   data-th="0-90"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
                   {test.ZeroTo90}
-                </td>
+                </td> */}
                 <td
-                  data-th="0-100"
+                  data-th="0-100 (secondes)"
                   className={[
-                    'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
+                    'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg ',
                   ]}
                 >
                   {test.ZeroTo100}
                 </td>
                 <td
-                  data-th="0-100 (1 foot)"
+                  data-th="0-100 1-foot (secondes)"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
                   {test.ZeroTo100onefoot}
                 </td>
                 <td
-                  data-th="0-100 (spec)"
+                  data-th="0-100 Spec (secondes)"
                   className={[
-                    'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
+                    'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg ',
                   ]}
                 >
                   {test.ZeroTo100spec}
@@ -325,7 +328,7 @@ const Acceleration = ({ tests, className }) => {
                   data-th="test VS spec"
                   className={`${
                     showDetails
-                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -335,7 +338,7 @@ const Acceleration = ({ tests, className }) => {
                   data-th="Date"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -345,7 +348,7 @@ const Acceleration = ({ tests, className }) => {
                   data-th="Hp"
                   className={`${
                     showDetails
-                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -355,7 +358,7 @@ const Acceleration = ({ tests, className }) => {
                   data-th="Pneux"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -364,7 +367,7 @@ const Acceleration = ({ tests, className }) => {
                 <td
                   data-th="Poid (kg)"
                   className={[
-                    'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell',
+                    'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg ',
                   ]}
                 >
                   {test.Weight}
@@ -373,7 +376,7 @@ const Acceleration = ({ tests, className }) => {
                   data-th="Roue avant"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -383,7 +386,7 @@ const Acceleration = ({ tests, className }) => {
                   data-th="Roue arrière"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block before:content-[attr(data-th)] before:font-semibold before:block sm:before:content-none sm:table-cell'
+                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
