@@ -47,99 +47,11 @@ const Acceleration = ({ tests, className }) => {
             <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help">
               <TableHeader info="Motorisation" imageSrc={driveImg} />
             </th>
-            {/* <th
-              className={`${
-                showDetails && showMoreDetails
-                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help'
-                  : 'hidden'
-              }`}
-            >
-              0-10
-            </th>
-            <th
-              className={`${
-                showDetails && showMoreDetails
-                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help'
-                  : 'hidden'
-              }`}
-            >
-              0-20
-            </th>
-            <th
-              className={`${
-                showDetails && showMoreDetails
-                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help'
-                  : 'hidden'
-              }`}
-            >
-              0-30
-            </th>
-            <th
-              className={`${
-                showDetails && showMoreDetails
-                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help'
-                  : 'hidden'
-              }`}
-            >
-              0-40
-            </th>
-            <th
-              className={`${
-                showDetails && showMoreDetails
-                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help'
-                  : 'hidden'
-              }`}
-            >
-              0-50
-            </th>
-            <th
-              className={`${
-                showDetails && showMoreDetails
-                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help'
-                  : 'hidden'
-              }`}
-            >
-              0-60
-            </th>
-            <th
-              className={`${
-                showDetails && showMoreDetails
-                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help'
-                  : 'hidden'
-              }`}
-            >
-              0-70
-            </th>
-            <th
-              className={`${
-                showDetails && showMoreDetails
-                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help'
-                  : 'hidden'
-              }`}
-            >
-              0-80
-            </th>
-            <th
-              className={`${
-                showDetails && showMoreDetails
-                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help'
-                  : 'hidden'
-              }`}
-            >
-              0-90
-            </th> */}
+
             <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help">
               <TableHeader info="Acceleration (secondes)" imageSrc={accImg} />
             </th>
-            {/* <th
-              className={`${
-                showDetails && showMoreDetails
-                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help'
-                  : 'hidden'
-              }`}
-            >
-              0-100 1-foot (secondes)
-            </th> */}
+
             <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help">
               <TableHeader
                 info="Acceleration spec (secondes)"
@@ -212,172 +124,146 @@ const Acceleration = ({ tests, className }) => {
                 key={i}
                 className="even:bg-light-primary-7/50  odd:bg-light-primary-3/50 "
               >
+                <div className="font-extrabold flex justify-center mt-5 sm:hidden hover:cursor-help">
+                  <TableHeader
+                    info="Motorisation"
+                    imageSrc={driveImg}
+                    className
+                  />
+                </div>
                 <td
                   data-th="Motorisation"
-                  className="block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.Drive}
                 </td>
-                {/* <td
-                  data-th="0-10"
-                  className={`${
-                    showDetails && showMoreDetails
-                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
-                      : 'hidden'
-                  }`}
-                >
-                  {test.ZeroTo10}
-                </td>
-                <td
-                  data-th="0-20"
-                  className={`${
-                    showDetails && showMoreDetails
-                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
-                      : 'hidden'
-                  }`}
-                >
-                  {test.ZeroTo20}
-                </td>
-                <td
-                  data-th="0-30"
-                  className={`${
-                    showDetails && showMoreDetails
-                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
-                      : 'hidden'
-                  }`}
-                >
-                  {test.ZeroTo30}
-                </td>
-                <td
-                  data-th="0-40"
-                  className={`${
-                    showDetails && showMoreDetails
-                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
-                      : 'hidden'
-                  }`}
-                >
-                  {test.ZeroTo40}
-                </td>
-                <td
-                  data-th="0-50"
-                  className={`${
-                    showDetails && showMoreDetails
-                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
-                      : 'hidden'
-                  }`}
-                >
-                  {test.ZeroTo50}
-                </td>
-                <td
-                  data-th="0-60"
-                  className={`${
-                    showDetails && showMoreDetails
-                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
-                      : 'hidden'
-                  }`}
-                >
-                  {test.ZeroTo60}
-                </td>
-                <td
-                  data-th="0-70"
-                  className={`${
-                    showDetails && showMoreDetails
-                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
-                      : 'hidden'
-                  }`}
-                >
-                  {test.ZeroTo70}
-                </td>
-                <td
-                  data-th="0-80"
-                  className={`${
-                    showDetails && showMoreDetails
-                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
-                      : 'hidden'
-                  }`}
-                >
-                  {test.ZeroTo80}
-                </td>
-                <td
-                  data-th="0-90"
-                  className={`${
-                    showDetails && showMoreDetails
-                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
-                      : 'hidden'
-                  }`}
-                >
-                  {test.ZeroTo90}
-                </td> */}
+
+                <div className="font-extrabold flex justify-center mt-5 sm:hidden hover:cursor-help">
+                  <TableHeader
+                    info="0-100km/h (secondes)"
+                    imageSrc={accImg}
+                    className
+                  />
+                </div>
                 <td
                   data-th="0-100 (secondes)"
                   className={[
-                    'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg ',
+                    'block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg ',
                   ]}
                 >
                   {test.ZeroTo100}
                 </td>
-                {/* <td
-                  data-th="0-100 1-foot (secondes)"
-                  className={`${
-                    showDetails && showMoreDetails
-                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
-                      : 'hidden'
-                  }`}
-                >
-                  {test.ZeroTo100onefoot}
-                </td> */}
+
+                <div className="font-extrabold flex justify-center mt-5 sm:hidden hover:cursor-help">
+                  <TableHeader
+                    info="0-100 spec. (secondes)"
+                    imageSrc={specImg}
+                    className
+                  />
+                </div>
                 <td
                   data-th="0-100 Spec (secondes)"
                   className={[
-                    'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg ',
+                    'block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg ',
                   ]}
                 >
                   {test.ZeroTo100spec}
                 </td>
+                <div
+                  className={`${
+                    showDetails
+                      ? 'font-extrabold flex justify-center mt-5 sm:hidden hover:cursor-help'
+                      : 'hidden'
+                  }`}
+                >
+                  <TableHeader
+                    info="test VS spec"
+                    imageSrc={versusImg}
+                    className
+                  />
+                </div>
                 <td
                   data-th="test VS spec"
                   className={`${
                     showDetails
-                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
                   {test.TestVsSpec}
                 </td>
+                <div
+                  className={`${
+                    showDetails && showMoreDetails
+                      ? 'font-extrabold flex justify-center mt-5 sm:hidden hover:cursor-help'
+                      : 'hidden'
+                  }`}
+                >
+                  <TableHeader info="Date" imageSrc={calendarImg} className />
+                </div>
                 <td
                   data-th="Date"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
                   {test.Date}
                 </td>
+                <div
+                  className={`${
+                    showDetails
+                      ? 'font-extrabold flex justify-center mt-5 sm:hidden hover:cursor-help'
+                      : 'hidden'
+                  }`}
+                >
+                  <TableHeader
+                    info="Puissance (cheveaux)"
+                    imageSrc={horseImg}
+                    className
+                  />
+                </div>
                 <td
                   data-th="Hp"
                   className={`${
                     showDetails
-                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
                   {test.Hp}
                 </td>
+                <div
+                  className={`${
+                    showDetails && showMoreDetails
+                      ? 'font-extrabold flex justify-center mt-5 sm:hidden hover:cursor-help'
+                      : 'hidden'
+                  }`}
+                >
+                  <TableHeader info="Pneux" imageSrc={tiresImg} className />
+                </div>
                 <td
                   data-th="Pneux"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-4 font-semibold before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
                   {test.Tires}
                 </td>
+                <div className="font-extrabold flex justify-center mt-5 sm:hidden hover:cursor-help">
+                  <TableHeader
+                    info="Poid (kg)"
+                    imageSrc={weightImg}
+                    className
+                  />
+                </div>
                 <td
                   data-th="Poid (kg)"
                   className={[
-                    'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg ',
+                    'block my-4 font-semibold before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg ',
                   ]}
                 >
                   {test.Weight}

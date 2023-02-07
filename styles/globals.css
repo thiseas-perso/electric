@@ -47,7 +47,7 @@ Solution: Install PostCSS Language Support extension
   }
 
   th {
-    @apply font-normal text-sm;
+    @apply text-sm;
   }
 
   td {
