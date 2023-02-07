@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
-import FlipCard from '../FlipCard';
+import TableHeader from '../TableHeader';
+import accImg from '../../public/headers/acc.png';
+import specImg from '../../public/headers/spec.png';
+import driveImg from '../../public/headers/drive.png';
+import weightImg from '../../public/headers/weight.png';
+import horseImg from '../../public/headers/horse-power.png';
+import versusImg from '../../public/headers/versus.png';
+import calendarImg from '../../public/headers/calendar.png';
+import tiresImg from '../../public/headers/tires.png';
 
 const Acceleration = ({ tests, className }) => {
   const [showMoreDetails, setShowMoreDetails] = useState(false);
@@ -22,7 +30,6 @@ const Acceleration = ({ tests, className }) => {
 
   return (
     <div className={className}>
-      <FlipCard />
       <table className="min-w-full border-separate border-spacing-2">
         <caption>
           <h3 className="font-bold bg-light-primary-2 text-white p-2 text-left flex items-center gap-x-4">
@@ -37,13 +44,13 @@ const Acceleration = ({ tests, className }) => {
         </caption>
         <thead>
           <tr>
-            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0">
-              Motorisation
+            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help">
+              <TableHeader info="Motorisation" imageSrc={driveImg} />
             </th>
             {/* <th
               className={`${
                 showDetails && showMoreDetails
-                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help'
                   : 'hidden'
               }`}
             >
@@ -52,7 +59,7 @@ const Acceleration = ({ tests, className }) => {
             <th
               className={`${
                 showDetails && showMoreDetails
-                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help'
                   : 'hidden'
               }`}
             >
@@ -61,7 +68,7 @@ const Acceleration = ({ tests, className }) => {
             <th
               className={`${
                 showDetails && showMoreDetails
-                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help'
                   : 'hidden'
               }`}
             >
@@ -70,7 +77,7 @@ const Acceleration = ({ tests, className }) => {
             <th
               className={`${
                 showDetails && showMoreDetails
-                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help'
                   : 'hidden'
               }`}
             >
@@ -79,7 +86,7 @@ const Acceleration = ({ tests, className }) => {
             <th
               className={`${
                 showDetails && showMoreDetails
-                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help'
                   : 'hidden'
               }`}
             >
@@ -88,7 +95,7 @@ const Acceleration = ({ tests, className }) => {
             <th
               className={`${
                 showDetails && showMoreDetails
-                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help'
                   : 'hidden'
               }`}
             >
@@ -97,7 +104,7 @@ const Acceleration = ({ tests, className }) => {
             <th
               className={`${
                 showDetails && showMoreDetails
-                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help'
                   : 'hidden'
               }`}
             >
@@ -106,7 +113,7 @@ const Acceleration = ({ tests, className }) => {
             <th
               className={`${
                 showDetails && showMoreDetails
-                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help'
                   : 'hidden'
               }`}
             >
@@ -115,70 +122,73 @@ const Acceleration = ({ tests, className }) => {
             <th
               className={`${
                 showDetails && showMoreDetails
-                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help'
                   : 'hidden'
               }`}
             >
               0-90
             </th> */}
-            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0">
-              0-100 (secondes)
+            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help">
+              <TableHeader info="Acceleration (secondes)" imageSrc={accImg} />
             </th>
-            <th
+            {/* <th
               className={`${
                 showDetails && showMoreDetails
-                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help'
                   : 'hidden'
               }`}
             >
               0-100 1-foot (secondes)
-            </th>
-            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0">
-              0-100 Spec. (secondes)
-            </th>
-            <th
-              className={`${
-                showDetails
-                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
-                  : 'hidden'
-              }`}
-            >
-              test VS spec
-            </th>
-            <th
-              className={`${
-                showDetails && showMoreDetails
-                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
-                  : 'hidden'
-              }`}
-            >
-              Date
+            </th> */}
+            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help">
+              <TableHeader
+                info="Acceleration spec (secondes)"
+                imageSrc={specImg}
+              />
             </th>
             <th
               className={`${
                 showDetails
-                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help'
                   : 'hidden'
               }`}
             >
-              Hp
+              <TableHeader info="test VS spec" imageSrc={versusImg} />
             </th>
             <th
               className={`${
                 showDetails && showMoreDetails
-                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help'
                   : 'hidden'
               }`}
             >
-              Pneux
+              <TableHeader info="Date" imageSrc={calendarImg} />
             </th>
-            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0">
-              Poid (kg)
+            <th
+              className={`${
+                showDetails
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help'
+                  : 'hidden'
+              }`}
+            >
+              <TableHeader info="Puissance (chevaux)" imageSrc={horseImg} />
             </th>
             <th
               className={`${
                 showDetails && showMoreDetails
-                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help'
+                  : 'hidden'
+              }`}
+            >
+              <TableHeader info="Pneux" imageSrc={tiresImg} />
+            </th>
+            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help">
+              <TableHeader info="Poid (kg)" imageSrc={weightImg} />
+            </th>
+            <th
+              className={`${
+                showDetails && showMoreDetails
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help'
                   : 'hidden'
               }`}
             >
@@ -187,7 +197,7 @@ const Acceleration = ({ tests, className }) => {
             <th
               className={`${
                 showDetails && showMoreDetails
-                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0'
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help'
                   : 'hidden'
               }`}
             >
@@ -204,7 +214,7 @@ const Acceleration = ({ tests, className }) => {
               >
                 <td
                   data-th="Motorisation"
-                  className="block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.Drive}
                 </td>
@@ -212,7 +222,7 @@ const Acceleration = ({ tests, className }) => {
                   data-th="0-10"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -222,7 +232,7 @@ const Acceleration = ({ tests, className }) => {
                   data-th="0-20"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -232,7 +242,7 @@ const Acceleration = ({ tests, className }) => {
                   data-th="0-30"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -242,7 +252,7 @@ const Acceleration = ({ tests, className }) => {
                   data-th="0-40"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -252,7 +262,7 @@ const Acceleration = ({ tests, className }) => {
                   data-th="0-50"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -262,7 +272,7 @@ const Acceleration = ({ tests, className }) => {
                   data-th="0-60"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -272,7 +282,7 @@ const Acceleration = ({ tests, className }) => {
                   data-th="0-70"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -282,7 +292,7 @@ const Acceleration = ({ tests, className }) => {
                   data-th="0-80"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -292,7 +302,7 @@ const Acceleration = ({ tests, className }) => {
                   data-th="0-90"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -301,25 +311,25 @@ const Acceleration = ({ tests, className }) => {
                 <td
                   data-th="0-100 (secondes)"
                   className={[
-                    'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg ',
+                    'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg ',
                   ]}
                 >
                   {test.ZeroTo100}
                 </td>
-                <td
+                {/* <td
                   data-th="0-100 1-foot (secondes)"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
                   {test.ZeroTo100onefoot}
-                </td>
+                </td> */}
                 <td
                   data-th="0-100 Spec (secondes)"
                   className={[
-                    'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg ',
+                    'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg ',
                   ]}
                 >
                   {test.ZeroTo100spec}
@@ -328,7 +338,7 @@ const Acceleration = ({ tests, className }) => {
                   data-th="test VS spec"
                   className={`${
                     showDetails
-                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -338,7 +348,7 @@ const Acceleration = ({ tests, className }) => {
                   data-th="Date"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -348,7 +358,7 @@ const Acceleration = ({ tests, className }) => {
                   data-th="Hp"
                   className={`${
                     showDetails
-                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -358,7 +368,7 @@ const Acceleration = ({ tests, className }) => {
                   data-th="Pneux"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -367,7 +377,7 @@ const Acceleration = ({ tests, className }) => {
                 <td
                   data-th="Poid (kg)"
                   className={[
-                    'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg ',
+                    'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg ',
                   ]}
                 >
                   {test.Weight}
@@ -376,7 +386,7 @@ const Acceleration = ({ tests, className }) => {
                   data-th="Roue avant"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -386,7 +396,7 @@ const Acceleration = ({ tests, className }) => {
                   data-th="Roue arrière"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >

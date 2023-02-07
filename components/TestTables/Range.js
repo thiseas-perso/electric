@@ -125,13 +125,13 @@ const Range = ({ tests, className }) => {
                 className="even:bg-light-primary-7/50  odd:bg-light-primary-3/50 "
               >
                 <td
-                  className="block  font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                   data-th="Vitesse (km/h)"
                 >
                   {test.Speed}
                 </td>
                 <td
-                  className="block font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                   data-th="Capacitée réelle (kWh)"
                 >
                   {Number(test.Capacity.replace(',', '.')).toFixed(0)}
@@ -139,7 +139,7 @@ const Range = ({ tests, className }) => {
                 <td
                   className={`${
                     showDetails
-                      ? 'block font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                   data-th="Température (°C)"
@@ -147,31 +147,31 @@ const Range = ({ tests, className }) => {
                   {test.Temp}
                 </td>
                 <td
-                  className="block font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                   data-th="Autonomie (100% à 0%)"
                 >
                   {test.Km}
                 </td>
                 <td
-                  className="block font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                   data-th="Autonomie (75% à 0%)"
                 >
                   {test.Range75}
                 </td>
                 <td
-                  className="block font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                   data-th="Temps de charge 0 à 75% (minutes)"
                 >
                   {test.ChargingTime75}
                 </td>
                 <td
-                  className="block font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                   data-th="Km chargés par heure (charge 0 à 75%)"
                 >
                   {test.KmPerH75}
                 </td>
                 <td
-                  className="block font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                   data-th="Consomation (kWh/km)"
                 >
                   {(Number(test.WhPerKm) / 10).toFixed(1)}
@@ -179,7 +179,7 @@ const Range = ({ tests, className }) => {
                 <td
                   className={`${
                     showMoreDetails
-                      ? 'block font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                   data-th="Surface"
@@ -189,7 +189,7 @@ const Range = ({ tests, className }) => {
                 <td
                   className={`${
                     showMoreDetails
-                      ? 'block font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                   data-th="Saison"
@@ -199,7 +199,7 @@ const Range = ({ tests, className }) => {
                 <td
                   className={`${
                     showMoreDetails
-                      ? 'block font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                   data-th="Pneux"
@@ -209,7 +209,7 @@ const Range = ({ tests, className }) => {
                 <td
                   className={`${
                     showMoreDetails
-                      ? 'block font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                   data-th="Roue avant"
@@ -219,7 +219,7 @@ const Range = ({ tests, className }) => {
                 <td
                   className={`${
                     showMoreDetails
-                      ? 'block font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                   data-th="Roue arrière"
