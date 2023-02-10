@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
 
-const TableHeader = ({ imageSrc, info, className }) => {
+const TableHeader = ({ imageSrc, info }) => {
   const [clicked, setClicked] = useState(false);
   const clickHandler = () => {
     setClicked((prev) => !prev);
   };
   return (
-    <div className={className}>
+    <div>
       {clicked ? (
         <div onClick={clickHandler}>{info}</div>
       ) : (

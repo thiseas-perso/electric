@@ -125,11 +125,7 @@ const Acceleration = ({ tests, className }) => {
                 className="even:bg-light-primary-7/50  odd:bg-light-primary-3/50 "
               >
                 <div className="font-extrabold flex justify-center mt-5 sm:hidden hover:cursor-help">
-                  <TableHeader
-                    info="Motorisation"
-                    imageSrc={driveImg}
-                    className
-                  />
+                  <TableHeader info="Motorisation" imageSrc={driveImg} />
                 </div>
                 <td
                   data-th="Motorisation"
@@ -139,11 +135,7 @@ const Acceleration = ({ tests, className }) => {
                 </td>
 
                 <div className="font-extrabold flex justify-center mt-5 sm:hidden hover:cursor-help">
-                  <TableHeader
-                    info="0-100km/h (secondes)"
-                    imageSrc={accImg}
-                    className
-                  />
+                  <TableHeader info="0-100km/h (secondes)" imageSrc={accImg} />
                 </div>
                 <td
                   data-th="0-100 (secondes)"
@@ -158,7 +150,6 @@ const Acceleration = ({ tests, className }) => {
                   <TableHeader
                     info="0-100 spec. (secondes)"
                     imageSrc={specImg}
-                    className
                   />
                 </div>
                 <td
@@ -176,11 +167,7 @@ const Acceleration = ({ tests, className }) => {
                       : 'hidden'
                   }`}
                 >
-                  <TableHeader
-                    info="test VS spec"
-                    imageSrc={versusImg}
-                    className
-                  />
+                  <TableHeader info="test VS spec" imageSrc={versusImg} />
                 </div>
                 <td
                   data-th="test VS spec"
@@ -199,7 +186,7 @@ const Acceleration = ({ tests, className }) => {
                       : 'hidden'
                   }`}
                 >
-                  <TableHeader info="Date" imageSrc={calendarImg} className />
+                  <TableHeader info="Date" imageSrc={calendarImg} />
                 </div>
                 <td
                   data-th="Date"
@@ -221,7 +208,6 @@ const Acceleration = ({ tests, className }) => {
                   <TableHeader
                     info="Puissance (cheveaux)"
                     imageSrc={horseImg}
-                    className
                   />
                 </div>
                 <td
@@ -241,7 +227,7 @@ const Acceleration = ({ tests, className }) => {
                       : 'hidden'
                   }`}
                 >
-                  <TableHeader info="Pneux" imageSrc={tiresImg} className />
+                  <TableHeader info="Pneux" imageSrc={tiresImg} />
                 </div>
                 <td
                   data-th="Pneux"
@@ -254,11 +240,7 @@ const Acceleration = ({ tests, className }) => {
                   {test.Tires}
                 </td>
                 <div className="font-extrabold flex justify-center mt-5 sm:hidden hover:cursor-help">
-                  <TableHeader
-                    info="Poid (kg)"
-                    imageSrc={weightImg}
-                    className
-                  />
+                  <TableHeader info="Poid (kg)" imageSrc={weightImg} />
                 </div>
                 <td
                   data-th="Poid (kg)"

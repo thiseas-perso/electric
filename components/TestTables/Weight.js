@@ -1,4 +1,9 @@
-import React from 'react';
+import TableHeader from '../TableHeader';
+import carFrontImg from '../../public/headers/car_front.png';
+import carRearImg from '../../public/headers/car_rear.png';
+import weightImg from '../../public/headers/weight.png';
+import scaleImg from '../../public/headers/scale.png';
+import batteryImg from '../../public/headers/battery_kwh.png';
 
 const Weight = ({ tests, className }) => {
   return (
@@ -16,35 +21,36 @@ const Weight = ({ tests, className }) => {
                 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0',
               ]}
             >
-              Total (kg)
+              <TableHeader info="Total (kg)" imageSrc={weightImg} />
             </th>
             <th
               className={[
                 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0',
               ]}
             >
-              Avant
+              <TableHeader info="Arrière" imageSrc={carRearImg} />
             </th>
             <th
               className={[
                 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0',
               ]}
             >
-              Arrière
+              <TableHeader info="Avant" imageSrc={carFrontImg} />
+            </th>
+
+            <th
+              className={[
+                'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0',
+              ]}
+            >
+              <TableHeader info="Distribution" imageSrc={scaleImg} />
             </th>
             <th
               className={[
                 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0',
               ]}
             >
-              Distribution
-            </th>
-            <th
-              className={[
-                'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0',
-              ]}
-            >
-              Batterie
+              <TableHeader info="Batterie" imageSrc={batteryImg} />
             </th>
           </tr>
         </thead>
@@ -55,33 +61,48 @@ const Weight = ({ tests, className }) => {
                 key={i}
                 className="even:bg-light-primary-7/50  odd:bg-light-primary-3/50 "
               >
+                <div className="font-extrabold flex justify-center mt-5 sm:hidden hover:cursor-help">
+                  <TableHeader info="Total (kg)" imageSrc={weightImg} />
+                </div>
                 <td
                   data-th="Total (kg)"
-                  className="block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.Total}
                 </td>
-                <td
-                  data-th="Avant"
-                  className="block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
-                >
-                  {test.Front}
-                </td>
+                <div className="font-extrabold flex justify-center mt-5 sm:hidden hover:cursor-help">
+                  <TableHeader info="Arrière" imageSrc={carRearImg} />
+                </div>
                 <td
                   data-th="Arrière"
-                  className="block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.Rear}
                 </td>
+                <div className="font-extrabold flex justify-center mt-5 sm:hidden hover:cursor-help">
+                  <TableHeader info="Avant" imageSrc={carFrontImg} />
+                </div>
+                <td
+                  data-th="Avant"
+                  className="block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
+                >
+                  {test.Front}
+                </td>
+                <div className="font-extrabold flex justify-center mt-5 sm:hidden hover:cursor-help">
+                  <TableHeader info="Distribution" imageSrc={scaleImg} />
+                </div>
                 <td
                   data-th="Distribution"
-                  className="block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.Distribution}
                 </td>
+                <div className="font-extrabold flex justify-center mt-5 sm:hidden hover:cursor-help">
+                  <TableHeader info="Batterie" imageSrc={batteryImg} />
+                </div>
                 <td
                   data-th="Batterie"
-                  className="block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.Battery}
                 </td>
