@@ -44,15 +44,15 @@ const Acceleration = ({ tests, className }) => {
         </caption>
         <thead>
           <tr>
-            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help">
+            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-pointer">
               <TableHeader info="Motorisation" imageSrc={driveImg} />
             </th>
 
-            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help">
+            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-pointer">
               <TableHeader info="Acceleration (secondes)" imageSrc={accImg} />
             </th>
 
-            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help">
+            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-pointer">
               <TableHeader
                 info="Acceleration spec (secondes)"
                 imageSrc={specImg}
@@ -61,7 +61,7 @@ const Acceleration = ({ tests, className }) => {
             <th
               className={`${
                 showDetails
-                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help'
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-pointer'
                   : 'hidden'
               }`}
             >
@@ -70,7 +70,7 @@ const Acceleration = ({ tests, className }) => {
             <th
               className={`${
                 showDetails && showMoreDetails
-                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help'
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-pointer'
                   : 'hidden'
               }`}
             >
@@ -79,7 +79,7 @@ const Acceleration = ({ tests, className }) => {
             <th
               className={`${
                 showDetails
-                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help'
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-pointer'
                   : 'hidden'
               }`}
             >
@@ -88,32 +88,32 @@ const Acceleration = ({ tests, className }) => {
             <th
               className={`${
                 showDetails && showMoreDetails
-                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help'
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-pointer'
                   : 'hidden'
               }`}
             >
               <TableHeader info="Pneux" imageSrc={tiresImg} />
             </th>
-            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help">
+            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-pointer">
               <TableHeader info="Poid (kg)" imageSrc={weightImg} />
             </th>
             <th
               className={`${
                 showDetails && showMoreDetails
-                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help'
-                  : 'hidden'
-              }`}
-            >
-              Roue avant
-            </th>
-            <th
-              className={`${
-                showDetails && showMoreDetails
-                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help'
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0 '
                   : 'hidden'
               }`}
             >
               Roue arrière
+            </th>
+            <th
+              className={`${
+                showDetails && showMoreDetails
+                  ? 'absolute top-[-9999px] left-[-9999px] sm:static sm:top-0 '
+                  : 'hidden'
+              }`}
+            >
+              Roue avant
             </th>
           </tr>
         </thead>
@@ -122,11 +122,11 @@ const Acceleration = ({ tests, className }) => {
             return (
               <tr
                 key={i}
-                className="even:bg-light-primary-7/50  odd:bg-light-primary-3/50 "
+                className="even:bg-light-primary-7/50  odd:bg-light-primary-3/50 rounded-3xl m-5 p-5 grid grid-cols-2 sm:table-row"
               >
-                <div className="font-extrabold flex justify-center mt-5 sm:hidden hover:cursor-help">
+                <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
                   <TableHeader info="Motorisation" imageSrc={driveImg} />
-                </div>
+                </th>
                 <td
                   data-th="Motorisation"
                   className="block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
@@ -134,41 +134,37 @@ const Acceleration = ({ tests, className }) => {
                   {test.Drive}
                 </td>
 
-                <div className="font-extrabold flex justify-center mt-5 sm:hidden hover:cursor-help">
+                <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
                   <TableHeader info="0-100km/h (secondes)" imageSrc={accImg} />
-                </div>
+                </th>
                 <td
                   data-th="0-100 (secondes)"
-                  className={[
-                    'block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg ',
-                  ]}
+                  className="block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.ZeroTo100}
                 </td>
 
-                <div className="font-extrabold flex justify-center mt-5 sm:hidden hover:cursor-help">
+                <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
                   <TableHeader
                     info="0-100 spec. (secondes)"
                     imageSrc={specImg}
                   />
-                </div>
+                </th>
                 <td
                   data-th="0-100 Spec (secondes)"
-                  className={[
-                    'block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg ',
-                  ]}
+                  className="block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.ZeroTo100spec}
                 </td>
-                <div
+                <th
                   className={`${
                     showDetails
-                      ? 'font-extrabold flex justify-center mt-5 sm:hidden hover:cursor-help'
+                      ? 'font-extrabold flex justify-center mt-5 sm:hidden hover:cursor-pointer'
                       : 'hidden'
                   }`}
                 >
                   <TableHeader info="test VS spec" imageSrc={versusImg} />
-                </div>
+                </th>
                 <td
                   data-th="test VS spec"
                   className={`${
@@ -179,15 +175,15 @@ const Acceleration = ({ tests, className }) => {
                 >
                   {test.TestVsSpec}
                 </td>
-                <div
+                <th
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'font-extrabold flex justify-center mt-5 sm:hidden hover:cursor-help'
+                      ? 'font-extrabold flex justify-center mt-5 sm:hidden hover:cursor-pointer'
                       : 'hidden'
                   }`}
                 >
                   <TableHeader info="Date" imageSrc={calendarImg} />
-                </div>
+                </th>
                 <td
                   data-th="Date"
                   className={`${
@@ -198,10 +194,10 @@ const Acceleration = ({ tests, className }) => {
                 >
                   {test.Date}
                 </td>
-                <div
+                <th
                   className={`${
                     showDetails
-                      ? 'font-extrabold flex justify-center mt-5 sm:hidden hover:cursor-help'
+                      ? 'font-extrabold flex justify-center mt-5 sm:hidden hover:cursor-pointer'
                       : 'hidden'
                   }`}
                 >
@@ -209,7 +205,7 @@ const Acceleration = ({ tests, className }) => {
                     info="Puissance (cheveaux)"
                     imageSrc={horseImg}
                   />
-                </div>
+                </th>
                 <td
                   data-th="Hp"
                   className={`${
@@ -220,15 +216,15 @@ const Acceleration = ({ tests, className }) => {
                 >
                   {test.Hp}
                 </td>
-                <div
+                <th
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'font-extrabold flex justify-center mt-5 sm:hidden hover:cursor-help'
+                      ? 'font-extrabold flex justify-center mt-5 sm:hidden hover:cursor-pointer'
                       : 'hidden'
                   }`}
                 >
                   <TableHeader info="Pneux" imageSrc={tiresImg} />
-                </div>
+                </th>
                 <td
                   data-th="Pneux"
                   className={`${
@@ -239,9 +235,9 @@ const Acceleration = ({ tests, className }) => {
                 >
                   {test.Tires}
                 </td>
-                <div className="font-extrabold flex justify-center mt-5 sm:hidden hover:cursor-help">
+                <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
                   <TableHeader info="Poid (kg)" imageSrc={weightImg} />
-                </div>
+                </th>
                 <td
                   data-th="Poid (kg)"
                   className={[
@@ -250,25 +246,43 @@ const Acceleration = ({ tests, className }) => {
                 >
                   {test.Weight}
                 </td>
-                <td
-                  data-th="Roue avant"
+                <th
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'font-extrabold flex justify-center mt-5 sm:hidden'
                       : 'hidden'
                   }`}
                 >
-                  {test.WheelFront}
-                </td>
+                  Roue arrière
+                </th>
                 <td
                   data-th="Roue arrière"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-4 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
                   {test.WheelRear}
+                </td>
+                <th
+                  className={`${
+                    showDetails && showMoreDetails
+                      ? 'font-extrabold flex justify-center mt-5 sm:hidden'
+                      : 'hidden'
+                  }`}
+                >
+                  Roue avant
+                </th>
+                <td
+                  data-th="Roue avant"
+                  className={`${
+                    showDetails && showMoreDetails
+                      ? 'block my-4 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg '
+                      : 'hidden'
+                  }`}
+                >
+                  {test.WheelFront}
                 </td>
               </tr>
             );

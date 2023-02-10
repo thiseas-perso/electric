@@ -15,16 +15,16 @@ const ThousandKM = ({ tests, className }) => {
         </caption>
         <thead>
           <tr>
-            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help">
+            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-pointer">
               <TableHeader info="Durée" imageSrc={durationImg} />
             </th>
-            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help">
+            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-pointer">
               <TableHeader info="Km/h" imageSrc={kmhImg} />
             </th>
-            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help">
-              <TableHeader info="KWh/km" imageSrc={consumptionImg} />
+            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-pointer">
+              <TableHeader info="kWh/100km" imageSrc={consumptionImg} />
             </th>
-            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-help">
+            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-pointer">
               <TableHeader info="Température" imageSrc={tempImg} />
             </th>
             {/* <th>Date</th> */}
@@ -35,38 +35,38 @@ const ThousandKM = ({ tests, className }) => {
             return (
               <tr
                 key={i}
-                className="even:bg-light-primary-7/50  odd:bg-light-primary-3/50 "
+                className="even:bg-light-primary-7/50  odd:bg-light-primary-3/50 rounded-3xl p-5 m-5 grid grid-cols-2 sm:table-row"
               >
-                <div className="font-extrabold flex justify-center mt-5 sm:hidden hover:cursor-help">
+                <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
                   <TableHeader info="Durée" imageSrc={durationImg} />
-                </div>
+                </th>
                 <td
                   data-th="Durée"
                   className="block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.Time}
                 </td>
-                <div className="font-extrabold flex justify-center mt-5 sm:hidden hover:cursor-help">
+                <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
                   <TableHeader info="Km/h" imageSrc={kmhImg} />
-                </div>
+                </th>
                 <td
                   data-th="Km/h"
                   className="block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.kmPerH}
                 </td>
-                <div className="font-extrabold flex justify-center mt-5 sm:hidden hover:cursor-help">
-                  <TableHeader info="KWh/km" imageSrc={consumptionImg} />
-                </div>
+                <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
+                  <TableHeader info="kWh/100km" imageSrc={consumptionImg} />
+                </th>
                 <td
                   data-th="KWh/km"
                   className="block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {(Number(test.WhPerKm.replace(',', '.')) / 10).toFixed(1)}
                 </td>
-                <div className="font-extrabold flex justify-center mt-5 sm:hidden hover:cursor-help">
+                <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
                   <TableHeader info="Température" imageSrc={tempImg} />
-                </div>
+                </th>
                 <td
                   data-th="Température"
                   className="block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "

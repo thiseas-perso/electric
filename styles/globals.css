@@ -51,7 +51,7 @@ Solution: Install PostCSS Language Support extension
   }
 
   td {
-    @apply text-center align-middle font-semibold p-0;
+    @apply align-middle font-semibold p-0 text-left justify-self-start self-center sm:text-center;
   }
 }
 

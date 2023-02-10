@@ -1,4 +1,7 @@
-import React from 'react';
+import TableHeader from '../TableHeader';
+import frunkImg from '../../public/headers/frunk.png';
+import trunkImg from '../../public/headers/trunk.png';
+import seatImg from '../../public/headers/seat.png';
 
 const Banana = ({ tests, className }) => {
   return (
@@ -12,13 +15,13 @@ const Banana = ({ tests, className }) => {
         <thead>
           <tr>
             <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0">
-              Coffre
+              <TableHeader info="Coffre" imageSrc={trunkImg} />
             </th>
             <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0">
-              Coffre sièges baissés
+              <TableHeader info="Coffre sièges baissés" imageSrc={seatImg} />
             </th>
             <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0">
-              Coffre Avant
+              <TableHeader info="Coffre" imageSrc={frunkImg} />
             </th>
           </tr>
         </thead>
@@ -27,7 +30,7 @@ const Banana = ({ tests, className }) => {
             return (
               <tr
                 key={i}
-                className="even:bg-light-primary-7/50  odd:bg-light-primary-3/50 "
+                className="even:bg-light-primary-7/50  odd:bg-light-primary-3/50 rounded-3xl m-5 p-5 grid grid-cols-2 sm:table-row"
               >
                 <td
                   data-th="Coffre"
