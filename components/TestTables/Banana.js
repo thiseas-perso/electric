@@ -32,21 +32,33 @@ const Banana = ({ tests, className }) => {
                 key={i}
                 className="even:bg-light-primary-7/50  odd:bg-light-primary-3/50 rounded-3xl m-5 p-5 grid grid-cols-2 sm:table-row"
               >
+                <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
+                  <TableHeader info="Coffre" imageSrc={trunkImg} />
+                </th>
                 <td
                   data-th="Coffre"
-                  className="block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-4 font-semibold sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.Trunk}
                 </td>
+                <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
+                  <TableHeader
+                    info="Coffre sièges baissés"
+                    imageSrc={seatImg}
+                  />
+                </th>
                 <td
                   data-th="Coffre sièges baissés"
-                  className="block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-4 font-semibold sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.SeatsFolded}
                 </td>
+                <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
+                  <TableHeader info="Coffre Avant" imageSrc={frunkImg} />
+                </th>
                 <td
                   data-th="Coffre Avant"
-                  className="block my-4 font-semibold before:content-[attr(data-th)] before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-4 font-semibold sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.Frunk || 0}
                 </td>
