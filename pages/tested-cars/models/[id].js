@@ -56,8 +56,8 @@ const Model = ({ modelData, testNames }) => {
           <span className="text-light-primary-4">{modelData.model}</span>
         </h1>
       </div>
-      <div className="bg-white min-w-ful px-4 max-w-full">
-        <div className="flex flex-wrap gap-3 py-3">
+      <div className="bg-white min-w-ful px-4 max-w-full py-5">
+        <div className="flex flex-wrap gap-3 mb-3 border p-3 rounded-2xl bg-slate-100">
           <div className="text-lg">Tests effectués :</div>
           {testNames.map((el) => (
             <TestFilter
