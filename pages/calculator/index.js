@@ -17,6 +17,7 @@ import ProgressBar from '../../components/calculator/ProgressBar';
 import ResultPage from '../../components/calculator/ResultPage';
 import SubmitPage from '../../components/calculator/SubmitPage';
 import CustomHead from '../../components/customHead';
+import Header from '../../components/header';
 import calculator from '../../helpers/calculator';
 
 const Calculator = () => {
@@ -150,22 +151,23 @@ const Calculator = () => {
   return (
     <>
       <CustomHead title="SOME TITLE" description="some description" />
+      <Header className="h-12 font-lato sticky top-0 bg-light-primary-1 z-10" />
 
       <div className="flex flex-col flex-grow justify-between min-h-[calc(100vh-48px)]">
         <ProgressBar stepState={stepState} />
         <h1 className="text-xl p-2 text-white font-poppins font-extrabold text-center">
-          Comparateur VE - VT
+          Calculateur éléctrocompatibilité
         </h1>
         <form
           autoComplete="off"
-          className=" text-lg flex flex-col flex-grow  justify-between mt-2 overflow-x-hidden"
+          className=" text-lg flex flex-col flex-grow  justify-between items-center mt-2 overflow-x-hidden"
         >
           {stepState === 0 && (
             <CarEVFieldSet
               x={x}
               state={state}
               errorState={errorState}
-              className="bg-white overflow-hidden  min-w-[275px]  dark:bg-black "
+              className="bg-white overflow-hidden  min-w-[275px] max-w-2xl  dark:bg-black "
               changeHandler={changeHandler}
             />
           )}
@@ -174,7 +176,7 @@ const Calculator = () => {
               x={x}
               state={state}
               errorState={errorState}
-              className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
+              className="bg-white overflow-hidden  min-w-[275px] max-w-2xl dark:bg-black"
               changeHandler={changeHandler}
             />
           )}
@@ -184,7 +186,7 @@ const Calculator = () => {
               state={state}
               errorState={errorState}
               changeHandler={changeHandler}
-              className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
+              className="bg-white overflow-hidden  min-w-[275px] max-w-2xl dark:bg-black"
             />
           )}
           {stepState === 3 && (
@@ -193,7 +195,7 @@ const Calculator = () => {
               state={state}
               errorState={errorState}
               changeHandler={changeHandler}
-              className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
+              className="bg-white overflow-hidden  min-w-[275px] max-w-2xl dark:bg-black"
             />
           )}
           {stepState === 4 && (
@@ -202,7 +204,7 @@ const Calculator = () => {
               state={state}
               errorState={errorState}
               changeHandler={changeHandler}
-              className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
+              className="bg-white overflow-hidden  min-w-[275px] max-w-2xl dark:bg-black"
             />
           )}
 
@@ -212,7 +214,7 @@ const Calculator = () => {
               state={state}
               errorState={errorState}
               changeHandler={changeHandler}
-              className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
+              className="bg-white overflow-hidden  min-w-[275px] max-w-2xl dark:bg-black"
             />
           )}
           {stepState === 6 && errorCount > 0 ? (

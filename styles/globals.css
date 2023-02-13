@@ -14,7 +14,7 @@ Solution: Install PostCSS Language Support extension
   }
   html,
   body {
-    @apply min-h-screen bg-gradient-to-t from-light-primary-start to-light-primary-end;
+    @apply min-h-screen bg-gradient-to-t from-light-primary-start to-light-primary-end dark:from-dark-primary-0 dark:via-dark-primary-1 dark:to-dark-primary-2;
   }
   input {
     @apply border-0 rounded px-2 bg-gray-100;
