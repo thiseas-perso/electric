@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import StudioImage from '../../../components/StudioImage';
+import TestFilter from '../../../components/TestFilter';
 import Version from '../../../components/Version';
-import VersionsTests from '../../../components/VersionTests';
+
 import {
   getAllModelIds,
   getAllTestNames,
@@ -28,7 +29,16 @@ export async function getStaticProps({ params }) {
 }
 
 const Model = ({ modelData, testNames }) => {
-  console.log({ modelData, testNames });
+  const [filters, setFilters] = useState([...testNames]);
+  const versions = modelData.versions.reduce((acc, cur) => {
+    if (cur.version === 'Base') {
+      acc.unshift(cur);
+    } else {
+      acc.push(cur);
+    }
+    return acc;
+  }, []);
+
   return (
     <div>
       <div className="w-full h-fit px-4 flex flex-col items-center">
@@ -41,15 +51,31 @@ const Model = ({ modelData, testNames }) => {
           priority={true}
           className={'unselectable w-full max-w-3xl object-cover'}
         />
-        <h1 className="relative top-[-30px] text-5xl">
+        <h1 className="relative top-[-30px] text-5xl text-white dark:text-black">
           {modelData.maker}{' '}
           <span className="text-light-primary-4">{modelData.model}</span>
         </h1>
       </div>
-      <div className="bg-white min-w-ful px-4 max-w-full">
-        {modelData.versions.map((version) => {
+      <div className="bg-white min-w-ful px-4 max-w-full py-5">
+        <div className="flex flex-wrap gap-3 mb-3 border p-3 rounded-2xl bg-slate-100">
+          <div className="text-lg">Tests effectués :</div>
+          {testNames.map((el) => (
+            <TestFilter
+              key={el}
+              testName={el}
+              filters={filters}
+              setFilters={setFilters}
+            />
+          ))}
+        </div>
+        {versions.map((version) => {
           return (
-            <Version key={version.id} version={version} testNames={testNames} />
+            <Version
+              key={version.id}
+              version={version}
+              testNames={testNames}
+              filters={filters}
+            />
           );
         })}
       </div>

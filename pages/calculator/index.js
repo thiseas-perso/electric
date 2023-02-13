@@ -118,6 +118,8 @@ const Calculator = () => {
     }
   };
 
+  console.log(results);
+
   const changeHandler = (e, objName, fieldName) => {
     if (!e.target.value.trim().length && !objName.startsWith('usage')) {
       setErrorState((prev) => ({

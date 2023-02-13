@@ -128,6 +128,8 @@ const calculator = ({
 
   return {
     gasIceVSevCostPerY,
+    gasICECostPerY,
+    chargeEVCostPerY,
     carEVCostAtEndOfPeriod,
     carICECostAtEndOfPeriod,
     carEVValueAtEndOfPeriod,
