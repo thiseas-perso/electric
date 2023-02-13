@@ -46,7 +46,9 @@ const TestFilter = ({ testName, filters, setFilters }) => {
         onChange={(e) => checkHandler(e)}
         checked={checked}
       />
-      <label htmlFor={testName}>{nameToDisplay}</label>
+      <label className="text-lg" htmlFor={testName}>
+        {nameToDisplay}
+      </label>
     </div>
   );
 };

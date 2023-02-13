@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import StudioImage from '../../../components/StudioImage';
 import TestFilter from '../../../components/TestFilter';
 import Version from '../../../components/Version';
-import VersionsTests from '../../../components/VersionTests';
+
 import {
   getAllModelIds,
   getAllTestNames,
@@ -38,7 +38,6 @@ const Model = ({ modelData, testNames }) => {
     }
     return acc;
   }, []);
-  console.log({ modelData, testNames, filters });
 
   return (
     <div>
@@ -52,14 +51,14 @@ const Model = ({ modelData, testNames }) => {
           priority={true}
           className={'unselectable w-full max-w-3xl object-cover'}
         />
-        <h1 className="relative top-[-30px] text-5xl">
+        <h1 className="relative top-[-30px] text-5xl text-white dark:text-black">
           {modelData.maker}{' '}
           <span className="text-light-primary-4">{modelData.model}</span>
         </h1>
       </div>
       <div className="bg-white min-w-ful px-4 max-w-full">
         <div className="flex flex-wrap gap-3 py-3">
-          <div>Test effectués :</div>
+          <div className="text-lg">Tests effectués :</div>
           {testNames.map((el) => (
             <TestFilter
               key={el}
