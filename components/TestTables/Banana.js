@@ -14,14 +14,14 @@ const Banana = ({ tests, className }) => {
         </caption>
         <thead>
           <tr>
-            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0">
+            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0 hover:cursor-pointer">
               <TableHeader info="Coffre" imageSrc={trunkImg} />
             </th>
-            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0">
+            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0 hover:cursor-pointer">
               <TableHeader info="Coffre sièges baissés" imageSrc={seatImg} />
             </th>
-            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0">
-              <TableHeader info="Coffre" imageSrc={frunkImg} />
+            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0 hover:cursor-pointer">
+              <TableHeader info="Coffre avant" imageSrc={frunkImg} />
             </th>
           </tr>
         </thead>

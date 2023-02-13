@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import StudioImage from '../../../components/StudioImage';
+import TestFilter from '../../../components/TestFilter';
 import Version from '../../../components/Version';
 import VersionsTests from '../../../components/VersionTests';
 import {
@@ -28,7 +29,17 @@ export async function getStaticProps({ params }) {
 }
 
 const Model = ({ modelData, testNames }) => {
-  console.log({ modelData, testNames });
+  const [filters, setFilters] = useState([...testNames]);
+  const versions = modelData.versions.reduce((acc, cur) => {
+    if (cur.version === 'Base') {
+      acc.unshift(cur);
+    } else {
+      acc.push(cur);
+    }
+    return acc;
+  }, []);
+  console.log({ modelData, testNames, filters });
+
   return (
     <div>
       <div className="w-full h-fit px-4 flex flex-col items-center">
@@ -47,9 +58,25 @@ const Model = ({ modelData, testNames }) => {
         </h1>
       </div>
       <div className="bg-white min-w-ful px-4 max-w-full">
-        {modelData.versions.map((version) => {
+        <div className="flex flex-wrap gap-3 py-3">
+          <div>Test effectués :</div>
+          {testNames.map((el) => (
+            <TestFilter
+              key={el}
+              testName={el}
+              filters={filters}
+              setFilters={setFilters}
+            />
+          ))}
+        </div>
+        {versions.map((version) => {
           return (
-            <Version key={version.id} version={version} testNames={testNames} />
+            <Version
+              key={version.id}
+              version={version}
+              testNames={testNames}
+              filters={filters}
+            />
           );
         })}
       </div>
