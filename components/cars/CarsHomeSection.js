@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import arrowButton from '../../public/icons/arrow-button.svg';
 import closeButton from '../../public/icons/close-button.svg';
 
-const CarsHomeSection = ({ stringArr, title, last }) => {
+const CarsHomeSection = ({ stringArr, last }) => {
   const [display, setDisplay] = useState(false);
   const contentRef = useRef();
   let height;
@@ -11,8 +11,10 @@ const CarsHomeSection = ({ stringArr, title, last }) => {
 
   return (
     <section>
-      <div className="flex items-center bg-white p-3 gap-3">
-        <h2 className="">{title}</h2>
+      <div className="flex items-center  p-3 gap-3 dark:bg-transparent">
+        <h2 className="" onClick={() => setDisplay((prev) => !prev)}>
+          Chercher par test
+        </h2>
         <button
           className="border-none h-9 m-0 p-0"
           onClick={() => setDisplay((prev) => !prev)}
@@ -31,9 +33,9 @@ const CarsHomeSection = ({ stringArr, title, last }) => {
         style={{ height: display ? height : '0px' }}
       >
         <div
-          className={`flex flex-wrap gap-2 flex-grow bg-white p-3 pb-8 justify-center ${
+          className={`flex flex-wrap gap-2 flex-grow  p-3 pb-8 justify-center ${
             last && 'mb-20'
-          }`}
+          } dark:bg-transparent`}
         >
           {stringArr.map((el) => (
             <button
