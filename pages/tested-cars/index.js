@@ -1,10 +1,10 @@
-import CarsHomeSection from '../../components/cars/CarsHomeSection';
+import { getAllDataLight, getAllTestNames } from '../../lib/csvParser';
+
 import MakerSection from '../../components/cars/MakerSection';
 import ModelsSection from '../../components/cars/ModelsSection';
 import CustomHead from '../../components/customHead';
 import Header from '../../components/header';
-
-import { getAllDataLight, getAllTestNames } from '../../lib/csvParser';
+import TestsLinks from '../../components/cars/TestsLinks';
 
 export async function getStaticProps() {
   const allDataLight = await getAllDataLight();
@@ -20,11 +20,6 @@ export async function getStaticProps() {
 }
 
 const Cars = ({ allDataLight, testNames }) => {
-  console.log({
-    allDataLight,
-    testNames,
-  });
-
   const dataByMaker = allDataLight.reduce((acc, cur) => {
     const foundIndex = acc.findIndex((el) => el?.maker === cur.maker);
     if (foundIndex !== -1) {
@@ -51,7 +46,7 @@ const Cars = ({ allDataLight, testNames }) => {
           Tous les tests
         </h1>
         <MakerSection dataByMaker={dataByMaker} />
-        <CarsHomeSection stringArr={testNames} />
+        <TestsLinks stringArr={testNames} />
         <ModelsSection allDataLight={allDataLight} last={true} />
       </div>
     </>
