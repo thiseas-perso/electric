@@ -104,7 +104,7 @@ const Calculator = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    const height = window.innerHeight - 42;
+    const height = window.innerHeight;
     const errors = checkValuesEntered(state);
     if (!errors) {
       const convertedInputToNumbers = convertDataToNumbers(state);
@@ -154,11 +154,11 @@ const Calculator = () => {
         <ProgressBar stepState={stepState} />
         <h1
           aria-label="Calculateur éléctro-compatibilité"
-          className="text-xl p-2 text-white font-poppins font-extrabold text-center  sm:mt-[10%]"
+          className="text-xl p-2 text-white font-poppins font-extrabold text-center"
         ></h1>
         <form
           autoComplete="off"
-          className=" text-lg flex flex-col flex-grow overflow-x-hidden mt-4 sm:items-center sm:mt-[10%]"
+          className=" text-lg flex flex-col flex-grow overflow-x-hidden sm:items-center mt-[5vh] sm:mt-[10vh]"
         >
           {stepState === 0 && (
             <CarEVFieldSet
