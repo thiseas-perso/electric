@@ -149,7 +149,7 @@ const Calculator = () => {
   return (
     <>
       <CustomHead title="SOME TITLE" description="some description" />
-      <Header className="flex items-center h-14 bg-light-primary-2 dark:bg-transparent" />
+      {/* <Header className="flex items-center h-14 bg-light-primary-2 dark:bg-transparent" /> */}
       <div className="flex flex-col flex-grow justify-between min-h-[calc(100vh-56px)]">
         <ProgressBar stepState={stepState} />
         <h1
