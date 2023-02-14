@@ -8,8 +8,9 @@ import horseImg from '../../public/headers/horse-power.png';
 import versusImg from '../../public/headers/versus.png';
 import calendarImg from '../../public/headers/calendar.png';
 import tiresImg from '../../public/headers/tires.png';
+import carImg from '../../public/headers/car_full.png';
 
-const Acceleration = ({ tests, className }) => {
+const Acceleration = ({ tests, className, fullTest }) => {
   const [showMoreDetails, setShowMoreDetails] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
   const [btnTxt, setBtnTxt] = useState('détails');
@@ -44,6 +45,11 @@ const Acceleration = ({ tests, className }) => {
         </caption>
         <thead>
           <tr>
+            {fullTest && (
+              <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-pointer">
+                <TableHeader info="Voiture" imageSrc={carImg} />
+              </th>
+            )}
             <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-pointer">
               <TableHeader info="Motorisation" imageSrc={driveImg} />
             </th>
@@ -124,6 +130,19 @@ const Acceleration = ({ tests, className }) => {
                 key={i}
                 className="even:bg-light-primary-7/50  odd:bg-light-primary-3/50 rounded-3xl m-5 p-5 grid grid-cols-2 sm:table-row"
               >
+                {fullTest && (
+                  <>
+                    <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
+                      <TableHeader info="Voiture" imageSrc={carImg} />
+                    </th>
+                    <td
+                      data-th="Voiture"
+                      className="block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
+                    >
+                      {test.Car}
+                    </td>
+                  </>
+                )}
                 <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
                   <TableHeader info="Motorisation" imageSrc={driveImg} />
                 </th>
