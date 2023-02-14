@@ -18,7 +18,10 @@ const MakerSection = ({ last, dataByMaker }) => {
   return (
     <section>
       <div className="flex items-center  p-3 gap-3 dark:bg-transparent">
-        <h2 className="" onClick={() => setDisplay((prev) => !prev)}>
+        <h2
+          className="hover:cursor-pointer"
+          onClick={() => setDisplay((prev) => !prev)}
+        >
           Chercher par marque
         </h2>
         <button

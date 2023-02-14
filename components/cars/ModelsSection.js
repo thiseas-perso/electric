@@ -23,7 +23,12 @@ const ModelsSection = ({ allDataLight, last }) => {
   return (
     <section>
       <div className="flex items-center  p-3 gap-3 dark:bg-transparent">
-        <h2 className="">Tous les modèles testés</h2>
+        <h2
+          onClick={() => setDisplay((prev) => !prev)}
+          className="hover:cursor-pointer"
+        >
+          Tous les modèles testés
+        </h2>
         <button
           className="border-none h-9 m-0 p-0"
           onClick={() => setDisplay((prev) => !prev)}
