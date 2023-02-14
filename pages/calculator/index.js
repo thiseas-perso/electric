@@ -119,8 +119,6 @@ const Calculator = () => {
     }
   };
 
-  console.log(results);
-
   const changeHandler = (e, objName, fieldName) => {
     if (!e.target.value.trim().length && !objName.startsWith('usage')) {
       setErrorState((prev) => ({
@@ -151,9 +149,8 @@ const Calculator = () => {
   return (
     <>
       <CustomHead title="SOME TITLE" description="some description" />
-      <Header className="h-12 font-lato sticky top-0 bg-light-primary-1 z-10" />
-
-      <div className="flex flex-col flex-grow justify-between min-h-[calc(100vh-48px)]">
+      <Header />
+      <div className="flex flex-col flex-grow justify-between min-h-[calc(100vh-56px)]">
         <ProgressBar stepState={stepState} />
         <h1 className="text-xl p-2 text-white font-poppins font-extrabold text-center">
           Calculateur éléctrocompatibilité
