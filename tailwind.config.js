@@ -29,6 +29,7 @@ module.exports = {
         'dark-primary-0': '#21354a',
         'dark-primary-1': '#386e85',
         'dark-primary-2': '#853c81',
+        'dark-primary-mid': '#7a4482',
       },
       fontFamily: {
         raleway: ['var(--raleway-font)', ...fontFamily.sans],

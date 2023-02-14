@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 
 import logoImg from '../../public/icons/logo_lg.png';
 
-const Header = () => {
+const Header = ({ className }) => {
   const [mounted, setMounted] = useState(false);
   const { systemTheme, theme, setTheme } = useTheme();
   useEffect(() => {
@@ -17,7 +17,7 @@ const Header = () => {
   }
 
   return (
-    <header className="flex top-0 sticky items-center h-14">
+    <header className={className}>
       <Link href="/" className="ml-2">
         <Image
           alt="logo"

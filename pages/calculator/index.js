@@ -149,15 +149,16 @@ const Calculator = () => {
   return (
     <>
       <CustomHead title="SOME TITLE" description="some description" />
-      <Header />
+      <Header className="flex items-center h-14 bg-light-primary-2 dark:bg-transparent" />
       <div className="flex flex-col flex-grow justify-between min-h-[calc(100vh-56px)]">
         <ProgressBar stepState={stepState} />
-        <h1 className="text-xl p-2 text-white font-poppins font-extrabold text-center">
-          Calculateur éléctrocompatibilité
-        </h1>
+        <h1
+          aria-label="Calculateur éléctro-compatibilité"
+          className="text-xl p-2 text-white font-poppins font-extrabold text-center  sm:mt-[10%]"
+        ></h1>
         <form
           autoComplete="off"
-          className=" text-lg flex flex-col flex-grow  justify-between items-center mt-2 overflow-x-hidden"
+          className=" text-lg flex flex-col flex-grow overflow-x-hidden mt-4 sm:items-center sm:mt-[10%]"
         >
           {stepState === 0 && (
             <CarEVFieldSet
