@@ -17,6 +17,7 @@ import ProgressBar from '../../components/calculator/ProgressBar';
 import ResultPage from '../../components/calculator/ResultPage';
 import SubmitPage from '../../components/calculator/SubmitPage';
 import CustomHead from '../../components/customHead';
+import Header from '../../components/header';
 import calculator from '../../helpers/calculator';
 
 const Calculator = () => {
@@ -103,7 +104,7 @@ const Calculator = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    const height = window.innerHeight - 42;
+    const height = window.innerHeight;
     const errors = checkValuesEntered(state);
     if (!errors) {
       const convertedInputToNumbers = convertDataToNumbers(state);
@@ -117,8 +118,6 @@ const Calculator = () => {
       }, 4000);
     }
   };
-
-  console.log(results);
 
   const changeHandler = (e, objName, fieldName) => {
     if (!e.target.value.trim().length && !objName.startsWith('usage')) {
@@ -150,22 +149,23 @@ const Calculator = () => {
   return (
     <>
       <CustomHead title="SOME TITLE" description="some description" />
-
-      <div className="flex flex-col flex-grow justify-between min-h-[calc(100vh-48px)]">
+      <Header className="flex items-center h-14 bg-light-primary-2 dark:bg-transparent" />
+      <div className="flex flex-col flex-grow justify-between min-h-[calc(100vh-56px)]">
         <ProgressBar stepState={stepState} />
-        <h1 className="text-xl p-2 text-white font-poppins font-extrabold text-center">
-          Comparateur VE - VT
-        </h1>
+        <h1
+          aria-label="Calculateur éléctro-compatibilité"
+          className="text-xl p-2 text-white font-poppins font-extrabold text-center"
+        ></h1>
         <form
           autoComplete="off"
-          className=" text-lg flex flex-col flex-grow  justify-between mt-2 overflow-x-hidden"
+          className=" text-lg flex flex-col flex-grow overflow-x-hidden sm:items-center mt-[5vh] sm:mt-[10vh]"
         >
           {stepState === 0 && (
             <CarEVFieldSet
               x={x}
               state={state}
               errorState={errorState}
-              className="bg-white overflow-hidden  min-w-[275px]  dark:bg-black "
+              className="bg-white overflow-hidden  min-w-[275px] max-w-2xl  dark:bg-black "
               changeHandler={changeHandler}
             />
           )}
@@ -174,7 +174,7 @@ const Calculator = () => {
               x={x}
               state={state}
               errorState={errorState}
-              className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
+              className="bg-white overflow-hidden  min-w-[275px] max-w-2xl dark:bg-black"
               changeHandler={changeHandler}
             />
           )}
@@ -184,7 +184,7 @@ const Calculator = () => {
               state={state}
               errorState={errorState}
               changeHandler={changeHandler}
-              className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
+              className="bg-white overflow-hidden  min-w-[275px] max-w-2xl dark:bg-black"
             />
           )}
           {stepState === 3 && (
@@ -193,7 +193,7 @@ const Calculator = () => {
               state={state}
               errorState={errorState}
               changeHandler={changeHandler}
-              className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
+              className="bg-white overflow-hidden  min-w-[275px] max-w-2xl dark:bg-black"
             />
           )}
           {stepState === 4 && (
@@ -202,7 +202,7 @@ const Calculator = () => {
               state={state}
               errorState={errorState}
               changeHandler={changeHandler}
-              className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
+              className="bg-white overflow-hidden  min-w-[275px] max-w-2xl dark:bg-black"
             />
           )}
 
@@ -212,7 +212,7 @@ const Calculator = () => {
               state={state}
               errorState={errorState}
               changeHandler={changeHandler}
-              className="bg-white overflow-hidden  min-w-[275px] dark:bg-black"
+              className="bg-white overflow-hidden  min-w-[275px] max-w-2xl dark:bg-black"
             />
           )}
           {stepState === 6 && errorCount > 0 ? (
