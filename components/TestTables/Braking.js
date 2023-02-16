@@ -120,18 +120,18 @@ const Braking = ({ tests, className, fullTest }) => {
               >
                 {fullTest && (
                   <>
-                    <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
+                    <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
                       <TableHeader info="Voiture" imageSrc={carImg} />
                     </th>
                     <td
                       data-th="Voiture"
-                      className="block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
+                      className="block my-2 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                     >
                       {test.Car}
                     </td>
                   </>
                 )}
-                <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
+                <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
                   <TableHeader
                     info="100 à 0 km/h (secondes)"
                     imageSrc={brakeTimeImg}
@@ -139,32 +139,32 @@ const Braking = ({ tests, className, fullTest }) => {
                 </th>
                 <td
                   data-th="100 à 0 km/h (secondes)"
-                  className="block my-4 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-2 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.Secs100to0KmPerH}
                 </td>
-                <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
+                <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
                   <TableHeader info="Distance (mètres)" imageSrc={meterImg} />
                 </th>
                 <td
                   data-th="Distance (mètres)"
-                  className="block my-4 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-2 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.Distance}
                 </td>
-                <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
+                <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
                   <TableHeader info="Surface" imageSrc={roadImg} />
                 </th>
                 <td
                   data-th="Surface"
-                  className="block my-4 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-2 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.Surface}
                 </td>
                 <th
                   className={`${
                     showDetails
-                      ? 'font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer'
+                      ? 'font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer'
                       : 'hidden'
                   }`}
                 >
@@ -174,7 +174,7 @@ const Braking = ({ tests, className, fullTest }) => {
                   data-th="Poid"
                   className={`${
                     showDetails
-                      ? 'block my-4 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-2 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -183,7 +183,7 @@ const Braking = ({ tests, className, fullTest }) => {
                 <th
                   className={`${
                     showDetails
-                      ? 'font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer'
+                      ? 'font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer'
                       : 'hidden'
                   }`}
                 >
@@ -193,7 +193,7 @@ const Braking = ({ tests, className, fullTest }) => {
                   data-th="Température"
                   className={`${
                     showDetails
-                      ? 'block my-4 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-2 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -202,7 +202,7 @@ const Braking = ({ tests, className, fullTest }) => {
                 <th
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer'
+                      ? 'font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer'
                       : 'hidden'
                   }`}
                 >
@@ -212,18 +212,18 @@ const Braking = ({ tests, className, fullTest }) => {
                   data-th="Saison"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block my-4 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-2 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
                   {test.Season}
                 </td>
-                <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
+                <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
                   <TableHeader info="Pneux" imageSrc={tiresImg} />
                 </th>
                 <td
                   data-th="Pneux"
-                  className="block my-4 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-2 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.Tires}
                 </td>
@@ -240,7 +240,7 @@ const Braking = ({ tests, className, fullTest }) => {
                   data-th="Roue arrière"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block my-4 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-2 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -259,7 +259,7 @@ const Braking = ({ tests, className, fullTest }) => {
                   data-th="Roue avant"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block my-4 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-2 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >

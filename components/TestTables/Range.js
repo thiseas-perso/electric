@@ -154,35 +154,35 @@ const Range = ({ tests, className, fullTest }) => {
               >
                 {fullTest && (
                   <>
-                    <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
+                    <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
                       <TableHeader info="Voiture" imageSrc={carImg} />
                     </th>
                     <td
                       data-th="Voiture"
-                      className="block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
+                      className="block my-2 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                     >
                       {test.Car}
                     </td>
                   </>
                 )}
-                <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
+                <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
                   <TableHeader info="Km/h" imageSrc={kmhImg} />
                 </th>
 
                 <td
-                  className="block my-4  sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-2  sm:table-cell sm:p-2 sm:rounded-lg "
                   data-th="Vitesse (km/h)"
                 >
                   {test.Speed}
                 </td>
-                <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
+                <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
                   <TableHeader
                     info="Capacitée réelle (kWh)"
                     imageSrc={batteryImg}
                   />
                 </th>
                 <td
-                  className="block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-2 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                   data-th="Capacitée réelle (kWh)"
                 >
                   {Number(test.Capacity.replace(',', '.')).toFixed(0)}
@@ -190,7 +190,7 @@ const Range = ({ tests, className, fullTest }) => {
                 <th
                   className={`${
                     showDetails
-                      ? 'font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer'
+                      ? 'font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer'
                       : 'hidden'
                   }`}
                 >
@@ -199,69 +199,69 @@ const Range = ({ tests, className, fullTest }) => {
                 <td
                   className={`${
                     showDetails
-                      ? 'block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-2 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                   data-th="Température (°C)"
                 >
                   {test.Temp}
                 </td>
-                <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
+                <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
                   <TableHeader
                     info="Autonomie (100% à 0%)"
                     imageSrc={range100Img}
                   />
                 </th>
                 <td
-                  className="block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-2 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                   data-th="Autonomie (100% à 0%)"
                 >
                   {test.Km}
                 </td>
-                <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
+                <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
                   <TableHeader
                     info="Autonomie 80% à 5% (km)"
                     imageSrc={range80Img}
                   />
                 </th>
                 <td
-                  className="block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-2 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                   data-th="Autonomie 80% à 5% (km)"
                 >
                   {test.Range75}
                 </td>
-                <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
+                <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
                   <TableHeader
                     info="Temps de charge 80% à 5% (minutes)"
                     imageSrc={charge80Img}
                   />
                 </th>
                 <td
-                  className="block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-2 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                   data-th="Temps de charge 80% à 5% (minutes)"
                 >
                   {test.ChargingTime75}
                 </td>
-                <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
+                <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
                   <TableHeader
                     info="Km chargés par heure (0 à 75%)"
                     imageSrc={chargekmhImg}
                   />
                 </th>
                 <td
-                  className="block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-2 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                   data-th="Km chargés par heure (0 à 75%)"
                 >
                   {test.KmPerH75}
                 </td>
-                <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
+                <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
                   <TableHeader
                     info="Consomation (kWh/100km)"
                     imageSrc={consumptionImg}
                   />
                 </th>
                 <td
-                  className="block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-2 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                   data-th="Consomation (kWh/100km)"
                 >
                   {(Number(test.WhPerKm) / 10).toFixed(1)}
@@ -269,7 +269,7 @@ const Range = ({ tests, className, fullTest }) => {
                 <th
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer'
+                      ? 'font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer'
                       : 'hidden'
                   }`}
                 >
@@ -278,7 +278,7 @@ const Range = ({ tests, className, fullTest }) => {
                 <td
                   className={`${
                     showMoreDetails
-                      ? 'block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-2 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                   data-th="Surface"
@@ -288,7 +288,7 @@ const Range = ({ tests, className, fullTest }) => {
                 <th
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer'
+                      ? 'font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer'
                       : 'hidden'
                   }`}
                 >
@@ -297,7 +297,7 @@ const Range = ({ tests, className, fullTest }) => {
                 <td
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-2 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                   data-th="Saison"
@@ -307,7 +307,7 @@ const Range = ({ tests, className, fullTest }) => {
                 <th
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer'
+                      ? 'font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer'
                       : 'hidden'
                   }`}
                 >
@@ -316,7 +316,7 @@ const Range = ({ tests, className, fullTest }) => {
                 <td
                   className={`${
                     showMoreDetails
-                      ? 'block my-4 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-2 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                   data-th="Pneux"
@@ -336,7 +336,7 @@ const Range = ({ tests, className, fullTest }) => {
                   data-th="Roue arrière"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block my-4 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-2 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -355,7 +355,7 @@ const Range = ({ tests, className, fullTest }) => {
                   data-th="Roue avant"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block my-4 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-2 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >

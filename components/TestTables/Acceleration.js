@@ -132,38 +132,38 @@ const Acceleration = ({ tests, className, fullTest }) => {
               >
                 {fullTest && (
                   <>
-                    <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
+                    <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
                       <TableHeader info="Voiture" imageSrc={carImg} />
                     </th>
                     <td
                       data-th="Voiture"
-                      className="block my-4 font-semibold   sm:table-cell sm:p-2 sm:rounded-lg "
+                      className="block my-2 font-semibold   sm:table-cell sm:p-2 sm:rounded-lg "
                     >
                       {test.Car}
                     </td>
                   </>
                 )}
-                <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
+                <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
                   <TableHeader info="Motorisation" imageSrc={driveImg} />
                 </th>
                 <td
                   data-th="Motorisation"
-                  className="block my-4 font-semibold   sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-2 font-semibold   sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.Drive}
                 </td>
 
-                <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
+                <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
                   <TableHeader info="0-100km/h (secondes)" imageSrc={accImg} />
                 </th>
                 <td
                   data-th="0-100 (secondes)"
-                  className="block my-4 font-semibold   sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-2 font-semibold   sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.ZeroTo100}
                 </td>
 
-                <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
+                <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
                   <TableHeader
                     info="0-100 spec. (secondes)"
                     imageSrc={specImg}
@@ -171,14 +171,14 @@ const Acceleration = ({ tests, className, fullTest }) => {
                 </th>
                 <td
                   data-th="0-100 Spec (secondes)"
-                  className="block my-4 font-semibold   sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-2 font-semibold   sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.ZeroTo100spec}
                 </td>
                 <th
                   className={`${
                     showDetails
-                      ? 'font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer'
+                      ? 'font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer'
                       : 'hidden'
                   }`}
                 >
@@ -188,7 +188,7 @@ const Acceleration = ({ tests, className, fullTest }) => {
                   data-th="test VS spec"
                   className={`${
                     showDetails
-                      ? 'block my-4 font-semibold   sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-2 font-semibold   sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -197,7 +197,7 @@ const Acceleration = ({ tests, className, fullTest }) => {
                 <th
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer'
+                      ? 'font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer'
                       : 'hidden'
                   }`}
                 >
@@ -207,7 +207,7 @@ const Acceleration = ({ tests, className, fullTest }) => {
                   data-th="Date"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block my-4 font-semibold   sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-2 font-semibold   sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -216,7 +216,7 @@ const Acceleration = ({ tests, className, fullTest }) => {
                 <th
                   className={`${
                     showDetails
-                      ? 'font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer'
+                      ? 'font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer'
                       : 'hidden'
                   }`}
                 >
@@ -229,7 +229,7 @@ const Acceleration = ({ tests, className, fullTest }) => {
                   data-th="Hp"
                   className={`${
                     showDetails
-                      ? 'block my-4 font-semibold   sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-2 font-semibold   sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -238,7 +238,7 @@ const Acceleration = ({ tests, className, fullTest }) => {
                 <th
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer'
+                      ? 'font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer'
                       : 'hidden'
                   }`}
                 >
@@ -248,19 +248,19 @@ const Acceleration = ({ tests, className, fullTest }) => {
                   data-th="Pneux"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block my-4 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-2 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
                   {test.Tires}
                 </td>
-                <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
+                <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
                   <TableHeader info="Poid (kg)" imageSrc={weightImg} />
                 </th>
                 <td
                   data-th="Poid (kg)"
                   className={[
-                    'block my-4 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg ',
+                    'block my-2 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg ',
                   ]}
                 >
                   {test.Weight}
@@ -268,7 +268,7 @@ const Acceleration = ({ tests, className, fullTest }) => {
                 <th
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'font-extrabold flex justify-center my-4 sm:hidden'
+                      ? 'font-extrabold flex justify-center my-2 sm:hidden'
                       : 'hidden'
                   }`}
                 >
@@ -278,7 +278,7 @@ const Acceleration = ({ tests, className, fullTest }) => {
                   data-th="Roue arrière"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block my-4 font-semibold   sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-2 font-semibold   sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
@@ -287,7 +287,7 @@ const Acceleration = ({ tests, className, fullTest }) => {
                 <th
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'font-extrabold flex justify-center my-4 sm:hidden'
+                      ? 'font-extrabold flex justify-center my-2 sm:hidden'
                       : 'hidden'
                   }`}
                 >
@@ -297,7 +297,7 @@ const Acceleration = ({ tests, className, fullTest }) => {
                   data-th="Roue avant"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block my-4 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block my-2 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >

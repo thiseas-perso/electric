@@ -49,59 +49,59 @@ const Weight = ({ tests, className, fullTest }) => {
               >
                 {fullTest && (
                   <>
-                    <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
+                    <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
                       <TableHeader info="Voiture" imageSrc={carImg} />
                     </th>
                     <td
                       data-th="Voiture"
-                      className="block my-4 font-semibold   sm:table-cell sm:p-2 sm:rounded-lg "
+                      className="block my-2 font-semibold   sm:table-cell sm:p-2 sm:rounded-lg "
                     >
                       {test.Car}
                     </td>
                   </>
                 )}
-                <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
+                <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
                   <TableHeader info="Total (kg)" imageSrc={weightImg} />
                 </th>
                 <td
                   data-th="Total (kg)"
-                  className="block my-4 font-semibold   sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-2 font-semibold   sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.Total}
                 </td>
-                <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
+                <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
                   <TableHeader info="Arrière" imageSrc={carRearImg} />
                 </th>
                 <td
                   data-th="Arrière"
-                  className="block my-4 font-semibold   sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-2 font-semibold   sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.Rear}
                 </td>
-                <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
+                <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
                   <TableHeader info="Avant" imageSrc={carFrontImg} />
                 </th>
                 <td
                   data-th="Avant"
-                  className="block my-4 font-semibold   sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-2 font-semibold   sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.Front}
                 </td>
-                <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
+                <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
                   <TableHeader info="Distribution" imageSrc={scaleImg} />
                 </th>
                 <td
                   data-th="Distribution"
-                  className="block my-4 font-semibold   sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-2 font-semibold   sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.Distribution}
                 </td>
-                <th className="font-extrabold flex justify-center my-4 sm:hidden hover:cursor-pointer">
+                <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
                   <TableHeader info="Batterie" imageSrc={batteryImg} />
                 </th>
                 <td
                   data-th="Batterie"
-                  className="block my-4 font-semibold   sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block my-2 font-semibold   sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.Battery}
                 </td>
