@@ -20,7 +20,7 @@ const AccelerationResults = ({ sorted }) => {
 
   const filterData = (string, arr) => {
     setQuery(() => string);
-    setFiltered((prev) =>
+    setFiltered(() =>
       arr.filter((el) =>
         el.Car.toLowerCase()
           .split('-')
