@@ -1,7 +1,9 @@
 import React from 'react';
 
-const Footer = ({ className }) => {
-  return <footer className={className}>[footer]</footer>;
+const Footer = () => {
+  return (
+    <footer className="font-lato bg-white dark:bg-black p-4">[footer]</footer>
+  );
 };
 
 export default Footer;

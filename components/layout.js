@@ -21,7 +21,7 @@ const Layout = ({ children, className }) => {
       >
         {children}
       </main>
-      <Footer className="font-lato bg-lime-900" />
+      <Footer />
     </>
   );
 };
