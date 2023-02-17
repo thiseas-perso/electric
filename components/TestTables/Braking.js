@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
+
 import TableHeader from '../TableHeader';
 import brakeTimeImg from '../../public/headers/brake_time.png';
+import brakeTimeDarkImg from '../../public/headers/brake_time_dark.png';
 import meterImg from '../../public/headers/meter.png';
 import roadImg from '../../public/headers/road.png';
 import tiresImg from '../../public/headers/tires.png';
@@ -13,6 +16,15 @@ const Braking = ({ tests, className, fullTest }) => {
   const [showMoreDetails, setShowMoreDetails] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
   const [btnTxt, setBtnTxt] = useState('détails');
+  const [mounted, setMounted] = useState(false);
+  const { systemTheme, theme } = useTheme();
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  const currentTheme = theme === 'system' ? systemTheme : theme;
+  if (!mounted) {
+    return null;
+  }
 
   const clickHandler = () => {
     if (!showDetails && !showMoreDetails) {
@@ -52,7 +64,9 @@ const Braking = ({ tests, className, fullTest }) => {
             <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-pointer">
               <TableHeader
                 info="100 à 0 km/h (secondes)"
-                imageSrc={brakeTimeImg}
+                imageSrc={
+                  currentTheme === 'dark' ? brakeTimeDarkImg : brakeTimeImg
+                }
               />
             </th>
             <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-pointer">

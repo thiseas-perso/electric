@@ -1,4 +1,5 @@
 import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 import TableHeader from '../TableHeader';
 import frunkImg from '../../public/headers/frunk.png';
@@ -7,7 +8,6 @@ import trunkImg from '../../public/headers/trunk.png';
 import trunkDarkImg from '../../public/headers/trunk_dark.png';
 import seatImg from '../../public/headers/seat.png';
 import carImg from '../../public/headers/car_full.png';
-import { useEffect, useState } from 'react';
 
 const Banana = ({ tests, className, fullTest }) => {
   const [mounted, setMounted] = useState(false);
