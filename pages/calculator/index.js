@@ -108,7 +108,7 @@ const Calculator = () => {
     const errors = checkValuesEntered(state);
     if (!errors) {
       const convertedInputToNumbers = convertDataToNumbers(state);
-      console.log(calculator(convertedInputToNumbers));
+
       setResults(() => calculator(convertedInputToNumbers));
       window.scrollBy({ top: height, behavior: 'smooth' });
     } else {

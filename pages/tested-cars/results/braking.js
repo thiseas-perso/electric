@@ -15,7 +15,6 @@ export async function getStaticProps() {
 }
 
 const BrakingResults = ({ sorted }) => {
-  console.log({ sorted });
   const [query, setQuery] = useState('');
 
   const [filtered, setFiltered] = useState(sorted);
