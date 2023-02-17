@@ -216,7 +216,7 @@ const Range = ({ tests, className, fullTest }) => {
                   className="block my-2 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                   data-th="Autonomie (100% à 0%)"
                 >
-                  {test.Km}
+                  {test.Range100}
                 </td>
                 <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
                   <TableHeader
