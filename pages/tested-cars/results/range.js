@@ -15,7 +15,6 @@ export async function getStaticProps() {
 }
 
 const RangeResults = ({ sorted }) => {
-  console.log({ sorted });
   const [query, setQuery] = useState('');
 
   const [filtered, setFiltered] = useState(sorted);
