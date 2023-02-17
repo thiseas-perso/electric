@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 import logoImg from '../../public/icons/logo_lg.png';
+import darkImg from '../../public/icons/night.png';
+import lightImg from '../../public/icons/light.png';
 
 const Header = ({ className }) => {
   const [mounted, setMounted] = useState(false);
@@ -28,10 +30,14 @@ const Header = ({ className }) => {
       </Link>
       <div className="ml-auto mr-2">
         <button
-          className=""
+          className="w-8 h-8 p-1 bg-white/50 dark:bg-black/50"
           onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')}
         >
-          {currentTheme === 'dark' ? 'light' : 'dark'}
+          {currentTheme === 'dark' ? (
+            <Image alt="light-mode" src={lightImg} />
+          ) : (
+            <Image alt="dark-mode" src={darkImg} />
+          )}
         </button>
       </div>
     </header>
