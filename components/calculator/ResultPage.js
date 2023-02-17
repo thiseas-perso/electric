@@ -5,6 +5,7 @@ import ResultMsgPositive from './ReslutMsgPositive';
 import ResultData from './ResultData';
 
 const ResultPage = ({ results, checked, worthIt, state }) => {
+  console.log({ results });
   return (
     <div
       className={` min-h-[calc(100vh)] flex justify-center bg-gradient-to-t from-light-primary-start to-light-primary-end  dark:from-dark-primary-1 dark:via-dark-primary-1 dark:to-dark-primary-2`}
@@ -17,6 +18,7 @@ const ResultPage = ({ results, checked, worthIt, state }) => {
           <ResultData
             carCostAtEnd={results.carICECostAtEndOfPeriod}
             carType="Thérmique"
+            energyCostPerYear={results.gasICECostPerY}
             carCostPerKMAtEnd={results.carICECostPerKmAtEnd}
             carValueAtEnd={results.carICEValueAtEndOfPeriod}
             checked={checked}
@@ -24,6 +26,7 @@ const ResultPage = ({ results, checked, worthIt, state }) => {
           <ResultData
             carCostAtEnd={results.carEVCostAtEndOfPeriod}
             carType="Eléctrique"
+            energyCostPerYear={results.chargeEVCostPerY}
             carCostPerKMAtEnd={results.carEVCostPerKmAtEnd}
             carValueAtEnd={results.carEVValueAtEndOfPeriod}
             checked={checked}
