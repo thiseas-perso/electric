@@ -15,7 +15,6 @@ export async function getStaticProps() {
 }
 
 const BananaResults = ({ sorted }) => {
-  console.log({ sorted });
   const [query, setQuery] = useState('');
   const [filtered, setFiltered] = useState(sorted);
 
@@ -61,6 +60,7 @@ const BananaResults = ({ sorted }) => {
         setFiltered(() => sorted);
     }
   };
+
   return (
     <>
       <Header className="flex items-center h-14 bg-black dark:bg-transparent" />
