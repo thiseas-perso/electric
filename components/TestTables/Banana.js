@@ -1,10 +1,24 @@
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
+
 import TableHeader from '../TableHeader';
 import frunkImg from '../../public/headers/frunk.png';
+import frunkDarkImg from '../../public/headers/frunk_dark.png';
 import trunkImg from '../../public/headers/trunk.png';
+import trunkDarkImg from '../../public/headers/trunk_dark.png';
 import seatImg from '../../public/headers/seat.png';
 import carImg from '../../public/headers/car_full.png';
 
 const Banana = ({ tests, className, fullTest }) => {
+  const [mounted, setMounted] = useState(false);
+  const { systemTheme, theme } = useTheme();
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  const currentTheme = theme === 'system' ? systemTheme : theme;
+  if (!mounted) {
+    return null;
+  }
   return (
     <div className={className}>
       <table className="min-w-full border-separate border-spacing-2 p-3">
@@ -21,13 +35,19 @@ const Banana = ({ tests, className, fullTest }) => {
               </th>
             )}
             <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0 hover:cursor-pointer">
-              <TableHeader info="Coffre" imageSrc={trunkImg} />
+              <TableHeader
+                info="Coffre"
+                imageSrc={currentTheme === 'dark' ? trunkDarkImg : trunkImg}
+              />
             </th>
             <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0 hover:cursor-pointer">
               <TableHeader info="Coffre sièges baissés" imageSrc={seatImg} />
             </th>
             <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0 hover:cursor-pointer">
-              <TableHeader info="Coffre avant" imageSrc={frunkImg} />
+              <TableHeader
+                info="Coffre avant"
+                imageSrc={currentTheme === 'dark' ? frunkDarkImg : frunkImg}
+              />
             </th>
           </tr>
         </thead>
@@ -52,7 +72,10 @@ const Banana = ({ tests, className, fullTest }) => {
                   </>
                 )}
                 <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
-                  <TableHeader info="Coffre" imageSrc={trunkImg} />
+                  <TableHeader
+                    info="Coffre"
+                    imageSrc={theme === 'dark' ? trunkDarkImg : trunkImg}
+                  />
                 </th>
                 <td
                   data-th="Coffre"
@@ -73,7 +96,10 @@ const Banana = ({ tests, className, fullTest }) => {
                   {test.SeatsFolded}
                 </td>
                 <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
-                  <TableHeader info="Coffre Avant" imageSrc={frunkImg} />
+                  <TableHeader
+                    info="Coffre Avant"
+                    imageSrc={currentTheme === 'dark' ? frunkDarkImg : frunkImg}
+                  />
                 </th>
                 <td
                   data-th="Coffre Avant"
