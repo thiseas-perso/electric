@@ -10,10 +10,13 @@ const ResultPage = ({ results, checked, worthIt, state }) => {
       className={` min-h-screen flex justify-center bg-gradient-to-t from-light-primary-start to-light-primary-end  dark:from-dark-primary-1 dark:via-dark-primary-1 dark:to-dark-primary-2`}
     >
       <div className="max-w-3xl">
-        <h2 className="text-xl p-2 text-white font-poppins font-extrabold text-center my-5">
+        <h2 className="text-xl p-2 text-white font-poppins font-extrabold text-center my-2 sm:my-5">
           Résultas
         </h2>
-        <div id="results-ctn" className="grid grid-cols-2 gap-5 mx-4 mt-[10vh]">
+        <div
+          id="results-ctn"
+          className="grid grid-cols-2 gap-5 mx-4 mt-4 sm:mt-[10vh]"
+        >
           <ResultData
             carCostAtEnd={results.carICECostAtEndOfPeriod}
             carType="Thérmique"
