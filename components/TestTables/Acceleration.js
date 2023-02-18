@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import TableHeader from '../TableHeader';
-import accImg from '../../public/headers/acc.png';
-import specImg from '../../public/headers/spec.png';
-import driveImg from '../../public/headers/drive.png';
-import weightImg from '../../public/headers/weight.png';
-import horseImg from '../../public/headers/horse-power.png';
-import versusImg from '../../public/headers/versus.png';
-import calendarImg from '../../public/headers/calendar.png';
-import tiresImg from '../../public/headers/tires.png';
-import carImg from '../../public/headers/car_full.png';
+const accImg = '/headers/acc.png';
+const specImg = '/headers/spec.png';
+const driveImg = '/headers/drive.png';
+const weightImg = '/headers/weight.png';
+const horseImg = '/headers/horse-power.png';
+const versusImg = '/headers/versus.png';
+const calendarImg = '/headers/calendar.png';
+const tiresImg = '/headers/tires.png';
+const carImg = '/headers/car_full.png';
 
 const Acceleration = ({ tests, className, fullTest }) => {
   const [showMoreDetails, setShowMoreDetails] = useState(false);
@@ -101,7 +101,7 @@ const Acceleration = ({ tests, className, fullTest }) => {
               <TableHeader info="Pneux" imageSrc={tiresImg} />
             </th>
             <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-pointer">
-              <TableHeader info="Poid (kg)" imageSrc={weightImg} />
+              <TableHeader info="Poids (kg)" imageSrc={weightImg} />
             </th>
             <th
               className={`${
@@ -255,10 +255,10 @@ const Acceleration = ({ tests, className, fullTest }) => {
                   {test.Tires}
                 </td>
                 <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
-                  <TableHeader info="Poid (kg)" imageSrc={weightImg} />
+                  <TableHeader info="Poids (kg)" imageSrc={weightImg} />
                 </th>
                 <td
-                  data-th="Poid (kg)"
+                  data-th="Poids (kg)"
                   className={[
                     'block my-2 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg ',
                   ]}

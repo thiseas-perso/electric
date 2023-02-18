@@ -11,9 +11,16 @@ const CarICEFieldSet = ({ state, className, x, changeHandler, errorState }) => {
         ease: 'easeOut',
       }}
     >
-      <h2 className="text-3xl text-white p-4 font-poppins font-bold bg-light-primary-2 text-center dark:bg-black">
-        Véhicule <span className="text-light-primary-4">thérmique</span>
-      </h2>
+      <div className="flex justify-center items-center p-4 gap-4 bg-light-primary-2 dark:bg-black">
+        <h2 className="text-3xl text-white font-poppins font-bold ">
+          Véhicule <span className="text-light-primary-4">thérmique</span>
+        </h2>
+
+        <button
+          type="button"
+          className="w-10 h-10 m-0 p-0 bg-[url('/icons/info.png')] bg-center bg-contain border-none"
+        />
+      </div>
 
       <div className="flex flex-col px-4 pb-4 pt-5  bg-white dark:bg-light-primary-2">
         <label htmlFor="purchaseCost">Prix achat (€):</label>

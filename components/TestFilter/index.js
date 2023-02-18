@@ -21,7 +21,7 @@ const TestFilter = ({ testName, filters, setFilters }) => {
       nameToDisplay = '1000km';
       break;
     case 'weight':
-      nameToDisplay = 'Poid';
+      nameToDisplay = 'Poids';
       break;
     default:
       nameToDisplay = testName;

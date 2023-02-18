@@ -13,7 +13,7 @@ const NavButtons = ({ stepState, setStepState, setX }) => {
             setStepState((prev) => prev - 1), setX(() => -1000);
           }}
         >
-          Back
+          Précédent
         </button>
       )}
       {stepState < 6 && (
@@ -26,7 +26,7 @@ const NavButtons = ({ stepState, setStepState, setX }) => {
             setStepState((prev) => prev + 1), setX(() => 1000);
           }}
         >
-          Next
+          Suivant
         </button>
       )}
     </div>

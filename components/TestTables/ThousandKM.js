@@ -1,9 +1,10 @@
 import TableHeader from '../TableHeader';
-import durationImg from '../../public/headers/duration.png';
-import consumptionImg from '../../public/headers/consumption.png';
-import kmhImg from '../../public/headers/kmh.png';
-import tempImg from '../../public/headers/temp.png';
-import carImg from '../../public/headers/car_full.png';
+
+const durationImg = '/headers/duration.png';
+const consumptionImg = '/headers/consumption.png';
+const kmhImg = '/headers/kmh.png';
+const tempImg = '/headers/temp.png';
+const carImg = '/headers/car_full.png';
 
 const ThousandKM = ({ tests, className, fullTest }) => {
   return (
