@@ -1,37 +1,28 @@
-import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import TableHeader from '../TableHeader';
-import kmhImg from '../../public/headers/kmh.png';
-import batteryImg from '../../public/headers/battery_kwh.png';
-import range100Img from '../../public/headers/range_100.png';
-import range100DarkImg from '../../public/headers/range_100_dark.png';
-import range80Img from '../../public/headers/range_80.png';
-import range80DarkImg from '../../public/headers/range_80_dark.png';
-import charge80Img from '../../public/headers/charge_80.png';
-import charge80DarkImg from '../../public/headers/charge_80_dark.png';
-import chargekmhImg from '../../public/headers/charge_kmh.png';
-import chargekmhDarkImg from '../../public/headers/charge_kmh_dark.png';
-import consumptionImg from '../../public/headers/consumption.png';
-import tempImg from '../../public/headers/temp.png';
-import roadImg from '../../public/headers/road.png';
-import seasonImg from '../../public/headers/season.png';
-import tiresImg from '../../public/headers/tires.png';
-import carImg from '../../public/headers/car_full.png';
+
+const kmhImg = '/headers/kmh.png';
+const batteryImg = '/headers/battery_kwh.png';
+const range100Img = '/headers/range_100.png';
+const range100DarkImg = '/headers/range_100_dark.png';
+const range80Img = '/headers/range_80.png';
+const range80DarkImg = '/headers/range_80_dark.png';
+const charge80Img = '/headers/charge_80.png';
+const charge80DarkImg = '/headers/charge_80_dark.png';
+const chargekmhImg = '/headers/charge_kmh.png';
+const chargekmhDarkImg = '/headers/charge_kmh_dark.png';
+const consumptionImg = '/headers/consumption.png';
+const tempImg = '/headers/temp.png';
+const roadImg = '/headers/road.png';
+const seasonImg = '/headers/season.png';
+const tiresImg = '/headers/tires.png';
+const carImg = '/headers/car_full.png';
 
 const Range = ({ tests, className, fullTest }) => {
   const [showMoreDetails, setShowMoreDetails] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
   const [btnTxt, setBtnTxt] = useState('détails');
-  const [mounted, setMounted] = useState(false);
-  const { systemTheme, theme } = useTheme();
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-  const currentTheme = theme === 'system' ? systemTheme : theme;
-  if (!mounted) {
-    return null;
-  }
 
   const clickHandler = () => {
     if (!showDetails && !showMoreDetails) {
@@ -89,31 +80,29 @@ const Range = ({ tests, className, fullTest }) => {
             <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-pointer">
               <TableHeader
                 info="Autonomie 100% à 0% (km)"
-                imageSrc={
-                  currentTheme === 'dark' ? range100DarkImg : range100Img
-                }
+                imageSrc={range100Img}
+                imageDarkSrc={range100DarkImg}
               />
             </th>
             <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-pointer">
               <TableHeader
                 info="Autonomie 80% à 5% (km)"
-                imageSrc={currentTheme === 'dark' ? range80DarkImg : range80Img}
+                imageSrc={range80Img}
+                imageDarkSrc={range80DarkImg}
               />
             </th>
             <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-pointer">
               <TableHeader
-                info="Temps de charge 80% à 5% (minutes)"
-                imageSrc={
-                  currentTheme === 'dark' ? charge80DarkImg : charge80Img
-                }
+                info="Temps de charge 5% à 80%(minutes)"
+                imageSrc={charge80Img}
+                imageDarkSrc={charge80DarkImg}
               />
             </th>
             <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-pointer">
               <TableHeader
                 info="Km chargés par heure (0 à 75%)"
-                imageSrc={
-                  currentTheme === 'dark' ? chargekmhDarkImg : chargekmhImg
-                }
+                imageSrc={chargekmhImg}
+                imageDarkSrc={chargekmhDarkImg}
               />
             </th>
             <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-pointer">
@@ -230,9 +219,8 @@ const Range = ({ tests, className, fullTest }) => {
                 <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
                   <TableHeader
                     info="Autonomie (100% à 0%)"
-                    imageSrc={
-                      currentTheme === 'dark' ? range100DarkImg : range100Img
-                    }
+                    imageSrc={range100Img}
+                    imageDarkSrc={range100DarkImg}
                   />
                 </th>
                 <td
@@ -244,9 +232,8 @@ const Range = ({ tests, className, fullTest }) => {
                 <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
                   <TableHeader
                     info="Autonomie 80% à 5% (km)"
-                    imageSrc={
-                      currentTheme === 'dark' ? range80DarkImg : range80Img
-                    }
+                    imageSrc={range80Img}
+                    imageDarkSrc={range80DarkImg}
                   />
                 </th>
                 <td
@@ -257,13 +244,14 @@ const Range = ({ tests, className, fullTest }) => {
                 </td>
                 <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
                   <TableHeader
-                    info="Temps de charge 80% à 5% (minutes)"
+                    info="Temps de charge 5% à 80%(minutes)"
                     imageSrc={charge80Img}
+                    imageDarkSrc={charge80DarkImg}
                   />
                 </th>
                 <td
                   className="block my-2 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
-                  data-th="Temps de charge 80% à 5% (minutes)"
+                  data-th="Temps de charge 5% à 80%(minutes)"
                 >
                   {test.ChargingTime75}
                 </td>
@@ -271,6 +259,7 @@ const Range = ({ tests, className, fullTest }) => {
                   <TableHeader
                     info="Km chargés par heure (0 à 75%)"
                     imageSrc={chargekmhImg}
+                    imageDarkSrc={chargekmhDarkImg}
                   />
                 </th>
                 <td

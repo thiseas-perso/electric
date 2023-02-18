@@ -1,10 +1,11 @@
 import TableHeader from '../TableHeader';
-import carFrontImg from '../../public/headers/car_front.png';
-import carRearImg from '../../public/headers/car_rear.png';
-import weightImg from '../../public/headers/weight.png';
-import scaleImg from '../../public/headers/scale.png';
-import batteryImg from '../../public/headers/battery_kwh.png';
-import carImg from '../../public/headers/car_full.png';
+
+const carFrontImg = '/headers/car_front.png';
+const carRearImg = '/headers/car_rear.png';
+const weightImg = '/headers/weight.png';
+const scaleImg = '/headers/scale.png';
+const batteryImg = '/headers/battery_kwh.png';
+const carImg = '/headers/car_full.png';
 
 const Weight = ({ tests, className, fullTest }) => {
   return (

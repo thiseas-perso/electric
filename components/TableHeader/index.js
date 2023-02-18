@@ -1,7 +1,6 @@
-import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 
-const TableHeader = ({ imageSrc, info }) => {
+const TableHeader = ({ imageSrc, info, imageDarkSrc }) => {
   const [clicked, setClicked] = useState(false);
   const [timeoutId, setTimeoutId] = useState(null);
 
@@ -20,18 +19,22 @@ const TableHeader = ({ imageSrc, info }) => {
     };
   }, [timeoutId]);
 
+  const lightImage = `url(${imageSrc})`;
+  const darkImage = `url(${imageDarkSrc || imageSrc})`;
+
   return (
     <div>
       {clicked ? (
         <div>{info}</div>
       ) : (
-        <Image
-          className="mx-auto unselectable"
-          src={imageSrc}
-          alt={info}
+        <div
           onClick={clickHandler}
-          height="42"
-        />
+          style={{
+            '--light-image': lightImage,
+            '--dark-image': darkImage,
+          }}
+          className="w-11 h-11 bg-center bg-contain bg-no-repeat mx-auto bg-[image:var(--light-image)] dark:bg-[image:var(--dark-image)]"
+        ></div>
       )}
     </div>
   );

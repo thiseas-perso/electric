@@ -18,10 +18,15 @@ const EnergyDataFieldSet = ({
         ease: 'easeOut',
       }}
     >
-      <h2 className="text-3xl text-white  p-4 font-poppins font-bold bg-light-primary-2 text-center dark:bg-black">
-        Cout de l&apos;<span className="text-light-primary-4">énergie</span>
-      </h2>
-
+      <div className="flex justify-center items-center bg-light-primary-2 dark:bg-black">
+        <h2 className="text-3xl text-white  p-4 font-poppins font-bold bg-light-primary-2 text-center dark:bg-black">
+          Cout de l&apos;<span className="text-light-primary-4">énergie</span>
+        </h2>
+        <button
+          type="button"
+          className="w-10 h-10 m-0 p-0 bg-[url('/icons/info.png')] bg-center bg-contain border-none"
+        />
+      </div>
       <div className="flex flex-col pt-5 px-4 pb-4 bg-white dark:bg-light-primary-2">
         <label htmlFor="chargingPriceHC">
           Electricité - heures creuses(€/kWh):

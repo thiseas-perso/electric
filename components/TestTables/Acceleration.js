@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import TableHeader from '../TableHeader';
-import accImg from '../../public/headers/acc.png';
-import specImg from '../../public/headers/spec.png';
-import driveImg from '../../public/headers/drive.png';
-import weightImg from '../../public/headers/weight.png';
-import horseImg from '../../public/headers/horse-power.png';
-import versusImg from '../../public/headers/versus.png';
-import calendarImg from '../../public/headers/calendar.png';
-import tiresImg from '../../public/headers/tires.png';
-import carImg from '../../public/headers/car_full.png';
+const accImg = '/headers/acc.png';
+const specImg = '/headers/spec.png';
+const driveImg = '/headers/drive.png';
+const weightImg = '/headers/weight.png';
+const horseImg = '/headers/horse-power.png';
+const versusImg = '/headers/versus.png';
+const calendarImg = '/headers/calendar.png';
+const tiresImg = '/headers/tires.png';
+const carImg = '/headers/car_full.png';
 
 const Acceleration = ({ tests, className, fullTest }) => {
   const [showMoreDetails, setShowMoreDetails] = useState(false);
