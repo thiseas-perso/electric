@@ -74,7 +74,7 @@ const WeightResults = ({ sorted }) => {
             className="bg-white/30 text-white hover:bg-white/10 active:bg-black/10 transition-colors"
             onClick={() => sortData('weight')}
           >
-            Poid
+            Poids
           </button>
           <button
             type="button"

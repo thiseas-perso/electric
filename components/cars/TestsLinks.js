@@ -29,7 +29,7 @@ const TestsLinks = ({ stringArr, last }) => {
         nameToDisplay = '1000km';
         break;
       case 'weight':
-        nameToDisplay = 'Poid';
+        nameToDisplay = 'Poids';
         break;
       default:
         nameToDisplay = testName;

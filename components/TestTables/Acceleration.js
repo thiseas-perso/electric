@@ -101,7 +101,7 @@ const Acceleration = ({ tests, className, fullTest }) => {
               <TableHeader info="Pneux" imageSrc={tiresImg} />
             </th>
             <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-pointer">
-              <TableHeader info="Poid (kg)" imageSrc={weightImg} />
+              <TableHeader info="Poids (kg)" imageSrc={weightImg} />
             </th>
             <th
               className={`${
@@ -255,10 +255,10 @@ const Acceleration = ({ tests, className, fullTest }) => {
                   {test.Tires}
                 </td>
                 <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
-                  <TableHeader info="Poid (kg)" imageSrc={weightImg} />
+                  <TableHeader info="Poids (kg)" imageSrc={weightImg} />
                 </th>
                 <td
-                  data-th="Poid (kg)"
+                  data-th="Poids (kg)"
                   className={[
                     'block my-2 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg ',
                   ]}

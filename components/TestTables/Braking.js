@@ -182,10 +182,10 @@ const Braking = ({ tests, className, fullTest }) => {
                       : 'hidden'
                   }`}
                 >
-                  <TableHeader info="Poid" imageSrc={weightImg} />
+                  <TableHeader info="Poids" imageSrc={weightImg} />
                 </th>
                 <td
-                  data-th="Poid"
+                  data-th="Poids"
                   className={`${
                     showDetails
                       ? 'block my-2 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg '
