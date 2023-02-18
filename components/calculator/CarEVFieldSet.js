@@ -1,9 +1,21 @@
 import { motion } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
 
 const CarEVFieldSet = ({ state, className, x, changeHandler, errorState }) => {
+  const [isFlip, setIsFlip] = useState(false);
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const myRef = useRef(null);
+
+  useEffect(() => {
+    const { width, height } = myRef.current.getBoundingClientRect();
+    setDimensions({ width, height });
+  }, []);
+
+  console.log({ dimensions });
   return (
     <motion.fieldset
       id="carData"
+      ref={myRef}
       className={className}
       initial={{ x }}
       animate={{ x: 0 }}
@@ -11,12 +23,13 @@ const CarEVFieldSet = ({ state, className, x, changeHandler, errorState }) => {
         ease: 'easeOut',
       }}
     >
-      <div className="flex justify-center items-center bg-light-primary-2 dark:bg-black">
-        <h2 className="text-3xl text-white  p-4 font-poppins font-bold bg-light-primary-2 text-center dark:bg-black">
+      <div className="flex justify-center items-center p-4 bg-light-primary-2 dark:bg-black gap-4">
+        <h2 className="text-3xl text-white  font-poppins font-bold bg-light-primary-2 text-center dark:bg-black">
           Véhicule <span className="text-light-primary-4">électrique</span>
         </h2>
         <button
           type="button"
+          onClick={() => setIsFlip(true)}
           className="w-10 h-10 m-0 p-0 bg-[url('/icons/info.png')] bg-center bg-contain border-none"
         />
       </div>

@@ -20,8 +20,8 @@ const UsageExpectedFieldSet = ({
         ease: 'easeOut',
       }}
     >
-      <div className="flex justify-center items-center bg-light-primary-2 dark:bg-black">
-        <h2 className="text-3xl text-white  p-4 font-poppins font-bold bg-light-primary-2 text-center dark:bg-black">
+      <div className="flex justify-center items-center gap-4 p-4 bg-light-primary-2 dark:bg-black">
+        <h2 className="text-3xl text-white font-poppins font-bold bg-light-primary-2 text-center dark:bg-black">
           <span className="text-light-primary-4">Kilomètrage</span> annuel
         </h2>
         <button

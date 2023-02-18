@@ -11,8 +11,8 @@ const CarICEFieldSet = ({ state, className, x, changeHandler, errorState }) => {
         ease: 'easeOut',
       }}
     >
-      <div className="flex justify-center items-center bg-light-primary-2 dark:bg-black">
-        <h2 className="text-3xl text-white p-4 font-poppins font-bold ">
+      <div className="flex justify-center items-center p-4 gap-4 bg-light-primary-2 dark:bg-black">
+        <h2 className="text-3xl text-white font-poppins font-bold ">
           Véhicule <span className="text-light-primary-4">thérmique</span>
         </h2>
 
