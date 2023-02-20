@@ -17,7 +17,7 @@ const ResultData = ({
         <h4>Cout total :</h4>
         <p className="font-bold">{carCostAtEnd} €</p>
         <h4>
-          Cout {carType === 'Thérmique' ? 'des carburants' : 'des recharges'}{' '}
+          Cout {carType === 'Thermique' ? 'des carburants' : 'des recharges'}{' '}
           par an:
         </h4>
         <p className="font-bold">{energyCostPerYear} €</p>
