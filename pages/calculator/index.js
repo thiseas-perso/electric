@@ -70,7 +70,11 @@ const Calculator = () => {
       const element = obj[outerKey];
       if (typeof element === 'object' && !outerKey.startsWith('usage')) {
         for (const innerKey in element) {
-          if (!element[innerKey].trim().length) {
+          if (
+            !element[innerKey].trim().length &&
+            innerKey !== 'chargingPriceHC'
+          ) {
+            console.log({ innerKey });
             errors += 1;
             setErrorState((prev) => ({
               ...prev,
@@ -108,7 +112,6 @@ const Calculator = () => {
     const errors = checkValuesEntered(state);
     if (!errors) {
       const convertedInputToNumbers = convertDataToNumbers(state);
-
       setResults(() => calculator(convertedInputToNumbers));
       window.scrollBy({ top: height, behavior: 'smooth' });
     } else {
@@ -120,7 +123,11 @@ const Calculator = () => {
   };
 
   const changeHandler = (e, objName, fieldName) => {
-    if (!e.target.value.trim().length && !objName.startsWith('usage')) {
+    if (
+      !e.target.value.trim().length &&
+      !objName.startsWith('usage') &&
+      fieldName !== 'chargingPriceHC'
+    ) {
       setErrorState((prev) => ({
         ...prev,
         [objName]: {

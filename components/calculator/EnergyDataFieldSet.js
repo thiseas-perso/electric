@@ -1,5 +1,9 @@
-import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+
+import warningIcon from '../../public/icons/warning.png';
+
 const EnergyDataFieldSet = ({
   state,
   changeHandler,
@@ -38,25 +42,6 @@ const EnergyDataFieldSet = ({
           />
         </div>
         <div className="flex flex-col pt-5 px-4 pb-4 bg-white dark:bg-light-primary-2">
-          <label htmlFor="chargingPriceHC">
-            Electricité - heures creuses(€/kWh):
-          </label>
-          <span className="error-msg">
-            {errorState.energyData.chargingPriceHC}
-          </span>
-          <input
-            className="mb-3"
-            required
-            placeholder="ex: 0,15"
-            min="0"
-            step=".01"
-            lang="en"
-            type="number"
-            id="chargingPriceHC"
-            name="chargingPriceHC"
-            value={state.energyData.chargingPriceHC}
-            onChange={(e) => changeHandler(e, 'energyData', 'chargingPriceHC')}
-          />
           <label htmlFor="chargingPriceHP">
             Electricité - heures pleines(€/kWh):
           </label>
@@ -75,6 +60,26 @@ const EnergyDataFieldSet = ({
             value={state.energyData.chargingPriceHP}
             onChange={(e) => changeHandler(e, 'energyData', 'chargingPriceHP')}
           />
+          <label htmlFor="chargingPriceHC">
+            Electricité - heures creuses(€/kWh){' '}
+            <span className="italic">(optionnel)</span>:
+          </label>
+          <span className="error-msg">
+            {errorState.energyData.chargingPriceHC}
+          </span>
+          <input
+            className="mb-3"
+            placeholder="ex: 0,15"
+            min="0"
+            step=".01"
+            lang="en"
+            type="number"
+            id="chargingPriceHC"
+            name="chargingPriceHC"
+            value={state.energyData.chargingPriceHC}
+            onChange={(e) => changeHandler(e, 'energyData', 'chargingPriceHC')}
+          />
+
           <label htmlFor="gasPrice">Carburant (€/lt):</label>
           <span className="error-msg">{errorState.energyData.gasPrice}</span>
           <input
@@ -91,14 +96,41 @@ const EnergyDataFieldSet = ({
           />
         </div>
       </div>
-      <div
-        style={{ width: dimensions.width, height: dimensions.height }}
-        className={`${isClicked ? '' : 'hidden'} flex`}
+      <article
+        style={{ width: dimensions.width, minHeight: dimensions.height }}
+        className={`${
+          isClicked ? '' : 'hidden'
+        } flex flex-col p-4 overflow-y-auto gap-1`}
       >
-        <button type="button" onClick={() => setIsClicked(false)}>
-          close
+        <section>
+          En février 2023, le prix en France est de{' '}
+          <span className="font-bold">0,21€/kWh</span> selon les tarifs
+          règlementés d&apos;EDF, pour une puissance de compteur de 6 kVA, en
+          option base.
+        </section>
+        <section>
+          <Image
+            alt="warning"
+            width="24"
+            src={warningIcon}
+            className="inline-block "
+          />{' '}
+          Le coût de recharge sur autoroute varie de{' '}
+          <span className="font-bold">0,44€/kWh</span> à{' '}
+          <span className="font-bold">0,70€/kWh</span> selon le fournisseur!
+        </section>
+        <section>
+          Le calculateur concidère que vous chargez 50% du temps en heures
+          creuses et 50% en heures pleines.
+        </section>
+        <button
+          type="button"
+          onClick={() => setIsClicked(false)}
+          className="mt-auto rounded-none border-none bg-light-primary-4 dark:bg-dark-primary-1"
+        >
+          Fermer
         </button>
-      </div>
+      </article>
     </motion.fieldset>
   );
 };

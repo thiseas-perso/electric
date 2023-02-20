@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
-import infoIcon from '../../public/icons/info.svg';
+import warningIcon from '../../public/icons/warning.png';
 
 const UsageExpectedFieldSet = ({
   state,
@@ -43,7 +43,12 @@ const UsageExpectedFieldSet = ({
 
         <div className="flex flex-col pt-5 px-4 pb-4 bg-white dark:bg-light-primary-2">
           <p className="text-base leading-5 mb-4">
-            <Image alt="information" src={infoIcon} className="inline-block " />{' '}
+            <Image
+              alt="warning"
+              width="24"
+              src={warningIcon}
+              className="inline-block "
+            />{' '}
             Si vous ne connaissez pas votre kilomètrage annuel, laissez cette
             case <b>vide</b> et utilisez le <b>similutateur</b> de l&apos;étape
             suivante
@@ -65,14 +70,26 @@ const UsageExpectedFieldSet = ({
           />
         </div>
       </div>
-      <div
+      <article
         style={{ width: dimensions.width, height: dimensions.height }}
-        className={`${isClicked ? '' : 'hidden'} flex`}
+        className={`${
+          isClicked ? '' : 'hidden'
+        } flex flex-col p-4 overflow-y-auto`}
       >
-        <button type="button" onClick={() => setIsClicked(false)}>
-          close
+        <section>
+          <p>
+            Une voiture immatriculée en France métropolitaine roule en moyenne{' '}
+            <span className="font-bold">12000km</span> dans une année
+          </p>
+        </section>
+        <button
+          type="button"
+          onClick={() => setIsClicked(false)}
+          className="mt-auto rounded-none border-none bg-light-primary-4 dark:bg-dark-primary-1"
+        >
+          Fermer
         </button>
-      </div>
+      </article>
     </motion.fieldset>
   );
 };

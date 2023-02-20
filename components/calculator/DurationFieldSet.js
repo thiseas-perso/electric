@@ -10,6 +10,7 @@ function DurationFieldSet({ state, changeHandler, className, x, errorState }) {
     const { width, height } = myRef.current.getBoundingClientRect();
     setDimensions({ width, height });
   }, []);
+  console.log(dimensions);
 
   return (
     <motion.fieldset
@@ -53,14 +54,27 @@ function DurationFieldSet({ state, changeHandler, className, x, errorState }) {
           />
         </div>
       </div>
-      <div
-        style={{ width: dimensions.width, height: dimensions.height }}
-        className={`${isClicked ? '' : 'hidden'} flex`}
+      <article
+        style={{ width: dimensions.width, minHeight: dimensions.height }}
+        className={`${
+          isClicked ? '' : 'hidden'
+        } flex flex-col p-4 overflow-y-auto`}
       >
-        <button type="button" onClick={() => setIsClicked(false)}>
-          close
+        <section>
+          <p>
+            Les VE coûtent plus cher à l&apos;achat mais offrent des économies
+            sur le <span className="font-bold">long terme </span>
+            grâce aux coûts d&apos;entretien et d&apos;énergie réduits.
+          </p>
+        </section>
+        <button
+          type="button"
+          onClick={() => setIsClicked(false)}
+          className="mt-auto rounded-none border-none bg-light-primary-4 dark:bg-dark-primary-1"
+        >
+          Fermer
         </button>
-      </div>
+      </article>
     </motion.fieldset>
   );
 }

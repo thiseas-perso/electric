@@ -90,14 +90,35 @@ const CarICEFieldSet = ({ state, className, x, changeHandler, errorState }) => {
           />
         </div>
       </div>
-      <div
+      <article
         style={{ width: dimensions.width, height: dimensions.height }}
-        className={`${isClicked ? '' : 'hidden'} flex`}
+        className={`${
+          isClicked ? '' : 'hidden'
+        } flex flex-col p-4 overflow-y-auto`}
       >
-        <button type="button" onClick={() => setIsClicked(false)}>
-          close
+        <section>
+          <h3 className="font-bold">Prix :</h3>
+          <p>
+            Renseignez le prix d&apos;achat de la VT qui vous intéresse ou 0 si
+            vous en possédez déjà une.
+          </p>
+        </section>
+        <section>
+          <h3 className="font-bold">Consomation :</h3>
+          <p>
+            Les VT les plus économes peuvent consommer moins de 5 L/100 km, les
+            moins efficaces plus de 15 L/100 km. En moyenne, on peut estimer
+            environ 7 à 10 L/100 km.
+          </p>
+        </section>
+        <button
+          type="button"
+          onClick={() => setIsClicked(false)}
+          className="mt-auto rounded-none border-none bg-light-primary-4 dark:bg-dark-primary-1"
+        >
+          Fermer
         </button>
-      </div>
+      </article>
     </motion.fieldset>
   );
 };

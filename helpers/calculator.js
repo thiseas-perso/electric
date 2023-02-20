@@ -51,15 +51,23 @@ const calculator = ({
       usageData.daysWorkedPerY +
       usageData.weekendKM * 52 +
       usageData.otherKMPerW * 52; // km
+
   const evConsumptionPerY = Number(
     ((totalKMPerY / 100) * carDataEV.consumption).toFixed(2)
   ); //kWh
-  const chargeEVCostPerY =
-    evConsumptionPerY *
-    (0.5 * energyData.chargingPriceHC + 0.5 * energyData.chargingPriceHC); //EUR
+
+  const chargeEVCostPerY = energyData.chargingPriceHC
+    ? Number(
+        (
+          evConsumptionPerY *
+          (0.5 * energyData.chargingPriceHP + energyData.chargingPriceHC * 0.5)
+        ).toFixed(2)
+      )
+    : Number((evConsumptionPerY * energyData.chargingPriceHP).toFixed(2)); //EUR
+
   const evKMCost = Number(
     (
-      ((0.5 * energyData.chargingPriceHC + 0.5 * energyData.chargingPriceHC) *
+      ((0.5 * energyData.chargingPriceHP + 0.5 * energyData.chargingPriceHC) *
         carDataEV.consumption) /
       100
     ).toFixed(2)

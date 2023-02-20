@@ -105,14 +105,37 @@ const CarEVFieldSet = ({ state, className, x, changeHandler, errorState }) => {
           />
         </div>
       </div>
-      <div
+      <article
         style={{ width: dimensions.width, height: dimensions.height }}
-        className={`${isClicked ? '' : 'hidden'} flex`}
+        className={`${isClicked ? '' : 'hidden'} flex flex-col p-4`}
       >
-        <button type="button" onClick={() => setIsClicked(false)}>
-          close
+        <section>
+          <h3 className="font-bold">Prix :</h3>
+          <p>Renseignez le prix d&apos;achat de la VE qui vous intéresse.</p>
+        </section>
+        <section>
+          <h3 className="font-bold">Entretien :</h3>
+          <p>
+            Pas besoin d&apos;huile, de filtres à air et de bougies
+            d&apos;allumage! Les freins régénératifs réduisent l&apos;usure des
+            plaquettes de frein, donc moins de réparations et de remplacements.
+          </p>
+        </section>
+        <section>
+          <h3 className="font-bold">Consomation :</h3>
+          <p>
+            En moyenne, la consommation d&apos;une voiture électrique cumule de
+            20 à 25 kWh/100 km.
+          </p>
+        </section>
+        <button
+          type="button"
+          onClick={() => setIsClicked(false)}
+          className="mt-auto rounded-none border-none bg-light-primary-4 dark:bg-dark-primary-1"
+        >
+          Fermer
         </button>
-      </div>
+      </article>
     </motion.fieldset>
   );
 };
