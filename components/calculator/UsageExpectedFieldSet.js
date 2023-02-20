@@ -37,7 +37,7 @@ const UsageExpectedFieldSet = ({
           <button
             type="button"
             onClick={() => setIsClicked(true)}
-            className="w-10 h-10 m-0 p-0 bg-[url('/icons/info.png')] bg-center bg-contain border-none"
+            className="w-10 h-10 m-0 p-0 bg-[url('/icons/info.png')] bg-center bg-contain border-none bg-no-repeat"
           />
         </div>
 

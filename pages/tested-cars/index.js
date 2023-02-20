@@ -37,7 +37,7 @@ const Cars = ({ allDataLight, testNames }) => {
     <>
       <CustomHead title="SOME TITLE" description="some description" />
       <Header className="flex items-center h-14 bg-light-primary-2 dark:bg-transparent" />
-      <div className="min-h-screenNoNav">
+      <div className="min-h-screenNoNav flex flex-col items-center max-w-4xl mx-auto">
         <h1
           aria-label="Tous les tests"
           className="text-xl p-2 text-white font-poppins font-extrabold text-center"

@@ -14,9 +14,9 @@ const MakerSection = ({ last, dataByMaker }) => {
   if (contentRef.current) height = `${contentRef.current.scrollHeight}px`;
 
   return (
-    <section>
+    <section className="flex flex-col items-center">
       <div
-        className="flex items-center  p-3 gap-3 dark:bg-transparent hover:cursor-pointer"
+        className="flex items-center p-3 gap-3 hover:cursor-pointer"
         onClick={() => setDisplay((prev) => !prev)}
       >
         <h2>Chercher par marque</h2>
@@ -25,7 +25,7 @@ const MakerSection = ({ last, dataByMaker }) => {
             display
               ? "bg-[url('/icons/close-button.svg')] dark:bg-[url('/icons/close-button-dark.svg')]"
               : "bg-[url('/icons/arrow-button.svg')] dark:bg-[url('/icons/arrow-button-dark.svg')]"
-          } bg-center bg-contain border-none`}
+          } bg-center bg-contain border-none bg-no-repeat`}
         >
           <span className="sr-only">Chercher par marque</span>
         </button>

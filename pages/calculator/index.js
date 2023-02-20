@@ -57,7 +57,7 @@ const Calculator = () => {
               utilisant le calculateur !
             </p>
             <Link
-              className="ml-auto bg-light-primary-4 px-6 py-3 rounded-xl font-bold hover:bg-light-primary-5 transition-colors"
+              className="ml-auto bg-light-primary-4 px-6 py-3 rounded-xl font-bold hover:bg-light-primary-5 transition-colors dark:bg-dark-primary-1 dark:hover:bg-dark-primary-0"
               href={'/calculator/form'}
             >
               Go!

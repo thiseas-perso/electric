@@ -35,7 +35,7 @@ const TestsLinks = ({ stringArr, last }) => {
   };
 
   return (
-    <section>
+    <section className="flex flex-col items-center">
       <div
         className="flex items-center hover:cursor-pointer  p-3 gap-3 dark:bg-transparent"
         onClick={() => setDisplay((prev) => !prev)}
@@ -46,7 +46,7 @@ const TestsLinks = ({ stringArr, last }) => {
             display
               ? "bg-[url('/icons/close-button.svg')] dark:bg-[url('/icons/close-button-dark.svg')]"
               : "bg-[url('/icons/arrow-button.svg')] dark:bg-[url('/icons/arrow-button-dark.svg')]"
-          } bg-center bg-contain border-none`}
+          } bg-center bg-contain border-none bg-no-repeat`}
         >
           <span className="sr-only">Chercher par test</span>
         </button>
