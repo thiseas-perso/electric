@@ -19,7 +19,7 @@ const ResultPage = ({ results, checked, worthIt, state }) => {
         >
           <ResultData
             carCostAtEnd={results.carICECostAtEndOfPeriod}
-            carType="Thérmique"
+            carType="Thermique"
             energyCostPerYear={results.gasICECostPerY}
             carCostPerKMAtEnd={results.carICECostPerKmAtEnd}
             carValueAtEnd={results.carICEValueAtEndOfPeriod}

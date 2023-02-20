@@ -23,7 +23,7 @@ const CarICEFieldSet = ({ state, className, x, changeHandler, errorState }) => {
       <div ref={myRef} className={`${isClicked ? 'hidden' : ''}`}>
         <div className="flex justify-center items-center p-4 gap-4 bg-light-primary-2 dark:bg-black">
           <h2 className="text-3xl text-white font-poppins font-bold ">
-            Véhicule <span className="text-light-primary-4">thérmique</span>
+            Véhicule <span className="text-light-primary-4">thermique</span>
           </h2>
 
           <button
