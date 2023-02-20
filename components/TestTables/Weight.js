@@ -55,7 +55,7 @@ const Weight = ({ tests, className, fullTest }) => {
                     </th>
                     <td
                       data-th="Voiture"
-                      className="block my-2 font-semibold   sm:table-cell sm:p-2 sm:rounded-lg "
+                      className="block my-2 font-extrabold    sm:table-cell sm:p-2 sm:rounded-lg "
                     >
                       {test.Car}
                     </td>

@@ -56,7 +56,7 @@ const Banana = ({ tests, className, fullTest }) => {
                     </th>
                     <td
                       data-th="Voiture"
-                      className="block my-2 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
+                      className="block my-2 font-extrabold   before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                     >
                       {test.Car}
                     </td>
