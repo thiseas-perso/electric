@@ -9,7 +9,7 @@ const Layout = ({ children, className }) => {
         src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
         data-id="eleco"
         data-description="Support me on Buy me a coffee!"
-        data-message="En tant que projet personnel votre don est essentiel pour maintenir ce site en vie. Chaque petit geste est vraiment apprécié!"
+        data-message="Ce projet et le fruit de plusieurs heures d'efforts. Si vous l'appréciez, offrez-moi un café 😊"
         data-color="#5F7FFF"
         data-position="Right"
         data-x_margin="18"
