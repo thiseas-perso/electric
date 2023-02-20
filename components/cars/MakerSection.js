@@ -1,8 +1,6 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { useRef, useState } from 'react';
-import arrowButton from '../../public/icons/arrow-button.svg';
-import closeButton from '../../public/icons/close-button.svg';
+
 import Modal from '../Modal';
 import MakerBtn from './MakerBtn';
 
@@ -17,22 +15,19 @@ const MakerSection = ({ last, dataByMaker }) => {
 
   return (
     <section>
-      <div className="flex items-center  p-3 gap-3 dark:bg-transparent">
-        <h2
-          className="hover:cursor-pointer"
-          onClick={() => setDisplay((prev) => !prev)}
-        >
-          Chercher par marque
-        </h2>
+      <div
+        className="flex items-center  p-3 gap-3 dark:bg-transparent hover:cursor-pointer"
+        onClick={() => setDisplay((prev) => !prev)}
+      >
+        <h2>Chercher par marque</h2>
         <button
-          className="border-none h-9 m-0 p-0"
-          onClick={() => setDisplay((prev) => !prev)}
+          className={`w-8 h-8 m-0 p-0 ${
+            display
+              ? "bg-[url('/icons/close-button.svg')] dark:bg-[url('/icons/close-button-dark.svg')]"
+              : "bg-[url('/icons/arrow-button.svg')] dark:bg-[url('/icons/arrow-button-dark.svg')]"
+          } bg-center bg-contain border-none`}
         >
-          <Image
-            src={display ? closeButton : arrowButton}
-            alt="click to display brands"
-            className="rotate-180 unselectable"
-          />
+          <span className="sr-only">Chercher par marque</span>
         </button>
       </div>
 

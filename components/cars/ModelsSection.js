@@ -22,22 +22,19 @@ const ModelsSection = ({ allDataLight, last }) => {
 
   return (
     <section>
-      <div className="flex items-center  p-3 gap-3 dark:bg-transparent">
-        <h2
-          onClick={() => setDisplay((prev) => !prev)}
-          className="hover:cursor-pointer"
-        >
-          Tous les modèles testés
-        </h2>
+      <div
+        className="flex items-center hover:cursor-pointer p-3 gap-3 dark:bg-transparent"
+        onClick={() => setDisplay((prev) => !prev)}
+      >
+        <h2>Tous les modèles testés</h2>
         <button
-          className="border-none h-9 m-0 p-0"
-          onClick={() => setDisplay((prev) => !prev)}
+          className={`w-8 h-8 m-0 p-0 ${
+            display
+              ? "bg-[url('/icons/close-button.svg')] dark:bg-[url('/icons/close-button-dark.svg')]"
+              : "bg-[url('/icons/arrow-button.svg')] dark:bg-[url('/icons/arrow-button-dark.svg')]"
+          } bg-center bg-contain border-none`}
         >
-          <Image
-            src={display ? closeButton : arrowButton}
-            alt="click to display models"
-            className="rotate-180 unselectable"
-          />
+          <span className="sr-only">Tous les modèles testés</span>
         </button>
       </div>
 
