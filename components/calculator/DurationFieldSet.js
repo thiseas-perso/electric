@@ -10,7 +10,6 @@ function DurationFieldSet({ state, changeHandler, className, x, errorState }) {
     const { width, height } = myRef.current.getBoundingClientRect();
     setDimensions({ width, height });
   }, []);
-  console.log(dimensions);
 
   return (
     <motion.fieldset

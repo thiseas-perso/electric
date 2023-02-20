@@ -74,7 +74,6 @@ const Calculator = () => {
             !element[innerKey].trim().length &&
             innerKey !== 'chargingPriceHC'
           ) {
-            console.log({ innerKey });
             errors += 1;
             setErrorState((prev) => ({
               ...prev,
