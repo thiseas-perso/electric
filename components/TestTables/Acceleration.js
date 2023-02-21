@@ -1,5 +1,9 @@
+import Image from 'next/image';
 import React, { useState } from 'react';
 import TableHeader from '../TableHeader';
+import Modal from '../Modal';
+import { Youtube } from '../Youtube';
+
 const accImg = '/headers/acc.png';
 const specImg = '/headers/spec.png';
 const driveImg = '/headers/drive.png';
@@ -9,11 +13,14 @@ const versusImg = '/headers/versus.png';
 const calendarImg = '/headers/calendar.png';
 const tiresImg = '/headers/tires.png';
 const carImg = '/headers/car_full.png';
+const youtubeImg = '/headers/youtube.png';
 
 const Acceleration = ({ tests, className, fullTest }) => {
   const [showMoreDetails, setShowMoreDetails] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
   const [btnTxt, setBtnTxt] = useState('détails');
+  const [modalOpen, setModalOpen] = useState(false);
+  const [embedId, setEmbedId] = useState('');
 
   const clickHandler = () => {
     if (!showDetails && !showMoreDetails) {
@@ -34,7 +41,7 @@ const Acceleration = ({ tests, className, fullTest }) => {
       <table className="min-w-full border-separate border-spacing-2 p-3">
         <caption>
           <h3 className="p-3 font-bold bg-light-primary-2 text-white text-left flex items-center gap-x-4 dark:bg-black">
-            Acceleration
+            Accélération
             <button
               className="font-light hover:bg-white/25"
               onClick={clickHandler}
@@ -55,12 +62,12 @@ const Acceleration = ({ tests, className, fullTest }) => {
             </th>
 
             <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-pointer">
-              <TableHeader info="Acceleration (secondes)" imageSrc={accImg} />
+              <TableHeader info="Accélération (secondes)" imageSrc={accImg} />
             </th>
 
             <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-pointer">
               <TableHeader
-                info="Acceleration spec (secondes)"
+                info="Accélération spec (secondes)"
                 imageSrc={specImg}
               />
             </th>
@@ -120,6 +127,9 @@ const Acceleration = ({ tests, className, fullTest }) => {
               }`}
             >
               Roue avant
+            </th>
+            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-pointer">
+              <TableHeader info="Vidéo" imageSrc={youtubeImg} />
             </th>
           </tr>
         </thead>
@@ -303,11 +313,49 @@ const Acceleration = ({ tests, className, fullTest }) => {
                 >
                   {test.WheelFront}
                 </td>
+                <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
+                  <TableHeader info="Vidéo" imageSrc={youtubeImg} />
+                </th>
+                <td
+                  data-th="Vidéo"
+                  className="block my-2 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg"
+                >
+                  {test.Youtube ? (
+                    <button
+                      onClick={() => {
+                        setModalOpen(true);
+                        setEmbedId(test.Youtube);
+                      }}
+                      className="flex relative p-0 overflow-hidden mx-auto hover:brightness-150 transition-all"
+                    >
+                      <span className="sr-only">watch video</span>
+                      <Image
+                        width="120"
+                        height="90"
+                        alt=""
+                        src={`https://img.youtube.com/vi/${test.Youtube}/mqdefault.jpg`}
+                      />
+                    </button>
+                  ) : (
+                    '-'
+                  )}
+                </td>
               </tr>
             );
           })}
         </tbody>
       </table>
+      <Modal
+        open={modalOpen}
+        handleClose={() => {
+          setModalOpen(false);
+          setEmbedId('');
+        }}
+      >
+        <div className="w-[100vw] lg:w-[512px] relative h-0 pb-[56.25%] bg-black">
+          <Youtube embedId={embedId} />
+        </div>
+      </Modal>
     </div>
   );
 };

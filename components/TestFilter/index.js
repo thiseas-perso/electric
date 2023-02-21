@@ -6,7 +6,7 @@ const TestFilter = ({ testName, filters, setFilters }) => {
   let nameToDisplay = '';
   switch (testName) {
     case 'acceleration':
-      nameToDisplay = 'Acceleration';
+      nameToDisplay = 'Accélération';
       break;
     case 'banana':
       nameToDisplay = 'Caisses à bananes';
