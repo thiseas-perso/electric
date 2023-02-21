@@ -40,11 +40,11 @@ const Cars = ({ allDataLight, testNames }) => {
       <div className="min-h-screenNoNav flex flex-col items-center max-w-4xl mx-auto">
         <h1
           aria-label="Tous les tests"
-          className="text-xl p-2 text-white font-poppins font-extrabold text-center"
+          className="text-xl p-2 mt-[2vh] text-white font-poppins font-extrabold text-center"
         >
           Tous les tests
         </h1>
-        <p>
+        <p className="text-lg leading-7 p-4">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
           mollitia, molestiae quas vel sint commodi repudiandae consequuntur
           voluptatum laborum numquam blanditiis harum quisquam eius sed odit
