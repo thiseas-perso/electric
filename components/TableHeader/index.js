@@ -6,7 +6,7 @@ const TableHeader = ({ imageSrc, info, imageDarkSrc }) => {
 
   const clickHandler = () => {
     clearTimeout(timeoutId);
-    setClicked(() => true);
+    setClicked((prev) => !prev);
     const newTimeoutId = setTimeout(() => {
       setClicked(() => false);
     }, 3000);
@@ -23,12 +23,11 @@ const TableHeader = ({ imageSrc, info, imageDarkSrc }) => {
   const darkImage = `url(${imageDarkSrc || imageSrc})`;
 
   return (
-    <div>
+    <div onClick={clickHandler}>
       {clicked ? (
         <div>{info}</div>
       ) : (
         <div
-          onClick={clickHandler}
           style={{
             '--light-image': lightImage,
             '--dark-image': darkImage,
