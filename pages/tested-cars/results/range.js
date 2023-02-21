@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { getOneFileData } from '../../../lib/csvParser';
 import { Range } from '../../../components/TestTables';
-import Header from '../../../components/header';
 
 export async function getStaticProps() {
   const data = await getOneFileData('range');
@@ -81,7 +80,6 @@ const RangeResults = ({ sorted }) => {
 
   return (
     <>
-      <Header className="flex items-center h-14 bg-black dark:bg-transparent" />
       <form className=" w-full p-8 flex justify-center gap-2 dark:bg-transparent items-center flex-wrap">
         <label htmlFor="query" className="font-semibold">
           Filtrer :{' '}

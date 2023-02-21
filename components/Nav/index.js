@@ -7,7 +7,7 @@ import logoImg from '../../public/icons/logo_lg.png';
 import darkImg from '../../public/icons/night.png';
 import lightImg from '../../public/icons/light.png';
 
-const Header = ({ className }) => {
+const Nav = () => {
   const [mounted, setMounted] = useState(false);
   const { systemTheme, theme, setTheme } = useTheme();
   useEffect(() => {
@@ -19,7 +19,7 @@ const Header = ({ className }) => {
   }
 
   return (
-    <header className={className}>
+    <nav className="flex items-center h-14 bg-black">
       <Link href="/" className="ml-2">
         <Image
           alt="logo"
@@ -40,8 +40,8 @@ const Header = ({ className }) => {
           )}
         </button>
       </div>
-    </header>
+    </nav>
   );
 };
 
-export default Header;
+export default Nav;

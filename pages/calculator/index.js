@@ -1,31 +1,11 @@
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
-
-import { CarEVFieldSet } from '../../components/calculator';
-import { CarICEFieldSet } from '../../components/calculator';
-import { DurationFieldSet } from '../../components/calculator';
-import { EnergyDataFieldSet } from '../../components/calculator';
-import { UsageDataFieldSet } from '../../components/calculator';
-import { UsageExpectedFieldSet } from '../../components/calculator';
-import ErrorMessage from '../../components/calculator/ErrorMessage';
-import {
-  initialResultsState,
-  initialState,
-  initialStateErrors,
-} from '../../components/calculator/initialStates';
-import NavButtons from '../../components/calculator/NavButtons';
-import ProgressBar from '../../components/calculator/ProgressBar';
-import ResultPage from '../../components/calculator/ResultPage';
-import SubmitPage from '../../components/calculator/SubmitPage';
 import CustomHead from '../../components/customHead';
-import Header from '../../components/header';
-import calculator from '../../helpers/calculator';
 
 const Calculator = () => {
   return (
     <>
       <CustomHead title="SOME TITLE" description="some description" />
-      <Header className="flex items-center h-14 bg-light-primary-2 dark:bg-transparent" />
+
       <div className="flex flex-col flex-grow min-h-screenNoNav items-center">
         <div className="flex flex-col bg-white dark:bg-light-primary-2 max-w-2xl mt-[1vh] sm:mt-[10vh] shadow-2xl">
           <h1

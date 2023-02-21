@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Header from '../../../components/header';
 import StudioImage from '../../../components/StudioImage';
 import TestFilter from '../../../components/TestFilter';
 import Version from '../../../components/Version';
@@ -42,7 +41,6 @@ const Model = ({ modelData, testNames }) => {
 
   return (
     <>
-      <Header className="flex items-center h-14 bg-light-primary-2 dark:bg-transparent" />
       <div className="min-h-screenNoNav">
         <div className="w-full h-fit px-4 flex flex-col items-center ">
           <StudioImage
