@@ -3,7 +3,7 @@ import { getAllDataLight, getAllTestNames } from '../../lib/csvParser';
 import MakerSection from '../../components/cars/MakerSection';
 import ModelsSection from '../../components/cars/ModelsSection';
 import CustomHead from '../../components/customHead';
-import Header from '../../components/header';
+
 import TestsLinks from '../../components/cars/TestsLinks';
 
 export async function getStaticProps() {
@@ -36,7 +36,6 @@ const Cars = ({ allDataLight, testNames }) => {
   return (
     <>
       <CustomHead title="SOME TITLE" description="some description" />
-      <Header className="flex items-center h-14 bg-light-primary-2 dark:bg-transparent" />
       <div className="min-h-screenNoNav flex flex-col items-center max-w-4xl mx-auto">
         <h1
           aria-label="Tous les tests"
