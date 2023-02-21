@@ -1,12 +1,21 @@
+import Image from 'next/image';
+import { useState } from 'react';
+import Modal from '../Modal';
 import TableHeader from '../TableHeader';
+import { Youtube } from '../Youtube';
 
 const durationImg = '/headers/duration.png';
 const consumptionImg = '/headers/consumption.png';
 const kmhImg = '/headers/kmh.png';
 const tempImg = '/headers/temp.png';
 const carImg = '/headers/car_full.png';
+const youtubeImg = '/headers/youtube.png';
+const calendarImg = '/headers/calendar.png';
 
 const ThousandKM = ({ tests, className, fullTest }) => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [embedId, setEmbedId] = useState('');
+
   return (
     <div className={className}>
       <table className="min-w-full border-separate border-spacing-2 p-3">
@@ -34,7 +43,12 @@ const ThousandKM = ({ tests, className, fullTest }) => {
             <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-pointer">
               <TableHeader info="Température" imageSrc={tempImg} />
             </th>
-            {/* <th>Date</th> */}
+            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-pointer">
+              <TableHeader info="Date" imageSrc={calendarImg} />
+            </th>
+            <th className="absolute top-[-9999px] left-[-9999px] sm:static sm:top-0  hover:cursor-pointer">
+              <TableHeader info="Vidéo" imageSrc={youtubeImg} />
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -93,12 +107,58 @@ const ThousandKM = ({ tests, className, fullTest }) => {
                 >
                   {test.Temp}
                 </td>
-                {/* <td>{test.Date}</td> */}
+                <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
+                  <TableHeader info="Date" imageSrc={tempImg} />
+                </th>
+                <td
+                  data-th="Date"
+                  className="block my-2 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
+                >
+                  {test.Date}
+                </td>
+                <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
+                  <TableHeader info="Vidéo" imageSrc={youtubeImg} />
+                </th>
+                <td
+                  data-th="Vidéo"
+                  className="block my-2 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg "
+                >
+                  {test.Youtube ? (
+                    <button
+                      onClick={() => {
+                        setModalOpen(true);
+                        setEmbedId(test.Youtube);
+                      }}
+                      className="flex relative p-0 overflow-hidden mx-auto hover:brightness-150 transition-all"
+                    >
+                      <span className="sr-only">watch video</span>
+                      <Image
+                        width="120"
+                        height="90"
+                        alt=""
+                        src={`https://img.youtube.com/vi/${test.Youtube}/mqdefault.jpg`}
+                      />
+                    </button>
+                  ) : (
+                    '-'
+                  )}
+                </td>
               </tr>
             );
           })}
         </tbody>
       </table>
+      <Modal
+        open={modalOpen}
+        handleClose={() => {
+          setModalOpen(false);
+          setEmbedId('');
+        }}
+      >
+        <div className="w-[100vw] lg:w-[512px] relative h-0 pb-[56.25%] bg-black">
+          <Youtube embedId={embedId} />
+        </div>
+      </Modal>
     </div>
   );
 };

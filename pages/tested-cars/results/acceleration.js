@@ -84,14 +84,14 @@ const AccelerationResults = ({ sorted }) => {
             className="bg-white/30 text-white hover:bg-white/10 active:bg-black/10 transition-colors"
             onClick={() => sortData('acc')}
           >
-            Acceleration testée
+            Accélération testée
           </button>
           <button
             type="button"
             className="bg-white/30 text-white hover:bg-white/10 active:bg-black/10 transition-colors"
             onClick={() => sortData('spec')}
           >
-            Acceleration spec.
+            Accélération spec.
           </button>
           <button
             type="button"
