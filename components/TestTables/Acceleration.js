@@ -14,6 +14,7 @@ const calendarImg = '/headers/calendar.png';
 const tiresImg = '/headers/tires.png';
 const carImg = '/headers/car_full.png';
 const youtubeImg = '/headers/youtube.png';
+const youtubeDarkImg = '/headers/youtube_dark.png';
 
 const Acceleration = ({ tests, className, fullTest }) => {
   const [showMoreDetails, setShowMoreDetails] = useState(false);
@@ -313,8 +314,8 @@ const Acceleration = ({ tests, className, fullTest }) => {
                 >
                   {test.WheelFront}
                 </td>
-                <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
-                  <TableHeader info="Vidéo" imageSrc={youtubeImg} />
+                <th className="font-extrabold flex justify-center items-center my-2 sm:hidden hover:cursor-pointer">
+                  <TableHeader info="Vidéo" imageSrc={youtubeDarkImg} />
                 </th>
                 <td
                   data-th="Vidéo"

@@ -114,7 +114,7 @@ const BananaResults = ({ sorted }) => {
         <Banana
           tests={filtered}
           fullTest={true}
-          className="sm:rounded-xl overflow-x-auto sm:border bg-white dark:bg-transparent"
+          className="sm:rounded-xl overflow-x-auto sm:border bg-white dark:bg-transparent "
         />
       </div>
     </>

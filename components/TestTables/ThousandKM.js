@@ -10,6 +10,7 @@ const kmhImg = '/headers/kmh.png';
 const tempImg = '/headers/temp.png';
 const carImg = '/headers/car_full.png';
 const youtubeImg = '/headers/youtube.png';
+const youtubeDarkImg = '/headers/youtube_dark.png';
 const calendarImg = '/headers/calendar.png';
 
 const ThousandKM = ({ tests, className, fullTest }) => {
@@ -108,7 +109,7 @@ const ThousandKM = ({ tests, className, fullTest }) => {
                   {test.Temp}
                 </td>
                 <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
-                  <TableHeader info="Date" imageSrc={tempImg} />
+                  <TableHeader info="Date" imageSrc={calendarImg} />
                 </th>
                 <td
                   data-th="Date"
@@ -116,8 +117,8 @@ const ThousandKM = ({ tests, className, fullTest }) => {
                 >
                   {test.Date}
                 </td>
-                <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
-                  <TableHeader info="Vidéo" imageSrc={youtubeImg} />
+                <th className="font-extrabold flex items-center justify-center my-2 sm:hidden hover:cursor-pointer">
+                  <TableHeader info="Vidéo" imageSrc={youtubeDarkImg} />
                 </th>
                 <td
                   data-th="Vidéo"

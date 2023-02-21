@@ -164,7 +164,7 @@ const Calculator = () => {
         ></h1>
         <form
           autoComplete="off"
-          className=" text-lg flex flex-col flex-grow overflow-x-hidden sm:items-center mt-[5vh] sm:mt-[10vh]"
+          className=" text-lg flex flex-col flex-grow overflow-x-hidden sm:items-center mt-[1vh] sm:mt-[10vh]"
         >
           {stepState === 0 && (
             <CarEVFieldSet

@@ -11,6 +11,7 @@ const trunkDarkImg = '/headers/trunk_dark.png';
 const seatImg = '/headers/seat.png';
 const carImg = '/headers/car_full.png';
 const youtubeImg = '/headers/youtube.png';
+const youtubeDarkImg = '/headers/youtube_dark.png';
 
 const Banana = ({ tests, className, fullTest }) => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -110,8 +111,8 @@ const Banana = ({ tests, className, fullTest }) => {
                 >
                   {test.Frunk || 0}
                 </td>
-                <th className="font-extrabold flex justify-center my-2 sm:hidden hover:cursor-pointer">
-                  <TableHeader info="Vidéo" imageSrc={youtubeImg} />
+                <th className="font-extrabold flex items-center justify-center my-2 sm:hidden hover:cursor-pointer">
+                  <TableHeader info="Vidéo" imageSrc={youtubeDarkImg} />
                 </th>
                 <td
                   data-th="Vidéo"
