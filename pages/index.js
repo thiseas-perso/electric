@@ -38,7 +38,7 @@ const Home = ({ allDataLight }) => {
               className="bg-gradient-to-r from-light-primary-start to-light-primary-end px-6 py-3 block w-fit text-center font-bold text-white dark:bg-gradient-to-r dark:from-dark-primary-0 dark:via-dark-primary-1 dark:to-dark-primary-2"
               href={'/tested-cars'}
             >
-              Accédez au tests.
+              Explorer les résultats.
             </Link>
           </div>
         </div>

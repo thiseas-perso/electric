@@ -77,7 +77,6 @@ const Nav = () => {
               className="w-8 h-8 p-1 bg-white/50"
               onClick={() => {
                 setTheme(currentTheme === 'dark' ? 'light' : 'dark');
-                setNavOpen((prev) => !prev);
               }}
             >
               {currentTheme === 'dark' ? (
