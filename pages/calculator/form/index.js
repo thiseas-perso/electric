@@ -251,6 +251,7 @@ const Calculator = () => {
           checked={checked}
           worthIt={worthIt}
           state={state}
+          resetSteps={() => setStepState(0)}
         />
       )}
     </>
