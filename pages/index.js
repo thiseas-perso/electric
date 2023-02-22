@@ -18,7 +18,7 @@ const Home = ({ allDataLight }) => {
     <>
       <CustomHead title="SOME TITLE" description="some description" />
       <div className="flex flex-col  min-h-screen bg-[url('../public/images/tesla_2_md_light.jpg')] bg-cover bg-center flex-grow dark:bg-[url('../public/images/tesla_2_md_night.png')]">
-        <div className="flex flex-col flex-grow gap-12 mt-[5vh] px-6">
+        <div className="flex flex-col flex-grow gap-12 mt-[5vh]  sm:mt-[10vh] px-6">
           <div className="flex flex-col  items-center">
             <h2 className="text-4xl mb-3 font-extrabold">
               ÊTES-VOUS ÉLECTRO-COMPATIBLE ?
