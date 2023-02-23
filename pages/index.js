@@ -24,7 +24,7 @@ const Home = ({ allDataLight }) => {
               ÊTES-VOUS ÉLECTRO-COMPATIBLE ?
             </h2>
             <Link
-              className="bg-gradient-to-r from-light-primary-start to-light-primary-end px-6 py-3 block w-fit text-center font-bold text-white dark:bg-gradient-to-r dark:from-dark-primary-0 dark:via-dark-primary-1 dark:to-dark-primary-2"
+              className="bg-gradient-to-r from-light-primary-start to-light-primary-end px-6 py-3 block w-fit text-center font-bold text-white dark:bg-gradient-to-r dark:from-dark-primary-0 dark:via-dark-primary-1 dark:to-dark-primary-2 hover:brightness-110 transition-all"
               href={'/calculator'}
             >
               Accédez au calculateur.
@@ -35,7 +35,7 @@ const Home = ({ allDataLight }) => {
               {allDataLight.length} VOITURES ELECTRIQUES TESTÈES
             </h2>
             <Link
-              className="bg-gradient-to-r from-light-primary-start to-light-primary-end px-6 py-3 block w-fit text-center font-bold text-white dark:bg-gradient-to-r dark:from-dark-primary-0 dark:via-dark-primary-1 dark:to-dark-primary-2"
+              className="bg-gradient-to-r from-light-primary-start to-light-primary-end px-6 py-3 block w-fit text-center font-bold text-white dark:bg-gradient-to-r dark:from-dark-primary-0 dark:via-dark-primary-1 dark:to-dark-primary-2 hover:brightness-110 transition-all"
               href={'/tested-cars'}
             >
               Explorer les résultats.
