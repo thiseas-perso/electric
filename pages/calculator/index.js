@@ -29,18 +29,15 @@ const Calculator = () => {
             </p>
             <p className="indent-4">
               Selon le nombre de kilomètres que vous parcourez en une année et
-              le prix d&apos;achat d&apos;une VE, il peut être avantageux de
-              vendre votre VT et de passer à l&apos;électrique. Ceci peut vous
-              permettre d&apos;<strong className="font-bold">économiser</strong>{' '}
-              sur les coûts de carburant et de réduire les émissions de gaz à
-              effet de serre.
+              le coût de l&apos;énérgie, il peut être avantageux de vendre votre
+              VT pour passer à l&apos;électrique.
             </p>
             <p className="indent-4">
               Découvrez dès maintenant votre compatibilité électrique en
               utilisant le calculateur !
             </p>
             <Link
-              className="ml-auto bg-light-primary-4 px-6 py-3 rounded-xl font-bold hover:bg-light-primary-5 transition-colors dark:bg-dark-primary-1 dark:hover:bg-dark-primary-0"
+              className="mx-auto bg-light-primary-4 px-6 py-3 rounded-xl font-bold hover:bg-light-primary-5 transition-colors dark:bg-dark-primary-1 dark:hover:bg-dark-primary-0"
               href={'/calculator/form'}
             >
               Go!
