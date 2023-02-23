@@ -11,6 +11,7 @@ const NavButtons = ({ stepState, setStepState, setX }) => {
           type="button"
           onClick={() => {
             setStepState((prev) => prev - 1), setX(() => -1000);
+            window.scrollTo(0, 0);
           }}
         >
           Précédent
@@ -24,6 +25,7 @@ const NavButtons = ({ stepState, setStepState, setX }) => {
           type="button"
           onClick={() => {
             setStepState((prev) => prev + 1), setX(() => 1000);
+            window.scrollTo(0, 0);
           }}
         >
           Suivant
