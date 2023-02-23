@@ -154,7 +154,10 @@ const Calculator = () => {
 
   return (
     <>
-      <CustomHead title="SOME TITLE" description="some description" />
+      <CustomHead
+        title="Calculez votre électrocompatibilité | eleco.dev"
+        description="Découvrez si il est rentable de passer à l'électrique selon vos trajets, le prix d'achat d'une voiture électrique qui vous intéresse et le coût de l'énergie..!"
+      />
       <div className="flex flex-col flex-grow justify-between min-h-screenNoNav">
         <ProgressBar stepState={stepState} />
         <h1

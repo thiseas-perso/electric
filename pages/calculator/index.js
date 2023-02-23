@@ -4,7 +4,10 @@ import CustomHead from '../../components/customHead';
 const Calculator = () => {
   return (
     <>
-      <CustomHead title="SOME TITLE" description="some description" />
+      <CustomHead
+        title="Calculez votre électrocompatibilité | eleco.dev"
+        description="Découvrez si il est rentable de passer à l'électrique selon vos trajets, le prix d'achat d'une voiture électrique qui vous intéresse et le coût de l'énergie..!"
+      />
 
       <div className="flex flex-col flex-grow min-h-screenNoNav items-center">
         <div className="flex flex-col bg-white dark:bg-light-primary-2 max-w-2xl mt-[1vh] sm:mt-[10vh] shadow-2xl rounded-none sm:rounded-2xl overflow-hidden">

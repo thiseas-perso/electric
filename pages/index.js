@@ -16,7 +16,10 @@ export async function getStaticProps() {
 const Home = ({ allDataLight }) => {
   return (
     <>
-      <CustomHead title="SOME TITLE" description="some description" />
+      <CustomHead
+        title="Voitures électiques & électrompatibilité | eleco.dev"
+        description="Êtes vous prêt(e)s pour une transition à électrique? Est-il rentable de vendre votre voiture thermique pour passer à l'électique? Quelle voiture vous convient? Accédez au calculateur et à tous les tests efféctués par Bjørn Nyland."
+      />
       <div className="flex flex-col  min-h-screen bg-[url('../public/images/tesla_2_md_light.jpg')] bg-cover bg-center flex-grow dark:bg-[url('../public/images/tesla_2_md_night.png')]">
         <div className="flex flex-col flex-grow gap-12 mt-[5vh]  sm:mt-[10vh] px-6">
           <div className="flex flex-col  items-center">

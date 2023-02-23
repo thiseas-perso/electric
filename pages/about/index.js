@@ -7,7 +7,10 @@ import SocialLinks from './SocialLinks';
 const About = () => {
   return (
     <>
-      <CustomHead title="À propos" description="some description" />
+      <CustomHead
+        title="À propos | eleco.dev"
+        description="Je m'appelle Thésée Kambas, je suis développeur web autodidacte et j'ai créé se site pour vous aider à comprendre si il est avantageux de passer à une voiture électique."
+      />
       <div className="min-h-screenNoNav flex flex-col items-center max-w-4xl mx-auto">
         <div className="flex flex-col gap-8 mt-[1vh] sm:mt-[5vh]">
           <div className="bg-white dark:bg-light-primary-2 rounded-none sm:rounded-2xl overflow-hidden shadow-lg">

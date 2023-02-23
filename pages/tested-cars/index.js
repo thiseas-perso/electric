@@ -36,7 +36,10 @@ const Cars = ({ allDataLight, testNames }) => {
 
   return (
     <>
-      <CustomHead title="SOME TITLE" description="some description" />
+      <CustomHead
+        title="Tests de voitures électriques"
+        description="Tous les résultats que vous pouvez trouver sont fournis par Bjørn Nyland, YouTubeur professionnel depuis 2018, qui teste pratiquement toutes les voitures électriques qui existent."
+      />
       <div className="min-h-screenNoNav flex flex-col items-center max-w-4xl mx-auto">
         <div className="flex flex-col gap-8 mt-[1vh] sm:mt-[10vh]">
           <div className="bg-white dark:bg-light-primary-2 rounded-none sm:rounded-2xl overflow-hidden shadow-lg">
