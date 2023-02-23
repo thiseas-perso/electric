@@ -1,5 +1,5 @@
-import Backdrop from '../backdrop';
-import ClientOnlyPortal from '../clientOnlyPortal';
+import Backdrop from '../Backdrop';
+import ClientOnlyPortal from '../ClientOnlyPortal';
 const Modal = ({ handleClose, children, open }) => {
   if (!open) return null;
   const yOffset = window.pageYOffset;

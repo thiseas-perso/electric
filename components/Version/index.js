@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import VersionsTests from '../versionTests';
+import VersionsTests from '../VersionTests';
 
 const Version = ({ version, testNames, filters }) => {
   const [display, setDisplay] = useState(false);
