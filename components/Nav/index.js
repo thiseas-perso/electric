@@ -68,7 +68,12 @@ const Nav = () => {
           </Link>
         </li>
         <li className="py-6 sm:py-0 w-full justify-center gap-3 flex flex-col items-center sm:hidden">
-          <label className="font-bold text-white">
+          <label
+            className="font-bold text-white"
+            onClick={() => {
+              setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+            }}
+          >
             {' '}
             DARK MODE: {currentTheme === 'dark' ? 'ON' : 'OFF'}
           </label>

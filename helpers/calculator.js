@@ -92,25 +92,27 @@ const calculator = ({
     carDataEV.ecoBonus;
 
   const carEVValueAtEndOfPeriod = (() => {
+    const purchaseCost = carDataEV.purchaseCost;
     let currPrice = carDataEV.purchaseCost;
 
     for (let i = 0; i < durationStudied.yearsStudied; i++) {
       if (carDepreciation[i]) {
-        currPrice = currPrice - (currPrice * carDepreciation[i]) / 100;
+        currPrice = currPrice - (purchaseCost * carDepreciation[i]) / 100;
       } else {
-        currPrice = currPrice - (currPrice * 6) / 100;
+        currPrice = currPrice - (purchaseCost * 6) / 100;
       }
     }
     return parseInt(currPrice);
   })();
 
   const carICEValueAtEndOfPeriod = (() => {
+    const purchaseCost = carDataICE.purchaseCost;
     let currPrice = carDataICE.purchaseCost;
     for (let i = 0; i < durationStudied.yearsStudied; i++) {
       if (carDepreciation[i]) {
-        currPrice = currPrice - (currPrice * carDepreciation[i]) / 100;
+        currPrice = currPrice - (purchaseCost * carDepreciation[i]) / 100;
       } else {
-        currPrice = currPrice - (currPrice * 6) / 100;
+        currPrice = currPrice - (purchaseCost * 6) / 100;
       }
     }
     return parseInt(currPrice);
