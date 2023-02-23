@@ -48,9 +48,19 @@ const Cars = ({ allDataLight, testNames }) => {
             </h1>
             <p className="text-lg leading-7 p-8">
               Tous les résultats que vous pouvez trouver sont fournis par{' '}
-              <strong>Björn Nyland</strong>, YouTubeur professionnel depuis
-              2018, qui teste pratiquement toutes les voitures électriques qui
-              existent.
+              <strong>
+                {' '}
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://www.youtube.com/@bjornnyland/featured"
+                  className="hover:underline"
+                >
+                  Bjørn Nyland
+                </a>
+              </strong>
+              , YouTubeur professionnel depuis 2018, qui teste pratiquement
+              toutes les voitures électriques qui existent.
             </p>
           </div>
           <TestInfo />
