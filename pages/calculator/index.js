@@ -7,7 +7,7 @@ const Calculator = () => {
       <CustomHead title="SOME TITLE" description="some description" />
 
       <div className="flex flex-col flex-grow min-h-screenNoNav items-center">
-        <div className="flex flex-col bg-white dark:bg-light-primary-2 max-w-2xl mt-[1vh] sm:mt-[10vh] shadow-2xl">
+        <div className="flex flex-col bg-white dark:bg-light-primary-2 max-w-2xl mt-[1vh] sm:mt-[10vh] shadow-2xl rounded-none sm:rounded-2xl overflow-hidden">
           <h1
             aria-label="L'éléctro-compatibilité"
             className="text-xl p-4 font-poppins font-extrabold text-center bg-black text-white"
