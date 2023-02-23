@@ -1,34 +1,34 @@
 export const initialState = {
   energyData: {
-    chargingPriceHC: '0.15',
-    chargingPriceHP: '0.18',
-    gasPrice: '1.7',
+    chargingPriceHC: '',
+    chargingPriceHP: '',
+    gasPrice: '',
   },
   usageData: {
-    workHomeDistance: '50',
-    dailyCommutes: '2',
-    daysWorkedPerY: '150',
-    weekendKM: '100',
-    otherKMPerW: '150',
+    workHomeDistance: '',
+    dailyCommutes: '',
+    daysWorkedPerY: '',
+    weekendKM: '',
+    otherKMPerW: '',
   },
   usageExpected: {
-    totalKMPerY: '10000',
+    totalKMPerY: '',
   },
   carDataICE: {
-    purchaseCost: '30000',
-    insurance: '500',
-    maintenance: '1000',
-    consumption: '5',
+    purchaseCost: '',
+    insurance: '',
+    maintenance: '',
+    consumption: '',
   },
   carDataEV: {
-    purchaseCost: '30000',
-    consumption: '20',
-    insurance: '500',
-    maintenance: '500',
-    ecoBonus: '5000',
+    purchaseCost: '',
+    consumption: '',
+    insurance: '',
+    maintenance: '',
+    ecoBonus: '',
   },
   durationStudied: {
-    yearsStudied: '4',
+    yearsStudied: '',
   },
 };
 
