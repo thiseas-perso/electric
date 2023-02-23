@@ -57,7 +57,7 @@ const Model = ({ modelData, testNames }) => {
             <span className="text-light-primary-4">{modelData.model}</span>
           </h1>
         </div>
-        <div className="bg-white min-w-ful px-4 max-w-full py-5 dark:bg-transparent">
+        <div className="bg-white min-w-ful px-4 max-w-4xl mx-auto py-5 dark:bg-transparent">
           <div className="flex flex-wrap gap-3 mb-3 border p-3 rounded-2xl bg-slate-100 dark:bg-black">
             <div className="text-lg">Tests effectués :</div>
             {testNames.map((el) => (

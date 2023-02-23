@@ -83,11 +83,11 @@ const WeightResults = ({ sorted }) => {
           </button>
         </div>
       </form>
-      <div className="bg-slate-200 dark:bg-light-primary-2 sm:p-10">
+      <div>
         <Weight
           tests={filtered}
           fullTest={true}
-          className="sm:rounded-xl overflow-x-auto sm:border bg-white dark:bg-transparent"
+          className="sm:rounded-xl overflow-x-auto sm:border-2 bg-white dark:bg-light-primary-2 max-w-5xl mx-auto dark:border-black"
         />
       </div>
     </>

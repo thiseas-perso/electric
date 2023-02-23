@@ -123,7 +123,7 @@ const About = () => {
                     <div className="flex w-32 h-8 mx-auto">
                       <input
                         type="image"
-                        className="bg-slate-300"
+                        className="bg-slate-300 dark:bg-slate-300"
                         src="https://pics.paypal.com/00/s/MzI1NGYzZDctM2YxMS00NDA4LWI2NGItZDc4MzU5NTU1YzMw/file.PNG"
                         border="0"
                         name="submit"

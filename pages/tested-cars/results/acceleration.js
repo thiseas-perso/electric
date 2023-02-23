@@ -61,7 +61,7 @@ const AccelerationResults = ({ sorted }) => {
 
   return (
     <>
-      <form className=" w-full p-8 flex justify-center gap-2 dark:bg-transparent items-center flex-wrap">
+      <form className=" w-full p-8 flex justify-center gap-2 items-center flex-wrap">
         <label htmlFor="query" className="font-semibold">
           Filtrer :{' '}
         </label>
@@ -100,11 +100,11 @@ const AccelerationResults = ({ sorted }) => {
           </button>
         </div>
       </form>
-      <div className="bg-slate-200 dark:bg-light-primary-2 sm:p-10">
+      <div>
         <Acceleration
           tests={filtered}
           fullTest={true}
-          className="sm:rounded-xl overflow-x-auto sm:border bg-white dark:bg-transparent"
+          className="sm:rounded-xl overflow-x-auto sm:border-2 bg-white dark:bg-light-primary-2 max-w-5xl mx-auto dark:border-black"
         />
       </div>
     </>
