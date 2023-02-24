@@ -53,7 +53,8 @@ const CarICEFieldSet = ({ state, className, x, changeHandler, errorState }) => {
           <span className="error-msg">{errorState.carDataICE.consumption}</span>
           <input
             className="mb-3"
-            placeholder="ex: 5.2"
+            placeholder="ex: 5,2"
+            step="0.1"
             required
             min="0"
             type="number"
