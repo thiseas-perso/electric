@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Script from 'next/script';
 import React from 'react';
 import CustomHead from '../../components/customHead';
 import SocialLinks from './SocialLinks';
@@ -108,9 +107,9 @@ const About = () => {
                 </div>
                 <div className="my-8 border-none p-4 rounded-lg bg-slate-300 text-black">
                   <p>
-                    ⭐️ Si le site vous a plu, offrez moi un café ! Celà
-                    m&apos;aidera à continuer de financer ce projet et d&apos;en
-                    faire des nouveaux!
+                    ⭐️ Si le site vous a plu, vous pouvez m&apos;offrir un café
+                    ! Cela m&apos;aidera à continuer de financer ce projet et
+                    d&apos;en faire des nouveaux!
                   </p>
                   <form
                     action="https://www.paypal.com/donate"
@@ -165,10 +164,6 @@ const About = () => {
                     <a className="a2a_button_whatsapp"></a>
                   </div>
                 </div>
-                <Script
-                  async
-                  src="https://static.addtoany.com/menu/page.js"
-                ></Script>
               </div>
             </div>
           </div>

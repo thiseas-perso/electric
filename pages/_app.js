@@ -71,32 +71,47 @@ const App = ({ Component, pageProps }) => {
   }, [router.events]);
 
   return (
-    <ThemeProvider attribute="class">
+    <>
       <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
       />
-          
+
       <Script
         id="google-analytics"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}', {
-            page_path: window.location.pathname,
-          });
-        `,
+            window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}', {
+                    page_path: window.location.pathname,
+                  });
+                `,
         }}
       />
-      <Layout
-        className={`${raleway.variable} ${merriweather.variable} ${lato.variable} ${poppins.variable}`}
-      >
-        <Component {...pageProps} />
-      </Layout>
-    </ThemeProvider>
+      <Script
+        data-name="BMC-Widget"
+        data-cfasync="false"
+        src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+        data-id="eleco"
+        data-description="Support me on Buy me a coffee!"
+        data-message="Si ce site vous plait, vous pouvez m'offrir un café ! 😊"
+        data-color="#5F7FFF"
+        data-position="Right"
+        data-x_margin="18"
+        data-y_margin="18"
+      />
+      <Script src="https://static.addtoany.com/menu/page.js" />
+      <ThemeProvider attribute="class">
+        <Layout
+          className={`${raleway.variable} ${merriweather.variable} ${lato.variable} ${poppins.variable}`}
+        >
+          <Component {...pageProps} />
+        </Layout>
+      </ThemeProvider>
+    </>
   );
 };
 
