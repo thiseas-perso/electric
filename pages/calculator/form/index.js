@@ -153,7 +153,7 @@ const Calculator = () => {
       ...prev,
       [objName]: {
         ...prev[objName],
-        [fieldName]: e.target.value,
+        [fieldName]: e.target.value.replace(',', '.'),
       },
     }));
   };
