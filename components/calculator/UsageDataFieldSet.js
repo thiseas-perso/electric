@@ -43,7 +43,7 @@ const UsageDataFieldSet = ({
           id="workHomeDistance"
           name="workHomeDistance"
           value={state.usageData.workHomeDistance}
-          onChange={(e) => changeHandler(e, 'usageData', 'workHomeDistance')}
+          onChange={(e) => changeHandler(e, 'usageData')}
         />
         <label htmlFor="dailyCommutes">A/R quotidiens</label>
         <span className="error-msg">{errorState.usageData.dailyCommutes}</span>
@@ -56,7 +56,7 @@ const UsageDataFieldSet = ({
           id="dailyCommutes"
           name="dailyCommutes"
           value={state.usageData.dailyCommutes}
-          onChange={(e) => changeHandler(e, 'usageData', 'dailyCommutes')}
+          onChange={(e) => changeHandler(e, 'usageData')}
         />
         <label htmlFor="daysWorkedPerY">Nombre de jours travaillés/an</label>
         <span className="error-msg">{errorState.usageData.daysWorkedPerY}</span>
@@ -70,7 +70,7 @@ const UsageDataFieldSet = ({
           id="daysWorkedPerY"
           name="daysWorkedPerY"
           value={state.usageData.daysWorkedPerY}
-          onChange={(e) => changeHandler(e, 'usageData', 'daysWorkedPerY')}
+          onChange={(e) => changeHandler(e, 'usageData')}
         />
         <label htmlFor="weekendKM">Km les weekends</label>
         <span className="error-msg">{errorState.usageData.weekendKM}</span>
@@ -82,7 +82,7 @@ const UsageDataFieldSet = ({
           name="weekendKM"
           placeholder="ex: 140"
           value={state.usageData.weekendKM}
-          onChange={(e) => changeHandler(e, 'usageData', 'weekendKM')}
+          onChange={(e) => changeHandler(e, 'usageData')}
         />
         <label htmlFor="otherKMPerW">Autres km par semaine</label>
         <span className="error-msg">{errorState.usageData.otherKMPerW}</span>
@@ -94,7 +94,7 @@ const UsageDataFieldSet = ({
           id="otherKMPerW"
           name="otherKMPerW"
           value={state.usageData.otherKMPerW}
-          onChange={(e) => changeHandler(e, 'usageData', 'otherKMPerW')}
+          onChange={(e) => changeHandler(e, 'usageData')}
         />
         <div className="text-end">
           <b>Total:</b> {total} km

@@ -127,28 +127,40 @@ const Calculator = () => {
     }
   };
 
-  const changeHandler = (e, objName, fieldName) => {
-    let { value } = e.target;
+  const changeHandler = (e, objName) => {
+    let { value, name } = e.target;
     value = value.replace(/\,/, '.');
 
     if (
       !e.target.value.trim().length &&
       !objName.startsWith('usage') &&
-      fieldName !== 'chargingPriceHC'
+      name !== 'chargingPriceHC'
     ) {
       setErrorState((prev) => ({
         ...prev,
         [objName]: {
           ...prev[objName],
-          [fieldName]: '*Ce champ est obligatoire',
+          [name]: '*Ce champ est obligatoire',
         },
       }));
+    } else if (objName === 'usageExpected' && value > 0) {
+      for (const key in state.usageData) {
+        if (!state.usageData[key].trim().length) {
+          setErrorState((prev) => ({
+            ...prev,
+            usageData: {
+              ...prev.usageData,
+              [key]: '',
+            },
+          }));
+        }
+      }
     } else {
       setErrorState((prev) => ({
         ...prev,
         [objName]: {
           ...prev[objName],
-          [fieldName]: '',
+          [name]: '',
         },
       }));
     }
@@ -156,7 +168,7 @@ const Calculator = () => {
       ...prev,
       [objName]: {
         ...prev[objName],
-        [fieldName]: value,
+        [name]: value,
       },
     }));
   };
@@ -233,9 +245,9 @@ const Calculator = () => {
               className="bg-white overflow-hidden  min-w-[275px] shadow-2xl max-w-2xl dark:bg-black"
             />
           )}
-          {stepState === 6 && errorCount > 0 ? (
+          {stepState === 6 && (
             <>
-              <ErrorMessage />
+              {errorCount > 0 && <ErrorMessage />}
               <SubmitPage
                 submitHandler={submitHandler}
                 checked={checked}
@@ -243,14 +255,7 @@ const Calculator = () => {
                 errorCount={errorCount}
               />
             </>
-          ) : stepState === 6 ? (
-            <SubmitPage
-              submitHandler={submitHandler}
-              checked={checked}
-              setChecked={setChecked}
-              errorCount={errorCount}
-            />
-          ) : null}
+          )}
         </form>
         <NavButtons
           stepState={stepState}
