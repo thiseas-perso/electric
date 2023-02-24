@@ -143,6 +143,18 @@ const Calculator = () => {
           [name]: '*Ce champ est obligatoire',
         },
       }));
+    } else if (objName === 'usageExpected' && value > 0) {
+      for (const key in state.usageData) {
+        if (!state.usageData[key].trim().length) {
+          setErrorState((prev) => ({
+            ...prev,
+            usageData: {
+              ...prev.usageData,
+              [key]: '',
+            },
+          }));
+        }
+      }
     } else {
       setErrorState((prev) => ({
         ...prev,

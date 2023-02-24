@@ -43,6 +43,8 @@ const CarICEFieldSet = ({ state, className, x, changeHandler, errorState }) => {
             placeholder="ex: 35000"
             required
             min="0"
+            max="1000000"
+            step="100"
             type="number"
             id="purchaseCost"
             name="purchaseCost"
@@ -57,6 +59,7 @@ const CarICEFieldSet = ({ state, className, x, changeHandler, errorState }) => {
             step="0.1"
             required
             min="0"
+            max="100"
             type="number"
             id="consumption"
             name="consumption"

@@ -40,6 +40,7 @@ const CarEVFieldSet = ({ state, className, x, changeHandler, errorState }) => {
             placeholder="ex: 35000"
             required
             min="0"
+            step="100"
             max="10000000"
             type="number"
             id="purchaseCost"
