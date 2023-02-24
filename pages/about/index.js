@@ -23,7 +23,7 @@ const About = () => {
             <div className="flex flex-col px-2 sm:px-8 py-4 sm:grid sm:grid-cols-[1fr_3fr] gap-4">
               <div className="flex items-start my-8 sm:my-0 gap-4">
                 <div className="felx">
-                  <div className="bg-[url('/images/thesee.jpeg')] w-40 h-40 rounded-full bg-center bg-cover" />
+                  <div className="bg-[url('/images/thesee.webp')] w-40 h-40 rounded-full bg-center bg-cover" />
                 </div>
                 <div className="flex flex-col flex-grow gap-2 sm:hidden">
                   <h2 className="text-4xl font-bold">
