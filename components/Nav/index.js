@@ -107,6 +107,7 @@ const Nav = () => {
       </div>
       <div className="absolute right-0 top-1 w-12 h-12 flex justify-center items-center sm:hidden">
         <button
+          aria-label="Open navigation menu"
           onClick={() => setNavOpen((prev) => !prev)}
           className="p-0 border-none rounded-none flex flex-col h-12 w-12 justify-center items-center group"
         >

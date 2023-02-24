@@ -20,7 +20,7 @@ const Home = ({ allDataLight }) => {
         title="Voitures électiques & électrompatibilité | eleco.dev"
         description="Êtes vous prêt(e)s pour une transition à électrique? Est-il rentable de vendre votre voiture thermique pour passer à l'électique? Quelle voiture vous convient? Accédez au calculateur et à tous les tests efféctués par Bjørn Nyland."
       />
-      <div className="flex flex-col  min-h-screen bg-[url('../public/images/tesla_light_xs.png')] sm:bg-[url('../public/images/tesla_light_xl.jpg')] bg-cover bg-center bg-no-repeat flex-grow dark:bg-[url('../public/images/tesla_night_xs.png')] sm:dark:bg-[url('../public/images/tesla_night_xl.png')]">
+      <div className="flex flex-col  min-h-screen bg-[url('../public/images/tesla_light_xs.webp')] sm:bg-[url('../public/images/tesla_light_xl.webp')] bg-cover bg-center bg-no-repeat flex-grow dark:bg-[url('../public/images/tesla_night_xs.webp')] sm:dark:bg-[url('../public/images/tesla_night_xl.webp')]">
         <div className="flex flex-col flex-grow gap-12 mt-[5vh]  sm:mt-[10vh] px-6">
           <div className="flex flex-col  items-center">
             <h2 className="text-4xl mb-3 font-extrabold">
