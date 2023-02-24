@@ -96,7 +96,7 @@ const Calculator = () => {
             usageData: {
               ...prev.usageData,
               [key]:
-                "*Vous n'avez pas rentré de KM annuel, ce champ est donc obligatoir",
+                "*Vous n'avez pas rentré de KM annuel, ce champ est donc obligatoire",
             },
           }));
         }
