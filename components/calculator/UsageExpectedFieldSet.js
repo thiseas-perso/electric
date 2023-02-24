@@ -65,8 +65,9 @@ const UsageExpectedFieldSet = ({
             placeholder="ex: 12500"
             type="number"
             id="totalKMPerY"
+            name="totalKMPerY"
             value={state.usageExpected.totalKMPerY}
-            onChange={(e) => changeHandler(e, 'usageExpected', 'totalKMPerY')}
+            onChange={(e) => changeHandler(e, 'usageExpected')}
           />
         </div>
       </div>

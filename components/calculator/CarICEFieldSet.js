@@ -47,7 +47,7 @@ const CarICEFieldSet = ({ state, className, x, changeHandler, errorState }) => {
             id="purchaseCost"
             name="purchaseCost"
             value={state.carDataICE.purchaseCost}
-            onChange={(e) => changeHandler(e, 'carDataICE', 'purchaseCost')}
+            onChange={(e) => changeHandler(e, 'carDataICE')}
           />
           <label htmlFor="consumption">Consomation (lt/100km):</label>
           <span className="error-msg">{errorState.carDataICE.consumption}</span>
@@ -61,7 +61,7 @@ const CarICEFieldSet = ({ state, className, x, changeHandler, errorState }) => {
             id="consumption"
             name="consumption"
             value={state.carDataICE.consumption}
-            onChange={(e) => changeHandler(e, 'carDataICE', 'consumption')}
+            onChange={(e) => changeHandler(e, 'carDataICE')}
           />
           <label htmlFor="insurance">Assurance (€/an):</label>
           <span className="error-msg">{errorState.carDataICE.insurance}</span>
@@ -74,7 +74,7 @@ const CarICEFieldSet = ({ state, className, x, changeHandler, errorState }) => {
             id="insurance"
             name="insurance"
             value={state.carDataICE.insurance}
-            onChange={(e) => changeHandler(e, 'carDataICE', 'insurance')}
+            onChange={(e) => changeHandler(e, 'carDataICE')}
           />
           <label htmlFor="maintenance">Entretien (€/an):</label>
           <span className="error-msg">{errorState.carDataICE.maintenance}</span>
@@ -87,7 +87,7 @@ const CarICEFieldSet = ({ state, className, x, changeHandler, errorState }) => {
             id="maintenance"
             name="maintenance"
             value={state.carDataICE.maintenance}
-            onChange={(e) => changeHandler(e, 'carDataICE', 'maintenance')}
+            onChange={(e) => changeHandler(e, 'carDataICE')}
           />
         </div>
       </div>

@@ -127,20 +127,20 @@ const Calculator = () => {
     }
   };
 
-  const changeHandler = (e, objName, fieldName) => {
-    let { value } = e.target;
+  const changeHandler = (e, objName) => {
+    let { value, name } = e.target;
     value = value.replace(/\,/, '.');
 
     if (
       !e.target.value.trim().length &&
       !objName.startsWith('usage') &&
-      fieldName !== 'chargingPriceHC'
+      name !== 'chargingPriceHC'
     ) {
       setErrorState((prev) => ({
         ...prev,
         [objName]: {
           ...prev[objName],
-          [fieldName]: '*Ce champ est obligatoire',
+          [name]: '*Ce champ est obligatoire',
         },
       }));
     } else {
@@ -148,7 +148,7 @@ const Calculator = () => {
         ...prev,
         [objName]: {
           ...prev[objName],
-          [fieldName]: '',
+          [name]: '',
         },
       }));
     }
@@ -156,7 +156,7 @@ const Calculator = () => {
       ...prev,
       [objName]: {
         ...prev[objName],
-        [fieldName]: value,
+        [name]: value,
       },
     }));
   };

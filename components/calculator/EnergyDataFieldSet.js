@@ -58,7 +58,7 @@ const EnergyDataFieldSet = ({
             id="chargingPriceHP"
             name="chargingPriceHP"
             value={state.energyData.chargingPriceHP}
-            onChange={(e) => changeHandler(e, 'energyData', 'chargingPriceHP')}
+            onChange={(e) => changeHandler(e, 'energyData')}
           />
           <label htmlFor="chargingPriceHC">
             Electricité - heures creuses(€/kWh){' '}
@@ -77,7 +77,7 @@ const EnergyDataFieldSet = ({
             id="chargingPriceHC"
             name="chargingPriceHC"
             value={state.energyData.chargingPriceHC}
-            onChange={(e) => changeHandler(e, 'energyData', 'chargingPriceHC')}
+            onChange={(e) => changeHandler(e, 'energyData')}
           />
 
           <label htmlFor="gasPrice">Carburant (€/lt):</label>
@@ -92,7 +92,7 @@ const EnergyDataFieldSet = ({
             id="gasPrice"
             name="gasPrice"
             value={state.energyData.gasPrice}
-            onChange={(e) => changeHandler(e, 'energyData', 'gasPrice')}
+            onChange={(e) => changeHandler(e, 'energyData')}
           />
         </div>
       </div>

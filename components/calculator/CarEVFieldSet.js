@@ -45,7 +45,7 @@ const CarEVFieldSet = ({ state, className, x, changeHandler, errorState }) => {
             id="purchaseCost"
             name="purchaseCost"
             value={state.carDataEV.purchaseCost}
-            onChange={(e) => changeHandler(e, 'carDataEV', 'purchaseCost')}
+            onChange={(e) => changeHandler(e, 'carDataEV')}
           />
           <label htmlFor="ecoBonus">Bonus ecologique (€):</label>
           <span className="error-msg">{errorState.carDataEV.ecoBonus}</span>
@@ -59,7 +59,7 @@ const CarEVFieldSet = ({ state, className, x, changeHandler, errorState }) => {
             id="ecoBonus"
             name="ecoBonus"
             value={state.carDataEV.ecoBonus}
-            onChange={(e) => changeHandler(e, 'carDataEV', 'ecoBonus')}
+            onChange={(e) => changeHandler(e, 'carDataEV')}
           />
           <label htmlFor="consumption">Consomation (kWh/100km):</label>
           <span className="error-msg">{errorState.carDataEV.consumption}</span>
@@ -73,7 +73,7 @@ const CarEVFieldSet = ({ state, className, x, changeHandler, errorState }) => {
             id="consumption"
             name="consumption"
             value={state.carDataEV.consumption}
-            onChange={(e) => changeHandler(e, 'carDataEV', 'consumption')}
+            onChange={(e) => changeHandler(e, 'carDataEV')}
           />
           <label htmlFor="insurance">Assurance (€/an):</label>
           <span className="error-msg">{errorState.carDataEV.insurance}</span>
@@ -87,7 +87,7 @@ const CarEVFieldSet = ({ state, className, x, changeHandler, errorState }) => {
             id="insurance"
             name="insurance"
             value={state.carDataEV.insurance}
-            onChange={(e) => changeHandler(e, 'carDataEV', 'insurance')}
+            onChange={(e) => changeHandler(e, 'carDataEV')}
           />
           <label htmlFor="maintenance">Entretien (€/an):</label>
           <span className="error-msg">{errorState.carDataEV.maintenance}</span>
@@ -101,7 +101,7 @@ const CarEVFieldSet = ({ state, className, x, changeHandler, errorState }) => {
             id="maintenance"
             name="maintenance"
             value={state.carDataEV.maintenance}
-            onChange={(e) => changeHandler(e, 'carDataEV', 'maintenance')}
+            onChange={(e) => changeHandler(e, 'carDataEV')}
           />
         </div>
       </div>
