@@ -245,9 +245,9 @@ const Calculator = () => {
               className="bg-white overflow-hidden  min-w-[275px] shadow-2xl max-w-2xl dark:bg-black"
             />
           )}
-          {stepState === 6 && errorCount > 0 ? (
+          {stepState === 6 && (
             <>
-              <ErrorMessage />
+              {errorCount > 0 && <ErrorMessage />}
               <SubmitPage
                 submitHandler={submitHandler}
                 checked={checked}
@@ -255,14 +255,7 @@ const Calculator = () => {
                 errorCount={errorCount}
               />
             </>
-          ) : stepState === 6 ? (
-            <SubmitPage
-              submitHandler={submitHandler}
-              checked={checked}
-              setChecked={setChecked}
-              errorCount={errorCount}
-            />
-          ) : null}
+          )}
         </form>
         <NavButtons
           stepState={stepState}
