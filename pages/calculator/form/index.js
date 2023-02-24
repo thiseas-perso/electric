@@ -128,6 +128,9 @@ const Calculator = () => {
   };
 
   const changeHandler = (e, objName, fieldName) => {
+    let { value } = e.target;
+    value = value.replace(/\,/, '.');
+
     if (
       !e.target.value.trim().length &&
       !objName.startsWith('usage') &&
@@ -153,7 +156,7 @@ const Calculator = () => {
       ...prev,
       [objName]: {
         ...prev[objName],
-        [fieldName]: e.target.value.replace(',', '.'),
+        [fieldName]: value,
       },
     }));
   };
@@ -173,6 +176,7 @@ const Calculator = () => {
         <form
           autoComplete="off"
           className=" text-lg flex flex-col flex-grow overflow-x-hidden sm:items-center mt-[1vh] sm:mt-[10vh]"
+          lang="fr"
         >
           {stepState === 0 && (
             <CarEVFieldSet
