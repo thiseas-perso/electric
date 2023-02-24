@@ -1,8 +1,8 @@
-import Head from 'next/head';
 import React, { useEffect, useRef, useState } from 'react';
 import ReactMapGL, { Source, Layer, ScaleControl } from 'react-map-gl';
 import * as turf from '@turf/turf';
 import axios from 'axios';
+import CustomHead from '../../components/customHead';
 
 //TODO: debounce hook to move to separate file
 const useDebounce = (value, delay) => {
@@ -72,17 +72,13 @@ const MapTest = () => {
 
   return (
     <>
-      <Head>
-        <title>[TEST MAP]</title>
-        <meta name="description" content="[DESCRIPTION HERE]" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <div>MapTest</div>
+      <CustomHead title="La map | eleco.dev" />
+      <h1>MapTest</h1>
 
       <ReactMapGL
         {...viewport}
         interactive={true}
+        attributionControl={false}
         ref={mapRef}
         style={{ width: 600, height: 400 }}
         mapStyle="mapbox://styles/mapbox/streets-v9"
