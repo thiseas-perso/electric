@@ -45,11 +45,9 @@ function DurationFieldSet({ state, changeHandler, className, x, errorState }) {
             step="1"
             type="number"
             id="durationStudied"
-            name="durationStudied"
+            name="yearsStudied"
             value={state.durationStudied.yearsStudied}
-            onChange={(e) =>
-              changeHandler(e, 'durationStudied', 'yearsStudied')
-            }
+            onChange={(e) => changeHandler(e, 'durationStudied')}
           />
         </div>
       </div>

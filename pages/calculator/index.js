@@ -27,7 +27,7 @@ const Calculator = () => {
               <strong className="font-bold"> d&apos;usage</strong> sur la durée
               de vie de la voiture.
             </p>
-            <p className="indent-4">
+            <p className="indent-4 sr-only sm:not-sr-only">
               Selon le nombre de kilomètres que vous parcourez en une année et
               le coût de l&apos;énérgie, il peut être avantageux de vendre votre
               VT pour passer à l&apos;électrique.
