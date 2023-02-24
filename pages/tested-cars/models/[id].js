@@ -52,8 +52,8 @@ const Model = ({ modelData, testNames }) => {
             priority={true}
             className="unselectable w-full max-w-3xl object-cover hover:brightness-110 transition-all"
           />
-          <h1 className="relative top-[-30px] text-5xl text-white dark:text-black">
-            {modelData.maker}{' '}
+          <h1 className="relative top-[-30px] text-5xl text-white dark:text-black text-center">
+            {modelData.maker} <br />
             <span className="text-light-primary-4">{modelData.model}</span>
           </h1>
         </div>

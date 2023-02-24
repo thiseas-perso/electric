@@ -27,21 +27,27 @@ const Calculator = () => {
   const [stepState, setStepState] = useState(0);
   const [x, setX] = useState(0);
   const [results, setResults] = useState(initialResultsState);
-  const [worthIt, setWorthIt] = useState(
-    results.carEVCostAtEndOfPeriod - results.carICECostAtEndOfPeriod
-  );
+  const [worthIt, setWorthIt] = useState(0);
   const [checked, setChecked] = useState(false);
 
   useEffect(() => {
     if (checked) {
       setWorthIt(
-        results.carEVCostAtEndOfPeriod -
-          results.carEVValueAtEndOfPeriod -
-          (results.carICECostAtEndOfPeriod - results.carICEValueAtEndOfPeriod)
+        Number(
+          (
+            results.carEVCostAtEndOfPeriod -
+            results.carEVValueAtEndOfPeriod -
+            (results.carICECostAtEndOfPeriod - results.carICEValueAtEndOfPeriod)
+          ).toFixed(0)
+        )
       );
     } else {
       setWorthIt(
-        results.carEVCostAtEndOfPeriod - results.carICECostAtEndOfPeriod
+        Number(
+          (
+            results.carEVCostAtEndOfPeriod - results.carICECostAtEndOfPeriod
+          ).toFixed(0)
+        )
       );
     }
   }, [
@@ -96,7 +102,7 @@ const Calculator = () => {
             usageData: {
               ...prev.usageData,
               [key]:
-                "*Vous n'avez pas rentré de KM annuel, ce champ est donc obligatoir",
+                "*Vous n'avez pas rentré de KM annuel, ce champ est donc obligatoire",
             },
           }));
         }
