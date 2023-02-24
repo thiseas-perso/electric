@@ -3,7 +3,7 @@ import ClientOnlyPortal from '../ClientOnlyPortal';
 const Modal = ({ handleClose, children, open }) => {
   if (!open) return null;
   const yOffset = window.pageYOffset;
-  console.log(yOffset);
+
   return (
     <ClientOnlyPortal selector="#modal">
       <Backdrop onClick={handleClose} />

@@ -5,7 +5,6 @@ import ResultMsgPositive from './ReslutMsgPositive';
 import ResultData from './ResultData';
 
 const ResultPage = ({ results, checked, worthIt, state, resetSteps }) => {
-  console.log({ results });
   return (
     <div className="min-h-screen flex flex-col items-center bg-gradient-to-t from-light-primary-start to-light-primary-end  dark:from-dark-primary-1 dark:via-dark-primary-1 dark:to-dark-primary-2">
       <div className="max-w-3xl">
