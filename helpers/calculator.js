@@ -91,7 +91,7 @@ const calculator = ({
     carDataEV.purchaseCost +
     (carDataEV.insurance + carDataEV.maintenance + chargeEVCostPerY) *
       durationStudied.yearsStudied -
-    carDataEV.ecoBonus;
+    (carDataEV.ecoBonus || 0);
 
   const carEVValueAtEndOfPeriod = (() => {
     const purchaseCost = carDataEV.purchaseCost;
