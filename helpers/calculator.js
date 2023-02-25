@@ -87,11 +87,14 @@ const calculator = ({
     (gasICECostPerY - chargeEVCostPerY).toFixed(0)
   );
 
-  const carEVCostAtEndOfPeriod =
-    carDataEV.purchaseCost +
-    (carDataEV.insurance + carDataEV.maintenance + chargeEVCostPerY) *
-      durationStudied.yearsStudied -
-    (carDataEV.ecoBonus || 0);
+  const carEVCostAtEndOfPeriod = Number(
+    (
+      carDataEV.purchaseCost +
+      (carDataEV.insurance + carDataEV.maintenance + chargeEVCostPerY) *
+        durationStudied.yearsStudied -
+      (carDataEV.ecoBonus || 0)
+    ).toFixed(0)
+  );
 
   const carEVValueAtEndOfPeriod = (() => {
     const purchaseCost = carDataEV.purchaseCost;
