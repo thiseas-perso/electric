@@ -78,7 +78,8 @@ const Calculator = () => {
         for (const innerKey in element) {
           if (
             !element[innerKey].trim().length &&
-            innerKey !== 'chargingPriceHC'
+            innerKey !== 'chargingPriceHC' &&
+            innerKey !== 'ecoBonus'
           ) {
             errors += 1;
             setErrorState((prev) => ({
@@ -132,9 +133,10 @@ const Calculator = () => {
     value = value.replace(/\,/, '.');
 
     if (
-      !e.target.value.trim().length &&
+      !value.trim().length &&
       !objName.startsWith('usage') &&
-      name !== 'chargingPriceHC'
+      name !== 'chargingPriceHC' &&
+      name !== 'ecoBonus'
     ) {
       setErrorState((prev) => ({
         ...prev,
