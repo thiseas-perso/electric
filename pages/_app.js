@@ -91,7 +91,7 @@ const App = ({ Component, pageProps }) => {
                 `,
         }}
       />
-      <Script
+      <script
         data-name="BMC-Widget"
         data-cfasync="false"
         src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
@@ -102,8 +102,8 @@ const App = ({ Component, pageProps }) => {
         data-position="Right"
         data-x_margin="18"
         data-y_margin="18"
+        defer
       />
-      <Script src="https://static.addtoany.com/menu/page.js" />
       <ThemeProvider attribute="class">
         <Layout
           className={`${raleway.variable} ${merriweather.variable} ${lato.variable} ${poppins.variable}`}
