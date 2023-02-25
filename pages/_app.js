@@ -3,7 +3,7 @@ import '../styles/globals.css';
 import { Raleway, Merriweather_Sans, Lato, Poppins } from '@next/font/google';
 import { ThemeProvider } from 'next-themes';
 import Layout from '../components/layout';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import * as gtag from '../lib/gtag';
 
@@ -38,7 +38,13 @@ const merriweather = Merriweather_Sans({
 });
 
 const App = ({ Component, pageProps }) => {
+  const [hostname, setHostname] = useState('');
+
   const router = useRouter();
+
+  useEffect(() => {
+    setHostname(window.location.hostname);
+  }, []);
 
   //gets screen size - to fix mobile viewport height problem
   useEffect(() => {
@@ -77,11 +83,12 @@ const App = ({ Component, pageProps }) => {
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
       />
 
-      <Script
-        id="google-analytics"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
+      {hostname !== 'localhost' && (
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
             window.dataLayer = window.dataLayer || [];
                   function gtag(){dataLayer.push(arguments);}
                   gtag('js', new Date());
@@ -89,8 +96,9 @@ const App = ({ Component, pageProps }) => {
                     page_path: window.location.pathname,
                   });
                 `,
-        }}
-      />
+          }}
+        />
+      )}
       <script
         data-name="BMC-Widget"
         data-cfasync="false"
