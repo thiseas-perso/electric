@@ -48,12 +48,13 @@ const CarEVFieldSet = ({ state, className, x, changeHandler, errorState }) => {
             value={state.carDataEV.purchaseCost}
             onChange={(e) => changeHandler(e, 'carDataEV')}
           />
-          <label htmlFor="ecoBonus">Bonus ecologique (€):</label>
-          <span className="error-msg">{errorState.carDataEV.ecoBonus}</span>
+          <label htmlFor="ecoBonus">
+            Bonus ecologique (€): <span className="italic">(optionnel)</span>
+          </label>
+          {/* <span className="error-msg">{errorState.carDataEV.ecoBonus}</span> */}
           <input
             className="mb-3"
             placeholder="ex: 5000"
-            required
             min="0"
             max="10000000"
             type="number"
