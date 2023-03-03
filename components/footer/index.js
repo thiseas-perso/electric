@@ -6,7 +6,7 @@ import logoImg from '../../public/icons/logo_lg.png';
 
 const Footer = () => {
   return (
-    <footer className="p-4 font-lato bg-white sm:p-6 dark:bg-gray-900 mt-48">
+    <footer className="pt-12 pb-4 px-4 font-lato bg-white dark:bg-gray-900">
       <div className="md:flex md:justify-between">
         <div className="mb-6 md:mb-0">
           <Link href="/" className="ml-2 self-start">
