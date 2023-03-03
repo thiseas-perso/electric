@@ -282,3 +282,15 @@ VW ID Buzz - Cargo 82 kWh;Dry;-4;Continental VC7;Winter;235/50-20;265/45-20;120;
 BYD Atto 3 - 60 kWh;Dry;25;Atlas Batman A51;Summer;215/55-18;215/55-18;90;134;59,6;445;276;289;40;434
 Ora Good Cat - 500 Ultra;Dry;20;GitiComfort;Summer;215/50-18;215/50-18;90;140;59;420;261;273;49;334
 Ora Good Cat - GT;Dry;27;GitiComfort;Summer;215/50-18;215/50-18;90;148;56,8;384;239;250;49;306
+Tesla Model Y - RWD;Dry;20;Hankook Ventus S1evo3;Summer;255/45-19;255/45-19;90;129;56,8;440;273;286;27;636
+BMW i7 - xDrive60;Dry;30;Bridgestone Turanza;Summer;255/40-21;285/35-21;90;160;101;631;392;410;29;849
+Volvo XC40 - 78 kWh AWD;Dry;20;Pirelli P Zero;Summer;235/50-19;255/45-19;90;185;75;405;252;263;34;465
+Volvo XC40 - 78 kWh AWD;Dry;19;Pirelli P Zero;Summer;235/50-19;255/45-19;120;261;75;288;179;187;34;330
+MG4 - 51 kWh;Dry;20;Continental PremiumContact C;Summer;215/50-17;215/50-17;90;150;49,5;330;205;215;31;415
+MG4 - 51 kWh;Dry;20;Continental PremiumContact C;Summer;215/50-17;215/50-17;120;219;49,5;226;140;147;31;284
+Mercedes EQS - 500 4Matic;Dry;21;Goodyear Eagle F1;Summer;265/40-21;265/40-21;90;160;108,4;678;421;441;28;944
+Mercedes EQS - 500 4Matic;Dry;20;Goodyear Eagle F1;Summer;265/40-21;265/40-21;120;210;108,4;516;320;335;28;719
+Tesla Model S - Plaid;Wet;5;Nokian R5;Winter;245/45-19;275/40-19;90;170;92,1;542;337;352;25;846
+Tesla Model S - Plaid;Wet;6;Nokian R5;Winter;245/45-19;275/40-19;120;235;92,1;392;243;255;25;612
+Tesla Model S - LR Palladium;Dry;8;Nokian R5;Winter;245/45-19;275/40-19;90;157;92,1;587;365;382;25;916
+Tesla Model S - LR Palladium;Dry;7;Nokian R5;Winter;245/45-19;275/40-19;120;216;92,1;426;265;277;25;665
