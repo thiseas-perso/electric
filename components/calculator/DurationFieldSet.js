@@ -39,6 +39,7 @@ function DurationFieldSet({ state, changeHandler, className, x, errorState }) {
             {errorState.durationStudied.yearsStudied}
           </span>
           <input
+            autoFocus
             className="mb-3"
             min="1"
             placeholder="ex: 8"
