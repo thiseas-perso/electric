@@ -87,7 +87,7 @@ const WeightResults = ({ sorted }) => {
         <Weight
           tests={filtered}
           fullTest={true}
-          className="sm:rounded-xl overflow-x-auto sm:border-2 bg-white dark:bg-light-primary-2 max-w-5xl mx-auto dark:border-black"
+          className="sm:rounded-xl overflow-x-auto overflow-y-hidden sm:border-2 bg-white dark:bg-light-primary-2 max-w-5xl mx-auto dark:border-black mb-32"
         />
       </div>
     </>
