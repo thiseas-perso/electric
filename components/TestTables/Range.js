@@ -23,6 +23,18 @@ const Range = ({ tests, className, fullTest }) => {
   const [showMoreDetails, setShowMoreDetails] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
   const [btnTxt, setBtnTxt] = useState('détails');
+  const [is90Clicked, setIs90Clicked] = useState(true);
+  const [is120Clicked, setIs120Clicked] = useState(true);
+
+  const filteredTests = tests.filter((test) => {
+    if (
+      (test.Speed === '90' && is90Clicked === true) ||
+      (test.Speed === '120' && is120Clicked === true)
+    ) {
+      return true;
+    }
+    return false;
+  });
 
   const clickHandler = () => {
     if (!showDetails && !showMoreDetails) {
@@ -45,10 +57,22 @@ const Range = ({ tests, className, fullTest }) => {
           <h3 className="font-bold bg-light-primary-2 text-white p-3 text-left flex items-center gap-x-4 dark:bg-black">
             Autonomie
             <button
-              className="font-light hover:bg-white/25"
+              className="font-light hover:bg-white/25 transition-colors"
               onClick={clickHandler}
             >
               {btnTxt}
+            </button>
+            <button
+              className=" p-0 m-0 rounded-full w-12 h-12 hover:bg-white/25 transition-colors"
+              onClick={() => setIs90Clicked((prev) => !prev)}
+            >
+              90
+            </button>
+            <button
+              className=" p-0 m-0 rounded-full w-12 h-12 hover:bg-white/25 transition-colors"
+              onClick={() => setIs120Clicked((prev) => !prev)}
+            >
+              120
             </button>
           </h3>
         </caption>
@@ -156,7 +180,7 @@ const Range = ({ tests, className, fullTest }) => {
           </tr>
         </thead>
         <tbody>
-          {tests.map((test, i) => {
+          {filteredTests.map((test, i) => {
             return (
               <tr
                 key={i}

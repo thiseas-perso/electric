@@ -16,8 +16,6 @@ export async function getStaticProps() {
 const RangeResults = ({ sorted }) => {
   const [query, setQuery] = useState('');
   const [filtered, setFiltered] = useState(sorted);
-  const [is90Checked, setIs90Checked] = useState(true);
-  const [is120Checked, setIs120Checked] = useState(true);
 
   const filterData = (string, arr) => {
     setQuery(() => string);
@@ -93,32 +91,7 @@ const RangeResults = ({ sorted }) => {
           maxLength="20"
           autoComplete="off"
         />
-        <div className=" gap-4 hidden">
-          <div>
-            <input
-              id="ninenty"
-              name="ninenty"
-              type="checkbox"
-              defaultChecked={is90Checked}
-              onChange={() => {
-                setIs90Checked((prev) => !prev);
-              }}
-            />
-            <label htmlFor="ninenty">90 km/h</label>
-          </div>
-          <div>
-            <input
-              id="hundred"
-              name="hundred"
-              type="checkbox"
-              defaultChecked={is120Checked}
-              onChange={() => {
-                setIs120Checked((prev) => !prev);
-              }}
-            />
-            <label htmlFor="hundred">120 km/h</label>
-          </div>
-        </div>
+
         <div className="flex justify-center gap-2 dark:bg-transparent items-center flex-wrap">
           <div className="w-full text-center sm:w-fit sm:text-left">
             Trier par:
