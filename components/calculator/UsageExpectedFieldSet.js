@@ -60,7 +60,6 @@ const UsageExpectedFieldSet = ({
             {errorState.usageExpected.totalKMPerY}
           </span>
           <input
-            autoFocus
             className="mb-3"
             min="0"
             placeholder="ex: 12500"
