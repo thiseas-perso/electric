@@ -67,7 +67,7 @@ const Cars = ({ allDataLight, testNames }) => {
             </p>
           </div>
           <TestInfo />
-          <div className="flex flex-col shadow-lg rounded-none sm:rounded-2xl">
+          <div className="flex flex-col shadow-lg rounded-none sm:rounded-2xl mb-32">
             <MakerSection dataByMaker={dataByMaker} />
             <TestsLinks stringArr={testNames} />
             <ModelsSection allDataLight={allDataLight} last={true} />
