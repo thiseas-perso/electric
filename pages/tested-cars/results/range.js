@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getOneFileData } from '../../../lib/csvParser';
 import { Range } from '../../../components/TestTables';
 
@@ -15,8 +15,9 @@ export async function getStaticProps() {
 
 const RangeResults = ({ sorted }) => {
   const [query, setQuery] = useState('');
-
   const [filtered, setFiltered] = useState(sorted);
+  const [is90Checked, setIs90Checked] = useState(true);
+  const [is120Checked, setIs120Checked] = useState(true);
 
   const filterData = (string, arr) => {
     setQuery(() => string);
@@ -80,7 +81,7 @@ const RangeResults = ({ sorted }) => {
 
   return (
     <>
-      <form className=" w-full p-8 flex justify-center gap-2 dark:bg-transparent items-center flex-wrap">
+      <form className="mx-auto max-w-4xl p-8 flex justify-center gap-2 dark:bg-transparent items-center flex-wrap">
         <label htmlFor="query" className="font-semibold">
           Filtrer :{' '}
         </label>
@@ -92,6 +93,32 @@ const RangeResults = ({ sorted }) => {
           maxLength="20"
           autoComplete="off"
         />
+        <div className=" gap-4 hidden">
+          <div>
+            <input
+              id="ninenty"
+              name="ninenty"
+              type="checkbox"
+              defaultChecked={is90Checked}
+              onChange={() => {
+                setIs90Checked((prev) => !prev);
+              }}
+            />
+            <label htmlFor="ninenty">90 km/h</label>
+          </div>
+          <div>
+            <input
+              id="hundred"
+              name="hundred"
+              type="checkbox"
+              defaultChecked={is120Checked}
+              onChange={() => {
+                setIs120Checked((prev) => !prev);
+              }}
+            />
+            <label htmlFor="hundred">120 km/h</label>
+          </div>
+        </div>
         <div className="flex justify-center gap-2 dark:bg-transparent items-center flex-wrap">
           <div className="w-full text-center sm:w-fit sm:text-left">
             Trier par:
@@ -137,7 +164,7 @@ const RangeResults = ({ sorted }) => {
         <Range
           tests={filtered}
           fullTest={true}
-          className="sm:rounded-xl overflow-x-auto sm:border-2 bg-white dark:bg-light-primary-2 max-w-5xl mx-auto dark:border-black"
+          className="sm:rounded-xl overflow-x-auto overflow-y-hidden sm:border-2 bg-white dark:bg-light-primary-2 max-w-5xl mx-auto dark:border-black mb-32"
         />
       </div>
     </>
