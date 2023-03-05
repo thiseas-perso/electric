@@ -266,6 +266,7 @@ const Calculator = () => {
           stepState={stepState}
           setStepState={setStepState}
           setX={setX}
+          state={state}
         />
       </div>
       {stepState === 6 && (
