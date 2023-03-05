@@ -11,18 +11,24 @@ const ResultData = ({
   return (
     <div className="border-2  rounded-xl bg-white text-center overflow-hidden dark:bg-light-primary-2">
       <h3 className="font-bold border-b p-2 bg-light-primary-2 text-white dark:bg-black">
-        Cout <span className="text-light-primary-4">{carType}</span>
+        Coût <span className="text-light-primary-4">{carType}</span>
       </h3>
       <div className="my-4">
-        <h4>Cout total :</h4>
-        <p className="font-bold">{carCostAtEnd} €</p>
+        <h4>Coût total :</h4>
+        <p className="font-bold">
+          <span>{carCostAtEnd}</span> €
+        </p>
         <h4>
           Cout {carType === 'Thermique' ? 'des carburants' : 'des recharges'}{' '}
           par an:
         </h4>
-        <p className="font-bold">{energyCostPerYear} €</p>
+        <p className="font-bold">
+          <span>{energyCostPerYear}</span> €
+        </p>
         <h4>Cout au km</h4>
-        <p className="font-bold">{carCostPerKMAtEnd} €</p>
+        <p className="font-bold">
+          <span>{carCostPerKMAtEnd}</span> €
+        </p>
         {checked && (
           <>
             <h4>Valeur résiduelle</h4>
