@@ -259,7 +259,7 @@ const Acceleration = ({ tests, className, fullTest }) => {
                   data-th="Pneux"
                   className={`${
                     showDetails && showMoreDetails
-                      ? 'block my-2 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block max-w-full break-words my-2 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                 >
