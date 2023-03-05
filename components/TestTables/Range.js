@@ -54,27 +54,31 @@ const Range = ({ tests, className, fullTest }) => {
     <div className={className}>
       <table className="min-w-full border-separate border-spacing-2 p-3">
         <caption>
-          <h3 className="font-bold bg-light-primary-2 text-white p-3 text-left flex items-center gap-x-4 dark:bg-black">
-            Autonomie
-            <button
-              className="font-light hover:bg-white/25 transition-colors"
-              onClick={clickHandler}
-            >
-              {btnTxt}
-            </button>
-            <button
-              className=" p-0 m-0 rounded-full w-12 h-12 hover:bg-white/25 transition-colors"
-              onClick={() => setIs90Clicked((prev) => !prev)}
-            >
-              90
-            </button>
-            <button
-              className=" p-0 m-0 rounded-full w-12 h-12 hover:bg-white/25 transition-colors"
-              onClick={() => setIs120Clicked((prev) => !prev)}
-            >
-              120
-            </button>
-          </h3>
+          <div className="font-bold bg-light-primary-2 text-white p-3 text-left flex items-center gap-x-4 dark:bg-black">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+              <h3>Autonomie</h3>
+              <div className="flex items-center gap-3">
+                <button
+                  className="font-light hover:bg-white/25 transition-colors"
+                  onClick={clickHandler}
+                >
+                  {btnTxt}
+                </button>
+                <button
+                  className=" p-0 m-0 rounded-full w-12 h-12 hover:bg-white/25 transition-colors"
+                  onClick={() => setIs90Clicked((prev) => !prev)}
+                >
+                  90
+                </button>
+                <button
+                  className=" p-0 m-0 rounded-full w-12 h-12 hover:bg-white/25 transition-colors"
+                  onClick={() => setIs120Clicked((prev) => !prev)}
+                >
+                  120
+                </button>
+              </div>
+            </div>
+          </div>
         </caption>
         <thead>
           <tr>
