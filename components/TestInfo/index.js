@@ -14,7 +14,7 @@ const TestInfo = () => {
       </div>
       <ul
         className={`${
-          isOpen ? 'max-h-[200vh]' : 'max-h-0'
+          isOpen ? 'max-h-[300vh]' : 'max-h-0'
         } overflow-hidden transition-all flex flex-col gap-3 bg-white dark:bg-light-primary-2 rounded-none sm:rounded-2xl shadow-lg`}
       >
         <h2 className="text-white bg-black pt-8 pb-4 px-8">
