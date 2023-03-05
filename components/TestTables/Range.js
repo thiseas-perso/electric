@@ -354,7 +354,7 @@ const Range = ({ tests, className, fullTest }) => {
                 <td
                   className={`${
                     showMoreDetails
-                      ? 'block my-2 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
+                      ? 'block max-w-full break-words my-2 font-semibold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg '
                       : 'hidden'
                   }`}
                   data-th="Pneux"
