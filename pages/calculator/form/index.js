@@ -11,6 +11,7 @@ import {
   initialResultsState,
   initialState,
   initialStateErrors,
+  initialStateDev,
 } from '../../../components/calculator/initialStates';
 import NavButtons from '../../../components/calculator/NavButtons';
 import ProgressBar from '../../../components/calculator/ProgressBar';
@@ -21,7 +22,9 @@ import CustomHead from '../../../components/customHead';
 import calculator from '../../../helpers/calculator';
 
 const Calculator = () => {
-  const [state, setState] = useState(initialState);
+  const [state, setState] = useState(
+    process.env.NEXT_PUBLIC_ENV === 'DEV' ? initialStateDev : initialState
+  );
   const [errorState, setErrorState] = useState(initialStateErrors);
   const [errorCount, setErrorCount] = useState(0);
   const [stepState, setStepState] = useState(0);

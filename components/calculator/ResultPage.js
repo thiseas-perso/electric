@@ -25,7 +25,7 @@ const ResultPage = ({ results, checked, worthIt, state, resetSteps }) => {
           />
           <ResultData
             carCostAtEnd={results.carEVCostAtEndOfPeriod}
-            carType="Eléctrique"
+            carType="Electrique"
             energyCostPerYear={results.chargeEVCostPerY}
             carCostPerKMAtEnd={results.carEVCostPerKmAtEnd}
             carValueAtEnd={results.carEVValueAtEndOfPeriod}
