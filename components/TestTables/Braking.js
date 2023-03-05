@@ -228,7 +228,7 @@ const Braking = ({ tests, className, fullTest }) => {
                 </th>
                 <td
                   data-th="Pneux"
-                  className="block my-2 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg "
+                  className="block max-w-full break-words my-2 font-semibold  sm:table-cell sm:p-2 sm:rounded-lg "
                 >
                   {test.Tires}
                 </td>
