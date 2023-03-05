@@ -2,7 +2,7 @@ import React from 'react';
 
 const NavButtons = ({ stepState, setStepState, setX }) => {
   return (
-    <div className="flex self-stretch font-bold font-poppins text-white border-y-2 bg-light-primary-start dark:bg-dark-primary-2">
+    <div className="flex self-stretch font-bold font-poppins text-white border-y-2 bg-light-primary-8 dark:bg-dark-primary-2">
       {stepState > 0 && stepState < 7 && (
         <button
           className={`${
