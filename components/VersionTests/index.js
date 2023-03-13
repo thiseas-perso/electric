@@ -11,40 +11,52 @@ const VersionsTests = ({ version }) => {
   return (
     <>
       {version?.acceleration && (
-        <Acceleration
-          tests={version.acceleration}
-          className="border rounded-lg my-14 shadow-md overflow-x-auto overflow-y-hidden dark:bg-dark-primary-0"
-        />
+        <li>
+          <Acceleration
+            tests={version.acceleration}
+            className="border rounded-lg my-14 shadow-md overflow-x-auto overflow-y-hidden dark:bg-dark-primary-0"
+          />
+        </li>
       )}
       {version?.thousand && (
-        <ThousandKM
-          tests={version.thousand}
-          className="border rounded-lg my-14 shadow-md overflow-x-auto overflow-y-hidden dark:bg-dark-primary-0"
-        />
+        <li>
+          <ThousandKM
+            tests={version.thousand}
+            className="border rounded-lg my-14 shadow-md overflow-x-auto overflow-y-hidden dark:bg-dark-primary-0"
+          />
+        </li>
       )}
       {version?.weight && (
-        <Weight
-          tests={version.weight}
-          className="border rounded-lg my-14 shadow-md overflow-x-auto overflow-y-hidden dark:bg-dark-primary-0"
-        />
+        <li>
+          <Weight
+            tests={version.weight}
+            className="border rounded-lg my-14 shadow-md overflow-x-auto overflow-y-hidden dark:bg-dark-primary-0"
+          />
+        </li>
       )}
       {version?.banana && (
-        <Banana
-          tests={version.banana}
-          className="border rounded-lg my-14 shadow-md overflow-x-auto overflow-y-hidden dark:bg-dark-primary-0"
-        />
+        <li>
+          <Banana
+            tests={version.banana}
+            className="border rounded-lg my-14 shadow-md overflow-x-auto overflow-y-hidden dark:bg-dark-primary-0"
+          />
+        </li>
       )}
       {version?.range && (
-        <Range
-          tests={version.range}
-          className="border rounded-lg my-14 shadow-md overflow-x-auto overflow-y-hidden dark:bg-dark-primary-0"
-        />
+        <li>
+          <Range
+            tests={version.range}
+            className="border rounded-lg my-14 shadow-md overflow-x-auto overflow-y-hidden dark:bg-dark-primary-0"
+          />
+        </li>
       )}
       {version?.braking && (
-        <Braking
-          tests={version.braking}
-          className="border rounded-lg my-14 shadow-md overflow-x-auto overflow-y-hidden dark:bg-dark-primary-0"
-        />
+        <li>
+          <Braking
+            tests={version.braking}
+            className="border rounded-lg my-14 shadow-md overflow-x-auto overflow-y-hidden dark:bg-dark-primary-0"
+          />
+        </li>
       )}
     </>
   );
