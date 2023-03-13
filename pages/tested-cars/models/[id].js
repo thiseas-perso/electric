@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import CustomHead from '../../../components/customHead';
 import StudioImage from '../../../components/StudioImage';
 import TestFilter from '../../../components/TestFilter';
 import Version from '../../../components/Version';
@@ -41,6 +42,10 @@ const Model = ({ modelData, testNames }) => {
 
   return (
     <>
+      <CustomHead
+        title={`${modelData.maker} - ${modelData.model} | eleco.dev`}
+        description={`Tous les resultats tests efféctués sur la voiture ${modelData.maker} - ${modelData.model} `}
+      />
       <div className="min-h-screenNoNav mb-32">
         <div className="w-full h-fit px-4 flex flex-col items-center ">
           <StudioImage
