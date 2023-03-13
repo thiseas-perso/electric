@@ -7,10 +7,7 @@ import SocialLinks from './SocialLinks';
 const About = () => {
   return (
     <>
-      <Script
-        src="https://static.addtoany.com/menu/page.js"
-        strategy="afterInteractive"
-      />
+      <script src="https://static.addtoany.com/menu/page.js" defer />
       <CustomHead
         title="À propos | eleco.dev"
         description="Je m'appelle Thésée Kambas, je suis développeur web autodidacte et j'ai créé se site pour vous aider à comprendre si il est avantageux de passer à une voiture électique."
