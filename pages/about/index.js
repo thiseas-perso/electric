@@ -112,9 +112,9 @@ const About = () => {
                 </div>
                 <div className="my-8 border-none p-4 rounded-lg bg-slate-300 text-black">
                   <p>
-                    ⭐️ Si le site vous a plu, vous pouvez m&apos;offrir un café
-                    ! Cela m&apos;aidera à continuer de financer ce projet et
-                    d&apos;en faire des nouveaux!
+                    ⭐️ Si le site vous a plu, vous pouvez me soutenir en
+                    m&apos;offrant un café ! Cela m&apos;aidera à continuer de
+                    financer ce projet et à en créer des nouveaux.
                   </p>
                   <form
                     action="https://www.paypal.com/donate"
@@ -148,7 +148,7 @@ const About = () => {
                     />
                   </form>
                 </div>
-                <div className="flex flex-col gap-2 items-end">
+                <div className="flex flex-col gap-2 items-end pb-6">
                   <p className="text-slate-500">
                     Partagez eleco.dev via le réseau de votre choix:
                   </p>
