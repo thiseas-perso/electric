@@ -47,6 +47,7 @@ const calculator = ({
   const totalKMPerY =
     usageExpected.totalKMPerY ||
     usageData.workHomeDistance *
+      2 *
       usageData.dailyCommutes *
       usageData.daysWorkedPerY +
       usageData.weekendKM * 52 +
