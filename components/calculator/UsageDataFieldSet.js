@@ -9,6 +9,7 @@ const UsageDataFieldSet = ({
 }) => {
   const total =
     Number(state.usageData.workHomeDistance) *
+      2 *
       Number(state.usageData.dailyCommutes) *
       Number(state.usageData.daysWorkedPerY) +
     Number(state.usageData.weekendKM) * 52 +
