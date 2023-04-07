@@ -72,7 +72,6 @@ const EnergyDataFieldSet = ({
             placeholder="ex: 0,15"
             min="0"
             step=".01"
-            lang="en"
             type="number"
             id="chargingPriceHC"
             name="chargingPriceHC"
