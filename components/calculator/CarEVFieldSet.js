@@ -42,9 +42,7 @@ const CarEVFieldSet = ({ state, className, x, changeHandler, errorState }) => {
             min="0"
             step="100"
             max="10000000"
-            pattern="[0-9]*"
-            type="text"
-            inputmode="numeric"
+            type="number"
             id="purchaseCost"
             name="purchaseCost"
             value={state.carDataEV.purchaseCost}
@@ -59,9 +57,7 @@ const CarEVFieldSet = ({ state, className, x, changeHandler, errorState }) => {
             placeholder="ex: 5000"
             min="0"
             max="10000000"
-            pattern="[0-9]*"
-            type="text"
-            inputmode="numeric"
+            type="number"
             id="ecoBonus"
             name="ecoBonus"
             value={state.carDataEV.ecoBonus}
@@ -75,9 +71,7 @@ const CarEVFieldSet = ({ state, className, x, changeHandler, errorState }) => {
             required
             min="0"
             max="1000"
-            pattern="[0-9]*"
-            type="text"
-            inputmode="numeric"
+            type="number"
             id="consumption"
             name="consumption"
             value={state.carDataEV.consumption}
@@ -91,9 +85,7 @@ const CarEVFieldSet = ({ state, className, x, changeHandler, errorState }) => {
             required
             min="0"
             max="10000000"
-            pattern="[0-9]*"
-            type="text"
-            inputmode="numeric"
+            type="number"
             id="insurance"
             name="insurance"
             value={state.carDataEV.insurance}
@@ -107,9 +99,7 @@ const CarEVFieldSet = ({ state, className, x, changeHandler, errorState }) => {
             max="10000000"
             required
             min="0"
-            pattern="[0-9]*"
-            type="text"
-            inputmode="numeric"
+            type="number"
             id="maintenance"
             name="maintenance"
             value={state.carDataEV.maintenance}
