@@ -45,9 +45,7 @@ const CarICEFieldSet = ({ state, className, x, changeHandler, errorState }) => {
             min="0"
             max="1000000"
             step="100"
-            pattern="[0-9]*"
-            type="text"
-            inputmode="numeric"
+            type="number"
             id="purchaseCost"
             name="purchaseCost"
             value={state.carDataICE.purchaseCost}
@@ -62,9 +60,7 @@ const CarICEFieldSet = ({ state, className, x, changeHandler, errorState }) => {
             required
             min="0"
             max="100"
-            pattern="[0-9]*"
-            type="text"
-            inputmode="numeric"
+            type="number"
             id="consumption"
             name="consumption"
             value={state.carDataICE.consumption}
@@ -77,9 +73,7 @@ const CarICEFieldSet = ({ state, className, x, changeHandler, errorState }) => {
             placeholder="ex: 750"
             required
             min="0"
-            pattern="[0-9]*"
-            type="text"
-            inputmode="numeric"
+            type="number"
             id="insurance"
             name="insurance"
             value={state.carDataICE.insurance}
@@ -92,9 +86,7 @@ const CarICEFieldSet = ({ state, className, x, changeHandler, errorState }) => {
             placeholder="ex: 700"
             required
             min="0"
-            pattern="[0-9]*"
-            type="text"
-            inputmode="numeric"
+            type="number"
             id="maintenance"
             name="maintenance"
             value={state.carDataICE.maintenance}
