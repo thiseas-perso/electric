@@ -193,7 +193,6 @@ const Calculator = () => {
         <form
           autoComplete="off"
           className=" text-lg flex flex-col flex-grow overflow-x-hidden sm:items-center mt-[1vh] sm:mt-[10vh]"
-          lang="fr"
         >
           {stepState === 0 && (
             <CarEVFieldSet
