@@ -46,6 +46,7 @@ const CarICEFieldSet = ({ state, className, x, changeHandler, errorState }) => {
             max="1000000"
             step="100"
             type="number"
+            inputMode="decimal"
             id="purchaseCost"
             name="purchaseCost"
             value={state.carDataICE.purchaseCost}
@@ -61,6 +62,7 @@ const CarICEFieldSet = ({ state, className, x, changeHandler, errorState }) => {
             min="0"
             max="100"
             type="number"
+            inputMode="decimal"
             id="consumption"
             name="consumption"
             value={state.carDataICE.consumption}
@@ -74,6 +76,7 @@ const CarICEFieldSet = ({ state, className, x, changeHandler, errorState }) => {
             required
             min="0"
             type="number"
+            inputMode="decimal"
             id="insurance"
             name="insurance"
             value={state.carDataICE.insurance}
@@ -87,6 +90,7 @@ const CarICEFieldSet = ({ state, className, x, changeHandler, errorState }) => {
             required
             min="0"
             type="number"
+            inputMode="decimal"
             id="maintenance"
             name="maintenance"
             value={state.carDataICE.maintenance}
