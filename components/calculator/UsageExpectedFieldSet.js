@@ -64,6 +64,7 @@ const UsageExpectedFieldSet = ({
             min="0"
             placeholder="ex: 12500"
             type="number"
+            inputMode="decimal"
             id="totalKMPerY"
             name="totalKMPerY"
             value={state.usageExpected.totalKMPerY}

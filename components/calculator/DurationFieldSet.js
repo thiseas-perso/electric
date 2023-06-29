@@ -44,6 +44,7 @@ function DurationFieldSet({ state, changeHandler, className, x, errorState }) {
             placeholder="ex: 8"
             step="1"
             type="number"
+            inputMode="decimal"
             id="durationStudied"
             name="yearsStudied"
             value={state.durationStudied.yearsStudied}
