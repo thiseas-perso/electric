@@ -133,7 +133,6 @@ const Calculator = () => {
 
   const changeHandler = (e, objName) => {
     let { value, name } = e.target;
-    // value = value.replace(/\,/, '.');
 
     if (
       !value.trim().length &&
