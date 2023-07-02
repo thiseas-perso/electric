@@ -47,14 +47,14 @@ const Model = ({ modelData, testNames }) => {
         description={`Tous les resultats tests efféctués sur la voiture ${modelData.maker} - ${modelData.model} `}
       />
       <div className="min-h-screenNoNav mb-32">
-        <div className="w-full h-fit px-4 flex flex-col items-center ">
+        <div className="w-[400px] ml-auto mr-auto h-fit px-4 flex flex-col items-center ">
           <StudioImage
             model={modelData.model}
             maker={modelData.maker}
-            width={1200}
-            height={100}
-            zoomType={'fullscreen'}
-            priority={true}
+            // width={400}
+            // height={250}
+            // zoomType={'fullscreen'}
+            // priority={true}
             className="unselectable w-full max-w-3xl object-cover hover:brightness-110 transition-all"
           />
           <h1 className="relative top-[-30px] text-5xl text-white dark:text-black text-center">

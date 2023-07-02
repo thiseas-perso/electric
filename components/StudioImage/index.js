@@ -29,6 +29,8 @@ const StudioImage = ({
       height={height}
       className={className}
       priority={priority}
+      placeholder="blur"
+      blurDataURL="/icons/load.webp"
     />
   );
 };
