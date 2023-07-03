@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { getOneFileData } from '../../../lib/csvParser';
 import { Range } from '../../../components/TestTables';
 
