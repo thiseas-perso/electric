@@ -133,9 +133,13 @@ const Calculator = () => {
 
   const changeHandler = (e, objName) => {
     let { value, name } = e.target;
+    value = value
+      .trim()
+      .replace(',', '.')
+      .replace(/[^0-9.]/g, '');
 
     if (
-      !value.trim().length &&
+      !value.length &&
       !objName.startsWith('usage') &&
       name !== 'chargingPriceHC' &&
       name !== 'ecoBonus'
@@ -159,6 +163,14 @@ const Calculator = () => {
           }));
         }
       }
+    } else if (value.length && isNaN(Number(value))) {
+      setErrorState((prev) => ({
+        ...prev,
+        [objName]: {
+          ...prev[objName],
+          [name]: '*Format invalide',
+        },
+      }));
     } else {
       setErrorState((prev) => ({
         ...prev,

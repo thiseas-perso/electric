@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import TableHeader from '../TableHeader';
+import StudioImage from '../StudioImage';
 
 const kmhImg = '/headers/kmh.png';
 const batteryImg = '/headers/battery_kwh.png';
@@ -35,6 +36,8 @@ const Range = ({ tests, className, fullTest }) => {
     }
     return false;
   });
+
+  useEffect(() => console.log(tests[0]));
 
   const clickHandler = () => {
     if (!showDetails && !showMoreDetails) {
@@ -199,6 +202,7 @@ const Range = ({ tests, className, fullTest }) => {
                       data-th="Voiture"
                       className="block my-2 font-extrabold  before:font-normal before:italic before:block sm:before:content-none sm:table-cell sm:p-2 sm:rounded-lg "
                     >
+                      {/* <StudioImage /> */}
                       {test.Car}
                     </td>
                   </>
