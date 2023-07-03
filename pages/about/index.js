@@ -20,9 +20,9 @@ const About = () => {
           <div className="bg-white dark:bg-light-primary-2 rounded-none sm:rounded-2xl overflow-hidden shadow-lg">
             <h1
               aria-label="Design & développment : KAMBAS Thésée"
-              className="text-xl px-2 sm:px-8 py-4 text-white bg-black font-poppins font-extrabold text-center"
+              className="text-xl px-2 sm:px-8 py-4 text-white bg-black font-poppins font-extralight text-center"
             >
-              Design & développment
+              Design & développement du site
             </h1>
             <div className="flex flex-col px-2 sm:px-8 py-4 sm:grid sm:grid-cols-[1fr_3fr] gap-4">
               <div className="flex items-start my-8 sm:my-0 gap-4">
@@ -47,9 +47,9 @@ const About = () => {
               </div>
               <div className="text-lg leading-7 col-span-2">
                 <div className="mb-8 border-none p-4 rounded-lg bg-slate-300 text-black">
-                  <h3 className="font-bold">Développeur autodidacte</h3>
+                  <h3 className="font-bold">Formation web dev</h3>
                   <p>
-                    J&apos;ai suivi le cours{' '}
+                    J&apos;ai suivi les cours{' '}
                     <a
                       className="underline font-bold text-blue-800 "
                       target="_blank"
@@ -79,7 +79,7 @@ const About = () => {
                     de l&apos;université d&apos;Helsinki.
                   </p>
                 </div>
-                <div className="my-8 border-none p-4 rounded-lg bg-slate-300 text-black hidden">
+                <div className="my-8 border-none p-4 rounded-lg bg-slate-300 text-black ">
                   <h3 className="font-bold ">eleco.dev</h3>
                   <p>
                     J&apos;ai créé ce site de A à Z avec{' '}
@@ -99,18 +99,20 @@ const About = () => {
                   </p>
                 </div>
                 <div className="my-8 border-none p-4 rounded-lg bg-slate-300 text-black">
-                  <h3 className="font-bold">Comment m&apos;aider</h3>
+                  <h3 className="font-bold">Actuellement</h3>
                   <p>
-                    🚀 Je cherche mon prochain challenge professionnel et je
-                    souhaite integrer une équipe dynamique en tant que
-                    développeur front ou full stack.
+                    Développeur full stack au sein de{' '}
+                    <span className="font-bold">
+                      Crédit Agricole e-développement
+                    </span>{' '}
+                    depuis Avril 2023.
                   </p>
-                  <p className="font-bold my-2 italic">
+                  <p className="font-light my-2 italic">
                     Si mon profil peut vous interesser, n&apos;hésitez pas à me
                     contacter!
                   </p>
                 </div>
-                <div className="my-8 border-none p-4 rounded-lg bg-slate-300 text-black">
+                {/* <div className="my-8 border-none p-4 rounded-lg bg-slate-300 text-black">
                   <p>
                     ⭐️ Si le site vous a plu, vous pouvez me soutenir en
                     m&apos;offrant un café ! Cela m&apos;aidera à continuer de
@@ -147,7 +149,7 @@ const About = () => {
                       className="bg-transparent"
                     />
                   </form>
-                </div>
+                </div> */}
                 <div className="flex flex-col gap-2 items-end pb-6">
                   <p className="text-slate-500">
                     Partagez eleco.dev via le réseau de votre choix:
